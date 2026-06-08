@@ -4,9 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Temperature Converter — Celsius, Fahrenheit & Kelvin | Free</title>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
 <meta name="description" content="Convert temperatures instantly between Celsius, Fahrenheit and Kelvin. Works for weather, cooking, science and medical use.">
 <meta name="keywords" content="celsius to fahrenheit, fahrenheit to celsius, temperature converter, 37 celsius in fahrenheit, kelvin converter, body temperature">
 <meta name="robots" content="index, follow">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.svg">
+<meta name="theme-color" content="#2563ff">
 <link rel="canonical" href="https://www.workkits.com/temperature-converter.html">
 <meta property="og:title" content="Temperature Converter — Celsius, Fahrenheit & Kelvin | Free">
 <meta property="og:description" content="Convert temperatures instantly between Celsius, Fahrenheit and Kelvin. Works for weather, cooking, science and medical use.">
@@ -100,12 +105,8 @@ ul.b li{font-size:15px;color:var(--ink3);line-height:1.75;margin-bottom:5px}
 .rc .rd{font-size:11px;color:var(--ink4)}
 .ad1{background:var(--surf);border:1px solid var(--bdr);border-radius:12px;padding:11px 18px;margin:20px 0;display:flex;align-items:center;gap:14px;min-height:56px}
 .ad2{background:var(--acc-l);border:1px solid rgba(37,99,255,.15);border-radius:12px;padding:11px 18px;margin:20px 0;display:flex;align-items:center;gap:14px;min-height:56px}
-.adlbl{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink5);flex-shrink:0}
-.adtxt{flex:1;font-size:13px;color:var(--ink2)}
-.adtxt strong{font-weight:500}
-.adcta{border:none;border-radius:7px;padding:7px 13px;font-size:12px;font-weight:500;cursor:pointer;white-space:nowrap;font-family:var(--fb);flex-shrink:0}
-.adcta.dk{background:var(--ink2);color:#fff}.adcta.dk:hover{background:var(--ink)}
-.adcta.bl{background:var(--acc-d);color:#fff}.adcta.bl:hover{background:var(--acc)}
+
+
 .sticky-ad{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-top:1px solid var(--bdr);padding:8px 5%;display:flex;align-items:center;gap:12px;z-index:50;flex-wrap:wrap}
 .sticky-ad p{font-size:12px;color:var(--ink3);margin:0;flex:1}
 .sticky-ad a{font-size:12px;color:var(--acc);font-weight:500;text-decoration:none;white-space:nowrap}
@@ -131,10 +132,13 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
   </div>
 </div>
 <div class="sticky-ad" id="stickyAd" role="complementary" aria-label="Advertisement">
-  <span class="adlbl">Ad</span>
-  <p>💼 <strong>QuickBooks</strong> — accounting software used by 7M+ businesses. Automate invoices, VAT &amp; payroll.</p>
-  <a href="#">Try free 30 days →</a>
-  <button class="adism" id="adDismiss" aria-label="Dismiss">×</button>
+  <ins class="adsbygoogle"
+       style="display:block;width:100%;min-height:50px"
+       data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+       data-ad-slot="REPLACE_WITH_SLOT_ID_3"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <button class="adism" id="adDismiss" aria-label="Dismiss ad">×</button>
 </div>
 <nav>
   <a class="logo" href="/index.html"><span class="lmark">W</span>WorkKit</a>
@@ -153,13 +157,27 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
     <p class="intro">Convert temperatures instantly between Celsius (°C), Fahrenheit (°F), and Kelvin (K). Works for weather, cooking, scientific, and medical applications worldwide.</p>
     <div class="kpills"><span class="kp">celsius to fahrenheit</span><span class="kp">fahrenheit to celsius</span><span class="kp">temperature converter</span><span class="kp">37°C in °F</span><span class="kp">body temperature</span><span class="kp">oven temperature</span></div>
   </div>
-  <div class="ad1" role="complementary" aria-label="Advertisement"><span class="adlbl">Ad</span><div class="adtxt">🌤️ <strong>Weather.com</strong> — 10-day forecasts in Celsius or Fahrenheit. Radar and severe weather alerts. Free app.</div><button class="adcta dk">Check weather</button><!-- ADSENSE: <ins class="adsbygoogle" data-ad-client="ca-pub-XXXX" data-ad-slot="SLOT1" data-ad-format="auto" style="display:block"></ins> --></div>
+  <div class="ad1" role="complementary" aria-label="Advertisement">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+       data-ad-slot="REPLACE_WITH_SLOT_ID_1"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+</div>
   <div class="calc-box"><h2>Temperature converter</h2>
   <div class="fr"><label>Temperature value</label><input type="number" id="tv" placeholder="e.g. 37" step="0.1" oninput="cTMP()">
   <select id="tf" onchange="cTMP()"><option value="c">°C Celsius</option><option value="f">°F Fahrenheit</option><option value="k">K Kelvin</option></select></div>
   <div class="rbox" id="tmpres" style="flex-direction:column;align-items:flex-start;gap:3px"><span style="color:var(--ink4)">Enter temperature above</span></div>
 </div>
-  <div class="ad2" role="complementary" aria-label="Advertisement"><span class="adlbl">Sponsored</span><div class="adtxt">🌡️ <strong>Dyson</strong> — smart home climate control. Purifying fans and heaters that maintain perfect temperature year-round.</div><button class="adcta bl">Shop Dyson</button><!-- ADSENSE: <ins class="adsbygoogle" data-ad-client="ca-pub-XXXX" data-ad-slot="SLOT2" data-ad-format="auto" style="display:block"></ins> --></div>
+  <div class="ad2" role="complementary" aria-label="Advertisement">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+       data-ad-slot="REPLACE_WITH_SLOT_ID_2"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+</div>
   <h2 class="s">Common temperature conversions</h2>
 <table class="rtbl"><tr><th>Reference</th><th>°C</th><th>°F</th></tr>
 <tr><td>Water freezes</td><td>0°C</td><td>32°F</td></tr>
@@ -265,5 +283,10 @@ function initPage(){
 
 function cTMP(){const v=parseFloat(document.getElementById("tv").value),fr=document.getElementById("tf").value;if(isNaN(v)){res("tmpres","<span style='color:var(--ink4)'>Enter temperature</span>");return;}let c;if(fr==="c")c=v;else if(fr==="f")c=(v-32)*5/9;else c=v-273.15;res("tmpres",`<div><strong>${f(c,1)}°C</strong> &nbsp;·&nbsp; <strong>${f(c*9/5+32,1)}°F</strong> &nbsp;·&nbsp; <strong>${f(c+273.15,1)} K</strong></div>`);}
 window.addEventListener('DOMContentLoaded',initPage);</script>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+(adsbygoogle = window.adsbygoogle || []).push({});
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 </body>
 </html>
