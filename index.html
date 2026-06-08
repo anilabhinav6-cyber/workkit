@@ -3,726 +3,216 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WorkKit — Free Online Tools for Everyone | Calculators, Converters & More</title>
-<meta name="description" content="40+ free instant tools for everyday work and life. Percentage calculator, salary breakdown, tax calculator, tip splitter, unit converter, word counter and more. No sign-up. Works everywhere.">
-<meta name="keywords" content="percentage calculator, salary calculator, tax calculator, tip calculator, unit converter, word counter, discount calculator, free online tools, work tools, office calculator">
+<title>WorkKit — Free Online Tools for Work & Life | Calculators, Converters & More</title>
+<meta name="description" content="40+ free instant tools for everyday work and life. Percentage calculator, VAT/GST, salary, loan EMI, tip splitter, unit converter, word counter and more. No sign-up. Works everywhere.">
+<meta name="keywords" content="free online tools, percentage calculator, vat calculator, salary calculator, loan calculator, tip calculator, unit converter, word counter, bmi calculator">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://workkit.tools/">
 <meta property="og:title" content="WorkKit — Free Tools for Work & Life">
-<meta property="og:description" content="40+ free instant tools. Percentage, salary, tax, tip, converter — all in one place. No sign-up needed.">
+<meta property="og:description" content="40+ free instant tools. % calculator, VAT/GST, salary, EMI, tip, converter — no sign-up.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://workkit.tools/">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="WorkKit — Free Tools for Everyone">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"WorkKit","url":"https://workkit.tools","description":"Free instant calculators and tools for work and daily life","applicationCategory":"UtilitiesApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800&family=Instrument+Sans:ital,opsz,wght@0,4..40,400;0,4..40,500;1,4..40,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --ink:#0c0c0e;--ink2:#1e1e24;--ink3:#44444f;--ink4:#888896;--ink5:#c8c8d4;
-  --w:#fff;--surf:#f4f3f0;--surf2:#eae9e5;
-  --acc:#2563ff;--acc-l:#dbeafe;--acc-d:#1d4ed8;
-  --green:#059669;--green-l:#d1fae5;
-  --amber:#d97706;--amber-l:#fef3c7;
-  --red:#dc2626;--red-l:#fee2e2;
-  --purple:#7c3aed;--purple-l:#ede9fe;
-  --teal:#0d9488;--teal-l:#ccfbf1;
-  --pink:#db2777;--pink-l:#fce7f3;
-  --bdr:rgba(12,12,14,0.08);
-  --ff:'Bricolage Grotesque',sans-serif;
-  --fb:'Instrument Sans',sans-serif;
-}
+:root{--ink:#0c0c0e;--ink2:#1e1e24;--ink3:#44444f;--ink4:#888896;--ink5:#c8c8d4;--w:#fff;--surf:#f4f3f0;--surf2:#eae9e5;--acc:#2563ff;--acc-l:#dbeafe;--acc-d:#1d4ed8;--green:#059669;--amber:#d97706;--red:#dc2626;--purple:#7c3aed;--teal:#0d9488;--pink:#db2777;--bdr:rgba(12,12,14,0.08);--ff:'Bricolage Grotesque',sans-serif;--fb:'Instrument Sans',sans-serif}
 html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
 body{font-family:var(--fb);background:var(--surf);color:var(--ink);font-size:15px;line-height:1.6;min-height:100vh}
-
-nav{background:rgba(255,255,255,.96);border-bottom:1px solid var(--bdr);padding:0 5%;height:58px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;backdrop-filter:blur(12px)}
-.logo{font-family:var(--ff);font-weight:800;font-size:20px;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:8px}
-.logo-icon{width:28px;height:28px;background:var(--acc);border-radius:7px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:800;font-family:var(--ff)}
+nav{background:rgba(255,255,255,.96);border-bottom:1px solid var(--bdr);height:58px;padding:0 5%;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;backdrop-filter:blur(12px)}
+.logo{font-family:var(--ff);font-weight:800;font-size:20px;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:7px}
+.lm{width:27px;height:27px;background:var(--acc);border-radius:7px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:800}
 .nright{display:flex;align-items:center;gap:8px}
-.loc-pill{display:flex;align-items:center;gap:5px;background:var(--surf);border:1px solid var(--bdr);border-radius:99px;padding:4px 12px;font-size:12px;color:var(--ink3);cursor:pointer;transition:border-color .15s}
+.loc-pill{display:flex;align-items:center;gap:5px;background:var(--surf);border:1px solid var(--bdr);border-radius:99px;padding:4px 12px;font-size:12px;color:var(--ink3);cursor:pointer;font-family:var(--fb);transition:border-color .15s}
 .loc-pill:hover{border-color:var(--ink5)}
-.nsrch{display:flex;align-items:center;gap:6px;background:var(--surf);border:1px solid var(--bdr);border-radius:8px;padding:6px 12px;font-size:13px;color:var(--ink4);cursor:pointer}
-.nsrch:hover{border-color:var(--ink5)}
-
-.hero{padding:52px 5% 36px;text-align:center;background:var(--w);border-bottom:1px solid var(--bdr)}
-.eyebrow{display:inline-flex;align-items:center;gap:7px;background:var(--acc-l);color:var(--acc-d);border-radius:99px;padding:4px 14px;font-size:12px;font-weight:500;margin-bottom:20px;animation:up .4s ease both}
-h1{font-family:var(--ff);font-size:clamp(32px,5vw,58px);font-weight:800;line-height:1.08;letter-spacing:-0.03em;color:var(--ink);max-width:680px;margin:0 auto 14px;animation:up .4s .08s ease both}
+.hero{padding:60px 5% 44px;text-align:center;background:var(--w);border-bottom:1px solid var(--bdr)}
+.eyebrow{display:inline-flex;align-items:center;gap:6px;background:var(--acc-l);color:var(--acc-d);border-radius:99px;padding:4px 14px;font-size:12px;font-weight:500;margin-bottom:20px;animation:up .4s ease both}
+h1{font-family:var(--ff);font-size:clamp(32px,5vw,58px);font-weight:800;line-height:1.08;letter-spacing:-.03em;color:var(--ink);max-width:680px;margin:0 auto 14px;animation:up .4s .08s ease both}
 h1 span{color:var(--acc)}
-.hsub{font-size:16px;color:var(--ink3);max-width:460px;margin:0 auto 26px;animation:up .4s .14s ease both}
-.srchwrap{max-width:420px;margin:0 auto 16px;position:relative;animation:up .4s .2s ease both}
+.hsub{font-size:16px;color:var(--ink3);max-width:460px;margin:0 auto 28px;animation:up .4s .14s ease both}
+.srchwrap{max-width:420px;margin:0 auto 20px;position:relative;animation:up .4s .2s ease both}
 .srchi{width:100%;background:var(--surf);border:1.5px solid var(--bdr);border-radius:12px;padding:12px 16px 12px 42px;font-size:15px;font-family:var(--fb);color:var(--ink);outline:none;transition:border-color .18s,background .18s}
 .srchi:focus{border-color:var(--acc);background:var(--w);box-shadow:0 0 0 3px rgba(37,99,255,.07)}
-.srchico{position:absolute;left:13px;top:50%;transform:translateY(-50%);font-size:17px;color:var(--ink4);pointer-events:none}
-.trust{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;margin-top:24px;animation:up .4s .26s ease both}
-.ti{font-size:12px;color:var(--ink4);display:flex;align-items:center;gap:5px}
+.sico{position:absolute;left:13px;top:50%;transform:translateY(-50%);font-size:17px;color:var(--ink4);pointer-events:none}
+.trust{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;margin-top:20px;animation:up .4s .26s ease both}
+.ti{font-size:12px;color:var(--ink4)}
 .ti strong{color:var(--ink2);font-weight:500}
-
 .cats{background:var(--w);border-bottom:1px solid var(--bdr);padding:0 5%;display:flex;gap:0;overflow-x:auto;-ms-overflow-style:none;scrollbar-width:none}
 .cats::-webkit-scrollbar{display:none}
 .cbt{background:none;border:none;border-bottom:2px solid transparent;padding:11px 16px 13px;font-size:13px;font-weight:500;color:var(--ink4);cursor:pointer;font-family:var(--fb);transition:color .15s,border-color .15s;white-space:nowrap}
-.cbt:hover{color:var(--ink)}
-.cbt.on{color:var(--acc);border-bottom-color:var(--acc)}
-
-/* currency selector modal */
-.curr-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:200;align-items:center;justify-content:center}
-.curr-modal.open{display:flex}
-.curr-box{background:var(--w);border-radius:16px;padding:24px;width:90%;max-width:400px;animation:up .2s ease}
-.curr-box h3{font-family:var(--ff);font-size:18px;font-weight:700;margin-bottom:14px}
-.curr-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.curr-opt{border:1.5px solid var(--bdr);border-radius:8px;padding:10px;cursor:pointer;text-align:center;font-size:13px;font-weight:500;transition:all .15s;background:var(--w)}
-.curr-opt:hover{border-color:var(--acc);background:var(--acc-l);color:var(--acc-d)}
-.curr-opt.sel{border-color:var(--acc);background:var(--acc-l);color:var(--acc-d)}
-.curr-sym{font-size:18px;font-weight:700;display:block;margin-bottom:2px;font-family:var(--ff)}
-
-.twrap{padding:28px 5% 60px;max-width:1200px;margin:0 auto}
-.tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:1px;background:var(--bdr);border-radius:16px;overflow:hidden;border:1px solid var(--bdr)}
-.tc{background:var(--w);padding:22px;transition:background .15s}
+.cbt:hover{color:var(--ink)}.cbt.on{color:var(--acc);border-bottom-color:var(--acc)}
+.tools-wrap{padding:28px 5% 80px;max-width:1200px;margin:0 auto}
+.sec-head{font-family:var(--ff);font-size:13px;font-weight:700;color:var(--ink4);text-transform:uppercase;letter-spacing:.07em;margin:28px 0 12px;display:flex;align-items:center;gap:8px}
+.sec-head::after{content:'';flex:1;height:1px;background:var(--bdr)}
+.tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1px;background:var(--bdr);border-radius:14px;overflow:hidden;border:1px solid var(--bdr);margin-bottom:8px}
+.tc{background:var(--w);padding:20px 18px;transition:background .15s;text-decoration:none;color:inherit;display:block}
 .tc:hover{background:#fafaf9}
-.thead{display:flex;align-items:center;gap:11px;margin-bottom:14px}
+.th2{display:flex;align-items:center;gap:10px;margin-bottom:10px}
 .tico{width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
-.tname{font-family:var(--ff);font-size:15px;font-weight:700;color:var(--ink);margin:0 0 2px}
-.tdesc{font-size:12px;color:var(--ink4);margin:0}
-.tbody{display:flex;flex-direction:column;gap:9px}
-.fr{display:flex;gap:7px;align-items:center}
-.fr label{font-size:12px;color:var(--ink3);white-space:nowrap;min-width:fit-content;font-weight:500}
-input[type=number],input[type=text],input[type=time],input[type=date],select,textarea{flex:1;border:1.5px solid var(--bdr);border-radius:8px;padding:8px 10px;font-size:13px;font-family:var(--fb);color:var(--ink);background:var(--surf);outline:none;transition:border-color .15s;min-width:0}
-input:focus,select:focus,textarea:focus{border-color:var(--acc);background:var(--w)}
-textarea{resize:vertical;min-height:72px}
-select{cursor:pointer}
-.rbox{background:var(--surf);border-radius:8px;padding:9px 13px;font-size:13px;color:var(--ink3);min-height:36px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.rbox strong{font-size:17px;font-weight:700;font-family:var(--ff);color:var(--ink)}
-.rbox .u{font-size:12px;color:var(--ink4)}
-.cbtn{background:var(--ink);color:var(--w);border:none;border-radius:7px;padding:8px 16px;font-size:12px;font-weight:500;cursor:pointer;font-family:var(--fb);transition:background .15s;white-space:nowrap;flex-shrink:0}
-.cbtn:hover{background:var(--acc)}
-.cpbtn{background:none;border:1px solid var(--bdr);border-radius:6px;padding:3px 9px;font-size:11px;color:var(--ink4);cursor:pointer;font-family:var(--fb);margin-left:auto}
-.cpbtn:hover{background:var(--surf2);color:var(--ink)}
-.mbtn-row{display:flex;gap:5px;margin-bottom:2px;flex-wrap:wrap}
-.mbtn{flex:1;min-width:60px;padding:6px 4px;border-radius:7px;border:1.5px solid var(--bdr);background:var(--surf);color:var(--ink3);font-size:11px;font-weight:500;cursor:pointer;text-align:center;font-family:var(--fb);transition:all .15s}
-.mbtn:hover{border-color:var(--acc-d);color:var(--acc-d)}
-.mbtn.on{background:var(--acc);color:#fff;border-color:var(--acc)}
-input[type=range]{-webkit-appearance:none;appearance:none;height:4px;background:var(--bdr);border-radius:99px;outline:none;flex:1;border:none;padding:0}
-input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;background:var(--acc);border-radius:50%;cursor:pointer;border:2px solid #fff}
-
-/* colour coding */
-.ic-blue .tico{background:var(--acc-l);color:var(--acc-d)}
-.ic-green .tico{background:var(--green-l);color:var(--green)}
-.ic-amber .tico{background:var(--amber-l);color:var(--amber)}
-.ic-red .tico{background:var(--red-l);color:var(--red)}
-.ic-purple .tico{background:var(--purple-l);color:var(--purple)}
-.ic-teal .tico{background:var(--teal-l);color:var(--teal)}
-.ic-pink .tico{background:var(--pink-l);color:var(--pink)}
-.ic-gray .tico{background:var(--surf2);color:var(--ink3)}
-
-.empty{text-align:center;padding:48px 24px;color:var(--ink4);grid-column:1/-1}
-
-footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:32px 5%;text-align:center}
-footer strong{color:rgba(255,255,255,.85)}
-.flinks{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-top:10px}
-.flinks a{color:rgba(255,255,255,.4);text-decoration:none;font-size:12px}
-.flinks a:hover{color:#fff}
-
+.tname{font-family:var(--ff);font-size:14px;font-weight:700;color:var(--ink);margin:0 0 3px}
+.tdesc{font-size:12px;color:var(--ink4)}
+.ic-blue .tico{background:#dbeafe;color:#1d4ed8}.ic-green .tico{background:#d1fae5;color:#059669}
+.ic-amber .tico{background:#fef3c7;color:#d97706}.ic-red .tico{background:#fee2e2;color:#dc2626}
+.ic-purple .tico{background:#ede9fe;color:#7c3aed}.ic-teal .tico{background:#ccfbf1;color:#0d9488}
+.ic-pink .tico{background:#fce7f3;color:#db2777}.ic-gray .tico{background:#eae9e5;color:#44444f}
+.curr-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:200;align-items:center;justify-content:center;padding:16px}
+.curr-modal.open{display:flex}
+.curr-box{background:var(--w);border-radius:16px;padding:24px;width:100%;max-width:380px}
+.curr-box h3{font-family:var(--ff);font-size:17px;font-weight:700;margin-bottom:14px}
+.cg{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-bottom:14px}
+.copt{border:1.5px solid var(--bdr);border-radius:8px;padding:8px 5px;cursor:pointer;text-align:center;font-family:var(--fb);background:var(--w);transition:all .15s;display:flex;flex-direction:column;align-items:center;gap:1px}
+.copt:hover,.copt.sel{border-color:var(--acc);background:var(--acc-l)}
+.cclose{width:100%;padding:10px;border:1.5px solid var(--bdr);border-radius:8px;background:none;font-size:14px;cursor:pointer;font-family:var(--fb)}
+.empty{text-align:center;padding:48px;color:var(--ink4);grid-column:1/-1;font-size:15px}
+footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:40px 5% 28px}
+.ftop{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px;margin-bottom:32px}
+.fbrand .logo{color:#fff;margin-bottom:10px;display:inline-flex}
+.fbrand p{max-width:210px;line-height:1.7;font-size:13px}
+.fcol h4{font-family:var(--ff);font-size:12px;font-weight:700;color:#fff;margin-bottom:12px;letter-spacing:.06em;text-transform:uppercase}
+.fcol a{display:block;color:rgba(255,255,255,.45);text-decoration:none;margin-bottom:8px;font-size:13px;transition:color .15s}
+.fcol a:hover{color:#fff}
+.fbot{border-top:1px solid rgba(255,255,255,.08);padding-top:18px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:12px}
 @keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-@media(max-width:600px){.tgrid{grid-template-columns:1fr}.fr{flex-direction:column;align-items:flex-start}.fr label{min-width:auto}.trust{gap:16px}}
+@media(max-width:600px){.ftop{grid-template-columns:1fr 1fr}.fbrand{grid-column:1/-1}.trust{gap:14px}}
 </style>
 </head>
 <body>
 
-<!-- Currency picker modal -->
 <div class="curr-modal" id="currModal">
   <div class="curr-box">
     <h3>Choose your currency</h3>
-    <div class="curr-grid" id="currGrid"></div>
-    <button onclick="document.getElementById('currModal').classList.remove('open')" style="margin-top:14px;width:100%;padding:10px;border:1.5px solid var(--bdr);border-radius:8px;background:none;font-size:14px;cursor:pointer;font-family:var(--fb)">Close</button>
+    <div class="cg" id="currGrid"></div>
+    <button class="cclose" onclick="document.getElementById('currModal').classList.remove('open')">Close</button>
   </div>
 </div>
 
 <nav>
-  <a class="logo" href="/"><span class="logo-icon">W</span>WorkKit</a>
+  <a class="logo" href="/index.html"><span class="lm">W</span>WorkKit</a>
   <div class="nright">
-    <div class="loc-pill" id="locPill" onclick="document.getElementById('currModal').classList.add('open')">
-      <span id="locFlag">🌍</span>
-      <span id="locLabel">Set currency</span>
-    </div>
-    <div class="nsrch" onclick="document.getElementById('mainSearch').focus();document.getElementById('mainSearch').scrollIntoView({behavior:'smooth',block:'center'})">
-      🔍 Search
-    </div>
+    <button class="loc-pill" onclick="document.getElementById('currModal').classList.add('open')">
+      <span id="locFlag">🌍</span>&nbsp;<span id="locLabel">USD</span>
+    </button>
   </div>
 </nav>
 
 <section class="hero">
-  <div class="eyebrow">⚡ Instant answers — no sign-up, works everywhere</div>
+  <div class="eyebrow">⚡ Free · No sign-up · Works everywhere · Any currency</div>
   <h1>Every tool your<br><span>workday needs</span></h1>
-  <p class="hsub">40+ free calculators for % math, salary, tax, time, text, and conversions. Pick your currency, get your answer.</p>
+  <p class="hsub">40+ free calculators for %, finance, salary, tax, time, text and unit conversions. Pick your currency, get your answer.</p>
   <div class="srchwrap">
-    <span class="srchico">🔍</span>
-    <input type="search" id="mainSearch" class="srchi" placeholder="Search — percentage, tip, salary, discount…" autocomplete="off">
+    <span class="sico">🔍</span>
+    <input type="search" id="msearch" class="srchi" placeholder="Search — vat, percentage, salary, tip…" autocomplete="off">
   </div>
   <div class="trust">
     <span class="ti"><strong>40+</strong> free tools</span>
-    <span class="ti"><strong>Any currency</strong> you choose</span>
+    <span class="ti"><strong>Any currency</strong></span>
     <span class="ti"><strong>No sign-up</strong> ever</span>
-    <span class="ti"><strong>Works offline</strong> once loaded</span>
+    <span class="ti"><strong>Works worldwide</strong></span>
   </div>
 </section>
 
 <div class="cats">
   <button class="cbt on" data-cat="all">All tools</button>
-  <button class="cbt" data-cat="math">% &amp; Math</button>
   <button class="cbt" data-cat="finance">Finance &amp; Pay</button>
+  <button class="cbt" data-cat="math">% &amp; Math</button>
   <button class="cbt" data-cat="text">Text &amp; Writing</button>
   <button class="cbt" data-cat="time">Time &amp; Date</button>
   <button class="cbt" data-cat="convert">Converters</button>
-  <button class="cbt" data-cat="health">Health &amp; Fitness</button>
+  <button class="cbt" data-cat="health">Health</button>
 </div>
 
-<div class="twrap">
-<div class="tgrid" id="tgrid">
+<div class="tools-wrap">
 
-  <!-- ===== % & MATH ===== -->
-  <div class="tc ic-blue" data-cat="math" data-name="percentage calculator percent of number what is">
-    <div class="thead"><div class="tico">%</div><div><p class="tname">Percentage calculator</p><p class="tdesc">What is X% of Y? / X is what % of Y?</p></div></div>
-    <div class="tbody">
-      <div class="mbtn-row">
-        <button class="mbtn on" onclick="setPM(this,'of')">% of number</button>
-        <button class="mbtn" onclick="setPM(this,'what')">X is what %</button>
-        <button class="mbtn" onclick="setPM(this,'change')">% change</button>
-      </div>
-      <div class="fr"><label id="pl1">Percentage (%)</label><input type="number" id="pa" placeholder="e.g. 15" oninput="calcP()"></div>
-      <div class="fr"><label id="pl2">Number</label><input type="number" id="pb" placeholder="e.g. 200" oninput="calcP()"></div>
-      <div class="rbox" id="pres"><span style="color:var(--ink4)">Result appears here</span></div>
-    </div>
+  <div class="sec-head" data-section="finance">Finance &amp; Pay</div>
+  <div class="tgrid" id="tgrid">
+    <a href="/vat-calculator.html" class="tc ic-green" data-cat="finance" data-name="vat gst tax calculator uk uae australia india"><div class="th2"><div class="tico">🧾</div><div><p class="tname">VAT / GST calculator</p><p class="tdesc">Add or remove any tax rate worldwide</p></div></div></a>
+    <a href="/salary-calculator.html" class="tc ic-green" data-cat="finance" data-name="salary monthly daily hourly rate annual"><div class="th2"><div class="tico">💰</div><div><p class="tname">Salary calculator</p><p class="tdesc">Monthly → daily → hourly breakdown</p></div></div></a>
+    <a href="/loan-emi-calculator.html" class="tc ic-red" data-cat="finance" data-name="loan emi monthly payment mortgage interest"><div class="th2"><div class="tico">🏦</div><div><p class="tname">Loan / EMI calculator</p><p class="tdesc">Monthly payment on any loan</p></div></div></a>
+    <a href="/tip-calculator.html" class="tc ic-purple" data-cat="finance" data-name="tip bill splitter restaurant friends split"><div class="th2"><div class="tico">🍽️</div><div><p class="tname">Tip & bill splitter</p><p class="tdesc">Split any bill evenly with tip</p></div></div></a>
+    <a href="/margin-calculator.html" class="tc ic-blue" data-cat="finance" data-name="margin markup profit cost selling price"><div class="th2"><div class="tico">📊</div><div><p class="tname">Margin & markup</p><p class="tdesc">Profit margin % and markup %</p></div></div></a>
+    <a href="/compound-interest.html" class="tc ic-teal" data-cat="finance" data-name="compound interest savings investment growth"><div class="th2"><div class="tico">📈</div><div><p class="tname">Compound interest</p><p class="tdesc">Savings and investment growth</p></div></div></a>
+    <a href="/currency-converter.html" class="tc ic-amber" data-cat="finance" data-name="currency converter usd aed gbp eur inr"><div class="th2"><div class="tico">💱</div><div><p class="tname">Currency converter</p><p class="tdesc">12 major world currencies</p></div></div></a>
+
+    <a href="/percentage-calculator.html" class="tc ic-blue" data-cat="math" data-name="percentage calculator percent of number change"><div class="th2"><div class="tico">%</div><div><p class="tname">Percentage calculator</p><p class="tdesc">3 ways to calculate any percentage</p></div></div></a>
+    <a href="/discount-calculator.html" class="tc ic-green" data-cat="math" data-name="discount sale price percent off markdown"><div class="th2"><div class="tico">🏷️</div><div><p class="tname">Discount calculator</p><p class="tdesc">Final price after any % off</p></div></div></a>
+    <a href="/percentage-increase.html" class="tc ic-blue" data-cat="math" data-name="percentage increase decrease raise cut salary"><div class="th2"><div class="tico">🔼</div><div><p class="tname">% increase / decrease</p><p class="tdesc">New value after any raise or cut</p></div></div></a>
+
+    <a href="/word-counter.html" class="tc ic-purple" data-cat="text" data-name="word counter character count sentences text"><div class="th2"><div class="tico">📝</div><div><p class="tname">Word & character counter</p><p class="tdesc">Count words, chars & sentences</p></div></div></a>
+    <a href="/case-converter.html" class="tc ic-purple" data-cat="text" data-name="text case upper lower title sentence converter"><div class="th2"><div class="tico">🔤</div><div><p class="tname">Text case converter</p><p class="tdesc">UPPER, lower, Title, Sentence case</p></div></div></a>
+    <a href="/invoice-generator.html" class="tc ic-blue" data-cat="text" data-name="invoice number generator sequential id prefix"><div class="th2"><div class="tico">🔢</div><div><p class="tname">Invoice number generator</p><p class="tdesc">Sequential invoice IDs with prefix</p></div></div></a>
+
+    <a href="/hours-worked.html" class="tc ic-amber" data-cat="time" data-name="hours worked time in out break overtime timesheet"><div class="th2"><div class="tico">⏱️</div><div><p class="tname">Hours worked calculator</p><p class="tdesc">Time in → time out, minus break</p></div></div></a>
+    <a href="/date-difference.html" class="tc ic-amber" data-cat="time" data-name="days between dates difference deadline countdown"><div class="th2"><div class="tico">📅</div><div><p class="tname">Days between dates</p><p class="tdesc">Days, weeks & months between dates</p></div></div></a>
+    <a href="/age-calculator.html" class="tc ic-blue" data-cat="time" data-name="age calculator date of birth how old years months days"><div class="th2"><div class="tico">🎂</div><div><p class="tname">Age calculator</p><p class="tdesc">Exact age in years, months, days</p></div></div></a>
+
+    <a href="/temperature-converter.html" class="tc ic-red" data-cat="convert" data-name="celsius fahrenheit kelvin temperature converter"><div class="th2"><div class="tico">🌡️</div><div><p class="tname">Temperature converter</p><p class="tdesc">°C ↔ °F ↔ Kelvin</p></div></div></a>
+    <a href="/unit-converters.html" class="tc ic-gray" data-cat="convert" data-name="unit converter length weight area cm inches kg lbs sqft sqm"><div class="th2"><div class="tico">📏</div><div><p class="tname">Unit converters</p><p class="tdesc">Length, weight, area & more</p></div></div></a>
+
+    <a href="/bmi-calculator.html" class="tc ic-pink" data-cat="health" data-name="bmi body mass index weight height metric imperial"><div class="th2"><div class="tico">🏃</div><div><p class="tname">BMI calculator</p><p class="tdesc">Body mass index — metric & imperial</p></div></div></a>
   </div>
 
-  <div class="tc ic-green" data-cat="math" data-name="discount calculator sale price off original">
-    <div class="thead"><div class="tico">🏷️</div><div><p class="tname">Discount calculator</p><p class="tdesc">Final price after any % discount</p></div></div>
-    <div class="tbody">
-      <div class="fr"><label>Original price</label><input type="number" id="do" placeholder="e.g. 100" oninput="calcD()"><span class="csym" style="font-size:13px;color:var(--ink3);white-space:nowrap"></span></div>
-      <div class="fr"><label>Discount (%)</label><input type="number" id="dp" placeholder="e.g. 20" oninput="calcD()"></div>
-      <div class="rbox" id="dres"><span style="color:var(--ink4)">Enter values above</span></div>
-    </div>
-  </div>
-
-  <div class="tc ic-blue" data-cat="math" data-name="percentage increase decrease raise cut new value">
-    <div class="thead"><div class="tico">📈</div><div><p class="tname">% increase / decrease</p><p class="tdesc">New value after any % raise or cut</p></div></div>
-    <div class="tbody">
-      <div class="fr"><label>Original value</label><input type="number" id="pi_o" placeholder="e.g. 5000" oninput="calcPI()"></div>
-      <div class="fr"><label>Change %</label><input type="number" id="pi_p" placeholder="e.g. 12 or -8" oninput="calcPI()"></div>
-      <div class="rbox" id="pi_r"><span style="color:var(--ink4)">Enter values above</span></div>
-    </div>
-  </div>
-
-  <div class="tc ic-purple" data-cat="math" data-name="ratio proportion calculator scale factor">
-    <div class="thead"><div class="tico">⚖️</div><div><p class="tname">Ratio & proportion</p><p class="tdesc">Scale any ratio — recipes, maps, mixes</p></div></div>
-    <div class="tbody">
-      <div class="fr"><label>A is to B</label><input type="number" id="ra" placeholder="3" oninput="calcR()"><span style="color:var(--ink4);padding:0 4px">:</span><input type="number" id="rb" placeholder="4" oninput="calcR()"></div>
-      <div class="fr"><label>C is to ?</label><input type="number" id="rc" placeholder="9" oninput="calcR()"></div>
-      <div class="rbox" id="rr"><span style="color:var(--ink4)">Enter values</span></div>
-    </div>
-  </div>
-
-  <!-- ===== FINANCE ===== -->
-  <div class="tc ic-green" data-cat="finance" data-name="tax calculator vat gst sales tax add remove">
-    <div class="thead"><div class="tico">🧾</div><div><p class="tname">Tax calculator</p><p class="tdesc">Add or remove any tax rate (VAT, GST, Sales)</p></div></div>
-    <div class="tbody">
-      <div class="mbtn-row">
-        <button class="mbtn on" onclick="setTM(this,'add')">Add tax</button>
-        <button class="mbtn" onclick="setTM(this,'remove')">Remove tax</button>
-      </div>
-      <div class="fr"><label>Amount <span class="csym"></span></label><input type="number" id="tx_a" placeholder="e.g. 1000" oninput="calcTX()"></div>
-      <div class="fr"><label>Tax rate (%)</label><input type="number" id="tx_r" placeholder="e.g. 10" step="0.1" value="10" oninput="calcTX()"></div>
-      <div class="rbox" id="tx_res"><span style="color:var(--ink4)">Enter amount</span></div>
-    </div>
-  </div>
-
-  <div class="tc ic-green" data-cat="finance" data-name="salary breakdown daily hourly monthly annual rate">
-    <div class="thead"><div class="tico">💰</div><div><p class="tname">Salary breakdown</p><p class="tdesc">Monthly → daily → hourly rate</p></div></div>
-    <div class="tbody">
-      <div class="fr"><label>Monthly salary <span class="csym"></span></label><input type="number" id="sm" placeholder="e.g. 5000" oninput="calcSal()"></div>
-      <div class="fr"><label>Working days/week</label><select id="sd" onchange="calcSal()"><option value="5">5 days</option><option value="6">6 days</option></select></div>
-      <div class="rbox" id="sr" style="flex-direction:column;align-items:flex-start;gap:3px"><span style="color:var(--ink4)">Enter salary above</span></div>
-    </div>
-  </div>
-
-  <div class="tc ic-purple" data-cat="finance" data-name="tip calculator bill splitter split restaurant friends">
-    <div class="thead"><div class="tico">🍽️</div><div><p class="tname">Tip & bill splitter</p><p class="tdesc">Split any bill with tip between people</p></div></div>
-    <div class="tbody">
-      <div class="fr"><label>Bill total <span class="csym"></span></label><input type="number" id="tb" placeholder="e.g. 120" oninput="calcTip()"></div>
-      <div class="fr"><label>Tip %</label><input type="range" id="tp" min="0" max="30" value="10" step="1" oninput="document.getElementById('tpv').textContent=this.value+'%';calcTip()"><span id="tpv" style="font-size:13px;font-weight:500;min-width:30px">10%</span></div>
-      <div class="fr"><label>Split between</label><input type="number" id="ts" value="2" min="1" oninput="calcTip()"></div>
-      <div class="rbox" id="tr"><span style="color:var(--ink4)">Enter bill details</span></div>
-    </div>
-  </div>
-
-  <div class="tc ic-red" data-cat="finance" data-name="loan emi monthly payment interest calculator mortgage">
-    <div class="thead"><div class="tico">🏦</div><div><p class="tname">Loan / EMI calculator</p><p class="tdesc">Monthly payment on any loan</p></div></div>
-    <div class="tbody">
-      <div class="fr"><label>Loan amount <span class="csym"></span></label><input type="number" id="ea" placeholder="e.g. 10000" oninput="calcEMI()"></div>
-      <div class="fr"><label>Annual interest (%)</label><input type="number" id="er" placeholder="e.g. 6.5" step="0.1" oninput="calcEMI()"></div>
-      <div class="fr"><label>Term (months)</label><input type="number" id="em" placeholder="e.g. 24" oninput="calcEMI()"></div>
-      <div class="rbox" id="eres"><span style="color:var(--ink4)">Enter loan details</span></div>
-    </div>
-  </div>
-
-  <div class="tc ic-blue" data-cat="finance" data-name="margin markup profit cost selling price calculator">
-    <div class="thead"><div class="tico">📊</div><div><p class="tname">Margin & markup</p><p class="tdesc">Profit margin % and markup %</p></div></div>
-    <div class="tbody">
-      <div class="fr"><label>Cost price <span class="csym"></span></label><input type="number" id="mc" placeholder="e.g. 80" oninput="calcMG()"></div>
-      <div class="fr"><label>Selling price <span class="csym"></span></label><input type="number" id="ms" placeholder="e.g. 120" oninput="calcMG()"></div>
-      <div class="rbox" id="mr" style="flex-direction:column;align-items:flex-start;gap:3px"><span style="color:var(--ink4)">Enter prices</span></div>
-    </div>
-  </div>
-
-  <div class="tc ic-amber" data-cat="finance" data-name="currency converter exchange rate usd eur gbp aed">
-    <div class="thead"><div class="tico">💱</div><div><p class="tname">Currency converter</p><p class="tdesc">Quick conversion between currencies</p></div></div>
-    <div class="tbody">
-      <div class="fr"><label>Amount</label><input type="number" id="cc_a" placeholder="e.g. 100" oninput="calcCC()"></div>
-      <div class="fr"><label>From</label>
-        <select id="cc_f" onchange="calcCC()">
-          <option value="USD">USD — US Dollar</option><option value="EUR">EUR — Euro</option>
-          <option value="GBP">GBP — Pound</option><option value="AED">AED — Dirham</option>
-          <option value="SAR">SAR — Riyal</option><option value="INR">INR — Rupee</option>
-          <option value="PKR">PKR — Pak Rupee</option><option value="PHP">PHP — Peso</option>
-          <option value="EGP">EGP — Egyptian Pound</option><option value="JPY">JPY — Yen</option>
-          <option value="CAD">CAD — C Dollar</option><option value="AUD">AUD — A Dollar</option>
-        </select>
-      </div>
-      <div class="fr"><label>To</label>
-        <select id="cc_t" onchange="calcCC()">
-          <option value="AED">AED — Dirham</option><option value="EUR">EUR — Euro</option>
-          <option value="GBP">GBP — Pound</option><option value="USD">USD — US Dollar</option>
-          <option value="SAR">SAR — Riyal</option><option value="INR">INR — Rupee</option>
-          <option value="PKR">PKR — Pak Rupee</option><option value="PHP">PHP — Peso</option>
-          <option value="EGP">EGP — Egyptian Pound</option><option value="JPY">JPY — Yen</option>
-          <option value="CAD">CAD — C Dollar</option><option value="AUD">AUD — A Dollar</option>
-        </select>
-      </div>
-      <div class="rbox" id="cc_r"><span style="color:var(--ink4)">Uses approximate rates</span></div>
-    </div>
-  </div>
-
-  <div class="tc ic-teal" data-cat="finance" data-name="compound interest investment savings calculator">
-    <div class="thead"><div class="tico">📉</div><div><p class="tname">Compound interest</p><p class="tdesc">Investment or savings growth over time</p></div></div>
-    <div class="tbody">
-      <div class="fr"><label>Principal <span class="csym"></span></label><input type="number" id="ci_p" placeholder="e.g. 5000" oninput="calcCI()"></div>
-      <div class="fr"><label>Annual rate (%)</label><input type="number" id="ci_r" placeholder="e.g. 7" step="0.1" oninput="calcCI()"></div>
-      <div class="fr"><label>Years</label><input type="number" id="ci_y" placeholder="e.g. 10" oninput="calcCI()"></div>
-      <div class="rbox" id="ci_res"><span style="color:var(--ink4)">Enter details</span></div>
-    </div>
-  </div>
-
-  <div class="tc ic-amber" data-cat="finance" data-name="fuel cost petrol diesel trip km miles litre gallon">
-    <div class="thead"><div class="tico">⛽</div><div><p class="tname">Fuel cost calculator</p><p class="tdesc">Trip cost by distance and efficiency</p></div></div>
-    <div class="tbody">
-      <div class="fr"><label>Distance</label><input type="number" id="fk" placeholder="e.g. 200" oninput="calcFuel()">
-        <select id="fu" onchange="calcFuel()"><option value="km">km</option><option value="mi">miles</option></select></div>
-      <div class="fr"><label id="feff_l">L per 100km</label><input type="number" id="fe" placeholder="e.g. 8" step="0.1" oninput="calcFuel()"></div>
-      <div class="fr"><label>Fuel price <span class="csym"></span>/L</label><input type="number" id="fp" placeholder="e.g. 2.50" step="0.01" oninput="calcFuel()"></div>
-      <div class="rbox" id="fres"><span style="color:var(--ink4)">Enter trip details</span></div>
-    </div>
-  </div>
-
-  <!-- ===== TEXT ===== -->
-  <div class="tc ic-purple" data-cat="text" data-name="word counter character count text length sentences">
-    <div class="thead"><div class="tico">📝</div><div><p class="tname">Word & character counter</p><p class="tdesc">Instant count for any text</p></div></div>
-    <div class="tbody">
-      <textarea id="wc_t" placeholder="Paste your text here…" oninput="calcWC()"></textarea>
-      <div class="rbox" id="wc_r" style="flex-wrap:wrap;gap:10px"><span style="color:var(--ink4)">Paste text above</span></div>
-    </div>
-  </div>
-
-  <div class="tc ic-purple" data-cat="text" data-name="text case converter upper lower title sentence case">
-    <div class="thead"><div class="tico">🔤</div><div><p class="tname">Text case converter</p><p class="tdesc">UPPER, lower, Title, Sentence case</p></div></div>
-    <div class="tbody">
-      <textarea id="case_in" placeholder="Paste text here…" style="min-height:56px"></textarea>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
-        <button class="cbtn" style="padding:7px" onclick="doCase('upper')">UPPERCASE</button>
-        <button class="cbtn" style="padding:7px" onclick="doCase('lower')">lowercase</button>
-        <button class="cbtn" style="padding:7px" onclick="doCase('title')">Title Case</button>
-        <button class="cbtn" style="padding:7px" onclick="doCase('sentence')">Sentence case</button>
-      </div>
-      <div class="rbox" id="case_r" style="word-break:break-word"><span style="color:var(--ink4)">Result here</span></div>
-      <button class="cpbtn" onclick="copyEl('case_r')">Copy</button>
-    </div>
-  </div>
-
-  <div class="tc ic-purple" data-cat="text" data-name="reading time estimate article blog post minutes">
-    <div class="thead"><div class="tico">📖</div><div><p class="tname">Reading time estimator</p><p class="tdesc">How long to read any text</p></div></div>
-    <div class="tbody">
-      <textarea id="rt_t" placeholder="Paste article or document…" oninput="calcRT()"></textarea>
-      <div class="rbox" id="rt_r"><span style="color:var(--ink4)">Paste text above</span></div>
-    </div>
-  </div>
-
-  <div class="tc ic-blue" data-cat="text" data-name="invoice number generator reference id sequential prefix">
-    <div class="thead"><div class="tico">🔢</div><div><p class="tname">Invoice number generator</p><p class="tdesc">Sequential invoice IDs with prefix</p></div></div>
-    <div class="tbody">
-      <div class="fr"><label>Prefix</label><input type="text" id="inv_p" value="INV" oninput="genInv()"></div>
-      <div class="fr"><label>Starting #</label><input type="number" id="inv_n" value="1001" oninput="genInv()"></div>
-      <div class="rbox" id="inv_r" style="flex-direction:column;align-items:flex-start;gap:5px"><span style="color:var(--ink4)">Set prefix above</span></div>
-      <button class="cpbtn" onclick="copyEl('inv_copy')">Copy current</button>
-    </div>
-  </div>
-
-  <div class="tc ic-teal" data-cat="text" data-name="lorem ipsum placeholder dummy text generator paragraphs">
-    <div class="thead"><div class="tico">✍️</div><div><p class="tname">Lorem ipsum generator</p><p class="tdesc">Placeholder text for designs and docs</p></div></div>
-    <div class="tbody">
-      <div class="fr"><label>Paragraphs</label><input type="number" id="li_n" value="2" min="1" max="10" oninput="genLorem()"></div>
-      <div class="rbox" id="li_r" style="flex-direction:column;align-items:flex-start;word-break:break-word;line-height:1.6;font-size:12px"><span style="color:var(--ink4)">Set count above</span></div>
-      <button class="cpbtn" onclick="copyEl('li_r')">Copy</button>
-    </div>
-  </div>
-
-  <!-- ===== TIME ===== -->
-  <div class="tc ic-amber" data-cat="time" data-name="hours worked calculator time in out break overtime">
-    <div class="thead"><div class="tico">⏱️</div><div><p class="tname">Hours worked calculator</p><p class="tdesc">Time in → time out, minus break</p></div></div>
-    <div class="tbody">
-      <div class="fr"><label>Time in</label><input type="time" id="hw_i" value="09:00" oninput="calcHW()"></div>
-      <div class="fr"><label>Time out</label><input type="time" id="hw_o" value="18:00" oninput="calcHW()"></div>
-      <div class="fr"><label>Break (mins)</label><input type="number" id="hw_b" value="60" min="0" oninput="calcHW()"></div>
-      <div class="rbox" id="hw_r"><span style="color:var(--ink4)">Set times above</span></div>
-    </div>
-  </div>
-
-  <div class="tc ic-amber" data-cat="time" data-name="days between dates difference deadline countdown">
-    <div class="thead"><div class="tico">📅</div><div><p class="tname">Days between dates</p><p class="tdesc">Days, weeks, months between two dates</p></div></div>
-    <div class="tbody">
-      <div class="fr"><label>From</label><input type="date" id="dd_a" oninput="calcDD()"></div>
-      <div class="fr"><label>To</label><input type="date" id="dd_b" oninput="calcDD()"></div>
-      <div class="rbox" id="dd_r"><span style="color:var(--ink4)">Pick dates above</span></div>
-    </div>
-  </div>
-
-  <div class="tc ic-blue" data-cat="time" data-name="age calculator date of birth how old years months days">
-    <div class="thead"><div class="tico">🎂</div><div><p class="tname">Age calculator</p><p class="tdesc">Exact age in years, months and days</p></div></div>
-    <div class="tbody">
-      <div class="fr"><label>Date of birth</label><input type="date" id="age_d" oninput="calcAge()"></div>
-      <div class="rbox" id="age_r"><span style="color:var(--ink4)">Enter date of birth</span></div>
-    </div>
-  </div>
-
-  <div class="tc ic-teal" data-cat="time" data-name="time zone converter world clock different country">
-    <div class="thead"><div class="tico">🕐</div><div><p class="tname">Time zone converter</p><p class="tdesc">Convert time between world cities</p></div></div>
-    <div class="tbody">
-      <div class="fr"><label>Your time</label><input type="time" id="tz_t" oninput="calcTZ()"></div>
-      <div class="fr"><label>From zone</label>
-        <select id="tz_f" onchange="calcTZ()">
-          <option value="0">UTC+0 — London</option><option value="4">UTC+4 — Dubai</option>
-          <option value="3">UTC+3 — Riyadh</option><option value="5.5">UTC+5:30 — Mumbai</option>
-          <option value="-5">UTC-5 — New York</option><option value="-8">UTC-8 — Los Angeles</option>
-          <option value="1">UTC+1 — Paris / Berlin</option><option value="8">UTC+8 — Singapore / KL</option>
-          <option value="9">UTC+9 — Tokyo</option><option value="10">UTC+10 — Sydney</option>
-          <option value="-3">UTC-3 — São Paulo</option><option value="2">UTC+2 — Cairo</option>
-        </select>
-      </div>
-      <div class="fr"><label>To zone</label>
-        <select id="tz_t2" onchange="calcTZ()">
-          <option value="0">UTC+0 — London</option><option value="4">UTC+4 — Dubai</option>
-          <option value="3">UTC+3 — Riyadh</option><option value="5.5">UTC+5:30 — Mumbai</option>
-          <option value="-5">UTC-5 — New York</option><option value="-8">UTC-8 — Los Angeles</option>
-          <option value="1">UTC+1 — Paris / Berlin</option><option value="8">UTC+8 — Singapore / KL</option>
-          <option value="9">UTC+9 — Tokyo</option><option value="10">UTC+10 — Sydney</option>
-          <option value="-3">UTC-3 — São Paulo</option><option value="2">UTC+2 — Cairo</option>
-        </select>
-      </div>
-      <div class="rbox" id="tz_r"><span style="color:var(--ink4)">Set times above</span></div>
-    </div>
-  </div>
-
-  <!-- ===== CONVERTERS ===== -->
-  <div class="tc ic-gray" data-cat="convert" data-name="kg lbs pounds kilograms weight converter">
-    <div class="thead"><div class="tico">⚖️</div><div><p class="tname">KG ↔ LBS</p><p class="tdesc">Weight unit converter</p></div></div>
-    <div class="tbody">
-      <div class="mbtn-row">
-        <button class="mbtn on" onclick="setWT(this,'kl')">KG → LBS</button>
-        <button class="mbtn" onclick="setWT(this,'lk')">LBS → KG</button>
-      </div>
-      <div class="fr"><label id="wt_l">Kilograms (kg)</label><input type="number" id="wt_v" placeholder="e.g. 70" step="0.1" oninput="calcWT()"></div>
-      <div class="rbox" id="wt_r"><span style="color:var(--ink4)">Enter value</span></div>
-    </div>
-  </div>
-
-  <div class="tc ic-gray" data-cat="convert" data-name="cm inches feet meters height length converter">
-    <div class="thead"><div class="tico">📏</div><div><p class="tname">Length converter</p><p class="tdesc">cm ↔ inches ↔ feet ↔ metres</p></div></div>
-    <div class="tbody">
-      <div class="fr"><label>Value</label><input type="number" id="len_v" placeholder="e.g. 180" step="0.01" oninput="calcLen()">
-        <select id="len_f" onchange="calcLen()"><option value="cm">cm</option><option value="in">inches</option><option value="ft">feet</option><option value="m">metres</option><option value="km">km</option><option value="mi">miles</option></select>
-      </div>
-      <div class="rbox" id="len_r" style="flex-direction:column;align-items:flex-start;gap:3px"><span style="color:var(--ink4)">Enter value above</span></div>
-    </div>
-  </div>
-
-  <div class="tc ic-red" data-cat="convert" data-name="celsius fahrenheit kelvin temperature converter">
-    <div class="thead"><div class="tico">🌡️</div><div><p class="tname">Temperature converter</p><p class="tdesc">°C ↔ °F ↔ Kelvin</p></div></div>
-    <div class="tbody">
-      <div class="fr"><label>Value</label><input type="number" id="tmp_v" placeholder="e.g. 37" step="0.1" oninput="calcTMP()">
-        <select id="tmp_f" onchange="calcTMP()"><option value="c">°C Celsius</option><option value="f">°F Fahrenheit</option><option value="k">K Kelvin</option></select>
-      </div>
-      <div class="rbox" id="tmp_r" style="flex-direction:column;align-items:flex-start;gap:3px"><span style="color:var(--ink4)">Enter temperature</span></div>
-    </div>
-  </div>
-
-  <div class="tc ic-gray" data-cat="convert" data-name="area converter sqft sqm square feet meters yards">
-    <div class="thead"><div class="tico">📐</div><div><p class="tname">Area converter</p><p class="tdesc">sq ft ↔ sq m ↔ sq yards ↔ acres</p></div></div>
-    <div class="tbody">
-      <div class="fr"><label>Value</label><input type="number" id="ar_v" placeholder="e.g. 1000" step="0.01" oninput="calcAR()">
-        <select id="ar_f" onchange="calcAR()"><option value="sqft">sq ft</option><option value="sqm">sq m</option><option value="sqyd">sq yards</option><option value="acre">acres</option></select>
-      </div>
-      <div class="rbox" id="ar_r" style="flex-direction:column;align-items:flex-start;gap:3px"><span style="color:var(--ink4)">Enter value</span></div>
-    </div>
-  </div>
-
-  <div class="tc ic-teal" data-cat="convert" data-name="data storage converter MB GB TB KB bytes">
-    <div class="thead"><div class="tico">💾</div><div><p class="tname">Data size converter</p><p class="tdesc">KB ↔ MB ↔ GB ↔ TB</p></div></div>
-    <div class="tbody">
-      <div class="fr"><label>Value</label><input type="number" id="ds_v" placeholder="e.g. 500" step="any" oninput="calcDS()">
-        <select id="ds_f" onchange="calcDS()"><option value="b">Bytes</option><option value="kb">KB</option><option value="mb">MB</option><option value="gb">GB</option><option value="tb">TB</option></select>
-      </div>
-      <div class="rbox" id="ds_r" style="flex-direction:column;align-items:flex-start;gap:3px"><span style="color:var(--ink4)">Enter value</span></div>
-    </div>
-  </div>
-
-  <div class="tc ic-amber" data-cat="convert" data-name="speed converter kmh mph knots metres per second">
-    <div class="thead"><div class="tico">💨</div><div><p class="tname">Speed converter</p><p class="tdesc">km/h ↔ mph ↔ m/s ↔ knots</p></div></div>
-    <div class="tbody">
-      <div class="fr"><label>Value</label><input type="number" id="sp_v" placeholder="e.g. 100" step="0.1" oninput="calcSP()">
-        <select id="sp_f" onchange="calcSP()"><option value="kmh">km/h</option><option value="mph">mph</option><option value="ms">m/s</option><option value="kn">knots</option></select>
-      </div>
-      <div class="rbox" id="sp_r" style="flex-direction:column;align-items:flex-start;gap:3px"><span style="color:var(--ink4)">Enter value</span></div>
-    </div>
-  </div>
-
-  <!-- ===== HEALTH ===== -->
-  <div class="tc ic-pink" data-cat="health" data-name="bmi calculator body mass index weight height">
-    <div class="thead"><div class="tico">🏃</div><div><p class="tname">BMI calculator</p><p class="tdesc">Body mass index — metric or imperial</p></div></div>
-    <div class="tbody">
-      <div class="mbtn-row">
-        <button class="mbtn on" onclick="setBMI(this,'metric')">Metric (kg/cm)</button>
-        <button class="mbtn" onclick="setBMI(this,'imperial')">Imperial (lb/in)</button>
-      </div>
-      <div class="fr"><label id="bmi_wl">Weight (kg)</label><input type="number" id="bmi_w" placeholder="e.g. 70" step="0.1" oninput="calcBMI()"></div>
-      <div class="fr"><label id="bmi_hl">Height (cm)</label><input type="number" id="bmi_h" placeholder="e.g. 175" step="0.1" oninput="calcBMI()"></div>
-      <div class="rbox" id="bmi_r"><span style="color:var(--ink4)">Enter measurements</span></div>
-    </div>
-  </div>
-
-  <div class="tc ic-pink" data-cat="health" data-name="calorie calculator TDEE daily energy expenditure">
-    <div class="thead"><div class="tico">🥗</div><div><p class="tname">Daily calorie needs</p><p class="tdesc">Estimated calories to maintain weight</p></div></div>
-    <div class="tbody">
-      <div class="fr"><label>Weight (kg)</label><input type="number" id="cal_w" placeholder="e.g. 70" oninput="calcCAL()"></div>
-      <div class="fr"><label>Height (cm)</label><input type="number" id="cal_h" placeholder="e.g. 175" oninput="calcCAL()"></div>
-      <div class="fr"><label>Age</label><input type="number" id="cal_a" placeholder="e.g. 30" oninput="calcCAL()"></div>
-      <div class="fr"><label>Activity</label>
-        <select id="cal_act" onchange="calcCAL()">
-          <option value="1.2">Sedentary (desk job)</option>
-          <option value="1.375">Light (1–3 days exercise)</option>
-          <option value="1.55" selected>Moderate (3–5 days)</option>
-          <option value="1.725">Active (6–7 days)</option>
-          <option value="1.9">Very active (athlete)</option>
-        </select>
-      </div>
-      <div class="rbox" id="cal_r"><span style="color:var(--ink4)">Enter details</span></div>
-    </div>
-  </div>
-
-</div>
-<div class="empty" id="noRes" style="display:none"><div style="font-size:36px;margin-bottom:8px">🔍</div><p>No tools match. Try a different search.</p></div>
+  <div class="empty" id="noRes" style="display:none">🔍 No tools match. Try a different keyword.</div>
 </div>
 
 <footer>
-  <strong>WorkKit</strong> — Free tools for work and daily life · Used worldwide<br>
-  <div class="flinks">
-    <a href="#">About</a><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Suggest a tool</a>
+  <div class="ftop">
+    <div class="fbrand">
+      <a class="logo" href="/index.html"><span class="lm">W</span>WorkKit</a>
+      <p>Free instant tools for everyday work and life. No sign-up, no tracking, works worldwide.</p>
+    </div>
+    <div class="fcol"><h4>Finance</h4>
+      <a href="/vat-calculator.html">VAT / GST calculator</a>
+      <a href="/salary-calculator.html">Salary calculator</a>
+      <a href="/loan-emi-calculator.html">Loan / EMI calculator</a>
+      <a href="/margin-calculator.html">Margin & markup</a>
+      <a href="/compound-interest.html">Compound interest</a>
+    </div>
+    <div class="fcol"><h4>Math & Convert</h4>
+      <a href="/percentage-calculator.html">Percentage calculator</a>
+      <a href="/discount-calculator.html">Discount calculator</a>
+      <a href="/currency-converter.html">Currency converter</a>
+      <a href="/unit-converters.html">Unit converters</a>
+      <a href="/temperature-converter.html">Temperature converter</a>
+    </div>
+    <div class="fcol"><h4>Tools</h4>
+      <a href="/word-counter.html">Word counter</a>
+      <a href="/hours-worked.html">Hours worked</a>
+      <a href="/bmi-calculator.html">BMI calculator</a>
+      <a href="/age-calculator.html">Age calculator</a>
+      <a href="/invoice-generator.html">Invoice numbers</a>
+    </div>
+  </div>
+  <div class="fbot">
+    <span>© 2026 WorkKit — Free tools for work & life worldwide</span>
+    <span>No sign-up · No tracking · Works offline once loaded</span>
   </div>
 </footer>
 
 <script>
-// ===== CURRENCY SYSTEM =====
-const CURRENCIES = [
-  {code:'USD',sym:'$',flag:'🇺🇸',name:'US Dollar'},
-  {code:'EUR',sym:'€',flag:'🇪🇺',name:'Euro'},
-  {code:'GBP',sym:'£',flag:'🇬🇧',name:'Pound'},
-  {code:'AED',sym:'AED',flag:'🇦🇪',name:'Dirham'},
-  {code:'SAR',sym:'SAR',flag:'🇸🇦',name:'Riyal'},
-  {code:'INR',sym:'₹',flag:'🇮🇳',name:'Rupee'},
-  {code:'PKR',sym:'₨',flag:'🇵🇰',name:'Pak Rupee'},
-  {code:'PHP',sym:'₱',flag:'🇵🇭',name:'Peso'},
-  {code:'EGP',sym:'E£',flag:'🇪🇬',name:'Egyptian £'},
-  {code:'NGN',sym:'₦',flag:'🇳🇬',name:'Naira'},
-  {code:'BDT',sym:'৳',flag:'🇧🇩',name:'Taka'},
-  {code:'CAD',sym:'C$',flag:'🇨🇦',name:'C Dollar'},
-];
-
-// Approximate fixed rates to USD (good enough for a calculator)
-const FX = {USD:1,EUR:1.08,GBP:1.27,AED:0.272,SAR:0.267,INR:0.012,PKR:0.0036,PHP:0.018,EGP:0.021,NGN:0.00065,BDT:0.0091,CAD:0.74,JPY:0.0067,AUD:0.65};
-
-let CUR = {code:'USD',sym:'$'};
-
-function detectCurrency(){
-  try{
-    const tz=Intl.DateTimeFormat().resolvedOptions().timeZone||'';
-    if(tz.includes('Dubai')||tz.includes('Abu_Dhabi'))return CURRENCIES.find(c=>c.code==='AED');
-    if(tz.includes('Riyadh')||tz.includes('Saudi'))return CURRENCIES.find(c=>c.code==='SAR');
-    if(tz.includes('Kolkata')||tz.includes('Calcutta'))return CURRENCIES.find(c=>c.code==='INR');
-    if(tz.includes('Karachi'))return CURRENCIES.find(c=>c.code==='PKR');
-    if(tz.includes('Manila'))return CURRENCIES.find(c=>c.code==='PHP');
-    if(tz.includes('Cairo'))return CURRENCIES.find(c=>c.code==='EGP');
-    if(tz.includes('Lagos'))return CURRENCIES.find(c=>c.code==='NGN');
-    if(tz.includes('Dhaka'))return CURRENCIES.find(c=>c.code==='BDT');
-    if(tz.includes('London'))return CURRENCIES.find(c=>c.code==='GBP');
-    if(tz.includes('Paris')||tz.includes('Berlin')||tz.includes('Rome'))return CURRENCIES.find(c=>c.code==='EUR');
-    if(tz.includes('Toronto')||tz.includes('Vancouver'))return CURRENCIES.find(c=>c.code==='CAD');
-  }catch(e){}
-  return CURRENCIES.find(c=>c.code==='USD');
-}
-
-function setCurrency(c){
-  CUR=c;
-  localStorage.setItem('wk_cur',JSON.stringify(c));
-  document.getElementById('locFlag').textContent=c.flag;
-  document.getElementById('locLabel').textContent=c.code+' '+c.sym;
-  document.querySelectorAll('.csym').forEach(el=>el.textContent='('+c.sym+')');
-  document.getElementById('currModal').classList.remove('open');
-  // Re-run any open calculations
-  calcD();calcSal();calcTX();calcTip();calcEMI();calcMG();calcFuel();calcCI();
-}
-
-function buildCurrGrid(){
-  const g=document.getElementById('currGrid');
-  g.innerHTML=CURRENCIES.map(c=>`<button class="curr-opt${c.code===CUR.code?' sel':''}" onclick="setCurrency({code:'${c.code}',sym:'${c.sym}',flag:'${c.flag}'})"><span class="curr-sym">${c.flag}</span>${c.code}<br><span style="font-size:10px;color:var(--ink4)">${c.sym}</span></button>`).join('');
-}
-
-// Init currency
-(function(){
-  const saved=localStorage.getItem('wk_cur');
-  if(saved){try{CUR=JSON.parse(saved);}catch(e){}}
-  else{const d=detectCurrency();if(d)CUR=d;}
-  document.getElementById('locFlag').textContent=CUR.flag||'🌍';
-  document.getElementById('locLabel').textContent=CUR.code+' '+(CUR.sym||'');
-  document.querySelectorAll('.csym').forEach(el=>el.textContent='('+CUR.sym+')');
-  buildCurrGrid();
-})();
-
+const CURRENCIES=[{code:'USD',sym:'$',flag:'🇺🇸'},{code:'EUR',sym:'€',flag:'🇪🇺'},{code:'GBP',sym:'£',flag:'🇬🇧'},{code:'AED',sym:'AED',flag:'🇦🇪'},{code:'SAR',sym:'SAR',flag:'🇸🇦'},{code:'INR',sym:'₹',flag:'🇮🇳'},{code:'PKR',sym:'₨',flag:'🇵🇰'},{code:'PHP',sym:'₱',flag:'🇵🇭'},{code:'NGN',sym:'₦',flag:'🇳🇬'},{code:'CAD',sym:'C$',flag:'🇨🇦'},{code:'AUD',sym:'A$',flag:'🇦🇺'},{code:'EGP',sym:'E£',flag:'🇪🇬'}];
+function detectCur(){try{const tz=Intl.DateTimeFormat().resolvedOptions().timeZone||'';if(tz.includes('Dubai')||tz.includes('Abu_Dhabi'))return CURRENCIES.find(c=>c.code==='AED');if(tz.includes('Riyadh'))return CURRENCIES.find(c=>c.code==='SAR');if(tz.includes('Kolkata'))return CURRENCIES.find(c=>c.code==='INR');if(tz.includes('Karachi'))return CURRENCIES.find(c=>c.code==='PKR');if(tz.includes('Manila'))return CURRENCIES.find(c=>c.code==='PHP');if(tz.includes('Lagos'))return CURRENCIES.find(c=>c.code==='NGN');if(tz.includes('London'))return CURRENCIES.find(c=>c.code==='GBP');if(tz.includes('Paris')||tz.includes('Berlin'))return CURRENCIES.find(c=>c.code==='EUR');}catch(e){}return CURRENCIES[0];}
+let CUR=(()=>{try{const s=localStorage.getItem('wk_cur');if(s)return JSON.parse(s);}catch(e){}return detectCur();})();
+function setCur(c){CUR=c;localStorage.setItem('wk_cur',JSON.stringify(c));document.getElementById('locLabel').textContent=c.code;document.getElementById('locFlag').textContent=c.flag;buildCG();document.getElementById('currModal').classList.remove('open');}
+function buildCG(){const g=document.getElementById('currGrid');g.innerHTML=CURRENCIES.map(c=>`<button class="copt${c.code===CUR.code?' sel':''}" onclick="setCur({code:'${c.code}',sym:'${c.sym}',flag:'${c.flag}'})"><span style="font-size:18px">${c.flag}</span><span style="font-size:12px;font-weight:600">${c.code}</span></button>`).join('');}
+document.getElementById('locFlag').textContent=CUR.flag||'🌍';
+document.getElementById('locLabel').textContent=CUR.code||'USD';
+buildCG();
 document.getElementById('currModal').addEventListener('click',function(e){if(e.target===this)this.classList.remove('open');});
 
-// ===== UTILS =====
-function f(n,d=2){return isNaN(n)||!isFinite(n)?'—':Number(n).toLocaleString(undefined,{maximumFractionDigits:d,minimumFractionDigits:d});}
-function fc(n){return CUR.sym+' '+f(n);}
-function res(id,html){const e=document.getElementById(id);if(e)e.innerHTML=html;}
-function setMB(btns,active){btns.forEach(b=>{b.classList.toggle('on',b===active);});}
-function copyEl(id){const e=document.getElementById(id);if(!e)return;const t=e.dataset.copy||e.textContent.trim();navigator.clipboard.writeText(t).then(()=>{const n=e.closest('.tbody')?.querySelector('.cpbtn');if(n){n.textContent='Copied!';setTimeout(()=>n.textContent='Copy',1500);}});}
-
-// ===== PERCENTAGE =====
-let pm='of';
-function setPM(btn,m){pm=m;setMB(document.querySelectorAll('[onclick^="setPM"]'),btn);const l1=document.getElementById('pl1'),l2=document.getElementById('pl2');if(m==='of'){l1.textContent='Percentage (%)';l2.textContent='Number';}else if(m==='what'){l1.textContent='Value (X)';l2.textContent='Total (Y)';}else{l1.textContent='Old value';l2.textContent='New value';}calcP();}
-function calcP(){const a=parseFloat(document.getElementById('pa').value),b=parseFloat(document.getElementById('pb').value);if(isNaN(a)||isNaN(b)){res('pres','<span style="color:var(--ink4)">Fill in both fields</span>');return;}if(pm==='of'){res('pres',`<span>${a}% of ${b} =</span><strong>${f(a/100*b)}</strong>`);}else if(pm==='what'){res('pres',`<span>${a} is</span><strong>${f(a/b*100)}%</strong><span class="u">of ${b}</span>`);}else{const ch=(b-a)/a*100;const col=ch>=0?'var(--green)':'var(--red)';res('pres',`<span>Change:</span><strong style="color:${col}">${ch>=0?'▲':'▼'} ${f(Math.abs(ch))}%</strong>`);}}
-
-// ===== DISCOUNT =====
-function calcD(){const o=parseFloat(document.getElementById('do').value),p=parseFloat(document.getElementById('dp').value);if(isNaN(o)||isNaN(p)){res('dres','<span style="color:var(--ink4)">Enter values above</span>');return;}const sv=o*p/100,fn=o-sv;res('dres',`<span>You pay</span><strong>${fc(fn)}</strong><span class="u">saving ${fc(sv)}</span>`);}
-
-// ===== % INCREASE =====
-function calcPI(){const o=parseFloat(document.getElementById('pi_o').value),p=parseFloat(document.getElementById('pi_p').value);if(isNaN(o)||isNaN(p)){res('pi_r','<span style="color:var(--ink4)">Enter values</span>');return;}const nv=o*(1+p/100),d=nv-o;const col=d>=0?'var(--green)':'var(--red)';res('pi_r',`<span>New value</span><strong style="color:${col}">${f(nv)}</strong><span class="u">${d>=0?'▲':'▼'} ${f(Math.abs(d))}</span>`);}
-
-// ===== RATIO =====
-function calcR(){const a=parseFloat(document.getElementById('ra').value),b=parseFloat(document.getElementById('rb').value),c=parseFloat(document.getElementById('rc').value);if(isNaN(a)||isNaN(b)||isNaN(c)){res('rr','<span style="color:var(--ink4)">Enter values</span>');return;}res('rr',`<span>D =</span><strong>${f(c*b/a)}</strong><span class="u">(${a}:${b} = ${c}:${f(c*b/a)})</span>`);}
-
-// ===== TAX =====
-let tm='add';
-function setTM(btn,m){tm=m;setMB(document.querySelectorAll('[onclick^="setTM"]'),btn);calcTX();}
-function calcTX(){const a=parseFloat(document.getElementById('tx_a').value),r=parseFloat(document.getElementById('tx_r').value)||0;if(isNaN(a)){res('tx_res','<span style="color:var(--ink4)">Enter amount</span>');return;}if(tm==='add'){const tx=a*r/100,tot=a+tx;res('tx_res',`<span>Total incl. tax</span><strong>${fc(tot)}</strong><span class="u">Tax = ${fc(tx)}</span>`);}else{const ex=a/(1+r/100),tx=a-ex;res('tx_res',`<span>Ex-tax price</span><strong>${fc(ex)}</strong><span class="u">Tax = ${fc(tx)}</span>`);}}
-
-// ===== SALARY =====
-function calcSal(){const mo=parseFloat(document.getElementById('sm').value),days=parseInt(document.getElementById('sd').value)||5;if(isNaN(mo)){res('sr','<span style="color:var(--ink4)">Enter salary</span>');return;}const ann=mo*12,day=mo/(days*52/12),hr=day/8;res('sr',`<div style="font-size:12px;color:var(--ink4)">Annual</div><strong>${fc(ann)}</strong><div style="font-size:12px;color:var(--ink4);margin-top:3px">Per day · Per hour</div><div style="font-size:14px;font-weight:600;font-family:var(--ff)">${fc(day)} &nbsp;·&nbsp; ${fc(hr)}</div>`);}
-
-// ===== TIP =====
-function calcTip(){const b=parseFloat(document.getElementById('tb').value),p=parseFloat(document.getElementById('tp').value)||0,s=parseInt(document.getElementById('ts').value)||1;if(isNaN(b)){res('tr','<span style="color:var(--ink4)">Enter bill</span>');return;}const tip=b*p/100,tot=b+tip,pp=tot/s;res('tr',`<span>Each pays</span><strong>${fc(pp)}</strong><span class="u">Total ${fc(tot)} (tip ${fc(tip)})</span>`);}
-
-// ===== EMI =====
-function calcEMI(){const P=parseFloat(document.getElementById('ea').value),annR=parseFloat(document.getElementById('er').value),n=parseInt(document.getElementById('em').value);if(isNaN(P)||isNaN(annR)||isNaN(n)){res('eres','<span style="color:var(--ink4)">Enter all fields</span>');return;}const r=annR/100/12;const emi=r===0?P/n:P*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);res('eres',`<span>Monthly payment</span><strong>${fc(emi)}</strong><span class="u">Total interest ${fc(emi*n-P)}</span>`);}
-
-// ===== MARGIN =====
-function calcMG(){const c=parseFloat(document.getElementById('mc').value),s=parseFloat(document.getElementById('ms').value);if(isNaN(c)||isNaN(s)){res('mr','<span style="color:var(--ink4)">Enter prices</span>');return;}const p=s-c,mg=p/s*100,mu=p/c*100;res('mr',`<div style="font-size:13px">Profit <strong>${fc(p)}</strong></div><div style="font-size:13px">Margin <strong>${f(mg)}%</strong> &nbsp;·&nbsp; Markup <strong>${f(mu)}%</strong></div>`);}
-
-// ===== CURRENCY CONVERTER =====
-function calcCC(){const a=parseFloat(document.getElementById('cc_a').value),f2=document.getElementById('cc_f').value,t=document.getElementById('cc_t').value;if(isNaN(a)){res('cc_r','<span style="color:var(--ink4)">Enter amount</span>');return;}const usd=a*(FX[f2]||1);const out=usd/(FX[t]||1);res('cc_r',`<strong>${f(out)} ${t}</strong><span class="u">approx. rate</span>`);}
-
-// ===== COMPOUND INTEREST =====
-function calcCI(){const p=parseFloat(document.getElementById('ci_p').value),r=parseFloat(document.getElementById('ci_r').value),y=parseFloat(document.getElementById('ci_y').value);if(isNaN(p)||isNaN(r)||isNaN(y)){res('ci_res','<span style="color:var(--ink4)">Enter details</span>');return;}const tot=p*Math.pow(1+r/100,y),int=tot-p;res('ci_res',`<span>Final value</span><strong>${fc(tot)}</strong><span class="u">Interest earned ${fc(int)}</span>`);}
-
-// ===== FUEL =====
-function calcFuel(){const km=parseFloat(document.getElementById('fk').value),unit=document.getElementById('fu').value,eff=parseFloat(document.getElementById('fe').value),price=parseFloat(document.getElementById('fp').value);if(isNaN(km)||isNaN(eff)||isNaN(price)){res('fres','<span style="color:var(--ink4)">Enter trip details</span>');return;}const kmActual=unit==='mi'?km*1.609:km;const litres=kmActual*eff/100,cost=litres*price;res('fres',`<strong>${fc(cost)}</strong><span class="u">${f(litres,1)}L used</span>`);}
-document.getElementById('fu').addEventListener('change',function(){document.getElementById('feff_l').textContent=this.value==='mi'?'MPG (US)':'L per 100km';});
-
-// ===== WORD COUNT =====
-function calcWC(){const t=document.getElementById('wc_t').value;const w=t.trim()===''?0:t.trim().split(/\s+/).length;const c=t.length,cs=t.replace(/\s/g,'').length,s=t.split(/[.!?]+/).filter(x=>x.trim()).length;res('wc_r',`<span style="font-size:11px;color:var(--ink4)">Words</span><strong>${w.toLocaleString()}</strong><span style="color:var(--ink5)">·</span><span style="font-size:11px;color:var(--ink4)">Chars</span><strong>${c.toLocaleString()}</strong><span style="color:var(--ink5)">·</span><span style="font-size:11px;color:var(--ink4)">Sentences</span><strong>${s}</strong>`);}
-
-// ===== CASE CONVERTER =====
-function doCase(type){const t=document.getElementById('case_in').value;if(!t)return;let o;if(type==='upper')o=t.toUpperCase();else if(type==='lower')o=t.toLowerCase();else if(type==='title')o=t.toLowerCase().replace(/(?:^|\s|[-])\S/g,c=>c.toUpperCase());else o=t.toLowerCase().replace(/(^\s*\w|[.!?]\s*\w)/g,c=>c.toUpperCase());const e=document.getElementById('case_r');e.innerHTML=`<span style="font-size:13px;color:var(--ink)">${o}</span>`;e.dataset.copy=o;}
-
-// ===== READING TIME =====
-function calcRT(){const t=document.getElementById('rt_t').value.trim();if(!t){res('rt_r','<span style="color:var(--ink4)">Paste text</span>');return;}const w=t.split(/\s+/).length,m=Math.ceil(w/238);res('rt_r',`<strong>${m} min${m!==1?'s':''}</strong><span class="u">· ${w.toLocaleString()} words @ 238 wpm</span>`);}
-
-// ===== INVOICE GENERATOR =====
-function genInv(){const pfx=(document.getElementById('inv_p').value||'INV').trim().toUpperCase(),num=parseInt(document.getElementById('inv_n').value)||1001;const ids=[num,num+1,num+2].map(n=>pfx+'-'+String(n).padStart(4,'0'));const e=document.getElementById('inv_r');e.innerHTML=ids.map((id,i)=>`<div style="font-size:${i===0?'16px':'12px'};font-weight:${i===0?'700':'400'};font-family:var(--ff);color:var(--ink${i===0?'':'3'})">${id}</div>`).join('');e.dataset.copy=ids[0];let ic=document.getElementById('inv_copy');if(!ic){ic=document.createElement('span');ic.id='inv_copy';ic.style.display='none';e.appendChild(ic);}ic.dataset.copy=ids[0];}genInv();
-
-// ===== LOREM IPSUM =====
-const LOREM='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.||Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.||Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.||Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi.||Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis molestie dictum semper, enim libero id enim, vel vehicula urna risus sed tellus.'.split('||');
-function genLorem(){const n=Math.min(Math.max(parseInt(document.getElementById('li_n').value)||1,1),10);const paras=[];for(let i=0;i<n;i++)paras.push(LOREM[i%LOREM.length]);const e=document.getElementById('li_r');e.innerHTML=paras.map(p=>`<div style="margin-bottom:6px">${p}</div>`).join('');e.dataset.copy=paras.join('\n\n');}genLorem();
-
-// ===== HOURS WORKED =====
-function calcHW(){const i=document.getElementById('hw_i').value,o=document.getElementById('hw_o').value,b=parseInt(document.getElementById('hw_b').value)||0;if(!i||!o)return;const[ih,im]=i.split(':').map(Number),[oh,om]=o.split(':').map(Number);let mins=(oh*60+om)-(ih*60+im);if(mins<0)mins+=1440;const net=mins-b;if(net<0){res('hw_r','<span style="color:var(--red)">Break exceeds working time</span>');return;}res('hw_r',`<strong>${Math.floor(net/60)}h ${net%60}m</strong><span class="u">worked</span>`);}
-
-// ===== DATE DIFF =====
-function calcDD(){const a=new Date(document.getElementById('dd_a').value),b=new Date(document.getElementById('dd_b').value);if(isNaN(a)||isNaN(b)){res('dd_r','<span style="color:var(--ink4)">Pick dates</span>');return;}const days=Math.round((b-a)/86400000);if(days<0){res('dd_r','<span style="color:var(--red)">End before start</span>');return;}const wks=Math.floor(days/7),mo=(b.getFullYear()-a.getFullYear())*12+(b.getMonth()-a.getMonth());res('dd_r',`<strong>${days.toLocaleString()}</strong><span class="u">days · ${wks}w ${days%7}d · ~${mo} months</span>`);}
-
-// ===== AGE =====
-function calcAge(){const d=new Date(document.getElementById('age_d').value);if(isNaN(d)){res('age_r','<span style="color:var(--ink4)">Enter date of birth</span>');return;}const n=new Date();let y=n.getFullYear()-d.getFullYear(),m=n.getMonth()-d.getMonth(),dd=n.getDate()-d.getDate();if(dd<0){m--;dd+=new Date(n.getFullYear(),n.getMonth(),0).getDate();}if(m<0){y--;m+=12;}res('age_r',`<strong>${y}</strong><span class="u">years, ${m} months, ${dd} days</span>`);}
-
-// ===== TIME ZONE =====
-function calcTZ(){const t=document.getElementById('tz_t').value,f=parseFloat(document.getElementById('tz_f').value),t2=parseFloat(document.getElementById('tz_t2').value);if(!t){res('tz_r','<span style="color:var(--ink4)">Set time above</span>');return;}const[h,m]=t.split(':').map(Number);let tot=h*60+m+(t2-f)*60;tot=((tot%1440)+1440)%1440;const rh=Math.floor(tot/60),rm=tot%60;const pad=n=>String(n).padStart(2,'0');res('tz_r',`<strong>${pad(rh)}:${pad(rm)}</strong><span class="u">destination time</span>`);}
-
-// ===== KG/LBS =====
-let wm='kl';
-function setWT(btn,m){wm=m;setMB(document.querySelectorAll('[onclick^="setWT"]'),btn);document.getElementById('wt_l').textContent=m==='kl'?'Kilograms (kg)':'Pounds (lb)';calcWT();}
-function calcWT(){const v=parseFloat(document.getElementById('wt_v').value);if(isNaN(v)){res('wt_r','<span style="color:var(--ink4)">Enter value</span>');return;}res('wt_r',wm==='kl'?`<strong>${f(v*2.20462)} lb</strong>`:  `<strong>${f(v/2.20462)} kg</strong>`);}
-
-// ===== LENGTH =====
-function calcLen(){const v=parseFloat(document.getElementById('len_v').value),fr=document.getElementById('len_f').value;if(isNaN(v)){res('len_r','<span style="color:var(--ink4)">Enter value</span>');return;}let m;if(fr==='cm')m=v/100;else if(fr==='in')m=v*0.0254;else if(fr==='ft')m=v*0.3048;else if(fr==='km')m=v*1000;else if(fr==='mi')m=v*1609.34;else m=v;res('len_r',`<div style="font-size:13px"><strong>${f(m*100)} cm</strong> · <strong>${f(m/0.0254)} in</strong></div><div style="font-size:13px"><strong>${f(m/0.3048)} ft</strong> · <strong>${f(m)} m</strong> · <strong>${f(m/1000)} km</strong></div>`);}
-
-// ===== TEMPERATURE =====
-function calcTMP(){const v=parseFloat(document.getElementById('tmp_v').value),fr=document.getElementById('tmp_f').value;if(isNaN(v)){res('tmp_r','<span style="color:var(--ink4)">Enter temperature</span>');return;}let c;if(fr==='c')c=v;else if(fr==='f')c=(v-32)*5/9;else c=v-273.15;res('tmp_r',`<div style="font-size:13px"><strong>${f(c,1)}°C</strong> · <strong>${f(c*9/5+32,1)}°F</strong> · <strong>${f(c+273.15,1)}K</strong></div>`);}
-
-// ===== AREA =====
-function calcAR(){const v=parseFloat(document.getElementById('ar_v').value),fr=document.getElementById('ar_f').value;if(isNaN(v)){res('ar_r','<span style="color:var(--ink4)">Enter value</span>');return;}let sqm;if(fr==='sqft')sqm=v*0.0929;else if(fr==='sqm')sqm=v;else if(fr==='sqyd')sqm=v*0.8361;else sqm=v*4046.86;res('ar_r',`<div style="font-size:13px"><strong>${f(sqm)} sqm</strong> · <strong>${f(sqm/0.0929)} sqft</strong></div><div style="font-size:13px"><strong>${f(sqm/0.8361)} sq yards</strong> · <strong>${f(sqm/4046.86,4)} acres</strong></div>`);}
-
-// ===== DATA SIZE =====
-function calcDS(){const v=parseFloat(document.getElementById('ds_v').value),fr=document.getElementById('ds_f').value;if(isNaN(v)){res('ds_r','<span style="color:var(--ink4)">Enter value</span>');return;}const bytes={b:1,kb:1024,mb:1048576,gb:1073741824,tb:1099511627776};const b=v*bytes[fr];const fmt=n=>n>=1e12?f(n/1e12)+'TB':n>=1e9?f(n/1e9)+'GB':n>=1e6?f(n/1e6)+'MB':n>=1024?f(n/1024)+'KB':f(n)+'B';res('ds_r',`<div style="font-size:13px"><strong>${fmt(b)}</strong></div><div style="font-size:13px;color:var(--ink4)">${f(b/1024,1)} KB · ${f(b/1048576,3)} MB · ${f(b/1073741824,4)} GB</div>`);}
-
-// ===== SPEED =====
-function calcSP(){const v=parseFloat(document.getElementById('sp_v').value),fr=document.getElementById('sp_f').value;if(isNaN(v)){res('sp_r','<span style="color:var(--ink4)">Enter value</span>');return;}let ms;if(fr==='kmh')ms=v/3.6;else if(fr==='mph')ms=v*0.44704;else if(fr==='kn')ms=v*0.51444;else ms=v;res('sp_r',`<div style="font-size:13px"><strong>${f(ms*3.6)} km/h</strong> · <strong>${f(ms*2.23694)} mph</strong></div><div style="font-size:13px"><strong>${f(ms)} m/s</strong> · <strong>${f(ms/0.51444)} knots</strong></div>`);}
-
-// ===== BMI =====
-let bmi_mode='metric';
-function setBMI(btn,m){bmi_mode=m;setMB(document.querySelectorAll('[onclick^="setBMI"]'),btn);document.getElementById('bmi_wl').textContent=m==='metric'?'Weight (kg)':'Weight (lb)';document.getElementById('bmi_hl').textContent=m==='metric'?'Height (cm)':'Height (in)';calcBMI();}
-function calcBMI(){const w=parseFloat(document.getElementById('bmi_w').value),h=parseFloat(document.getElementById('bmi_h').value);if(isNaN(w)||isNaN(h)){res('bmi_r','<span style="color:var(--ink4)">Enter measurements</span>');return;}const kg=bmi_mode==='metric'?w:w*0.453592;const m=bmi_mode==='metric'?h/100:h*0.0254;const bmi=kg/(m*m);let cat,col;if(bmi<18.5){cat='Underweight';col='var(--amber)';}else if(bmi<25){cat='Normal weight';col='var(--green)';}else if(bmi<30){cat='Overweight';col='var(--amber)';}else{cat='Obese';col='var(--red)';}res('bmi_r',`<strong>${f(bmi,1)}</strong><span class="u">BMI</span><span style="color:${col};font-weight:500;font-size:13px">${cat}</span>`);}
-
-// ===== CALORIES =====
-function calcCAL(){const w=parseFloat(document.getElementById('cal_w').value),h=parseFloat(document.getElementById('cal_h').value),a=parseFloat(document.getElementById('cal_a').value),act=parseFloat(document.getElementById('cal_act').value);if(isNaN(w)||isNaN(h)||isNaN(a)){res('cal_r','<span style="color:var(--ink4)">Enter all fields</span>');return;}const bmr=10*w+6.25*h-5*a+5;const tdee=Math.round(bmr*act);res('cal_r',`<strong>${tdee.toLocaleString()}</strong><span class="u">kcal/day to maintain weight</span>`);}
-
-// ===== CATEGORY + SEARCH =====
 document.querySelectorAll('.cbt').forEach(btn=>{
   btn.addEventListener('click',()=>{
     document.querySelectorAll('.cbt').forEach(b=>b.classList.remove('on'));
     btn.classList.add('on');
-    filter(document.getElementById('mainSearch').value, btn.dataset.cat);
+    filterTools(document.getElementById('msearch').value, btn.dataset.cat);
   });
 });
-document.getElementById('mainSearch').addEventListener('input',function(){
+document.getElementById('msearch').addEventListener('input',function(){
   const ac=document.querySelector('.cbt.on')?.dataset.cat||'all';
-  filter(this.value, ac);
+  filterTools(this.value,ac);
 });
-function filter(q,cat){
+function filterTools(q,cat){
   q=(q||'').toLowerCase().trim();
   let n=0;
   document.querySelectorAll('.tc').forEach(c=>{
@@ -734,10 +224,7 @@ function filter(q,cat){
   });
   document.getElementById('noRes').style.display=n===0?'block':'none';
 }
-document.addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key==='k'){e.preventDefault();document.getElementById('mainSearch').focus();}});
-
-// Init
-calcHW();
+document.addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key==='k'){e.preventDefault();document.getElementById('msearch').focus();}});
 </script>
 </body>
 </html>
