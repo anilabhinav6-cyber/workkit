@@ -4,9 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hours Worked Calculator — Timesheet & Overtime | Free</title>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
 <meta name="description" content="Calculate hours worked from start time to end time with optional break deduction. Perfect for timesheets, freelancer invoicing, and overtime calculation.">
 <meta name="keywords" content="hours worked calculator, timesheet calculator, overtime calculator, work hours, break time deduction, time tracking">
 <meta name="robots" content="index, follow">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.svg">
+<meta name="theme-color" content="#2563ff">
 <link rel="canonical" href="https://www.workkits.com/hours-worked.html">
 <meta property="og:title" content="Hours Worked Calculator — Timesheet & Overtime | Free">
 <meta property="og:description" content="Calculate hours worked from start time to end time with optional break deduction. Perfect for timesheets, freelancer invoicing, and overtime calculation.">
@@ -100,12 +105,8 @@ ul.b li{font-size:15px;color:var(--ink3);line-height:1.75;margin-bottom:5px}
 .rc .rd{font-size:11px;color:var(--ink4)}
 .ad1{background:var(--surf);border:1px solid var(--bdr);border-radius:12px;padding:11px 18px;margin:20px 0;display:flex;align-items:center;gap:14px;min-height:56px}
 .ad2{background:var(--acc-l);border:1px solid rgba(37,99,255,.15);border-radius:12px;padding:11px 18px;margin:20px 0;display:flex;align-items:center;gap:14px;min-height:56px}
-.adlbl{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink5);flex-shrink:0}
-.adtxt{flex:1;font-size:13px;color:var(--ink2)}
-.adtxt strong{font-weight:500}
-.adcta{border:none;border-radius:7px;padding:7px 13px;font-size:12px;font-weight:500;cursor:pointer;white-space:nowrap;font-family:var(--fb);flex-shrink:0}
-.adcta.dk{background:var(--ink2);color:#fff}.adcta.dk:hover{background:var(--ink)}
-.adcta.bl{background:var(--acc-d);color:#fff}.adcta.bl:hover{background:var(--acc)}
+
+
 .sticky-ad{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-top:1px solid var(--bdr);padding:8px 5%;display:flex;align-items:center;gap:12px;z-index:50;flex-wrap:wrap}
 .sticky-ad p{font-size:12px;color:var(--ink3);margin:0;flex:1}
 .sticky-ad a{font-size:12px;color:var(--acc);font-weight:500;text-decoration:none;white-space:nowrap}
@@ -131,10 +132,13 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
   </div>
 </div>
 <div class="sticky-ad" id="stickyAd" role="complementary" aria-label="Advertisement">
-  <span class="adlbl">Ad</span>
-  <p>💼 <strong>QuickBooks</strong> — accounting software used by 7M+ businesses. Automate invoices, VAT &amp; payroll.</p>
-  <a href="#">Try free 30 days →</a>
-  <button class="adism" id="adDismiss" aria-label="Dismiss">×</button>
+  <ins class="adsbygoogle"
+       style="display:block;width:100%;min-height:50px"
+       data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+       data-ad-slot="REPLACE_WITH_SLOT_ID_3"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <button class="adism" id="adDismiss" aria-label="Dismiss ad">×</button>
 </div>
 <nav>
   <a class="logo" href="/index.html"><span class="lmark">W</span>WorkKit</a>
@@ -153,14 +157,28 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
     <p class="intro">Calculate total hours worked from any start time to end time, with an optional break deduction. Works for any shift length, including overnight shifts.</p>
     <div class="kpills"><span class="kp">hours worked</span><span class="kp">timesheet calculator</span><span class="kp">overtime calculator</span><span class="kp">work hours</span><span class="kp">break deduction</span><span class="kp">shift calculator</span></div>
   </div>
-  <div class="ad1" role="complementary" aria-label="Advertisement"><span class="adlbl">Ad</span><div class="adtxt">⏱️ <strong>Toggl Track</strong> — free time tracking for freelancers and teams. One-click timers and automatic reports.</div><button class="adcta dk">Track time free</button><!-- ADSENSE: <ins class="adsbygoogle" data-ad-client="ca-pub-XXXX" data-ad-slot="SLOT1" data-ad-format="auto" style="display:block"></ins> --></div>
+  <div class="ad1" role="complementary" aria-label="Advertisement">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+       data-ad-slot="REPLACE_WITH_SLOT_ID_1"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+</div>
   <div class="calc-box"><h2>Hours worked</h2>
   <div class="fr"><label>Start time (time in)</label><input type="time" id="hwi" value="09:00" oninput="cHW()"></div>
   <div class="fr"><label>End time (time out)</label><input type="time" id="hwo" value="18:00" oninput="cHW()"></div>
   <div class="fr"><label>Break time (minutes)</label><input type="number" id="hwb" value="60" min="0" oninput="cHW()"></div>
   <div class="rbox" id="hwres"><span style="color:var(--ink4)">Set times above</span></div>
 </div>
-  <div class="ad2" role="complementary" aria-label="Advertisement"><span class="adlbl">Sponsored</span><div class="adtxt">🧾 <strong>FreshBooks</strong> — invoice clients based on tracked hours automatically. Freelancer-friendly accounting.</div><button class="adcta bl">Try FreshBooks</button><!-- ADSENSE: <ins class="adsbygoogle" data-ad-client="ca-pub-XXXX" data-ad-slot="SLOT2" data-ad-format="auto" style="display:block"></ins> --></div>
+  <div class="ad2" role="complementary" aria-label="Advertisement">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+       data-ad-slot="REPLACE_WITH_SLOT_ID_2"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+</div>
   <h2 class="s">How to calculate hours worked</h2><p class="b">Subtract start time from end time to get total time, then subtract any unpaid breaks. For overnight shifts, add 24 hours if the end time is earlier than the start time. Example: 9:00am to 6:00pm minus 1 hour lunch = <strong>8 hours worked</strong>.</p>
   <div class="faq-sec"><h2 class="s">Frequently asked questions</h2><div class="faq-item"><button class="faq-q" aria-expanded="false">How do I calculate overtime hours? <i>+</i></button><div class="faq-a"><p>Standard working hours vary by country. UK and UAE: typically 8 hours/day or 40–48 hours/week. Hours beyond this threshold are overtime, usually paid at 1.25x–1.5x the regular rate.</p></div></div><div class="faq-item"><button class="faq-q" aria-expanded="false">Can this calculator handle overnight shifts? <i>+</i></button><div class="faq-a"><p>Yes — if you start at 10pm and finish at 6am, enter 22:00 and 06:00. The calculator automatically adds 24 hours to handle shifts crossing midnight.</p></div></div><div class="faq-item"><button class="faq-q" aria-expanded="false">How do I track hours for a freelance invoice? <i>+</i></button><div class="faq-a"><p>Log your start and end times for each work session, then add up the totals. Multiply total hours by your hourly rate to calculate the invoice amount.</p></div></div></div>
   <h2 class="s">Related tools</h2><div class="related"><a href="/salary-calculator.html" class="rc"><div class="rt">Salary calculator</div><div class="rd">Monthly to hourly rate</div></a><a href="/invoice-generator.html" class="rc"><div class="rt">Invoice numbers</div><div class="rd">Auto-generate IDs</div></a><a href="/age-calculator.html" class="rc"><div class="rt">Age calculator</div><div class="rd">Exact age calculation</div></a><a href="/date-difference.html" class="rc"><div class="rt">Days between dates</div><div class="rd">Deadline counter</div></a></div>
@@ -258,5 +276,10 @@ function initPage(){
 
 function cHW(){const i=document.getElementById("hwi").value,o=document.getElementById("hwo").value,b=parseInt(document.getElementById("hwb").value)||0;if(!i||!o)return;const[ih,im]=i.split(":").map(Number),[oh,om]=o.split(":").map(Number);let m=(oh*60+om)-(ih*60+im);if(m<0)m+=1440;const net=m-b;if(net<0){res("hwres","<span style='color:var(--red)'>Break exceeds working time</span>");return;}res("hwres",`<strong>${Math.floor(net/60)}h ${net%60}m</strong><span class="u">worked (${b}min break deducted)</span>`);}
 window.addEventListener('DOMContentLoaded',initPage);</script>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+(adsbygoogle = window.adsbygoogle || []).push({});
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 </body>
 </html>
