@@ -12,11 +12,11 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="apple-touch-icon" href="/apple-touch-icon.svg">
 <meta name="theme-color" content="#2563ff">
-<link rel="canonical" href="https://www.workkits.com/word-counter.html">
+<link rel="canonical" href="https://www.mymyworkkits.com/word-counter.html">
 <meta property="og:title" content="Word Counter & Character Counter — Free Online Tool">
 <meta property="og:description" content="Count words, characters, sentences in any text instantly. Free online word counter for writers, students, social media and SEO professionals.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://www.workkits.com/word-counter.html">
+<meta property="og:url" content="https://www.mymyworkkits.com/word-counter.html">
 <meta name="twitter:card" content="summary">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many words is a typical blog post?","acceptedAnswer":{"@type":"Answer","text":"A typical blog post is 1,000–2,000 words. For SEO, aim for 1,500–2,500 words on competitive topics. For social media or emails, shorter is usually better."}},{"@type":"Question","name":"How do I check the character count in Microsoft Word?","acceptedAnswer":{"@type":"Answer","text":"Go to Review → Word Count. You can also select specific text and check the count in the status bar at the bottom of the screen."}},{"@type":"Question","name":"What is the ideal word count for an email?","acceptedAnswer":{"@type":"Answer","text":"Research suggests emails under 200 words have the highest response rates. Keep your main message in the first 50 words, as many people only skim."}}]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
@@ -121,6 +121,9 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
 .fbot{border-top:1px solid rgba(255,255,255,.08);padding-top:18px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:12px}
 .phero{padding:24px 0 20px}
 @media(max-width:600px){.fr{flex-direction:column;align-items:flex-start}.fr label{min-width:auto}.ftop{grid-template-columns:1fr 1fr}.fbrand{grid-column:1/-1}.sticky-ad{display:none}}
+.adsbygoogle:not([data-ad-status]){min-height:0!important;height:0!important;overflow:hidden;display:none!important}.adsbygoogle[data-ad-status="filled"]{display:block!important}
+.ad1,.ad2{min-height:0;padding:0}
+.ad1:empty,.ad2:empty{display:none}
 </style>
 </head>
 <body>
@@ -131,7 +134,7 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
     <button class="cclose" onclick="document.getElementById('currModal').classList.remove('open')">Close</button>
   </div>
 </div>
-<div class="sticky-ad" id="stickyAd" role="complementary" aria-label="Advertisement">
+<div class="sticky-ad" id="stickyAd" style="display:none" role="complementary" aria-label="Advertisement">
   <ins class="adsbygoogle"
        style="display:block;width:100%;min-height:50px"
        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
@@ -157,9 +160,9 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
     <p class="intro">Count words, characters, and sentences in any text instantly. Essential for writers, students, social media managers, email marketers, and SEO professionals checking content length.</p>
     <div class="kpills"><span class="kp">word counter</span><span class="kp">character counter</span><span class="kp">word count online</span><span class="kp">essay word counter</span><span class="kp">Twitter character limit</span><span class="kp">SEO meta description</span></div>
   </div>
-  <div class="ad1" role="complementary" aria-label="Advertisement">
+  <div class="ad1" id="adslot1" role="complementary" aria-label="Advertisement">
   <ins class="adsbygoogle"
-       style="display:block"
+       style="display:block;min-height:0"
        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
        data-ad-slot="REPLACE_WITH_SLOT_ID_1"
        data-ad-format="auto"
@@ -169,9 +172,9 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
   <textarea id="wct" placeholder="Paste or type your text here…" oninput="cWC()" style="min-height:120px;width:100%;border:1.5px solid var(--bdr);border-radius:8px;padding:10px;font-size:14px;font-family:var(--fb);color:var(--ink);background:var(--surf);outline:none;resize:vertical"></textarea>
   <div class="rbox" id="wcres" style="flex-wrap:wrap;gap:14px;margin-top:6px"><span style="color:var(--ink4)">Paste text above</span></div>
 </div>
-  <div class="ad2" role="complementary" aria-label="Advertisement">
+  <div class="ad2" id="adslot2" role="complementary" aria-label="Advertisement">
   <ins class="adsbygoogle"
-       style="display:block"
+       style="display:block;min-height:0"
        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
        data-ad-slot="REPLACE_WITH_SLOT_ID_2"
        data-ad-format="auto"
@@ -218,7 +221,7 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
     </div>
   </div>
   <div class="fbot">
-    <span>© 2026 WorkKits — Free tools for work &amp; life worldwide · workkits.com</span>
+    <span>© 2026 WorkKits — Free tools for work &amp; life worldwide · mymyworkkits.com</span>
     <span>No sign-up · No tracking · Works offline once loaded</span>
   </div>
 </footer>
@@ -281,7 +284,7 @@ function initPage(){
 }
 
 function cWC(){const t=document.getElementById("wct").value;const w=t.trim()===""?0:t.trim().split(/\s+/).length;const c=t.length,s=t.split(/[.!?]+/).filter(x=>x.trim()).length;res("wcres",`<span style="font-size:11px;color:var(--ink4)">Words</span><strong>${w.toLocaleString()}</strong><span style="color:var(--ink5)">·</span><span style="font-size:11px;color:var(--ink4)">Chars</span><strong>${c.toLocaleString()}</strong><span style="color:var(--ink5)">·</span><span style="font-size:11px;color:var(--ink4)">Sentences</span><strong>${s}</strong>`);}
-window.addEventListener('DOMContentLoaded',initPage);</script>
+window.addEventListener("DOMContentLoaded",initPage);window.addEventListener("load",function(){setTimeout(function(){var sa=document.getElementById("stickyAd");if(sa){var ins=sa.querySelector(".adsbygoogle");if(ins&&ins.getAttribute("data-ad-status")==="filled")sa.style.display="flex";}},2000);});</script>
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 (adsbygoogle = window.adsbygoogle || []).push({});
