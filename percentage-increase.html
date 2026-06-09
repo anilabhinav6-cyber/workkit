@@ -12,11 +12,11 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="apple-touch-icon" href="/apple-touch-icon.svg">
 <meta name="theme-color" content="#2563ff">
-<link rel="canonical" href="https://www.workkits.com/percentage-increase.html">
+<link rel="canonical" href="https://www.mymyworkkits.com/percentage-increase.html">
 <meta property="og:title" content="Percentage Increase & Decrease Calculator | Free Online Tool">
 <meta property="og:description" content="Calculate the new value after any percentage increase or decrease. Perfect for salary raises, price changes, and inflation adjustments.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://www.workkits.com/percentage-increase.html">
+<meta property="og:url" content="https://www.mymyworkkits.com/percentage-increase.html">
 <meta name="twitter:card" content="summary">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I calculate a 10% salary increase?","acceptedAnswer":{"@type":"Answer","text":"Multiply your current salary by 1.10. Example: $4,500 × 1.10 = $4,950. Alternatively, find 10% of your salary ($450) and add it."}},{"@type":"Question","name":"What is inflation and how does it affect my salary?","acceptedAnswer":{"@type":"Answer","text":"Inflation is the percentage rise in prices over time. If inflation is 5% and your salary increases by 3%, your real (purchasing power) salary has decreased by 2%."}},{"@type":"Question","name":"How do I calculate a price after multiple discounts?","acceptedAnswer":{"@type":"Answer","text":"Apply each discount sequentially, not cumulatively. A 20% discount then a 10% discount on £100: £100 × 0.80 = £80, then £80 × 0.90 = £72 — not 30% off."}}]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
@@ -121,6 +121,9 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
 .fbot{border-top:1px solid rgba(255,255,255,.08);padding-top:18px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:12px}
 .phero{padding:24px 0 20px}
 @media(max-width:600px){.fr{flex-direction:column;align-items:flex-start}.fr label{min-width:auto}.ftop{grid-template-columns:1fr 1fr}.fbrand{grid-column:1/-1}.sticky-ad{display:none}}
+.adsbygoogle:not([data-ad-status]){min-height:0!important;height:0!important;overflow:hidden;display:none!important}.adsbygoogle[data-ad-status="filled"]{display:block!important}
+.ad1,.ad2{min-height:0;padding:0}
+.ad1:empty,.ad2:empty{display:none}
 </style>
 </head>
 <body>
@@ -131,7 +134,7 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
     <button class="cclose" onclick="document.getElementById('currModal').classList.remove('open')">Close</button>
   </div>
 </div>
-<div class="sticky-ad" id="stickyAd" role="complementary" aria-label="Advertisement">
+<div class="sticky-ad" id="stickyAd" style="display:none" role="complementary" aria-label="Advertisement">
   <ins class="adsbygoogle"
        style="display:block;width:100%;min-height:50px"
        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
@@ -157,9 +160,9 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
     <p class="intro">Find the new value after any percentage increase or decrease. Works for salary raises, price changes, inflation adjustments, discounts and any % change.</p>
     <div class="kpills"><span class="kp">percentage increase</span><span class="kp">percentage decrease</span><span class="kp">salary raise calculator</span><span class="kp">price increase</span><span class="kp">inflation calculator</span></div>
   </div>
-  <div class="ad1" role="complementary" aria-label="Advertisement">
+  <div class="ad1" id="adslot1" role="complementary" aria-label="Advertisement">
   <ins class="adsbygoogle"
-       style="display:block"
+       style="display:block;min-height:0"
        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
        data-ad-slot="REPLACE_WITH_SLOT_ID_1"
        data-ad-format="auto"
@@ -170,9 +173,9 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
   <div class="fr"><label>Change (%)</label><input type="number" id="pp" placeholder="e.g. 12 or -8" oninput="cPI()"></div>
   <div class="rbox" id="pires"><span style="color:var(--ink4)">Enter values above</span></div>
 </div>
-  <div class="ad2" role="complementary" aria-label="Advertisement">
+  <div class="ad2" id="adslot2" role="complementary" aria-label="Advertisement">
   <ins class="adsbygoogle"
-       style="display:block"
+       style="display:block;min-height:0"
        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
        data-ad-slot="REPLACE_WITH_SLOT_ID_2"
        data-ad-format="auto"
@@ -211,7 +214,7 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
     </div>
   </div>
   <div class="fbot">
-    <span>© 2026 WorkKits — Free tools for work &amp; life worldwide · workkits.com</span>
+    <span>© 2026 WorkKits — Free tools for work &amp; life worldwide · mymyworkkits.com</span>
     <span>No sign-up · No tracking · Works offline once loaded</span>
   </div>
 </footer>
@@ -274,7 +277,7 @@ function initPage(){
 }
 
 function cPI(){const o=parseFloat(document.getElementById("po").value),p=parseFloat(document.getElementById("pp").value);if(isNaN(o)||isNaN(p)){res("pires","<span style='color:var(--ink4)'>Enter values</span>");return;}const nv=o*(1+p/100),d=nv-o;const col=d>=0?"var(--green)":"var(--red)";res("pires",`<span>New value</span><strong style="color:${col}">${f(nv)}</strong><span class="u">${d>=0?"▲":"▼"} ${f(Math.abs(d))}</span>`);}
-window.addEventListener('DOMContentLoaded',initPage);</script>
+window.addEventListener("DOMContentLoaded",initPage);window.addEventListener("load",function(){setTimeout(function(){var sa=document.getElementById("stickyAd");if(sa){var ins=sa.querySelector(".adsbygoogle");if(ins&&ins.getAttribute("data-ad-status")==="filled")sa.style.display="flex";}},2000);});</script>
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 (adsbygoogle = window.adsbygoogle || []).push({});
