@@ -12,11 +12,11 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="apple-touch-icon" href="/apple-touch-icon.svg">
 <meta name="theme-color" content="#2563ff">
-<link rel="canonical" href="https://www.workkits.com/currency-converter.html">
+<link rel="canonical" href="https://www.mymyworkkits.com/currency-converter.html">
 <meta property="og:title" content="Currency Converter — USD, EUR, GBP, AED, INR & More | Free">
 <meta property="og:description" content="Quick currency conversion between 12 major currencies. USD, EUR, GBP, AED, SAR, INR, PKR, PHP and more. Uses approximate rates for quick estimates.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://www.workkits.com/currency-converter.html">
+<meta property="og:url" content="https://www.mymyworkkits.com/currency-converter.html">
 <meta name="twitter:card" content="summary">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why does the exchange rate differ from my bank?","acceptedAnswer":{"@type":"Answer","text":"Banks typically add a margin of 2–4% above the interbank (real) exchange rate. Specialist money transfer services like Wise charge closer to the real rate plus a small fee."}},{"@type":"Question","name":"What is the AED to USD exchange rate?","acceptedAnswer":{"@type":"Answer","text":"The UAE Dirham is pegged to the US Dollar at approximately 3.6725 AED per USD. This rate is fixed by the UAE Central Bank and does not fluctuate like other currencies."}},{"@type":"Question","name":"What currencies can I convert?","acceptedAnswer":{"@type":"Answer","text":"Our tool supports USD, EUR, GBP, AED, SAR, INR, PKR, PHP, NGN, CAD, AUD, and EGP. For other currencies, use a live rate provider."}}]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
@@ -121,6 +121,9 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
 .fbot{border-top:1px solid rgba(255,255,255,.08);padding-top:18px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:12px}
 .phero{padding:24px 0 20px}
 @media(max-width:600px){.fr{flex-direction:column;align-items:flex-start}.fr label{min-width:auto}.ftop{grid-template-columns:1fr 1fr}.fbrand{grid-column:1/-1}.sticky-ad{display:none}}
+.adsbygoogle:not([data-ad-status]){min-height:0!important;height:0!important;overflow:hidden;display:none!important}.adsbygoogle[data-ad-status="filled"]{display:block!important}
+.ad1,.ad2{min-height:0;padding:0}
+.ad1:empty,.ad2:empty{display:none}
 </style>
 </head>
 <body>
@@ -131,7 +134,7 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
     <button class="cclose" onclick="document.getElementById('currModal').classList.remove('open')">Close</button>
   </div>
 </div>
-<div class="sticky-ad" id="stickyAd" role="complementary" aria-label="Advertisement">
+<div class="sticky-ad" id="stickyAd" style="display:none" role="complementary" aria-label="Advertisement">
   <ins class="adsbygoogle"
        style="display:block;width:100%;min-height:50px"
        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
@@ -157,9 +160,9 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
     <p class="intro">Convert between 12 major currencies instantly using approximate fixed rates. Great for quick estimates when travelling, shopping online, or comparing international prices.</p>
     <div class="kpills"><span class="kp">currency converter</span><span class="kp">USD to AED</span><span class="kp">GBP to INR</span><span class="kp">EUR to USD</span><span class="kp">exchange rate</span><span class="kp">dollar to pound</span></div>
   </div>
-  <div class="ad1" role="complementary" aria-label="Advertisement">
+  <div class="ad1" id="adslot1" role="complementary" aria-label="Advertisement">
   <ins class="adsbygoogle"
-       style="display:block"
+       style="display:block;min-height:0"
        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
        data-ad-slot="REPLACE_WITH_SLOT_ID_1"
        data-ad-format="auto"
@@ -186,9 +189,9 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
   <div class="rbox" id="cres"><span style="color:var(--ink4)">Enter amount above</span></div>
   <p style="font-size:11px;color:var(--ink5);margin-top:8px">⚠️ Uses approximate fixed rates for quick estimates. For exact live rates use Wise or your bank.</p>
 </div>
-  <div class="ad2" role="complementary" aria-label="Advertisement">
+  <div class="ad2" id="adslot2" role="complementary" aria-label="Advertisement">
   <ins class="adsbygoogle"
-       style="display:block"
+       style="display:block;min-height:0"
        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
        data-ad-slot="REPLACE_WITH_SLOT_ID_2"
        data-ad-format="auto"
@@ -227,7 +230,7 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
     </div>
   </div>
   <div class="fbot">
-    <span>© 2026 WorkKits — Free tools for work &amp; life worldwide · workkits.com</span>
+    <span>© 2026 WorkKits — Free tools for work &amp; life worldwide · mymyworkkits.com</span>
     <span>No sign-up · No tracking · Works offline once loaded</span>
   </div>
 </footer>
@@ -290,7 +293,7 @@ function initPage(){
 }
 
 function cCC(){const a=parseFloat(document.getElementById("ca").value),fr=document.getElementById("cf").value,t=document.getElementById("ct").value;if(isNaN(a)){res("cres","<span style='color:var(--ink4)'>Enter amount</span>");return;}const usd=a*(FX[fr]||1),out=usd/(FX[t]||1);res("cres",`<strong>${f(out)} ${t}</strong><span class="u">approx. rate</span>`);}
-window.addEventListener('DOMContentLoaded',initPage);</script>
+window.addEventListener("DOMContentLoaded",initPage);window.addEventListener("load",function(){setTimeout(function(){var sa=document.getElementById("stickyAd");if(sa){var ins=sa.querySelector(".adsbygoogle");if(ins&&ins.getAttribute("data-ad-status")==="filled")sa.style.display="flex";}},2000);});</script>
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 (adsbygoogle = window.adsbygoogle || []).push({});
