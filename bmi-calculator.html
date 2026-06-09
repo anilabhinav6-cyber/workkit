@@ -12,11 +12,11 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="apple-touch-icon" href="/apple-touch-icon.svg">
 <meta name="theme-color" content="#2563ff">
-<link rel="canonical" href="https://www.workkits.com/bmi-calculator.html">
+<link rel="canonical" href="https://www.mymyworkkits.com/bmi-calculator.html">
 <meta property="og:title" content="BMI Calculator — Body Mass Index Metric & Imperial | Free">
 <meta property="og:description" content="Calculate BMI (Body Mass Index) using weight and height. Available in metric (kg/cm) and imperial (lb/in). Includes WHO BMI category ranges.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://www.workkits.com/bmi-calculator.html">
+<meta property="og:url" content="https://www.mymyworkkits.com/bmi-calculator.html">
 <meta name="twitter:card" content="summary">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is BMI accurate for everyone?","acceptedAnswer":{"@type":"Answer","text":"BMI is a useful screening tool but has limitations. It may overestimate body fat in muscular individuals and underestimate it in older adults. It also does not distinguish between visceral and subcutaneous fat."}},{"@type":"Question","name":"What is a healthy BMI for adults?","acceptedAnswer":{"@type":"Answer","text":"The WHO defines 18.5–24.9 as healthy weight for most adults. However, BMI ranges for people of Asian descent are slightly lower — some guidelines use 18.5–22.9 as healthy for this group."}},{"@type":"Question","name":"How do I convert my weight from kg to pounds?","acceptedAnswer":{"@type":"Answer","text":"Multiply kilograms by 2.20462 to get pounds. Example: 70 kg × 2.20462 = 154.3 lbs. Use our unit converter for more conversions."}}]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
@@ -121,6 +121,9 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
 .fbot{border-top:1px solid rgba(255,255,255,.08);padding-top:18px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:12px}
 .phero{padding:24px 0 20px}
 @media(max-width:600px){.fr{flex-direction:column;align-items:flex-start}.fr label{min-width:auto}.ftop{grid-template-columns:1fr 1fr}.fbrand{grid-column:1/-1}.sticky-ad{display:none}}
+.adsbygoogle:not([data-ad-status]){min-height:0!important;height:0!important;overflow:hidden;display:none!important}.adsbygoogle[data-ad-status="filled"]{display:block!important}
+.ad1,.ad2{min-height:0;padding:0}
+.ad1:empty,.ad2:empty{display:none}
 </style>
 </head>
 <body>
@@ -131,7 +134,7 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
     <button class="cclose" onclick="document.getElementById('currModal').classList.remove('open')">Close</button>
   </div>
 </div>
-<div class="sticky-ad" id="stickyAd" role="complementary" aria-label="Advertisement">
+<div class="sticky-ad" id="stickyAd" style="display:none" role="complementary" aria-label="Advertisement">
   <ins class="adsbygoogle"
        style="display:block;width:100%;min-height:50px"
        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
@@ -157,9 +160,9 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
     <p class="intro">Calculate your BMI using weight and height. Available in metric (kg/cm) and imperial (lb/inches). Results include WHO BMI category classification.</p>
     <div class="kpills"><span class="kp">BMI calculator</span><span class="kp">body mass index</span><span class="kp">healthy weight</span><span class="kp">BMI chart</span><span class="kp">overweight calculator</span><span class="kp">ideal weight</span></div>
   </div>
-  <div class="ad1" role="complementary" aria-label="Advertisement">
+  <div class="ad1" id="adslot1" role="complementary" aria-label="Advertisement">
   <ins class="adsbygoogle"
-       style="display:block"
+       style="display:block;min-height:0"
        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
        data-ad-slot="REPLACE_WITH_SLOT_ID_1"
        data-ad-format="auto"
@@ -174,9 +177,9 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
   <div class="fr"><label id="bhl">Height (cm)</label><input type="number" id="bh" placeholder="e.g. 175" step="0.1" oninput="cBMI()"></div>
   <div class="rbox" id="bmires"><span style="color:var(--ink4)">Enter measurements above</span></div>
 </div>
-  <div class="ad2" role="complementary" aria-label="Advertisement">
+  <div class="ad2" id="adslot2" role="complementary" aria-label="Advertisement">
   <ins class="adsbygoogle"
-       style="display:block"
+       style="display:block;min-height:0"
        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
        data-ad-slot="REPLACE_WITH_SLOT_ID_2"
        data-ad-format="auto"
@@ -222,7 +225,7 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
     </div>
   </div>
   <div class="fbot">
-    <span>© 2026 WorkKits — Free tools for work &amp; life worldwide · workkits.com</span>
+    <span>© 2026 WorkKits — Free tools for work &amp; life worldwide · mymyworkkits.com</span>
     <span>No sign-up · No tracking · Works offline once loaded</span>
   </div>
 </footer>
@@ -287,7 +290,7 @@ function initPage(){
 let bMode='metric';
 function setBM(b,m){bMode=m;document.querySelectorAll('[onclick^="setBM"]').forEach(x=>x.classList.toggle('on',x===b));document.getElementById('bwl').textContent=m==='metric'?'Weight (kg)':'Weight (lb)';document.getElementById('bhl').textContent=m==='metric'?'Height (cm)':'Height (in)';cBMI();}
 function cBMI(){const w=parseFloat(document.getElementById('bw').value),h=parseFloat(document.getElementById('bh').value);if(isNaN(w)||isNaN(h)){res('bmires','<span style="color:var(--ink4)">Enter measurements</span>');return;}const kg=bMode==='metric'?w:w*0.453592,m=bMode==='metric'?h/100:h*0.0254;const bmi=kg/(m*m);let cat,col;if(bmi<18.5){cat='Underweight';col='var(--amber)';}else if(bmi<25){cat='Normal weight';col='var(--green)';}else if(bmi<30){cat='Overweight';col='var(--amber)';}else{cat='Obese';col='var(--red)';}res('bmires',`<strong>${f(bmi,1)}</strong><span class="u">BMI</span><span style="color:${col};font-weight:600;font-size:13px">${cat}</span>`);}
-window.addEventListener('DOMContentLoaded',initPage);</script>
+window.addEventListener("DOMContentLoaded",initPage);window.addEventListener("load",function(){setTimeout(function(){var sa=document.getElementById("stickyAd");if(sa){var ins=sa.querySelector(".adsbygoogle");if(ins&&ins.getAttribute("data-ad-status")==="filled")sa.style.display="flex";}},2000);});</script>
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 (adsbygoogle = window.adsbygoogle || []).push({});
