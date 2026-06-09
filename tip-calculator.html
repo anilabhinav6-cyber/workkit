@@ -12,11 +12,11 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="apple-touch-icon" href="/apple-touch-icon.svg">
 <meta name="theme-color" content="#2563ff">
-<link rel="canonical" href="https://www.workkits.com/tip-calculator.html">
+<link rel="canonical" href="https://www.mymyworkkits.com/tip-calculator.html">
 <meta property="og:title" content="Tip Calculator & Bill Splitter — Split Any Bill | Free">
 <meta property="og:description" content="Calculate tip and split any restaurant or service bill between multiple people. Supports any currency. Free, no sign-up.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://www.workkits.com/tip-calculator.html">
+<meta property="og:url" content="https://www.mymyworkkits.com/tip-calculator.html">
 <meta name="twitter:card" content="summary">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much should I tip at a restaurant?","acceptedAnswer":{"@type":"Answer","text":"Tip varies by country. US: 18–22%. UK: 10–15%. UAE: 10–15%. Many Asian countries: tipping not expected. Always check if service charge already appears on the bill."}},{"@type":"Question","name":"How do I split a bill with different amounts ordered?","acceptedAnswer":{"@type":"Answer","text":"Our calculator splits the total equally. For unequal splits based on what each person ordered, calculate each person's subtotal plus their share of the tip separately."}},{"@type":"Question","name":"Is service charge the same as tip?","acceptedAnswer":{"@type":"Answer","text":"No. A service charge is a mandatory fee added by the establishment (often 10–15%). A tip is a voluntary payment you give directly to staff. Check your bill — if service is already charged, you don't need to tip again."}}]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
@@ -121,6 +121,9 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
 .fbot{border-top:1px solid rgba(255,255,255,.08);padding-top:18px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:12px}
 .phero{padding:24px 0 20px}
 @media(max-width:600px){.fr{flex-direction:column;align-items:flex-start}.fr label{min-width:auto}.ftop{grid-template-columns:1fr 1fr}.fbrand{grid-column:1/-1}.sticky-ad{display:none}}
+.adsbygoogle:not([data-ad-status]){min-height:0!important;height:0!important;overflow:hidden;display:none!important}.adsbygoogle[data-ad-status="filled"]{display:block!important}
+.ad1,.ad2{min-height:0;padding:0}
+.ad1:empty,.ad2:empty{display:none}
 </style>
 </head>
 <body>
@@ -131,7 +134,7 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
     <button class="cclose" onclick="document.getElementById('currModal').classList.remove('open')">Close</button>
   </div>
 </div>
-<div class="sticky-ad" id="stickyAd" role="complementary" aria-label="Advertisement">
+<div class="sticky-ad" id="stickyAd" style="display:none" role="complementary" aria-label="Advertisement">
   <ins class="adsbygoogle"
        style="display:block;width:100%;min-height:50px"
        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
@@ -157,9 +160,9 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
     <p class="intro">Calculate tip and split any bill evenly between any number of people. Works for restaurants, taxis, hotels and any service. Any currency.</p>
     <div class="kpills"><span class="kp">tip calculator</span><span class="kp">bill splitter</span><span class="kp">split bill</span><span class="kp">service charge</span><span class="kp">gratuity</span></div>
   </div>
-  <div class="ad1" role="complementary" aria-label="Advertisement">
+  <div class="ad1" id="adslot1" role="complementary" aria-label="Advertisement">
   <ins class="adsbygoogle"
-       style="display:block"
+       style="display:block;min-height:0"
        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
        data-ad-slot="REPLACE_WITH_SLOT_ID_1"
        data-ad-format="auto"
@@ -171,9 +174,9 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
   <div class="fr"><label>Split between</label><input type="number" id="ts" value="2" min="1" oninput="cT()"></div>
   <div class="rbox" id="tres"><span style="color:var(--ink4)">Enter bill details</span></div>
 </div>
-  <div class="ad2" role="complementary" aria-label="Advertisement">
+  <div class="ad2" id="adslot2" role="complementary" aria-label="Advertisement">
   <ins class="adsbygoogle"
-       style="display:block"
+       style="display:block;min-height:0"
        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
        data-ad-slot="REPLACE_WITH_SLOT_ID_2"
        data-ad-format="auto"
@@ -220,7 +223,7 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
     </div>
   </div>
   <div class="fbot">
-    <span>© 2026 WorkKits — Free tools for work &amp; life worldwide · workkits.com</span>
+    <span>© 2026 WorkKits — Free tools for work &amp; life worldwide · mymyworkkits.com</span>
     <span>No sign-up · No tracking · Works offline once loaded</span>
   </div>
 </footer>
@@ -283,7 +286,7 @@ function initPage(){
 }
 
 function cT(){const b=parseFloat(document.getElementById("tb").value),p=parseFloat(document.getElementById("tp").value)||0,s=parseInt(document.getElementById("ts").value)||1;if(isNaN(b)){res("tres","<span style='color:var(--ink4)'>Enter bill</span>");return;}const tip=b*p/100,tot=b+tip,pp=tot/s;res("tres",`<span>Each pays</span><strong>${fc(f(pp))}</strong><span class="u">Total ${fc(f(tot))} (tip ${fc(f(tip))})</span>`);}
-window.addEventListener('DOMContentLoaded',initPage);</script>
+window.addEventListener("DOMContentLoaded",initPage);window.addEventListener("load",function(){setTimeout(function(){var sa=document.getElementById("stickyAd");if(sa){var ins=sa.querySelector(".adsbygoogle");if(ins&&ins.getAttribute("data-ad-status")==="filled")sa.style.display="flex";}},2000);});</script>
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 (adsbygoogle = window.adsbygoogle || []).push({});
