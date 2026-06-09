@@ -12,11 +12,11 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="apple-touch-icon" href="/apple-touch-icon.svg">
 <meta name="theme-color" content="#2563ff">
-<link rel="canonical" href="https://www.workkits.com/invoice-generator.html">
+<link rel="canonical" href="https://www.mymyworkkits.com/invoice-generator.html">
 <meta property="og:title" content="Invoice Number Generator — Sequential Invoice IDs | Free">
 <meta property="og:description" content="Generate sequential invoice numbers with a custom prefix instantly. Free tool for freelancers, consultants and small businesses.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://www.workkits.com/invoice-generator.html">
+<meta property="og:url" content="https://www.mymyworkkits.com/invoice-generator.html">
 <meta name="twitter:card" content="summary">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does it matter what invoice number format I use?","acceptedAnswer":{"@type":"Answer","text":"Format is up to you, but it must be unique and sequential. HMRC (UK), ATO (Australia), and FTA (UAE) all require unique invoice numbers. Keep it simple and consistent year-on-year."}},{"@type":"Question","name":"Can I restart invoice numbers each year?","acceptedAnswer":{"@type":"Answer","text":"Yes. Many businesses restart from 001 each January and include the year in the prefix (e.g. 2026-001). This makes it easy to identify which tax year an invoice belongs to."}},{"@type":"Question","name":"What happens if I have a gap in invoice numbers?","acceptedAnswer":{"@type":"Answer","text":"A gap can happen if an invoice was voided or cancelled. Always note voided invoices in your records. Tax authorities may query gaps but a clear explanation resolves this."}}]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
@@ -121,6 +121,9 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
 .fbot{border-top:1px solid rgba(255,255,255,.08);padding-top:18px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:12px}
 .phero{padding:24px 0 20px}
 @media(max-width:600px){.fr{flex-direction:column;align-items:flex-start}.fr label{min-width:auto}.ftop{grid-template-columns:1fr 1fr}.fbrand{grid-column:1/-1}.sticky-ad{display:none}}
+.adsbygoogle:not([data-ad-status]){min-height:0!important;height:0!important;overflow:hidden;display:none!important}.adsbygoogle[data-ad-status="filled"]{display:block!important}
+.ad1,.ad2{min-height:0;padding:0}
+.ad1:empty,.ad2:empty{display:none}
 </style>
 </head>
 <body>
@@ -131,7 +134,7 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
     <button class="cclose" onclick="document.getElementById('currModal').classList.remove('open')">Close</button>
   </div>
 </div>
-<div class="sticky-ad" id="stickyAd" role="complementary" aria-label="Advertisement">
+<div class="sticky-ad" id="stickyAd" style="display:none" role="complementary" aria-label="Advertisement">
   <ins class="adsbygoogle"
        style="display:block;width:100%;min-height:50px"
        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
@@ -157,9 +160,9 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
     <p class="intro">Generate sequential invoice IDs with any prefix instantly. Essential for freelancers, consultants, and small businesses who need consistent, professional invoice numbering.</p>
     <div class="kpills"><span class="kp">invoice number generator</span><span class="kp">sequential invoice IDs</span><span class="kp">invoice format</span><span class="kp">freelance invoice</span><span class="kp">invoice reference</span></div>
   </div>
-  <div class="ad1" role="complementary" aria-label="Advertisement">
+  <div class="ad1" id="adslot1" role="complementary" aria-label="Advertisement">
   <ins class="adsbygoogle"
-       style="display:block"
+       style="display:block;min-height:0"
        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
        data-ad-slot="REPLACE_WITH_SLOT_ID_1"
        data-ad-format="auto"
@@ -171,9 +174,9 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
   <div class="rbox" id="invres" style="flex-direction:column;align-items:flex-start;gap:6px"><span style="color:var(--ink4)">Set prefix above</span></div>
   <button id="invcpbtn" onclick="cpInv()" style="margin-top:10px;background:var(--ink);color:#fff;border:none;border-radius:8px;padding:9px 18px;font-size:13px;cursor:pointer;font-family:var(--fb)">Copy current number</button>
 </div>
-  <div class="ad2" role="complementary" aria-label="Advertisement">
+  <div class="ad2" id="adslot2" role="complementary" aria-label="Advertisement">
   <ins class="adsbygoogle"
-       style="display:block"
+       style="display:block;min-height:0"
        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
        data-ad-slot="REPLACE_WITH_SLOT_ID_2"
        data-ad-format="auto"
@@ -220,7 +223,7 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
     </div>
   </div>
   <div class="fbot">
-    <span>© 2026 WorkKits — Free tools for work &amp; life worldwide · workkits.com</span>
+    <span>© 2026 WorkKits — Free tools for work &amp; life worldwide · mymyworkkits.com</span>
     <span>No sign-up · No tracking · Works offline once loaded</span>
   </div>
 </footer>
@@ -286,7 +289,7 @@ let invCurrent='';
 function gInv(){const pfx=(document.getElementById("invp").value||"INV").trim().toUpperCase(),num=parseInt(document.getElementById("invn").value)||1001;const ids=[num,num+1,num+2].map(n=>pfx+"-"+String(n).padStart(4,"0"));invCurrent=ids[0];res("invres",ids.map((id,i)=>`<div style="font-size:${i===0?"17px":"12px"};font-weight:${i===0?"700":"400"};color:var(--ink${i===0?"":"3"})">${id}</div>`).join(""));}
 gInv();
 function cpInv(){if(!invCurrent)return;navigator.clipboard.writeText(invCurrent).then(()=>{const b=document.getElementById("invcpbtn");b.textContent="Copied!";setTimeout(()=>b.textContent="Copy current number",1500);});}
-window.addEventListener('DOMContentLoaded',initPage);</script>
+window.addEventListener("DOMContentLoaded",initPage);window.addEventListener("load",function(){setTimeout(function(){var sa=document.getElementById("stickyAd");if(sa){var ins=sa.querySelector(".adsbygoogle");if(ins&&ins.getAttribute("data-ad-status")==="filled")sa.style.display="flex";}},2000);});</script>
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 (adsbygoogle = window.adsbygoogle || []).push({});
