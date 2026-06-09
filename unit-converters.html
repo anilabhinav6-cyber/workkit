@@ -12,11 +12,11 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="apple-touch-icon" href="/apple-touch-icon.svg">
 <meta name="theme-color" content="#2563ff">
-<link rel="canonical" href="https://www.workkits.com/unit-converters.html">
+<link rel="canonical" href="https://www.mymyworkkits.com/unit-converters.html">
 <meta property="og:title" content="Unit Converter — Length, Weight, Area, Speed & Data | Free">
 <meta property="og:description" content="Convert between length (cm, inches, feet), weight (kg, lbs), area (sqft, sqm), speed (km/h, mph) and data size (MB, GB, TB). Free, instant, no sign-up.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://www.workkits.com/unit-converters.html">
+<meta property="og:url" content="https://www.mymyworkkits.com/unit-converters.html">
 <meta name="twitter:card" content="summary">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many feet are in a metre?","acceptedAnswer":{"@type":"Answer","text":"1 metre = 3.28084 feet, or approximately 3 feet 3.37 inches. Conversely, 1 foot = 0.3048 metres."}},{"@type":"Question","name":"How many sq metres is 1000 sq feet?","acceptedAnswer":{"@type":"Answer","text":"1,000 sq ft × 0.0929 = 92.9 sq metres. This is a common conversion for real estate in countries that use both systems."}},{"@type":"Question","name":"How do I convert km to miles?","acceptedAnswer":{"@type":"Answer","text":"Multiply km by 0.621371. Quick approximation: multiply by 0.6 (slightly less accurate). Example: 100 km × 0.621 = 62.1 miles."}}]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
@@ -121,6 +121,9 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
 .fbot{border-top:1px solid rgba(255,255,255,.08);padding-top:18px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:12px}
 .phero{padding:24px 0 20px}
 @media(max-width:600px){.fr{flex-direction:column;align-items:flex-start}.fr label{min-width:auto}.ftop{grid-template-columns:1fr 1fr}.fbrand{grid-column:1/-1}.sticky-ad{display:none}}
+.adsbygoogle:not([data-ad-status]){min-height:0!important;height:0!important;overflow:hidden;display:none!important}.adsbygoogle[data-ad-status="filled"]{display:block!important}
+.ad1,.ad2{min-height:0;padding:0}
+.ad1:empty,.ad2:empty{display:none}
 </style>
 </head>
 <body>
@@ -131,7 +134,7 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
     <button class="cclose" onclick="document.getElementById('currModal').classList.remove('open')">Close</button>
   </div>
 </div>
-<div class="sticky-ad" id="stickyAd" role="complementary" aria-label="Advertisement">
+<div class="sticky-ad" id="stickyAd" style="display:none" role="complementary" aria-label="Advertisement">
   <ins class="adsbygoogle"
        style="display:block;width:100%;min-height:50px"
        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
@@ -157,9 +160,9 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
     <p class="intro">Convert between common units of measurement instantly. Covers length, weight, area, speed, and data storage. Works for metric, imperial, and digital units.</p>
     <div class="kpills"><span class="kp">cm to inches</span><span class="kp">kg to lbs</span><span class="kp">sqft to sqm</span><span class="kp">km to miles</span><span class="kp">MB to GB</span><span class="kp">unit converter</span></div>
   </div>
-  <div class="ad1" role="complementary" aria-label="Advertisement">
+  <div class="ad1" id="adslot1" role="complementary" aria-label="Advertisement">
   <ins class="adsbygoogle"
-       style="display:block"
+       style="display:block;min-height:0"
        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
        data-ad-slot="REPLACE_WITH_SLOT_ID_1"
        data-ad-format="auto"
@@ -180,9 +183,9 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
   <select id="arf" onchange="cAr()"><option value="sqft">sq ft</option><option value="sqm">sq m</option><option value="sqyd">sq yards</option><option value="acre">acres</option></select></div>
   <div class="rbox" id="arres" style="flex-direction:column;align-items:flex-start;gap:3px"><span style="color:var(--ink4)">Enter value above</span></div>
 </div>
-  <div class="ad2" role="complementary" aria-label="Advertisement">
+  <div class="ad2" id="adslot2" role="complementary" aria-label="Advertisement">
   <ins class="adsbygoogle"
-       style="display:block"
+       style="display:block;min-height:0"
        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
        data-ad-slot="REPLACE_WITH_SLOT_ID_2"
        data-ad-format="auto"
@@ -221,7 +224,7 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
     </div>
   </div>
   <div class="fbot">
-    <span>© 2026 WorkKits — Free tools for work &amp; life worldwide · workkits.com</span>
+    <span>© 2026 WorkKits — Free tools for work &amp; life worldwide · mymyworkkits.com</span>
     <span>No sign-up · No tracking · Works offline once loaded</span>
   </div>
 </footer>
@@ -286,7 +289,7 @@ function initPage(){
 function cLen(){const v=parseFloat(document.getElementById("lv").value),fr=document.getElementById("lf").value;if(isNaN(v)){res("lres","<span style='color:var(--ink4)'>Enter value</span>");return;}let m;if(fr==="cm")m=v/100;else if(fr==="in")m=v*0.0254;else if(fr==="ft")m=v*0.3048;else if(fr==="km")m=v*1000;else if(fr==="mi")m=v*1609.34;else m=v;res("lres",`<div><strong>${f(m*100)} cm</strong> &nbsp;·&nbsp; <strong>${f(m/0.0254)} in</strong> &nbsp;·&nbsp; <strong>${f(m/0.3048)} ft</strong></div><div style="font-size:12px;color:var(--ink4)">${f(m)} m &nbsp;·&nbsp; ${f(m/1000)} km &nbsp;·&nbsp; ${f(m/1609.34)} mi</div>`);}
 function cWt(){const v=parseFloat(document.getElementById("wv").value),fr=document.getElementById("wf").value;if(isNaN(v)){res("wres","<span style='color:var(--ink4)'>Enter value</span>");return;}let kg;if(fr==="kg")kg=v;else if(fr==="lb")kg=v*0.453592;else if(fr==="g")kg=v/1000;else if(fr==="oz")kg=v*0.0283495;else kg=v*6.35029;res("wres",`<div><strong>${f(kg)} kg</strong> &nbsp;·&nbsp; <strong>${f(kg*2.20462)} lb</strong> &nbsp;·&nbsp; <strong>${f(kg/6.35029,2)} stone</strong></div>`);}
 function cAr(){const v=parseFloat(document.getElementById("arv").value),fr=document.getElementById("arf").value;if(isNaN(v)){res("arres","<span style='color:var(--ink4)'>Enter value</span>");return;}let sqm;if(fr==="sqft")sqm=v*0.0929;else if(fr==="sqm")sqm=v;else if(fr==="sqyd")sqm=v*0.8361;else sqm=v*4046.86;res("arres",`<div><strong>${f(sqm)} sqm</strong> &nbsp;·&nbsp; <strong>${f(sqm/0.0929)} sqft</strong></div><div style="font-size:12px;color:var(--ink4)">${f(sqm/0.8361)} sq yards &nbsp;·&nbsp; ${f(sqm/4046.86,4)} acres</div>`);}
-window.addEventListener('DOMContentLoaded',initPage);</script>
+window.addEventListener("DOMContentLoaded",initPage);window.addEventListener("load",function(){setTimeout(function(){var sa=document.getElementById("stickyAd");if(sa){var ins=sa.querySelector(".adsbygoogle");if(ins&&ins.getAttribute("data-ad-status")==="filled")sa.style.display="flex";}},2000);});</script>
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 (adsbygoogle = window.adsbygoogle || []).push({});
