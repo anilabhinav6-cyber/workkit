@@ -12,11 +12,11 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="apple-touch-icon" href="/apple-touch-icon.svg">
 <meta name="theme-color" content="#2563ff">
-<link rel="canonical" href="https://www.workkits.com/compound-interest.html">
+<link rel="canonical" href="https://www.mymyworkkits.com/compound-interest.html">
 <meta property="og:title" content="Compound Interest Calculator — Savings & Investment Growth | Free">
 <meta property="og:description" content="Calculate how savings or investments grow with compound interest over time. Works for any principal, rate, and time period.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://www.workkits.com/compound-interest.html">
+<meta property="og:url" content="https://www.mymyworkkits.com/compound-interest.html">
 <meta name="twitter:card" content="summary">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is compound interest vs simple interest?","acceptedAnswer":{"@type":"Answer","text":"Simple interest = Principal × rate × time. Compound interest reinvests the earnings each period. At 10% for 10 years: simple interest = 100% gain; compound interest = 159% gain."}},{"@type":"Question","name":"How often is interest compounded?","acceptedAnswer":{"@type":"Answer","text":"Frequency varies by product. Savings accounts: daily or monthly. Fixed deposits: quarterly. Mutual funds: effectively daily. More frequent compounding gives slightly higher returns."}},{"@type":"Question","name":"What is the Rule of 72?","acceptedAnswer":{"@type":"Answer","text":"Divide 72 by the annual interest rate to estimate how many years to double your money. At 7% p.a.: 72 ÷ 7 ≈ 10.3 years to double. At 10%: about 7.2 years."}}]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
@@ -121,6 +121,9 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
 .fbot{border-top:1px solid rgba(255,255,255,.08);padding-top:18px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:12px}
 .phero{padding:24px 0 20px}
 @media(max-width:600px){.fr{flex-direction:column;align-items:flex-start}.fr label{min-width:auto}.ftop{grid-template-columns:1fr 1fr}.fbrand{grid-column:1/-1}.sticky-ad{display:none}}
+.adsbygoogle:not([data-ad-status]){min-height:0!important;height:0!important;overflow:hidden;display:none!important}.adsbygoogle[data-ad-status="filled"]{display:block!important}
+.ad1,.ad2{min-height:0;padding:0}
+.ad1:empty,.ad2:empty{display:none}
 </style>
 </head>
 <body>
@@ -131,7 +134,7 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
     <button class="cclose" onclick="document.getElementById('currModal').classList.remove('open')">Close</button>
   </div>
 </div>
-<div class="sticky-ad" id="stickyAd" role="complementary" aria-label="Advertisement">
+<div class="sticky-ad" id="stickyAd" style="display:none" role="complementary" aria-label="Advertisement">
   <ins class="adsbygoogle"
        style="display:block;width:100%;min-height:50px"
        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
@@ -157,9 +160,9 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
     <p class="intro">See how your savings or investments grow with compound interest over any time period. Works for savings accounts, fixed deposits, mutual funds, and any compound growth scenario.</p>
     <div class="kpills"><span class="kp">compound interest</span><span class="kp">savings calculator</span><span class="kp">investment growth</span><span class="kp">fixed deposit</span><span class="kp">wealth calculator</span></div>
   </div>
-  <div class="ad1" role="complementary" aria-label="Advertisement">
+  <div class="ad1" id="adslot1" role="complementary" aria-label="Advertisement">
   <ins class="adsbygoogle"
-       style="display:block"
+       style="display:block;min-height:0"
        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
        data-ad-slot="REPLACE_WITH_SLOT_ID_1"
        data-ad-format="auto"
@@ -171,9 +174,9 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
   <div class="fr"><label>Years</label><input type="number" id="ci_y" placeholder="e.g. 10" oninput="cCI()"></div>
   <div class="rbox" id="ci_res"><span style="color:var(--ink4)">Enter details above</span></div>
 </div>
-  <div class="ad2" role="complementary" aria-label="Advertisement">
+  <div class="ad2" id="adslot2" role="complementary" aria-label="Advertisement">
   <ins class="adsbygoogle"
-       style="display:block"
+       style="display:block;min-height:0"
        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
        data-ad-slot="REPLACE_WITH_SLOT_ID_2"
        data-ad-format="auto"
@@ -214,7 +217,7 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
     </div>
   </div>
   <div class="fbot">
-    <span>© 2026 WorkKits — Free tools for work &amp; life worldwide · workkits.com</span>
+    <span>© 2026 WorkKits — Free tools for work &amp; life worldwide · mymyworkkits.com</span>
     <span>No sign-up · No tracking · Works offline once loaded</span>
   </div>
 </footer>
@@ -277,7 +280,7 @@ function initPage(){
 }
 
 function cCI(){const p=parseFloat(document.getElementById("ci_p").value),r=parseFloat(document.getElementById("ci_r").value),y=parseFloat(document.getElementById("ci_y").value);if(isNaN(p)||isNaN(r)||isNaN(y)){res("ci_res","<span style='color:var(--ink4)'>Enter details</span>");return;}const tot=p*Math.pow(1+r/100,y),int=tot-p;res("ci_res",`<span>Final value</span><strong>${fc(f(tot))}</strong><span class="u">Interest earned ${fc(f(int))}</span>`);}
-window.addEventListener('DOMContentLoaded',initPage);</script>
+window.addEventListener("DOMContentLoaded",initPage);window.addEventListener("load",function(){setTimeout(function(){var sa=document.getElementById("stickyAd");if(sa){var ins=sa.querySelector(".adsbygoogle");if(ins&&ins.getAttribute("data-ad-status")==="filled")sa.style.display="flex";}},2000);});</script>
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 (adsbygoogle = window.adsbygoogle || []).push({});
