@@ -12,11 +12,11 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="apple-touch-icon" href="/apple-touch-icon.svg">
 <meta name="theme-color" content="#2563ff">
-<link rel="canonical" href="https://www.workkits.com/salary-calculator.html">
+<link rel="canonical" href="https://www.mymyworkkits.com/salary-calculator.html">
 <meta property="og:title" content="Salary Calculator — Monthly to Daily & Hourly Rate | Free">
 <meta property="og:description" content="Convert any monthly salary to daily and hourly rate instantly. Works for any currency — USD, GBP, AED, INR, EUR. No sign-up needed.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://www.workkits.com/salary-calculator.html">
+<meta property="og:url" content="https://www.mymyworkkits.com/salary-calculator.html">
 <meta name="twitter:card" content="summary">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I convert monthly salary to hourly rate?","acceptedAnswer":{"@type":"Answer","text":"Divide monthly salary by working days per month (21.67 for 5-day week), then by 8 hours. Example: $5,000 ÷ 21.67 ÷ 8 = approximately $28.85 per hour."}},{"@type":"Question","name":"How many working days are in a month?","acceptedAnswer":{"@type":"Answer","text":"On average 21.67 working days for a 5-day week (260 days ÷ 12 months). Individual months vary from 20 to 23 depending on weekends and public holidays."}},{"@type":"Question","name":"How do I calculate my annual salary?","acceptedAnswer":{"@type":"Answer","text":"Multiply monthly gross salary by 12. If you receive a 13th-month bonus (common in UAE, Philippines, and parts of Europe), multiply by 13 for total annual pay."}},{"@type":"Question","name":"What is a day rate and how is it calculated?","acceptedAnswer":{"@type":"Answer","text":"A day rate is your daily pay. Calculated as: monthly salary ÷ (working days per week × 52 ÷ 12). Freelancers and contractors often quote day rates to clients."}},{"@type":"Question","name":"Is salary calculated on 30 days or working days?","acceptedAnswer":{"@type":"Answer","text":"Depends on the country and contract. UAE labour law typically uses 30 days for leave and some calculations. For actual day rate calculations, working days are used."}}]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
@@ -121,6 +121,9 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
 .fbot{border-top:1px solid rgba(255,255,255,.08);padding-top:18px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:12px}
 .phero{padding:24px 0 20px}
 @media(max-width:600px){.fr{flex-direction:column;align-items:flex-start}.fr label{min-width:auto}.ftop{grid-template-columns:1fr 1fr}.fbrand{grid-column:1/-1}.sticky-ad{display:none}}
+.adsbygoogle:not([data-ad-status]){min-height:0!important;height:0!important;overflow:hidden;display:none!important}.adsbygoogle[data-ad-status="filled"]{display:block!important}
+.ad1,.ad2{min-height:0;padding:0}
+.ad1:empty,.ad2:empty{display:none}
 </style>
 </head>
 <body>
@@ -131,7 +134,7 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
     <button class="cclose" onclick="document.getElementById('currModal').classList.remove('open')">Close</button>
   </div>
 </div>
-<div class="sticky-ad" id="stickyAd" role="complementary" aria-label="Advertisement">
+<div class="sticky-ad" id="stickyAd" style="display:none" role="complementary" aria-label="Advertisement">
   <ins class="adsbygoogle"
        style="display:block;width:100%;min-height:50px"
        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
@@ -157,9 +160,9 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
     <p class="intro">Convert any monthly salary to daily, hourly and annual rate instantly. Works for any currency worldwide — USD, GBP, AED, INR, EUR, AUD and more.</p>
     <div class="kpills"><span class="kp">salary calculator</span><span class="kp">monthly to hourly</span><span class="kp">daily rate calculator</span><span class="kp">annual salary</span><span class="kp">hourly wage</span><span class="kp">pay rate converter</span></div>
   </div>
-  <div class="ad1" role="complementary" aria-label="Advertisement">
+  <div class="ad1" id="adslot1" role="complementary" aria-label="Advertisement">
   <ins class="adsbygoogle"
-       style="display:block"
+       style="display:block;min-height:0"
        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
        data-ad-slot="REPLACE_WITH_SLOT_ID_1"
        data-ad-format="auto"
@@ -173,9 +176,9 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
   </div>
   <div class="rbox" id="sres" style="flex-direction:column;align-items:flex-start;gap:4px"><span style="color:var(--ink4)">Enter monthly salary above</span></div>
 </div>
-  <div class="ad2" role="complementary" aria-label="Advertisement">
+  <div class="ad2" id="adslot2" role="complementary" aria-label="Advertisement">
   <ins class="adsbygoogle"
-       style="display:block"
+       style="display:block;min-height:0"
        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
        data-ad-slot="REPLACE_WITH_SLOT_ID_2"
        data-ad-format="auto"
@@ -220,7 +223,7 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
     </div>
   </div>
   <div class="fbot">
-    <span>© 2026 WorkKits — Free tools for work &amp; life worldwide · workkits.com</span>
+    <span>© 2026 WorkKits — Free tools for work &amp; life worldwide · mymyworkkits.com</span>
     <span>No sign-up · No tracking · Works offline once loaded</span>
   </div>
 </footer>
@@ -286,7 +289,7 @@ function cS(){const m=parseFloat(document.getElementById('sm').value),d=parseInt
   if(isNaN(m)){res('sres','<span style="color:var(--ink4)">Enter salary</span>');return;}
   const ann=m*12,day=m/(d*52/12),hr=day/8;
   res('sres',`<div style="font-size:12px;color:var(--ink4)">Annual</div><strong>${fc(Math.round(ann))}</strong><div style="font-size:12px;color:var(--ink4);margin-top:4px">Per day &nbsp;·&nbsp; Per hour</div><div style="font-size:16px;font-weight:700;font-family:var(--ff)">${fc(day)} &nbsp;·&nbsp; ${fc(hr)}</div>`);}
-window.addEventListener('DOMContentLoaded',initPage);</script>
+window.addEventListener("DOMContentLoaded",initPage);window.addEventListener("load",function(){setTimeout(function(){var sa=document.getElementById("stickyAd");if(sa){var ins=sa.querySelector(".adsbygoogle");if(ins&&ins.getAttribute("data-ad-status")==="filled")sa.style.display="flex";}},2000);});</script>
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 (adsbygoogle = window.adsbygoogle || []).push({});
