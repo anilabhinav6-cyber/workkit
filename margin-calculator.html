@@ -12,11 +12,11 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="apple-touch-icon" href="/apple-touch-icon.svg">
 <meta name="theme-color" content="#2563ff">
-<link rel="canonical" href="https://www.workkits.com/margin-calculator.html">
+<link rel="canonical" href="https://www.mymyworkkits.com/margin-calculator.html">
 <meta property="og:title" content="Profit Margin & Markup Calculator — Free Online Tool">
 <meta property="og:description" content="Calculate gross profit margin and markup percentage from cost and selling price. Essential for pricing products and evaluating business profitability.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://www.workkits.com/margin-calculator.html">
+<meta property="og:url" content="https://www.mymyworkkits.com/margin-calculator.html">
 <meta name="twitter:card" content="summary">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a good profit margin?","acceptedAnswer":{"@type":"Answer","text":"Depends on industry. Retail: 20–50%. SaaS software: 70–80%. Restaurants: 3–9%. Manufacturing: 5–20%. Compare to your industry benchmark rather than a universal standard."}},{"@type":"Question","name":"How do I find the selling price given a desired margin?","acceptedAnswer":{"@type":"Answer","text":"Formula: Selling price = Cost ÷ (1 − Margin). For a 30% margin on a £70 cost item: £70 ÷ 0.70 = £100 selling price."}},{"@type":"Question","name":"What markup gives me a 40% margin?","acceptedAnswer":{"@type":"Answer","text":"Formula: Markup = Margin ÷ (1 − Margin) = 0.40 ÷ 0.60 = 66.7% markup."}}]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
@@ -121,6 +121,9 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
 .fbot{border-top:1px solid rgba(255,255,255,.08);padding-top:18px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:12px}
 .phero{padding:24px 0 20px}
 @media(max-width:600px){.fr{flex-direction:column;align-items:flex-start}.fr label{min-width:auto}.ftop{grid-template-columns:1fr 1fr}.fbrand{grid-column:1/-1}.sticky-ad{display:none}}
+.adsbygoogle:not([data-ad-status]){min-height:0!important;height:0!important;overflow:hidden;display:none!important}.adsbygoogle[data-ad-status="filled"]{display:block!important}
+.ad1,.ad2{min-height:0;padding:0}
+.ad1:empty,.ad2:empty{display:none}
 </style>
 </head>
 <body>
@@ -131,7 +134,7 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
     <button class="cclose" onclick="document.getElementById('currModal').classList.remove('open')">Close</button>
   </div>
 </div>
-<div class="sticky-ad" id="stickyAd" role="complementary" aria-label="Advertisement">
+<div class="sticky-ad" id="stickyAd" style="display:none" role="complementary" aria-label="Advertisement">
   <ins class="adsbygoogle"
        style="display:block;width:100%;min-height:50px"
        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
@@ -157,9 +160,9 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
     <p class="intro">Calculate gross profit margin % and markup % from cost and selling price. Essential for pricing decisions, wholesale rates, and evaluating profitability.</p>
     <div class="kpills"><span class="kp">profit margin calculator</span><span class="kp">markup calculator</span><span class="kp">gross margin</span><span class="kp">retail pricing</span><span class="kp">business profit</span></div>
   </div>
-  <div class="ad1" role="complementary" aria-label="Advertisement">
+  <div class="ad1" id="adslot1" role="complementary" aria-label="Advertisement">
   <ins class="adsbygoogle"
-       style="display:block"
+       style="display:block;min-height:0"
        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
        data-ad-slot="REPLACE_WITH_SLOT_ID_1"
        data-ad-format="auto"
@@ -170,9 +173,9 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
   <div class="fr"><label>Selling price <span class="csym"></span></label><input type="number" id="ms" placeholder="e.g. 120" oninput="cM()"></div>
   <div class="rbox" id="mres" style="flex-direction:column;align-items:flex-start;gap:4px"><span style="color:var(--ink4)">Enter prices above</span></div>
 </div>
-  <div class="ad2" role="complementary" aria-label="Advertisement">
+  <div class="ad2" id="adslot2" role="complementary" aria-label="Advertisement">
   <ins class="adsbygoogle"
-       style="display:block"
+       style="display:block;min-height:0"
        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
        data-ad-slot="REPLACE_WITH_SLOT_ID_2"
        data-ad-format="auto"
@@ -214,7 +217,7 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
     </div>
   </div>
   <div class="fbot">
-    <span>© 2026 WorkKits — Free tools for work &amp; life worldwide · workkits.com</span>
+    <span>© 2026 WorkKits — Free tools for work &amp; life worldwide · mymyworkkits.com</span>
     <span>No sign-up · No tracking · Works offline once loaded</span>
   </div>
 </footer>
@@ -277,7 +280,7 @@ function initPage(){
 }
 
 function cM(){const c=parseFloat(document.getElementById("mc").value),s=parseFloat(document.getElementById("ms").value);if(isNaN(c)||isNaN(s)){res("mres","<span style='color:var(--ink4)'>Enter prices above</span>");return;}const p=s-c,mg=p/s*100,mu=p/c*100;res("mres",`<div>Profit <strong>${fc(f(p))}</strong></div><div style="font-size:13px">Margin <strong>${f(mg)}%</strong> &nbsp;·&nbsp; Markup <strong>${f(mu)}%</strong></div>`);}
-window.addEventListener('DOMContentLoaded',initPage);</script>
+window.addEventListener("DOMContentLoaded",initPage);window.addEventListener("load",function(){setTimeout(function(){var sa=document.getElementById("stickyAd");if(sa){var ins=sa.querySelector(".adsbygoogle");if(ins&&ins.getAttribute("data-ad-status")==="filled")sa.style.display="flex";}},2000);});</script>
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 (adsbygoogle = window.adsbygoogle || []).push({});
