@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Pomodoro Timer — Focus & Productivity Timer | MyWorkKits</title>
+<meta name="description" content="Free online Pomodoro timer. 25-minute focus sessions with short and long breaks. Boost productivity at work. No sign-up needed.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.myworkkits.com/pomodoro-timer.html">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4G7CH7PCCF"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4G7CH7PCCF');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0c0c0e;--ink3:#44444f;--ink4:#888896;--w:#fff;--surf:#f4f3f0;--surf2:#eae9e5;--acc:#2563ff;--accl:#dbeafe;--accd:#1d4ed8;--green:#059669;--gl:#d1fae5;--bdr:rgba(12,12,14,0.08);--ff:'Bricolage Grotesque',sans-serif;--fb:'Instrument Sans',sans-serif}
+html{-webkit-font-smoothing:antialiased}
+body{font-family:var(--fb);background:var(--surf);color:var(--ink);font-size:15px;line-height:1.7;min-height:100vh}
+.page{max-width:700px;margin:0 auto;padding:20px 5% 80px}
+.ptag{display:inline-flex;align-items:center;background:var(--accl);color:var(--accd);border-radius:99px;padding:3px 12px;font-size:11px;font-weight:600;margin-bottom:10px;text-transform:uppercase;letter-spacing:.04em}
+h1{font-family:var(--ff);font-size:clamp(24px,4vw,38px);font-weight:800;line-height:1.1;letter-spacing:-.02em;margin-bottom:8px}
+.intro{font-size:15px;color:var(--ink3);margin-bottom:20px}
+.box{background:var(--w);border:1px solid var(--bdr);border-radius:14px;padding:24px;margin-bottom:16px}
+.box h2{font-family:var(--ff);font-size:17px;font-weight:700;margin-bottom:16px}
+.fr{display:flex;gap:8px;align-items:center;margin-bottom:10px}
+.fr label{font-size:12px;font-weight:500;color:var(--ink3);min-width:140px;flex-shrink:0}
+input,select,textarea{flex:1;border:1.5px solid var(--bdr);border-radius:8px;padding:9px 11px;font-size:14px;font-family:var(--fb);color:var(--ink);background:var(--surf);outline:none;transition:border-color .15s;min-width:0}
+input:focus,select:focus,textarea:focus{border-color:var(--acc);background:var(--w)}
+.rbox{background:var(--surf);border:1px solid var(--bdr);border-radius:10px;padding:12px 16px;min-height:48px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:4px}
+.rbox strong{font-size:20px;font-weight:800;font-family:var(--ff)}
+.rbox .u{font-size:12px;color:var(--ink4)}
+.mrow{display:flex;gap:6px;margin-bottom:10px}
+.mb{flex:1;padding:7px 8px;border-radius:7px;border:1.5px solid var(--bdr);background:var(--surf);color:var(--ink3);font-size:12px;font-weight:500;cursor:pointer;font-family:var(--fb);text-align:center;transition:all .15s}
+.mb.on{background:var(--acc);color:#fff;border-color:var(--acc)}
+.btn{background:var(--acc);color:#fff;border:none;border-radius:9px;padding:11px 24px;font-size:14px;font-weight:500;cursor:pointer;font-family:var(--fb);transition:all .15s}
+.btn:hover{background:var(--accd)}
+.cpbtn{background:none;border:1px solid var(--bdr);border-radius:6px;padding:4px 10px;font-size:11px;color:var(--ink4);cursor:pointer;font-family:var(--fb)}
+</style>
+</head>
+<body>
+<nav style="background:rgba(255,255,255,.97);border-bottom:1px solid rgba(12,12,14,0.08);height:56px;padding:0 4%;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;backdrop-filter:blur(14px)">
+  <a style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:19px;color:#0c0c0e;text-decoration:none;display:flex;align-items:center;gap:7px" href="/index.html">
+    <span style="width:26px;height:26px;background:#2563ff;border-radius:7px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:800">W</span>MyWorkKits
+  </a>
+  <a style="font-size:13px;color:#2563ff;text-decoration:none;font-weight:500" href="/index.html">← All tools</a>
+</nav>
+<main class="page">
+  <div class="ptag">🍅 Productivity</div>
+  <h1>Pomodoro Timer</h1>
+  <p class="intro">Stay focused with the Pomodoro technique. 25 minutes of focused work, then a short break. Proven to boost productivity.</p>
+  <div class="box" style="text-align:center">
+  <h2>Focus timer</h2>
+  <div class="mrow">
+    <button class="mb on" onclick="setMode(this,25,5,'Focus')" id="mFocus">🎯 Focus (25m)</button>
+    <button class="mb" onclick="setMode(this,5,0,'Short Break')" id="mShort">☕ Short break (5m)</button>
+    <button class="mb" onclick="setMode(this,15,0,'Long Break')" id="mLong">🛋️ Long break (15m)</button>
+  </div>
+  <div style="font-size:80px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;color:var(--ink);letter-spacing:-.02em;margin:20px 0;line-height:1" id="timerDisp">25:00</div>
+  <div style="font-size:14px;color:var(--ink4);margin-bottom:20px" id="timerLabel">Ready to focus</div>
+  <div style="display:flex;gap:10px;justify-content:center;margin-bottom:16px">
+    <button class="btn" onclick="startStop()" id="startBtn" style="padding:13px 40px;font-size:16px">▶ Start</button>
+    <button class="btn" onclick="resetTimer()" style="background:var(--surf2);color:var(--ink);padding:13px 20px">↺ Reset</button>
+  </div>
+  <div style="font-size:13px;color:var(--ink4)" id="sessCount">Sessions completed: 0</div>
+</div>
+</main>
+<footer style="background:#1e1e24;color:rgba(255,255,255,.5);font-size:13px;padding:32px 4% 24px;margin-top:40px">
+  <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:12px">
+    <span>© 2026 MyWorkKits · www.myworkkits.com</span>
+    <span>No sign-up · No tracking · Free forever</span>
+  </div>
+</footer>
+<script>let dur=25*60,remaining=25*60,running=false,timer=null,sessions=0,modeName='Focus';
+function setMode(btn,mins,_,name){
+  clearInterval(timer);running=false;
+  modeName=name;dur=mins*60;remaining=dur;
+  document.querySelectorAll('.mb').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  document.getElementById('startBtn').textContent='▶ Start';
+  updDisp();
+  document.getElementById('timerLabel').textContent='Ready: '+name;
+}
+function updDisp(){
+  const m=Math.floor(remaining/60),s=remaining%60;
+  document.getElementById('timerDisp').textContent=String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
+}
+function startStop(){
+  if(running){clearInterval(timer);running=false;document.getElementById('startBtn').textContent='▶ Resume';}
+  else{
+    running=true;
+    document.getElementById('startBtn').textContent='⏸ Pause';
+    document.getElementById('timerLabel').textContent=modeName+' in progress…';
+    timer=setInterval(()=>{
+      remaining--;updDisp();
+      if(remaining<=0){
+        clearInterval(timer);running=false;
+        if(modeName==='Focus'){sessions++;document.getElementById('sessCount').textContent='Sessions completed: '+sessions;}
+        document.getElementById('startBtn').textContent='▶ Start';
+        document.getElementById('timerLabel').textContent='✓ '+modeName+' complete!';
+        try{new Audio('data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAA...').play();}catch(e){}
+        alert(modeName+' complete! '+(modeName==='Focus'?'Time for a break!':'Back to work!'));
+      }
+    },1000);
+  }
+}
+function resetTimer(){clearInterval(timer);running=false;remaining=dur;updDisp();document.getElementById('startBtn').textContent='▶ Start';document.getElementById('timerLabel').textContent='Ready: '+modeName;}</script>
+</body>
+</html>
