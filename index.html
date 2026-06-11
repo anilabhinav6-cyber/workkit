@@ -817,6 +817,56 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
   </div>
 </div>
 
+
+<!-- IMAGE TO PDF -->
+<div class="tcard tb-red" data-cat="convert" data-name="image to pdf jpg png photo convert combine">
+  <div class="tc-head" onclick="togTool(this)">
+    <div class="tc-icon">🖼️</div>
+    <div><div class="tc-name">Image to PDF</div><div class="tc-desc">JPG/PNG → one PDF</div></div>
+    <button class="tc-x" onclick="event.stopPropagation();closeTool(this)">×</button>
+  </div>
+  <div class="tpanel">
+    <input type="file" id="i2pFiles" accept="image/*" multiple onchange="i2pPick()" style="width:100%;padding:14px;border:1.5px dashed var(--bdr);border-radius:9px;background:var(--surf);cursor:pointer;font-size:12px">
+    <div id="i2pList" style="font-size:12px;color:var(--ink4);margin:8px 0"></div>
+    <div class="fr"><label>Page size</label><select id="i2pSize"><option value="a4">A4 (fit image)</option><option value="img">Match image size</option></select></div>
+    <button class="btn" style="width:100%" onclick="makeImgPDF(this)" id="i2pBtn" disabled>⬇ Create PDF</button>
+    <p style="font-size:10px;color:var(--ink4);margin-top:6px;text-align:center">🔒 100% private — files never leave your browser</p>
+  </div>
+</div>
+
+<!-- IMAGE COMPRESSOR -->
+<div class="tcard tb-green" data-cat="convert" data-name="image compressor resize jpg png webp convert reduce size">
+  <div class="tc-head" onclick="togTool(this)">
+    <div class="tc-icon">🗜️</div>
+    <div><div class="tc-name">Image Compressor</div><div class="tc-desc">Compress &amp; convert JPG/PNG/WebP</div></div>
+    <button class="tc-x" onclick="event.stopPropagation();closeTool(this)">×</button>
+  </div>
+  <div class="tpanel">
+    <input type="file" id="icFile" accept="image/*" onchange="icPick()" style="width:100%;padding:14px;border:1.5px dashed var(--bdr);border-radius:9px;background:var(--surf);cursor:pointer;font-size:12px">
+    <div id="icInfo" style="font-size:12px;color:var(--ink4);margin:8px 0"></div>
+    <div class="fr"><label>Quality: <span id="icQv">80</span>%</label><input type="range" id="icQ" min="10" max="100" value="80" oninput="document.getElementById('icQv').textContent=this.value" style="flex:1"></div>
+    <div class="fr"><label>Output format</label><select id="icFmt"><option value="image/jpeg">JPG</option><option value="image/webp">WebP (smallest)</option><option value="image/png">PNG</option></select></div>
+    <div class="fr"><label>Max width (px)</label><input type="number" id="icW" placeholder="leave empty = original"></div>
+    <button class="btn bg" style="width:100%" onclick="compressImg(this)" id="icBtn" disabled>⬇ Compress &amp; Download</button>
+    <div id="icResult" style="font-size:12px;margin-top:8px"></div>
+  </div>
+</div>
+
+<!-- MERGE PDF -->
+<div class="tcard tb-purple" data-cat="convert" data-name="merge pdf combine join files documents">
+  <div class="tc-head" onclick="togTool(this)">
+    <div class="tc-icon">📎</div>
+    <div><div class="tc-name">Merge PDF</div><div class="tc-desc">Combine PDFs into one</div></div>
+    <button class="tc-x" onclick="event.stopPropagation();closeTool(this)">×</button>
+  </div>
+  <div class="tpanel">
+    <input type="file" id="mpFiles" accept="application/pdf" multiple onchange="mpPick()" style="width:100%;padding:14px;border:1.5px dashed var(--bdr);border-radius:9px;background:var(--surf);cursor:pointer;font-size:12px">
+    <div id="mpList" style="font-size:12px;color:var(--ink4);margin:8px 0"></div>
+    <button class="btn" style="width:100%" onclick="mergePDFs(this)" id="mpBtn" disabled>⬇ Merge &amp; Download</button>
+    <p style="font-size:10px;color:var(--ink4);margin-top:6px;text-align:center">🔒 100% private — files never leave your browser</p>
+  </div>
+</div>
+
 <!-- READING TIME -->
 <div class="tcard tb-purple" data-cat="work" data-name="reading time estimate text article">
   <div class="tc-head" onclick="togTool(this)">
@@ -889,6 +939,9 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
       <a href="/retirement-calculator.html">Retirement</a>
       <a href="/countdown-timer.html">Countdown timer</a>
       <a href="/timezone-converter.html">Time zones</a>
+      <a href="/image-to-pdf.html">Image to PDF</a>
+      <a href="/image-compressor.html">Image compressor</a>
+      <a href="/merge-pdf.html">Merge PDF</a>
     </div>
   </div>
   <div class="fbot">
@@ -1115,6 +1168,117 @@ const LP=['Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusm
 let liT='';
 function genLI(){const n=Math.min(parseInt(document.getElementById('liN').value)||3,10);let out=[];for(let i=0;i<n;i++)out.push(LP[i%LP.length]);liT=out.join('\n\n');res('lires',out.map(p=>`<p style="margin-bottom:6px">${p}</p>`).join(''));}
 function cpLI(btn){if(liT)navigator.clipboard.writeText(liT).then(()=>{btn.textContent='✓ Copied';setTimeout(()=>btn.textContent='Copy text',1400);});}
+
+
+// ═══ FILE TOOLS (lazy-loaded libs) ═══
+function loadLib(url,check,cb){
+  if(check())return cb();
+  const s=document.createElement('script');s.src=url;s.onload=cb;document.head.appendChild(s);
+}
+// IMAGE TO PDF
+let i2pImgs=[];
+function i2pPick(){
+  const files=[...document.getElementById('i2pFiles').files];
+  i2pImgs=files;
+  document.getElementById('i2pList').textContent=files.length?files.length+' image(s): '+files.map(f=>f.name).join(', ').slice(0,90):'';
+  document.getElementById('i2pBtn').disabled=!files.length;
+}
+function makeImgPDF(btn){
+  btn.textContent='⏳ Working…';
+  loadLib('https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js',()=>window.jspdf,async()=>{
+    const {jsPDF}=window.jspdf;
+    const mode=document.getElementById('i2pSize').value;
+    let doc=null;
+    for(const file of i2pImgs){
+      const dataUrl=await new Promise(r=>{const fr=new FileReader();fr.onload=()=>r(fr.result);fr.readAsDataURL(file);});
+      const img=await new Promise(r=>{const im=new Image();im.onload=()=>r(im);im.src=dataUrl;});
+      if(mode==='img'){
+        const w=img.width*0.264583,h=img.height*0.264583;
+        if(!doc)doc=new jsPDF({orientation:w>h?'l':'p',unit:'mm',format:[w,h]});
+        else doc.addPage([w,h],w>h?'l':'p');
+        doc.addImage(dataUrl,'JPEG',0,0,w,h);
+      }else{
+        if(!doc)doc=new jsPDF();else doc.addPage();
+        const pw=doc.internal.pageSize.getWidth()-20,ph=doc.internal.pageSize.getHeight()-20;
+        const scale=Math.min(pw/img.width,ph/img.height);
+        const w=img.width*scale,h=img.height*scale;
+        doc.addImage(dataUrl,'JPEG',(doc.internal.pageSize.getWidth()-w)/2,(doc.internal.pageSize.getHeight()-h)/2,w,h);
+      }
+    }
+    doc.save('images-myworkkits.pdf');
+    btn.textContent='⬇ Create PDF';
+  });
+}
+// IMAGE COMPRESSOR
+let icF=null;
+function icPick(){
+  icF=document.getElementById('icFile').files[0]||null;
+  document.getElementById('icInfo').textContent=icF?icF.name+' — '+(icF.size/1024).toFixed(0)+' KB original':'';
+  document.getElementById('icBtn').disabled=!icF;
+  document.getElementById('icResult').textContent='';
+}
+function compressImg(btn){
+  if(!icF)return;btn.textContent='⏳ Compressing…';
+  const q=parseInt(document.getElementById('icQ').value)/100;
+  const fmt=document.getElementById('icFmt').value;
+  const maxW=parseInt(document.getElementById('icW').value)||0;
+  const fr=new FileReader();
+  fr.onload=()=>{
+    const img=new Image();
+    img.onload=()=>{
+      let w=img.width,h=img.height;
+      if(maxW&&w>maxW){h=h*maxW/w;w=maxW;}
+      const c=document.createElement('canvas');c.width=w;c.height=h;
+      const ctx=c.getContext('2d');
+      if(fmt==='image/jpeg'){ctx.fillStyle='#fff';ctx.fillRect(0,0,w,h);}
+      ctx.drawImage(img,0,0,w,h);
+      c.toBlob(blob=>{
+        const ext=fmt==='image/jpeg'?'jpg':fmt==='image/webp'?'webp':'png';
+        const a=document.createElement('a');
+        a.download='compressed-myworkkits.'+ext;
+        a.href=URL.createObjectURL(blob);
+        a.click();
+        const saved=(1-blob.size/icF.size)*100;
+        document.getElementById('icResult').innerHTML='✓ Done: <strong>'+(blob.size/1024).toFixed(0)+' KB</strong>'+(saved>0?' <span style="color:var(--green);font-weight:600">('+saved.toFixed(0)+'% smaller)</span>':'');
+        btn.textContent='⬇ Compress & Download';
+      },fmt,q);
+    };
+    img.src=fr.result;
+  };
+  fr.readAsDataURL(icF);
+}
+// MERGE PDF
+let mpF=[];
+function mpPick(){
+  mpF=[...document.getElementById('mpFiles').files];
+  document.getElementById('mpList').textContent=mpF.length?mpF.length+' PDF(s): '+mpF.map(f=>f.name).join(', ').slice(0,90):'';
+  document.getElementById('mpBtn').disabled=mpF.length<2;
+  if(mpF.length===1)document.getElementById('mpList').textContent+=' — select at least 2 PDFs';
+}
+function mergePDFs(btn){
+  btn.textContent='⏳ Merging…';
+  loadLib('https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js',()=>window.PDFLib,async()=>{
+    try{
+      const {PDFDocument}=window.PDFLib;
+      const out=await PDFDocument.create();
+      for(const f of mpF){
+        const bytes=await f.arrayBuffer();
+        const src=await PDFDocument.load(bytes,{ignoreEncryption:true});
+        const pages=await out.copyPages(src,src.getPageIndices());
+        pages.forEach(p=>out.addPage(p));
+      }
+      const blob=new Blob([await out.save()],{type:'application/pdf'});
+      const a=document.createElement('a');
+      a.download='merged-myworkkits.pdf';
+      a.href=URL.createObjectURL(blob);
+      a.click();
+      btn.textContent='⬇ Merge & Download';
+    }catch(e){
+      btn.textContent='⬇ Merge & Download';
+      alert('One of the PDFs could not be read (it may be password-protected).');
+    }
+  });
+}
 
 // ═══ INIT ═══
 try{if(window.adsbygoogle&&document.querySelector("ins.adsbygoogle")){}}catch(e){}
