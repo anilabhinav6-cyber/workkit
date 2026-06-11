@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image to PDF Converter — JPG/PNG to PDF Free | MyWorkKits</title>
+<meta name="description" content="Convert JPG, PNG and other images to PDF free. Combine multiple images into one PDF. 100% private — files never leave your browser. No sign-up.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.myworkkits.com/image-to-pdf.html">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Image to PDF Converter","url":"https://www.myworkkits.com/image-to-pdf.html","applicationCategory":"UtilitiesApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4G7CH7PCCF"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4G7CH7PCCF');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet"></noscript>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0c0c0e;--ink3:#44444f;--ink4:#888896;--w:#fff;--surf:#f4f3f0;--acc:#2563ff;--accl:#dbeafe;--accd:#1d4ed8;--green:#059669;--bdr:rgba(12,12,14,0.08);--ff:'Bricolage Grotesque',sans-serif;--fb:'Instrument Sans',sans-serif}
+body{font-family:var(--fb);background:var(--surf);color:var(--ink);font-size:15px;line-height:1.7;min-height:100vh;-webkit-font-smoothing:antialiased}
+nav{background:rgba(255,255,255,.97);border-bottom:1px solid var(--bdr);height:56px;padding:0 4%;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.logo{font-family:var(--ff);font-weight:800;font-size:19px;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:7px}
+.lm{width:26px;height:26px;background:var(--acc);border-radius:7px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:800}
+.back{font-size:13px;color:var(--acc);text-decoration:none;font-weight:500}
+.page{max-width:640px;margin:0 auto;padding:24px 5% 80px}
+.ptag{display:inline-flex;background:var(--accl);color:var(--accd);border-radius:99px;padding:3px 12px;font-size:11px;font-weight:600;margin-bottom:10px;text-transform:uppercase;letter-spacing:.04em}
+h1{font-family:var(--ff);font-size:clamp(24px,4vw,36px);font-weight:800;line-height:1.1;margin-bottom:8px}
+.intro{font-size:15px;color:var(--ink3);margin-bottom:20px}
+.box{background:var(--w);border:1px solid var(--bdr);border-radius:14px;padding:24px;margin-bottom:16px}
+.fr{display:flex;gap:8px;align-items:center;margin-bottom:10px}
+.fr label{font-size:12px;font-weight:500;color:var(--ink3);min-width:130px;flex-shrink:0}
+input,select{flex:1;border:1.5px solid var(--bdr);border-radius:8px;padding:9px 11px;font-size:13px;font-family:var(--fb);background:var(--surf);outline:none;min-width:0}
+input:focus,select:focus{border-color:var(--acc);background:var(--w)}
+input[type=file]{width:100%;padding:18px;border:1.5px dashed var(--bdr);border-radius:10px;cursor:pointer;flex:none}
+input[type=range]{-webkit-appearance:none;height:4px;background:var(--bdr);border-radius:99px;border:none;padding:0}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:17px;height:17px;background:var(--acc);border-radius:50%;cursor:pointer;border:2px solid #fff}
+.btn{background:var(--acc);color:#fff;border:none;border-radius:9px;padding:12px 24px;font-size:14px;font-weight:500;cursor:pointer;font-family:var(--fb);width:100%}
+.btn:hover{background:var(--accd)}
+.btn:disabled{background:var(--ink4);cursor:not-allowed}
+.priv{font-size:11px;color:var(--ink4);text-align:center;margin-top:8px}
+h2.s{font-family:var(--ff);font-size:20px;font-weight:700;margin:28px 0 8px}
+p.b{font-size:14px;color:var(--ink3);margin-bottom:12px}
+footer{background:#1e1e24;color:rgba(255,255,255,.5);font-size:12px;padding:28px 4%;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+</style>
+</head>
+<body>
+<nav><a class="logo" href="/index.html"><span class="lm">W</span>MyWorkKits</a><a class="back" href="/index.html">← All tools</a></nav>
+<main class="page">
+<div class="ptag">🖼️ Converter</div>
+<h1>Image to PDF Converter</h1>
+<p class="intro">Convert one or many JPG/PNG images into a single PDF. Everything happens in your browser — your photos are never uploaded anywhere.</p>
+<div class="box">
+<input type="file" id="files" accept="image/*" multiple onchange="pick()">
+<div id="list" style="font-size:12px;color:var(--ink4);margin:10px 0"></div>
+<div class="fr"><label>Page size</label><select id="psize"><option value="a4">A4 (fit image)</option><option value="img">Match image size</option></select></div>
+<button class="btn" id="goBtn" onclick="go(this)" disabled>⬇ Create PDF</button>
+<p class="priv">🔒 100% private — images are processed in your browser only</p>
+</div>
+<h2 class="s">How it works</h2>
+<p class="b">Select one or more images (JPG, PNG, WebP), choose a page size, and click Create PDF. Each image becomes one page. Unlike other converter sites, your files are never uploaded to a server — the conversion happens entirely on your device, which means it's instant and completely private.</p>
+</main>
+<footer><span>© 2026 MyWorkKits · www.myworkkits.com</span><span>🔒 Files never leave your browser</span></footer>
+<script>
+function loadLib(url,check,cb){if(check())return cb();const s=document.createElement('script');s.src=url;s.onload=cb;document.head.appendChild(s);}
+let imgs=[];
+function pick(){imgs=[...document.getElementById('files').files];document.getElementById('list').textContent=imgs.length?imgs.length+' image(s) selected':'';document.getElementById('goBtn').disabled=!imgs.length;}
+function go(btn){btn.textContent='⏳ Working…';
+loadLib('https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js',()=>window.jspdf,async()=>{
+const {jsPDF}=window.jspdf;const mode=document.getElementById('psize').value;let doc=null;
+for(const file of imgs){
+const dataUrl=await new Promise(r=>{const fr=new FileReader();fr.onload=()=>r(fr.result);fr.readAsDataURL(file);});
+const img=await new Promise(r=>{const im=new Image();im.onload=()=>r(im);im.src=dataUrl;});
+if(mode==='img'){const w=img.width*0.264583,h=img.height*0.264583;if(!doc)doc=new jsPDF({orientation:w>h?'l':'p',unit:'mm',format:[w,h]});else doc.addPage([w,h],w>h?'l':'p');doc.addImage(dataUrl,'JPEG',0,0,w,h);}
+else{if(!doc)doc=new jsPDF();else doc.addPage();const pw=doc.internal.pageSize.getWidth()-20,ph=doc.internal.pageSize.getHeight()-20;const sc=Math.min(pw/img.width,ph/img.height);const w=img.width*sc,h=img.height*sc;doc.addImage(dataUrl,'JPEG',(doc.internal.pageSize.getWidth()-w)/2,(doc.internal.pageSize.getHeight()-h)/2,w,h);}}
+doc.save('images-myworkkits.pdf');btn.textContent='⬇ Create PDF';});}
+</script>
+</body>
+</html>
