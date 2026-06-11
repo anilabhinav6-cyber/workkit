@@ -3,32 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MyWorkKits — Free Online Tools for Work & Life | Calculators, Converters & More</title>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4G7CH7PCCF"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-4G7CH7PCCF');
-</script>
-<meta name="description" content="40+ free instant tools for everyday work and life. Percentage calculator, VAT/GST, salary, loan EMI, tip splitter, unit converter, word counter and more. No sign-up. Works everywhere.">
-<meta name="keywords" content="free online tools, percentage calculator, vat calculator, salary calculator, loan calculator, tip calculator, unit converter, word counter, bmi calculator, gst calculator">
+<title>MyWorkKits — Free Online Tools for Work, Finance, Health & Life</title>
+<meta name="description" content="50+ free instant tools — budget planner, QR code generator, VAT/GST, salary, EMI, BMI, tip splitter and more. Use every tool right on this page. No sign-up.">
+<meta name="keywords" content="free online tools, budget planner, qr code generator, percentage calculator, vat calculator, salary calculator, bmi calculator, loan calculator">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.myworkkits.com/">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="apple-touch-icon" href="/apple-touch-icon.svg">
 <meta name="theme-color" content="#2563ff">
-<meta property="og:title" content="MyWorkKits — Free Tools for Work & Life">
-<meta property="og:description" content="40+ free instant tools. % calculator, VAT/GST, salary, EMI, tip, converter — no sign-up.">
+<meta property="og:title" content="MyWorkKits — Free Tools for Work, Finance & Life">
+<meta property="og:description" content="50+ free instant tools, all usable on one page. No sign-up.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.myworkkits.com/">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"MyWorkKits","url":"https://www.myworkkits.com","description":"Free instant calculators and tools for work and daily life","applicationCategory":"UtilitiesApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"MyWorkKits","url":"https://www.myworkkits.com","description":"Free instant tools for work, finance, health and daily life","applicationCategory":"UtilitiesApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4G7CH7PCCF"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4G7CH7PCCF');</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -41,672 +37,855 @@
   --purple:#7c3aed;--pl:#ede9fe;
   --teal:#0d9488;--tl:#ccfbf1;
   --pink:#db2777;--pkl:#fce7f3;
+  --orange:#ea580c;--ol:#ffedd5;
   --bdr:rgba(12,12,14,0.08);
   --ff:'Bricolage Grotesque',sans-serif;
   --fb:'Instrument Sans',sans-serif;
 }
 html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
-body{font-family:var(--fb);background:var(--surf);color:var(--ink);font-size:15px;line-height:1.6}
-
-/* NAV */
-nav{background:rgba(255,255,255,.96);border-bottom:1px solid var(--bdr);height:58px;padding:0 5%;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;backdrop-filter:blur(12px)}
+body{font-family:var(--fb);background:var(--surf);color:var(--ink);font-size:15px;line-height:1.6;min-height:100vh}
+nav{background:rgba(255,255,255,.97);border-bottom:1px solid var(--bdr);height:56px;padding:0 4%;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;backdrop-filter:blur(14px)}
 .logo{font-family:var(--ff);font-weight:800;font-size:19px;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:7px}
-.lm{width:27px;height:27px;background:var(--acc);border-radius:7px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:800}
-.nright{display:flex;align-items:center;gap:8px}
-.loc-pill{display:flex;align-items:center;gap:5px;background:var(--surf);border:1px solid var(--bdr);border-radius:99px;padding:5px 13px;font-size:12px;color:var(--ink3);cursor:pointer;font-family:var(--fb);transition:border-color .15s}
+.lm{width:26px;height:26px;background:var(--acc);border-radius:7px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:800}
+.loc-pill{display:flex;align-items:center;gap:5px;background:var(--surf);border:1px solid var(--bdr);border-radius:99px;padding:5px 12px;font-size:12px;color:var(--ink3);cursor:pointer;font-family:var(--fb);transition:border-color .15s}
 .loc-pill:hover{border-color:var(--ink5)}
-
-/* CURRENCY MODAL */
-.curr-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:200;align-items:center;justify-content:center;padding:16px}
-.curr-modal.open{display:flex}
-.curr-box{background:var(--w);border-radius:16px;padding:24px;width:100%;max-width:380px;animation:up .2s ease}
-.curr-box h3{font-family:var(--ff);font-size:17px;font-weight:700;margin-bottom:14px}
-.cgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-bottom:14px}
-.copt{border:1.5px solid var(--bdr);border-radius:8px;padding:8px 5px;cursor:pointer;text-align:center;font-family:var(--fb);background:var(--w);transition:all .15s;display:flex;flex-direction:column;align-items:center;gap:2px}
+.cmod{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:200;align-items:center;justify-content:center;padding:16px}
+.cmod.open{display:flex}
+.cbox{background:var(--w);border-radius:16px;padding:22px;width:100%;max-width:370px}
+.cbox h3{font-family:var(--ff);font-size:16px;font-weight:700;margin-bottom:12px}
+.cgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:12px}
+.copt{border:1.5px solid var(--bdr);border-radius:8px;padding:7px 4px;cursor:pointer;text-align:center;font-family:var(--fb);background:var(--w);transition:all .15s;display:flex;flex-direction:column;align-items:center;gap:1px}
 .copt:hover,.copt.sel{border-color:var(--acc);background:var(--accl)}
-.cclose{width:100%;padding:10px;border:1.5px solid var(--bdr);border-radius:8px;background:none;font-size:14px;cursor:pointer;font-family:var(--fb)}
-
-/* HERO */
-.hero{padding:48px 5% 36px;text-align:center;background:var(--w);border-bottom:1px solid var(--bdr)}
-.eyebrow{display:inline-flex;align-items:center;gap:6px;background:var(--accl);color:var(--accd);border-radius:99px;padding:4px 14px;font-size:12px;font-weight:500;margin-bottom:18px;animation:up .4s ease both}
-h1{font-family:var(--ff);font-size:clamp(30px,5vw,54px);font-weight:800;line-height:1.08;letter-spacing:-.03em;color:var(--ink);max-width:660px;margin:0 auto 12px;animation:up .4s .08s ease both}
-h1 span{color:var(--acc)}
-.hsub{font-size:15px;color:var(--ink3);max-width:440px;margin:0 auto 24px;animation:up .4s .14s ease both}
-.srchwrap{max-width:400px;margin:0 auto 16px;position:relative;animation:up .4s .2s ease both}
-.srchi{width:100%;background:var(--surf);border:1.5px solid var(--bdr);border-radius:12px;padding:11px 16px 11px 40px;font-size:14px;font-family:var(--fb);color:var(--ink);outline:none;transition:border-color .18s}
-.srchi:focus{border-color:var(--acc);background:var(--w);box-shadow:0 0 0 3px rgba(37,99,255,.07)}
-.sico{position:absolute;left:13px;top:50%;transform:translateY(-50%);font-size:16px;color:var(--ink4);pointer-events:none}
-.trust{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-top:18px;animation:up .4s .26s ease both}
-.ti{font-size:12px;color:var(--ink4)}
-.ti strong{color:var(--ink2);font-weight:500}
-
-/* AD SLOT 1 — below hero above tabs */
-.ad-top{max-width:1200px;margin:0 auto;padding:0 5%}.ad-top ins:empty{display:none!important}
-
-/* CATEGORY TABS */
-.cats{background:var(--w);border-bottom:1px solid var(--bdr);padding:0 5%;display:flex;gap:0;overflow-x:auto;-ms-overflow-style:none;scrollbar-width:none}
-.cats::-webkit-scrollbar{display:none}
-.cbt{background:none;border:none;border-bottom:2px solid transparent;padding:11px 16px 13px;font-size:13px;font-weight:500;color:var(--ink4);cursor:pointer;font-family:var(--fb);transition:color .15s,border-color .15s;white-space:nowrap}
-.cbt:hover{color:var(--ink)}.cbt.on{color:var(--acc);border-bottom-color:var(--acc)}
-
-/* TOOLS GRID */
-.tools-wrap{padding:24px 5% 40px;max-width:1200px;margin:0 auto}
-.tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px;margin-bottom:20px}
-
-/* TOOL CARD */
-.tc{background:var(--w);border:1px solid var(--bdr);border-radius:16px;padding:22px;transition:box-shadow .18s,border-color .18s}
-.tc:hover{box-shadow:0 6px 24px rgba(0,0,0,.07);border-color:var(--ink5)}
-.th{display:flex;align-items:center;gap:10px;margin-bottom:16px}
-.tico{width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
-.tname{font-family:var(--ff);font-size:15px;font-weight:700;color:var(--ink);margin:0 0 2px}
-.tdesc{font-size:11px;color:var(--ink4);margin:0}
-.tbody{display:flex;flex-direction:column;gap:9px}
-
-/* FORM FIELDS */
-.fr{display:flex;gap:7px;align-items:center}
-.fr label{font-size:12px;color:var(--ink3);font-weight:500;white-space:nowrap;min-width:130px;flex-shrink:0}
-input[type=number],input[type=text],input[type=time],input[type=date],select,textarea{flex:1;border:1.5px solid var(--bdr);border-radius:8px;padding:8px 10px;font-size:13px;font-family:var(--fb);color:var(--ink);background:var(--surf);outline:none;transition:border-color .15s;min-width:0}
-input:focus,select:focus,textarea:focus{border-color:var(--acc);background:var(--w)}
-select{cursor:pointer}textarea{resize:vertical;min-height:72px}
-.rbox{background:var(--surf);border:1px solid var(--bdr);border-radius:9px;padding:10px 14px;margin-top:2px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;min-height:44px}
-.rbox strong{font-size:19px;font-weight:800;font-family:var(--ff);color:var(--ink)}
-.rbox .u{font-size:12px;color:var(--ink4)}
-.mrow{display:flex;gap:5px;margin-bottom:8px;flex-wrap:wrap}
-.mb{flex:1;min-width:60px;padding:6px 6px;border-radius:7px;border:1.5px solid var(--bdr);background:var(--surf);color:var(--ink3);font-size:11px;font-weight:500;cursor:pointer;font-family:var(--fb);transition:all .15s;text-align:center}
-.mb:hover{border-color:var(--accd);color:var(--accd)}
+.cclose{width:100%;padding:9px;border:1.5px solid var(--bdr);border-radius:8px;background:none;font-size:13px;cursor:pointer;font-family:var(--fb)}
+.hero{padding:30px 4% 22px;background:var(--w);border-bottom:1px solid var(--bdr);text-align:center}
+.hero h1{font-family:var(--ff);font-size:clamp(24px,4vw,40px);font-weight:800;line-height:1.1;letter-spacing:-.025em;margin-bottom:6px}
+.hero h1 span{color:var(--acc)}
+.hero p{font-size:13px;color:var(--ink4);margin-bottom:14px}
+.search-wrap{max-width:420px;margin:0 auto;position:relative}
+.search-inp{width:100%;background:var(--surf);border:1.5px solid var(--bdr);border-radius:12px;padding:10px 16px 10px 38px;font-size:14px;font-family:var(--fb);color:var(--ink);outline:none;transition:border-color .18s}
+.search-inp:focus{border-color:var(--acc);background:var(--w);box-shadow:0 0 0 3px rgba(37,99,255,.07)}
+.sico{position:absolute;left:12px;top:50%;transform:translateY(-50%);font-size:14px;color:var(--ink4);pointer-events:none}
+.featured{max-width:1100px;margin:0 auto;padding:18px 4% 0;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.feat-card{border-radius:16px;padding:20px 22px;cursor:pointer;color:#fff;position:relative;overflow:hidden;transition:transform .15s,box-shadow .15s;border:none;text-align:left;font-family:var(--fb)}
+.feat-card:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,0,0,.18)}
+.feat-qr{background:linear-gradient(135deg,#7c3aed,#5b21b6)}
+.feat-budget{background:linear-gradient(135deg,#059669,#047857)}
+.feat-tag{display:inline-block;background:rgba(255,255,255,.2);border-radius:99px;padding:2px 10px;font-size:10px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;margin-bottom:8px}
+.feat-title{font-family:var(--ff);font-size:19px;font-weight:800;margin-bottom:3px}
+.feat-desc{font-size:12px;opacity:.85}
+.feat-arrow{position:absolute;right:18px;top:50%;transform:translateY(-50%);font-size:22px;opacity:.7;transition:transform .2s}
+.feat-card.open .feat-arrow{transform:translateY(-50%) rotate(180deg)}
+.feat-panel{max-width:1100px;margin:0 auto;padding:0 4%;display:none}
+.feat-panel.open{display:block}
+.feat-panel-inner{background:var(--w);border:1px solid var(--bdr);border-radius:0 0 16px 16px;border-top:none;padding:24px;margin-top:-4px;box-shadow:0 8px 24px rgba(0,0,0,.06)}
+.cat-nav{background:var(--w);border-bottom:1px solid var(--bdr);padding:0 4%;display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;position:sticky;top:56px;z-index:90;margin-top:18px}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-btn{background:none;border:none;border-bottom:2.5px solid transparent;padding:10px 13px 11px;font-size:13px;font-weight:500;color:var(--ink4);cursor:pointer;font-family:var(--fb);transition:color .15s,border-color .15s;white-space:nowrap;display:flex;align-items:center;gap:5px}
+.cat-btn:hover{color:var(--ink)}
+.cat-btn.on{color:var(--acc);border-bottom-color:var(--acc);font-weight:600}
+.tools-section{padding:18px 4% 40px;max-width:1100px;margin:0 auto}
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px}
+.tcard{background:var(--w);border:1px solid var(--bdr);border-radius:12px;padding:14px;cursor:pointer;display:flex;flex-direction:column;gap:6px;transition:transform .15s,box-shadow .15s,border-color .15s;font-family:var(--fb);text-align:left;position:relative}
+.tcard:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.07);border-color:var(--ink5)}
+.tcard.open{grid-column:1/-1;cursor:default;transform:none;box-shadow:0 8px 28px rgba(0,0,0,.08);border-color:var(--acc)}
+.tcard.open:hover{transform:none}
+.tc-head{display:flex;align-items:center;gap:9px;cursor:pointer}
+.tc-icon{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.tc-name{font-family:var(--ff);font-size:13px;font-weight:700;color:var(--ink);line-height:1.25}
+.tc-desc{font-size:10.5px;color:var(--ink4);line-height:1.35}
+.tc-x{display:none;margin-left:auto;width:26px;height:26px;border-radius:7px;background:var(--surf2);border:none;cursor:pointer;font-size:14px;color:var(--ink3);flex-shrink:0;align-items:center;justify-content:center}
+.tcard.open .tc-x{display:flex}
+.tpanel{display:none;padding-top:14px;margin-top:12px;border-top:1px solid var(--bdr)}
+.tcard.open .tpanel{display:block}
+.tb-blue .tc-icon{background:var(--accl);color:var(--accd)}
+.tb-green .tc-icon{background:var(--gl);color:var(--green)}
+.tb-amber .tc-icon{background:var(--al);color:var(--amber)}
+.tb-red .tc-icon{background:var(--rl);color:var(--red)}
+.tb-purple .tc-icon{background:var(--pl);color:var(--purple)}
+.tb-teal .tc-icon{background:var(--tl);color:var(--teal)}
+.tb-pink .tc-icon{background:var(--pkl);color:var(--pink)}
+.tb-orange .tc-icon{background:var(--ol);color:var(--orange)}
+.tb-gray .tc-icon{background:var(--surf2);color:var(--ink3)}
+.fr{display:flex;gap:8px;align-items:center;margin-bottom:9px}
+.fr label{font-size:12px;font-weight:500;color:var(--ink3);min-width:130px;flex-shrink:0}
+.tpanel input,.tpanel select,.tpanel textarea,.feat-panel-inner input,.feat-panel-inner select,.feat-panel-inner textarea{flex:1;border:1.5px solid var(--bdr);border-radius:8px;padding:8px 10px;font-size:13px;font-family:var(--fb);color:var(--ink);background:var(--surf);outline:none;transition:border-color .15s;min-width:0}
+.tpanel input:focus,.tpanel select:focus,.tpanel textarea:focus,.feat-panel-inner input:focus,.feat-panel-inner select:focus,.feat-panel-inner textarea:focus{border-color:var(--acc);background:var(--w)}
+.tpanel textarea,.feat-panel-inner textarea{resize:vertical;min-height:70px;width:100%}
+.rbox{background:var(--surf);border:1px solid var(--bdr);border-radius:9px;padding:10px 14px;min-height:44px;display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-top:3px}
+.rbox strong{font-size:18px;font-weight:800;font-family:var(--ff)}
+.rbox .u{font-size:11px;color:var(--ink4)}
+.mrow{display:flex;gap:5px;margin-bottom:9px;flex-wrap:wrap}
+.mb{flex:1;min-width:64px;padding:6px;border-radius:7px;border:1.5px solid var(--bdr);background:var(--surf);color:var(--ink3);font-size:11px;font-weight:500;cursor:pointer;font-family:var(--fb);text-align:center;transition:all .15s}
 .mb.on{background:var(--acc);color:#fff;border-color:var(--acc)}
-input[type=range]{-webkit-appearance:none;height:4px;background:var(--bdr);border-radius:99px;outline:none;flex:1;border:none;padding:0}
-input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;background:var(--acc);border-radius:50%;cursor:pointer;border:2px solid #fff}
-.cpbtn{background:none;border:1px solid var(--bdr);border-radius:6px;padding:4px 10px;font-size:11px;color:var(--ink4);cursor:pointer;font-family:var(--fb);margin-left:auto;margin-top:4px}
-.cpbtn:hover{background:var(--surf2);color:var(--ink)}
-
-/* icon colours */
-.ib .tico{background:var(--accl);color:var(--accd)}
-.ig .tico{background:var(--gl);color:var(--green)}
-.ia .tico{background:var(--al);color:var(--amber)}
-.ir .tico{background:var(--rl);color:var(--red)}
-.ip .tico{background:var(--pl);color:var(--purple)}
-.it .tico{background:var(--tl);color:var(--teal)}
-.ipk .tico{background:var(--pkl);color:var(--pink)}
-.ik .tico{background:var(--surf2);color:var(--ink3)}
-
-/* AD SLOT 2 — between tool sections */
-.ad-mid{max-width:1200px;margin:0 auto;padding:0 5%}
-.ad-block{background:var(--accl);border:1px solid rgba(37,99,255,.12);border-radius:12px;padding:12px 20px;min-height:0;display:flex;align-items:center}.ad-block ins:empty{display:none!important}
-
-/* FOOTER */
-footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:44px 5% 28px;margin-top:56px}
-.ftop{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px;margin-bottom:32px}
-.fbrand .logo{color:#fff;margin-bottom:10px;display:inline-flex}
-.fbrand p{max-width:210px;line-height:1.7;font-size:13px}
-.fcol h4{font-family:var(--ff);font-size:12px;font-weight:700;color:#fff;margin-bottom:12px;letter-spacing:.06em;text-transform:uppercase}
-.fcol a{display:block;color:rgba(255,255,255,.45);text-decoration:none;margin-bottom:8px;font-size:13px;transition:color .15s}
+.mb:hover:not(.on){border-color:var(--accd);color:var(--accd)}
+.btn{background:var(--acc);color:#fff;border:none;border-radius:9px;padding:10px 20px;font-size:13px;font-weight:500;cursor:pointer;font-family:var(--fb);transition:background .15s}
+.btn:hover{background:var(--accd)}
+.btn.bg{background:var(--green)}
+.btn.bg:hover{background:#047857}
+.cpbtn{background:none;border:1px solid var(--bdr);border-radius:6px;padding:4px 10px;font-size:11px;color:var(--ink4);cursor:pointer;font-family:var(--fb)}
+input[type=range]{-webkit-appearance:none;height:4px;background:var(--bdr);border-radius:99px;outline:none;border:none;padding:0}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:17px;height:17px;background:var(--acc);border-radius:50%;cursor:pointer;border:2px solid #fff}
+.ad-top{max-width:1100px;margin:0 auto;padding:12px 4% 0}
+.ad-top ins:empty{display:none!important}
+.ad-mid{max-width:1100px;margin:0 auto;padding:0 4% 14px}
+.ad-mid ins:empty{display:none!important}
+.empty{text-align:center;padding:40px 24px;color:var(--ink4);grid-column:1/-1}
+footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:36px 4% 24px}
+.ftop{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr 1fr;gap:24px;margin-bottom:24px}
+.fbrand .logo{color:#fff;margin-bottom:8px;display:inline-flex}
+.fbrand p{max-width:180px;line-height:1.7;font-size:12px}
+.fcol h4{font-family:var(--ff);font-size:11px;font-weight:700;color:#fff;margin-bottom:9px;letter-spacing:.07em;text-transform:uppercase}
+.fcol a{display:block;color:rgba(255,255,255,.4);text-decoration:none;margin-bottom:6px;font-size:12px;transition:color .15s}
 .fcol a:hover{color:#fff}
-.fbot{border-top:1px solid rgba(255,255,255,.08);padding-top:18px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:12px}
-
-/* STICKY AD SLOT 3 */
-.sticky-ad{display:none}
-.adism{background:none;border:none;color:var(--ink5);cursor:pointer;font-size:20px;line-height:1;flex-shrink:0;font-family:var(--fb)}
-
-/* SECTION LABEL */
-.slabel{font-family:var(--ff);font-size:12px;font-weight:700;color:var(--ink4);text-transform:uppercase;letter-spacing:.07em;margin:28px 0 10px;display:flex;align-items:center;gap:8px}
-.slabel::after{content:'';flex:1;height:1px;background:var(--bdr)}
-
-.empty{text-align:center;padding:48px;color:var(--ink4);font-size:14px}
-
-@keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-@media(max-width:600px){.ftop{grid-template-columns:1fr 1fr}.fbrand{grid-column:1/-1}.fr{flex-direction:column;align-items:flex-start}.fr label{min-width:auto}.trust{gap:14px}.sticky-ad{display:none}}
+.fbot{border-top:1px solid rgba(255,255,255,.07);padding-top:14px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:11px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:720px){.featured{grid-template-columns:1fr}.grid2{grid-template-columns:1fr}.ftop{grid-template-columns:1fr 1fr}.fbrand{grid-column:1/-1}.fr{flex-direction:column;align-items:flex-start}.fr label{min-width:auto}}
+@media(max-width:420px){.tools-grid{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
 <body>
 
-<!-- CURRENCY MODAL -->
-<div class="curr-modal" id="currModal">
-  <div class="curr-box">
+<div class="cmod" id="currModal">
+  <div class="cbox">
     <h3>Choose your currency</h3>
     <div class="cgrid" id="currGrid"></div>
     <button class="cclose" onclick="document.getElementById('currModal').classList.remove('open')">Close</button>
   </div>
 </div>
 
-<!-- AD SLOT 3 — sticky bottom -->
-<div class="sticky-ad" id="stickyAd">
-  <ins class="adsbygoogle" style="display:block;flex:1;min-height:50px" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="REPLACE_SLOT_3" data-ad-format="auto" data-full-width-responsive="true" style="display:block;min-height:0"></ins>
-  <button class="adism" id="adDismiss" aria-label="Dismiss">×</button>
-</div>
-
-<!-- NAV -->
 <nav>
   <a class="logo" href="/"><span class="lm">W</span>MyWorkKits</a>
-  <div class="nright">
-    <button class="loc-pill" onclick="document.getElementById('currModal').classList.add('open')">
-      <span id="locFlag">🌍</span>&nbsp;<span id="locLabel">USD</span>
-    </button>
-  </div>
+  <button class="loc-pill" onclick="document.getElementById('currModal').classList.add('open')">
+    <span id="locFlag">🌍</span>&nbsp;<span id="locLabel">USD</span>
+  </button>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
-  <div class="eyebrow">⚡ Free · No sign-up · Any currency · Works everywhere</div>
-  <h1>Every tool your<br><span>workday needs</span></h1>
-  <p class="hsub">40+ free calculators for %, finance, salary, tax, time, text and conversions. Pick your currency, instant results.</p>
-  <div class="srchwrap">
+  <h1>Every tool your <span>daily life needs</span></h1>
+  <p>50+ free tools — use them all right here on this page. No sign-up.</p>
+  <div class="search-wrap">
     <span class="sico">🔍</span>
-    <input type="search" id="msearch" class="srchi" placeholder="Search — vat, salary, percentage, tip…" autocomplete="off">
-  </div>
-  <div class="trust">
-    <span class="ti"><strong>40+</strong> free tools</span>
-    <span class="ti"><strong>Any currency</strong></span>
-    <span class="ti"><strong>No sign-up</strong> ever</span>
-    <span class="ti"><strong>Works worldwide</strong></span>
+    <input type="search" id="msearch" class="search-inp" placeholder="Search — budget, QR, salary, BMI…" autocomplete="off">
   </div>
 </section>
 
-<!-- AD SLOT 1 — below hero -->
 <div class="ad-top">
-  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="REPLACE_SLOT_1" data-ad-format="auto" data-full-width-responsive="true" style="display:block;min-height:0"></ins>
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="REPLACE_SLOT_1" data-ad-format="auto" data-full-width-responsive="true"></ins>
 </div>
 
-<!-- CATEGORY TABS -->
-<div class="cats">
-  <button class="cbt on" data-cat="all">All tools</button>
-  <button class="cbt" data-cat="finance">Finance &amp; Pay</button>
-  <button class="cbt" data-cat="math">% &amp; Math</button>
-  <button class="cbt" data-cat="text">Text &amp; Writing</button>
-  <button class="cbt" data-cat="time">Time &amp; Date</button>
-  <button class="cbt" data-cat="convert">Converters</button>
-  <button class="cbt" data-cat="health">Health</button>
+<!-- ═══ FEATURED: QR + BUDGET ═══ -->
+<div class="featured">
+  <button class="feat-card feat-qr" id="featQRBtn" onclick="toggleFeat('qr')">
+    <span class="feat-tag">⭐ Featured</span>
+    <div class="feat-title">▦ QR Code Generator</div>
+    <div class="feat-desc">URL, WiFi, WhatsApp, email — download PNG free</div>
+    <span class="feat-arrow">▾</span>
+  </button>
+  <button class="feat-card feat-budget" id="featBudgetBtn" onclick="toggleFeat('budget')">
+    <span class="feat-tag">⭐ Featured</span>
+    <div class="feat-title">📋 Monthly Budget Planner</div>
+    <div class="feat-desc">Income, expenses, savings — download PDF</div>
+    <span class="feat-arrow">▾</span>
+  </button>
 </div>
 
-<!-- TOOLS -->
-<div class="tools-wrap" id="toolsWrap">
-
-  <!-- ===== FINANCE & PAY ===== -->
-  <div class="slabel" data-section="finance">Finance &amp; Pay</div>
-  <div class="tgrid">
-
-    <!-- VAT / GST -->
-    <div class="tc ig" data-cat="finance" data-name="vat gst tax calculator uk uae australia india canada">
-      <div class="th"><div class="tico">🧾</div><div><p class="tname">VAT / GST Calculator</p><p class="tdesc">Add or remove any tax rate worldwide</p></div></div>
-      <div class="tbody">
-        <div class="mrow">
-          <button class="mb on" onclick="setVM(this,'add')">Add tax</button>
-          <button class="mb" onclick="setVM(this,'remove')">Remove tax</button>
+<!-- QR PANEL -->
+<div class="feat-panel" id="featQRPanel">
+  <div class="feat-panel-inner">
+    <div class="grid2">
+      <div>
+        <div class="mrow" style="flex-wrap:wrap">
+          <button class="mb on" onclick="setQT(this,'url')">🔗 URL</button>
+          <button class="mb" onclick="setQT(this,'text')">📝 Text</button>
+          <button class="mb" onclick="setQT(this,'wifi')">📶 WiFi</button>
+          <button class="mb" onclick="setQT(this,'whatsapp')">💚 WhatsApp</button>
+          <button class="mb" onclick="setQT(this,'email')">📧 Email</button>
+          <button class="mb" onclick="setQT(this,'phone')">📞 Phone</button>
         </div>
-        <div class="fr"><label>Amount <span class="csym"></span></label><input type="number" id="va" placeholder="e.g. 1000" oninput="cVAT()"></div>
-        <div class="fr"><label>Tax rate</label>
-          <input type="number" id="vr" value="20" step="0.1" oninput="cVAT()" style="flex:.5">
-          <select onchange="document.getElementById('vr').value=this.value;cVAT()" style="flex:1.2;font-size:12px">
-            <option value="20">UK VAT 20%</option><option value="5">UAE VAT 5%</option>
-            <option value="15">Saudi VAT 15%</option><option value="10">AU GST 10%</option>
-            <option value="18">India GST 18%</option><option value="5">Canada GST 5%</option>
-            <option value="15">NZ GST 15%</option><option value="9">Singapore 9%</option>
-            <option value="23">Ireland 23%</option><option value="19">Germany 19%</option>
-            <option value="8.875">NYC Tax 8.875%</option>
-          </select>
+        <div id="qrForm"></div>
+        <div class="fr" style="margin-top:10px"><label>Size</label>
+          <select id="qrSize" onchange="genQR()"><option value="200">Small (200px)</option><option value="300" selected>Medium (300px)</option><option value="500">Large / Print (500px)</option></select>
         </div>
-        <div class="rbox" id="vres"><span style="color:var(--ink4)">Enter amount above</span></div>
       </div>
-    </div>
-
-    <!-- SALARY -->
-    <div class="tc ig" data-cat="finance" data-name="salary monthly daily hourly annual rate breakdown">
-      <div class="th"><div class="tico">💰</div><div><p class="tname">Salary Calculator</p><p class="tdesc">Monthly → daily → hourly breakdown</p></div></div>
-      <div class="tbody">
-        <div class="fr"><label>Monthly salary <span class="csym"></span></label><input type="number" id="sm" placeholder="e.g. 5000" oninput="cSal()"></div>
-        <div class="fr"><label>Working days/week</label>
-          <select id="sd" onchange="cSal()"><option value="5">5 days</option><option value="6">6 days</option></select>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:12px">
+        <div style="background:var(--w);border:2px solid var(--bdr);border-radius:12px;padding:16px;min-height:200px;min-width:200px;display:flex;align-items:center;justify-content:center" id="qrBox">
+          <span style="color:var(--ink4);font-size:13px;text-align:center">Enter content<br>to generate QR</span>
         </div>
-        <div class="rbox" id="sres" style="flex-direction:column;align-items:flex-start;gap:3px"><span style="color:var(--ink4)">Enter salary above</span></div>
-      </div>
-    </div>
-
-    <!-- LOAN EMI -->
-    <div class="tc ir" data-cat="finance" data-name="loan emi monthly payment mortgage personal car home interest">
-      <div class="th"><div class="tico">🏦</div><div><p class="tname">Loan / EMI Calculator</p><p class="tdesc">Monthly payment on any loan</p></div></div>
-      <div class="tbody">
-        <div class="fr"><label>Loan amount <span class="csym"></span></label><input type="number" id="ea" placeholder="e.g. 50000" oninput="cEMI()"></div>
-        <div class="fr"><label>Annual interest %</label><input type="number" id="er" placeholder="e.g. 6.5" step="0.1" oninput="cEMI()"></div>
-        <div class="fr"><label>Term (months)</label>
-          <input type="number" id="em" placeholder="e.g. 36" oninput="cEMI()" style="flex:.5">
-          <select onchange="document.getElementById('em').value=this.value;cEMI()" style="flex:1.2;font-size:12px">
-            <option value="12">12 months</option><option value="24">24 months</option>
-            <option value="36">36 months</option><option value="48">48 months</option>
-            <option value="60">60 months</option><option value="84">7 years</option>
-            <option value="120">10 years</option><option value="240">20 years</option>
-          </select>
-        </div>
-        <div class="rbox" id="eres" style="flex-direction:column;align-items:flex-start;gap:3px"><span style="color:var(--ink4)">Enter loan details</span></div>
-      </div>
-    </div>
-
-    <!-- TIP SPLITTER -->
-    <div class="tc ip" data-cat="finance" data-name="tip bill splitter restaurant friends share service charge">
-      <div class="th"><div class="tico">🍽️</div><div><p class="tname">Tip &amp; Bill Splitter</p><p class="tdesc">Split any bill evenly with tip</p></div></div>
-      <div class="tbody">
-        <div class="fr"><label>Total bill <span class="csym"></span></label><input type="number" id="tb" placeholder="e.g. 180" oninput="cTip()"></div>
-        <div class="fr"><label>Tip %</label><input type="range" id="tp" min="0" max="30" value="10" step="1" oninput="document.getElementById('tpv').textContent=this.value+'%';cTip()"><span id="tpv" style="font-size:13px;font-weight:600;min-width:30px">10%</span></div>
-        <div class="fr"><label>Split between</label><input type="number" id="ts" value="2" min="1" oninput="cTip()"></div>
-        <div class="rbox" id="tres"><span style="color:var(--ink4)">Enter bill details</span></div>
-      </div>
-    </div>
-
-    <!-- MARGIN -->
-    <div class="tc ib" data-cat="finance" data-name="margin markup profit cost selling price business retail">
-      <div class="th"><div class="tico">📊</div><div><p class="tname">Margin &amp; Markup</p><p class="tdesc">Profit margin % and markup %</p></div></div>
-      <div class="tbody">
-        <div class="fr"><label>Cost price <span class="csym"></span></label><input type="number" id="mc" placeholder="e.g. 80" oninput="cMG()"></div>
-        <div class="fr"><label>Selling price <span class="csym"></span></label><input type="number" id="ms" placeholder="e.g. 120" oninput="cMG()"></div>
-        <div class="rbox" id="mres" style="flex-direction:column;align-items:flex-start;gap:3px"><span style="color:var(--ink4)">Enter prices above</span></div>
-      </div>
-    </div>
-
-    <!-- COMPOUND INTEREST -->
-    <div class="tc it" data-cat="finance" data-name="compound interest savings investment growth fixed deposit returns">
-      <div class="th"><div class="tico">📈</div><div><p class="tname">Compound Interest</p><p class="tdesc">Savings and investment growth</p></div></div>
-      <div class="tbody">
-        <div class="fr"><label>Principal <span class="csym"></span></label><input type="number" id="ci_p" placeholder="e.g. 10000" oninput="cCI()"></div>
-        <div class="fr"><label>Annual rate %</label><input type="number" id="ci_r" placeholder="e.g. 7" step="0.1" oninput="cCI()"></div>
-        <div class="fr"><label>Years</label><input type="number" id="ci_y" placeholder="e.g. 10" oninput="cCI()"></div>
-        <div class="rbox" id="ci_res"><span style="color:var(--ink4)">Enter details above</span></div>
-      </div>
-    </div>
-
-    
-    <!-- BUDGET PLANNER -->
-    <div class="tc ig" data-cat="finance" data-name="monthly budget planner expense tracker salary budget pdf download">
-      <div class="th"><div class="tico">📋</div><div><p class="tname">Monthly Budget Planner</p><p class="tdesc">Plan budget, track expenses, download PDF</p></div></div>
-      <div class="tbody" style="align-items:center;justify-content:center;min-height:80px">
-        <a href="/budget-planner.html" style="background:var(--green);color:#fff;border:none;border-radius:9px;padding:11px 22px;font-size:14px;font-weight:500;cursor:pointer;font-family:var(--fb);text-decoration:none;display:inline-flex;align-items:center;gap:7px;transition:all .15s">
-          📋 &nbsp;Open Budget Planner →
-        </a>
-        <p style="font-size:12px;color:var(--ink4);text-align:center;margin-top:8px">Free · All currencies · Download PDF</p>
-      </div>
-    </div>
-
-    <!-- CURRENCY CONVERTER -->
-    <div class="tc ia" data-cat="finance" data-name="currency converter usd aed gbp eur inr exchange rate dollar">
-      <div class="th"><div class="tico">💱</div><div><p class="tname">Currency Converter</p><p class="tdesc">12 major world currencies</p></div></div>
-      <div class="tbody">
-        <div class="fr"><label>Amount</label><input type="number" id="ca" placeholder="e.g. 100" oninput="cCC()"></div>
-        <div class="fr"><label>From</label>
-          <select id="cf" onchange="cCC()" style="font-size:12px">
-            <option value="USD">USD — Dollar</option><option value="EUR">EUR — Euro</option>
-            <option value="GBP">GBP — Pound</option><option value="AED">AED — Dirham</option>
-            <option value="SAR">SAR — Riyal</option><option value="INR">INR — Rupee</option>
-            <option value="PKR">PKR — Pak ₨</option><option value="PHP">PHP — Peso</option>
-            <option value="NGN">NGN — Naira</option><option value="CAD">CAD — C$</option>
-            <option value="AUD">AUD — A$</option><option value="EGP">EGP — E£</option>
-          </select>
-        </div>
-        <div class="fr"><label>To</label>
-          <select id="ct" onchange="cCC()" style="font-size:12px">
-            <option value="AED">AED — Dirham</option><option value="USD">USD — Dollar</option>
-            <option value="EUR">EUR — Euro</option><option value="GBP">GBP — Pound</option>
-            <option value="SAR">SAR — Riyal</option><option value="INR">INR — Rupee</option>
-            <option value="PKR">PKR — Pak ₨</option><option value="PHP">PHP — Peso</option>
-            <option value="NGN">NGN — Naira</option><option value="CAD">CAD — C$</option>
-            <option value="AUD">AUD — A$</option><option value="EGP">EGP — E£</option>
-          </select>
-        </div>
-        <div class="rbox" id="cc_r"><span style="color:var(--ink4)">Enter amount</span></div>
-      </div>
-    </div>
-
-    <!-- FUEL COST -->
-    <div class="tc ia" data-cat="finance" data-name="fuel cost petrol diesel trip km miles litre gallon calculator">
-      <div class="th"><div class="tico">⛽</div><div><p class="tname">Fuel Cost Calculator</p><p class="tdesc">Trip cost by distance &amp; efficiency</p></div></div>
-      <div class="tbody">
-        <div class="fr"><label>Distance</label><input type="number" id="fk" placeholder="e.g. 200" oninput="cFuel()">
-          <select id="fu" onchange="updateFuLbl();cFuel()" style="font-size:12px"><option value="km">km</option><option value="mi">miles</option></select>
-        </div>
-        <div class="fr"><label id="feff_l">L per 100km</label><input type="number" id="fe" placeholder="e.g. 8" step="0.1" oninput="cFuel()"></div>
-        <div class="fr"><label>Price per litre <span class="csym"></span></label><input type="number" id="fp" placeholder="e.g. 2.50" step="0.01" oninput="cFuel()"></div>
-        <div class="rbox" id="fres"><span style="color:var(--ink4)">Enter trip details</span></div>
+        <button class="btn" id="qrDlBtn" onclick="dlQR()" disabled style="width:100%">⬇ Download PNG</button>
       </div>
     </div>
   </div>
-
-  <!-- AD SLOT 2 — between finance and math sections -->
-  <div class="ad-mid">
-    <div class="ad-block">
-      <ins class="adsbygoogle" style="display:block;width:100%" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="REPLACE_SLOT_2" data-ad-format="auto" data-full-width-responsive="true" style="display:block;min-height:0"></ins>
-    </div>
-  </div>
-
-  <!-- ===== % & MATH ===== -->
-  <div class="slabel" data-section="math">% &amp; Math</div>
-  <div class="tgrid">
-
-    <!-- PERCENTAGE -->
-    <div class="tc ib" data-cat="math" data-name="percentage calculator percent of number what is change">
-      <div class="th"><div class="tico">%</div><div><p class="tname">Percentage Calculator</p><p class="tdesc">3 ways to calculate any percentage</p></div></div>
-      <div class="tbody">
-        <div class="mrow">
-          <button class="mb on" onclick="setPM(this,'of')">X% of Y</button>
-          <button class="mb" onclick="setPM(this,'what')">X is what %</button>
-          <button class="mb" onclick="setPM(this,'chg')">% change</button>
-        </div>
-        <div class="fr"><label id="pl1">Percentage %</label><input type="number" id="pa" placeholder="e.g. 15" oninput="cPCT()"></div>
-        <div class="fr"><label id="pl2">Number</label><input type="number" id="pb" placeholder="e.g. 200" oninput="cPCT()"></div>
-        <div class="rbox" id="pres"><span style="color:var(--ink4)">Fill in both fields</span></div>
-      </div>
-    </div>
-
-    <!-- DISCOUNT -->
-    <div class="tc ig" data-cat="math" data-name="discount sale price percent off markdown coupon calculator">
-      <div class="th"><div class="tico">🏷️</div><div><p class="tname">Discount Calculator</p><p class="tdesc">Final price after any % off</p></div></div>
-      <div class="tbody">
-        <div class="fr"><label>Original price <span class="csym"></span></label><input type="number" id="do" placeholder="e.g. 250" oninput="cDisc()"></div>
-        <div class="fr"><label>Discount %</label>
-          <input type="number" id="dp" placeholder="e.g. 20" oninput="cDisc()" style="flex:.5">
-          <select onchange="document.getElementById('dp').value=this.value;cDisc()" style="flex:1.2;font-size:12px">
-            <option value="5">5% off</option><option value="10">10% off</option>
-            <option value="15">15% off</option><option value="20">20% off</option>
-            <option value="25">25% off</option><option value="30">30% off</option>
-            <option value="40">40% off</option><option value="50">50% off</option>
-            <option value="70">70% off</option>
-          </select>
-        </div>
-        <div class="rbox" id="dres"><span style="color:var(--ink4)">Enter values above</span></div>
-      </div>
-    </div>
-
-    <!-- % INCREASE -->
-    <div class="tc ib" data-cat="math" data-name="percentage increase decrease raise cut salary price inflation">
-      <div class="th"><div class="tico">🔼</div><div><p class="tname">% Increase / Decrease</p><p class="tdesc">New value after any raise or cut</p></div></div>
-      <div class="tbody">
-        <div class="fr"><label>Original value</label><input type="number" id="po" placeholder="e.g. 5000" oninput="cPI()"></div>
-        <div class="fr"><label>Change %</label><input type="number" id="pp" placeholder="e.g. 12 or -8" oninput="cPI()"></div>
-        <div class="rbox" id="pires"><span style="color:var(--ink4)">Enter values above</span></div>
-      </div>
-    </div>
-
-    <!-- RATIO -->
-    <div class="tc ip" data-cat="math" data-name="ratio proportion calculator scale factor recipe map">
-      <div class="th"><div class="tico">⚖️</div><div><p class="tname">Ratio &amp; Proportion</p><p class="tdesc">Scale any ratio — recipes, maps, mixes</p></div></div>
-      <div class="tbody">
-        <div class="fr"><label>A : B</label><input type="number" id="ra" placeholder="3" oninput="cRatio()" style="flex:.8"><span style="color:var(--ink4);padding:0 4px;flex-shrink:0">:</span><input type="number" id="rb" placeholder="4" oninput="cRatio()" style="flex:.8"></div>
-        <div class="fr"><label>C : ?</label><input type="number" id="rc" placeholder="9" oninput="cRatio()"></div>
-        <div class="rbox" id="rres"><span style="color:var(--ink4)">Enter values above</span></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ===== TEXT & WRITING ===== -->
-  <div class="slabel" data-section="text">Text &amp; Writing</div>
-  <div class="tgrid">
-
-    <!-- WORD COUNTER -->
-    <div class="tc ip" data-cat="text" data-name="word counter character count sentences text length essay">
-      <div class="th"><div class="tico">📝</div><div><p class="tname">Word &amp; Character Counter</p><p class="tdesc">Words, chars &amp; sentences instantly</p></div></div>
-      <div class="tbody">
-        <textarea id="wct" placeholder="Paste or type your text here…" oninput="cWC()"></textarea>
-        <div class="rbox" id="wcres" style="flex-wrap:wrap;gap:12px"><span style="color:var(--ink4)">Paste text above</span></div>
-      </div>
-    </div>
-
-    <!-- CASE CONVERTER -->
-    <div class="tc ip" data-cat="text" data-name="text case converter upper lower title sentence capitalize">
-      <div class="th"><div class="tico">🔤</div><div><p class="tname">Text Case Converter</p><p class="tdesc">UPPER, lower, Title, Sentence case</p></div></div>
-      <div class="tbody">
-        <textarea id="cst" placeholder="Paste text here…" style="min-height:56px" oninput=""></textarea>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">
-          <button class="mb on" onclick="dCase('upper')" style="padding:8px">UPPERCASE</button>
-          <button class="mb on" onclick="dCase('lower')" style="padding:8px">lowercase</button>
-          <button class="mb on" onclick="dCase('title')" style="padding:8px">Title Case</button>
-          <button class="mb on" onclick="dCase('sentence')" style="padding:8px">Sentence case</button>
-        </div>
-        <div class="rbox" id="csres" style="word-break:break-word"><span style="color:var(--ink4)">Result here</span></div>
-        <button class="cpbtn" onclick="cpCase()">Copy result</button>
-      </div>
-    </div>
-
-    <!-- READING TIME -->
-    <div class="tc ip" data-cat="text" data-name="reading time estimate blog article email minutes words">
-      <div class="th"><div class="tico">📖</div><div><p class="tname">Reading Time Estimator</p><p class="tdesc">How long to read any text</p></div></div>
-      <div class="tbody">
-        <textarea id="rtt" placeholder="Paste your article or email…" oninput="cRT()"></textarea>
-        <div class="rbox" id="rtres"><span style="color:var(--ink4)">Paste text above</span></div>
-      </div>
-    </div>
-
-    <!-- INVOICE GENERATOR -->
-    <div class="tc ib" data-cat="text" data-name="invoice number generator sequential id prefix freelance">
-      <div class="th"><div class="tico">🔢</div><div><p class="tname">Invoice Number Generator</p><p class="tdesc">Sequential invoice IDs with prefix</p></div></div>
-      <div class="tbody">
-        <div class="fr"><label>Prefix</label><input type="text" id="invp" value="INV" oninput="gInv()"></div>
-        <div class="fr"><label>Starting number</label><input type="number" id="invn" value="1001" oninput="gInv()"></div>
-        <div class="rbox" id="invres" style="flex-direction:column;align-items:flex-start;gap:5px"><span style="color:var(--ink4)">Set prefix above</span></div>
-        <button class="cpbtn" onclick="cpInv()">Copy current</button>
-      </div>
-    </div>
-  </div>
-
-  
-    <!-- QR CODE GENERATOR -->
-    <div class="tc ib" data-cat="text" data-name="qr code generator free qr maker url wifi whatsapp text">
-      <div class="th"><div class="tico">▦</div><div><p class="tname">QR Code Generator</p><p class="tdesc">URL, WiFi, WhatsApp, email, contact &amp; more</p></div></div>
-      <div class="tbody" style="align-items:center;justify-content:center;min-height:80px">
-        <a href="/qr-code-generator.html" style="background:var(--acc);color:#fff;border:none;border-radius:9px;padding:11px 22px;font-size:14px;font-weight:500;cursor:pointer;font-family:var(--fb);text-decoration:none;display:inline-flex;align-items:center;gap:7px;transition:all .15s">
-          ▦ &nbsp;Open QR Generator →
-        </a>
-        <p style="font-size:12px;color:var(--ink4);text-align:center;margin-top:8px">Free · No watermark · Download PNG</p>
-      </div>
-    </div>
-
-  <!-- ===== TIME & DATE ===== -->
-  <div class="slabel" data-section="time">Time &amp; Date</div>
-  <div class="tgrid">
-
-    <!-- HOURS WORKED -->
-    <div class="tc ia" data-cat="time" data-name="hours worked time in out break overtime timesheet calculator">
-      <div class="th"><div class="tico">⏱️</div><div><p class="tname">Hours Worked Calculator</p><p class="tdesc">Time in → time out, minus break</p></div></div>
-      <div class="tbody">
-        <div class="fr"><label>Time in</label><input type="time" id="hwi" value="09:00" oninput="cHW()"></div>
-        <div class="fr"><label>Time out</label><input type="time" id="hwo" value="18:00" oninput="cHW()"></div>
-        <div class="fr"><label>Break (mins)</label><input type="number" id="hwb" value="60" min="0" oninput="cHW()"></div>
-        <div class="rbox" id="hwres"><span style="color:var(--ink4)">Set times above</span></div>
-      </div>
-    </div>
-
-    <!-- DATE DIFFERENCE -->
-    <div class="tc ia" data-cat="time" data-name="days between dates difference deadline countdown calendar">
-      <div class="th"><div class="tico">📅</div><div><p class="tname">Days Between Dates</p><p class="tdesc">Days, weeks &amp; months between dates</p></div></div>
-      <div class="tbody">
-        <div class="fr"><label>Start date</label><input type="date" id="dda" oninput="cDD()"></div>
-        <div class="fr"><label>End date</label><input type="date" id="ddb" oninput="cDD()"></div>
-        <div class="rbox" id="ddres"><span style="color:var(--ink4)">Pick two dates</span></div>
-      </div>
-    </div>
-
-    <!-- AGE -->
-    <div class="tc ib" data-cat="time" data-name="age calculator date of birth how old years months days birthday">
-      <div class="th"><div class="tico">🎂</div><div><p class="tname">Age Calculator</p><p class="tdesc">Exact age in years, months, days</p></div></div>
-      <div class="tbody">
-        <div class="fr"><label>Date of birth</label><input type="date" id="adob" oninput="cAge()"></div>
-        <div class="rbox" id="ageres"><span style="color:var(--ink4)">Enter date of birth</span></div>
-      </div>
-    </div>
-
-    <!-- TIME ZONE -->
-    <div class="tc it" data-cat="time" data-name="time zone converter world clock city country dubai london new york">
-      <div class="th"><div class="tico">🕐</div><div><p class="tname">Time Zone Converter</p><p class="tdesc">Convert time between world cities</p></div></div>
-      <div class="tbody">
-        <div class="fr"><label>Your time</label><input type="time" id="tzt" oninput="cTZ()"></div>
-        <div class="fr"><label>From zone</label>
-          <select id="tzf" onchange="cTZ()" style="font-size:12px">
-            <option value="0">UTC+0 London</option><option value="4">UTC+4 Dubai</option>
-            <option value="3">UTC+3 Riyadh</option><option value="5.5">UTC+5:30 Mumbai</option>
-            <option value="-5">UTC-5 New York</option><option value="-8">UTC-8 LA</option>
-            <option value="1">UTC+1 Paris/Berlin</option><option value="8">UTC+8 Singapore</option>
-            <option value="9">UTC+9 Tokyo</option><option value="10">UTC+10 Sydney</option>
-            <option value="2">UTC+2 Cairo</option><option value="-3">UTC-3 São Paulo</option>
-          </select>
-        </div>
-        <div class="fr"><label>To zone</label>
-          <select id="tzt2" onchange="cTZ()" style="font-size:12px">
-            <option value="4">UTC+4 Dubai</option><option value="0">UTC+0 London</option>
-            <option value="3">UTC+3 Riyadh</option><option value="5.5">UTC+5:30 Mumbai</option>
-            <option value="-5">UTC-5 New York</option><option value="-8">UTC-8 LA</option>
-            <option value="1">UTC+1 Paris/Berlin</option><option value="8">UTC+8 Singapore</option>
-            <option value="9">UTC+9 Tokyo</option><option value="10">UTC+10 Sydney</option>
-            <option value="2">UTC+2 Cairo</option><option value="-3">UTC-3 São Paulo</option>
-          </select>
-        </div>
-        <div class="rbox" id="tzres"><span style="color:var(--ink4)">Set time above</span></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ===== CONVERTERS ===== -->
-  <div class="slabel" data-section="convert">Converters</div>
-  <div class="tgrid">
-
-    <!-- TEMPERATURE -->
-    <div class="tc ir" data-cat="convert" data-name="celsius fahrenheit kelvin temperature converter body weather">
-      <div class="th"><div class="tico">🌡️</div><div><p class="tname">Temperature Converter</p><p class="tdesc">°C ↔ °F ↔ Kelvin</p></div></div>
-      <div class="tbody">
-        <div class="fr"><label>Value</label><input type="number" id="tv" placeholder="e.g. 37" step="0.1" oninput="cTMP()">
-          <select id="tf" onchange="cTMP()" style="font-size:12px"><option value="c">°C Celsius</option><option value="f">°F Fahrenheit</option><option value="k">K Kelvin</option></select>
-        </div>
-        <div class="rbox" id="tmpres" style="flex-direction:column;align-items:flex-start;gap:3px"><span style="color:var(--ink4)">Enter temperature</span></div>
-      </div>
-    </div>
-
-    <!-- LENGTH -->
-    <div class="tc ik" data-cat="convert" data-name="length converter cm inches feet meters km miles height">
-      <div class="th"><div class="tico">📏</div><div><p class="tname">Length Converter</p><p class="tdesc">cm ↔ inches ↔ feet ↔ metres ↔ km</p></div></div>
-      <div class="tbody">
-        <div class="fr"><label>Value</label><input type="number" id="lv" placeholder="e.g. 180" step="0.01" oninput="cLen()">
-          <select id="lf" onchange="cLen()" style="font-size:12px"><option value="cm">cm</option><option value="in">inches</option><option value="ft">feet</option><option value="m">metres</option><option value="km">km</option><option value="mi">miles</option></select>
-        </div>
-        <div class="rbox" id="lres" style="flex-direction:column;align-items:flex-start;gap:3px"><span style="color:var(--ink4)">Enter value above</span></div>
-      </div>
-    </div>
-
-    <!-- WEIGHT -->
-    <div class="tc ik" data-cat="convert" data-name="weight converter kg lbs pounds kilograms stone grams ounces">
-      <div class="th"><div class="tico">⚖️</div><div><p class="tname">Weight Converter</p><p class="tdesc">kg ↔ lbs ↔ stone ↔ grams</p></div></div>
-      <div class="tbody">
-        <div class="fr"><label>Value</label><input type="number" id="wv" placeholder="e.g. 70" step="0.1" oninput="cWt()">
-          <select id="wf" onchange="cWt()" style="font-size:12px"><option value="kg">kg</option><option value="lb">pounds (lb)</option><option value="g">grams</option><option value="oz">ounces</option><option value="st">stone</option></select>
-        </div>
-        <div class="rbox" id="wres" style="flex-direction:column;align-items:flex-start;gap:3px"><span style="color:var(--ink4)">Enter value above</span></div>
-      </div>
-    </div>
-
-    <!-- AREA -->
-    <div class="tc ik" data-cat="convert" data-name="area converter sqft sqm square feet meters yards acres property">
-      <div class="th"><div class="tico">📐</div><div><p class="tname">Area Converter</p><p class="tdesc">sq ft ↔ sq m ↔ sq yards ↔ acres</p></div></div>
-      <div class="tbody">
-        <div class="fr"><label>Value</label><input type="number" id="arv" placeholder="e.g. 1000" step="0.01" oninput="cAr()">
-          <select id="arf" onchange="cAr()" style="font-size:12px"><option value="sqft">sq ft</option><option value="sqm">sq m</option><option value="sqyd">sq yards</option><option value="acre">acres</option></select>
-        </div>
-        <div class="rbox" id="arres" style="flex-direction:column;align-items:flex-start;gap:3px"><span style="color:var(--ink4)">Enter value above</span></div>
-      </div>
-    </div>
-
-    <!-- DATA SIZE -->
-    <div class="tc it" data-cat="convert" data-name="data size converter mb gb tb kb bytes storage file size">
-      <div class="th"><div class="tico">💾</div><div><p class="tname">Data Size Converter</p><p class="tdesc">KB ↔ MB ↔ GB ↔ TB</p></div></div>
-      <div class="tbody">
-        <div class="fr"><label>Value</label><input type="number" id="dsv" placeholder="e.g. 500" step="any" oninput="cDS()">
-          <select id="dsf" onchange="cDS()" style="font-size:12px"><option value="b">Bytes</option><option value="kb">KB</option><option value="mb">MB</option><option value="gb">GB</option><option value="tb">TB</option></select>
-        </div>
-        <div class="rbox" id="dsres" style="flex-direction:column;align-items:flex-start;gap:3px"><span style="color:var(--ink4)">Enter value above</span></div>
-      </div>
-    </div>
-
-    <!-- SPEED -->
-    <div class="tc ia" data-cat="convert" data-name="speed converter kmh mph knots ms kilometres miles per hour">
-      <div class="th"><div class="tico">💨</div><div><p class="tname">Speed Converter</p><p class="tdesc">km/h ↔ mph ↔ m/s ↔ knots</p></div></div>
-      <div class="tbody">
-        <div class="fr"><label>Value</label><input type="number" id="spv" placeholder="e.g. 100" step="0.1" oninput="cSP()">
-          <select id="spf" onchange="cSP()" style="font-size:12px"><option value="kmh">km/h</option><option value="mph">mph</option><option value="ms">m/s</option><option value="kn">knots</option></select>
-        </div>
-        <div class="rbox" id="spres" style="flex-direction:column;align-items:flex-start;gap:3px"><span style="color:var(--ink4)">Enter value above</span></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ===== HEALTH ===== -->
-  <div class="slabel" data-section="health">Health &amp; Fitness</div>
-  <div class="tgrid">
-
-    <!-- BMI -->
-    <div class="tc ipk" data-cat="health" data-name="bmi body mass index weight height healthy overweight metric imperial">
-      <div class="th"><div class="tico">🏃</div><div><p class="tname">BMI Calculator</p><p class="tdesc">Body mass index — metric &amp; imperial</p></div></div>
-      <div class="tbody">
-        <div class="mrow">
-          <button class="mb on" onclick="setBMI(this,'metric')">Metric (kg/cm)</button>
-          <button class="mb" onclick="setBMI(this,'imperial')">Imperial (lb/in)</button>
-        </div>
-        <div class="fr"><label id="bwl">Weight (kg)</label><input type="number" id="bw" placeholder="e.g. 70" step="0.1" oninput="cBMI()"></div>
-        <div class="fr"><label id="bhl">Height (cm)</label><input type="number" id="bh" placeholder="e.g. 175" step="0.1" oninput="cBMI()"></div>
-        <div class="rbox" id="bmires"><span style="color:var(--ink4)">Enter measurements</span></div>
-      </div>
-    </div>
-
-    <!-- CALORIES -->
-    <div class="tc ipk" data-cat="health" data-name="calorie calculator daily energy tdee maintenance weight loss">
-      <div class="th"><div class="tico">🥗</div><div><p class="tname">Daily Calorie Needs</p><p class="tdesc">Estimated calories to maintain weight</p></div></div>
-      <div class="tbody">
-        <div class="fr"><label>Weight (kg)</label><input type="number" id="cal_w" placeholder="e.g. 70" oninput="cCal()"></div>
-        <div class="fr"><label>Height (cm)</label><input type="number" id="cal_h" placeholder="e.g. 175" oninput="cCal()"></div>
-        <div class="fr"><label>Age</label><input type="number" id="cal_a" placeholder="e.g. 30" oninput="cCal()"></div>
-        <div class="fr"><label>Activity</label>
-          <select id="cal_act" onchange="cCal()" style="font-size:12px">
-            <option value="1.2">Sedentary (desk job)</option>
-            <option value="1.375">Light (1–3 days exercise)</option>
-            <option value="1.55" selected>Moderate (3–5 days)</option>
-            <option value="1.725">Active (6–7 days)</option>
-            <option value="1.9">Very active (athlete)</option>
-          </select>
-        </div>
-        <div class="rbox" id="calres"><span style="color:var(--ink4)">Enter details above</span></div>
-      </div>
-    </div>
-  </div>
-
-  <div id="noRes" class="empty" style="display:none">🔍 No tools match. Try a different keyword.</div>
 </div>
 
-<!-- FOOTER — SEO links to individual pages -->
+<!-- BUDGET PANEL -->
+<div class="feat-panel" id="featBudgetPanel">
+  <div class="feat-panel-inner">
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px;align-items:flex-end">
+      <div style="flex:1;min-width:130px"><label style="font-size:11px;font-weight:600;color:var(--ink4)">NAME</label><input type="text" id="bName" placeholder="Your name" style="width:100%"></div>
+      <div style="flex:1;min-width:110px"><label style="font-size:11px;font-weight:600;color:var(--ink4)">MONTH</label><select id="bMonth" style="width:100%"><option>January</option><option>February</option><option>March</option><option>April</option><option>May</option><option>June</option><option>July</option><option>August</option><option>September</option><option>October</option><option>November</option><option>December</option></select></div>
+      <div style="flex:.7;min-width:90px"><label style="font-size:11px;font-weight:600;color:var(--ink4)">CURRENCY</label><select id="bCur" onchange="calcBudget()" style="width:100%"><option>AED</option><option>USD</option><option>GBP</option><option>EUR</option><option>INR</option><option>SAR</option><option>PKR</option><option>PHP</option></select></div>
+      <button class="btn bg" onclick="dlBudgetPDF()">⬇ PDF</button>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px" id="budgetSummary">
+      <div style="background:var(--gl);border-radius:10px;padding:10px 12px"><div style="font-size:10px;font-weight:700;color:var(--green);text-transform:uppercase">Income</div><div style="font-size:18px;font-weight:800;font-family:var(--ff);color:var(--green)" id="bSumInc">0</div></div>
+      <div style="background:var(--rl);border-radius:10px;padding:10px 12px"><div style="font-size:10px;font-weight:700;color:var(--red);text-transform:uppercase">Expenses</div><div style="font-size:18px;font-weight:800;font-family:var(--ff);color:var(--red)" id="bSumExp">0</div></div>
+      <div style="background:var(--accl);border-radius:10px;padding:10px 12px"><div style="font-size:10px;font-weight:700;color:var(--accd);text-transform:uppercase">Savings</div><div style="font-size:18px;font-weight:800;font-family:var(--ff);color:var(--accd)" id="bSumSav">0</div></div>
+      <div style="background:var(--al);border-radius:10px;padding:10px 12px"><div style="font-size:10px;font-weight:700;color:var(--amber);text-transform:uppercase">Rate</div><div style="font-size:18px;font-weight:800;font-family:var(--ff);color:var(--amber)" id="bSumPct">0%</div></div>
+    </div>
+    <div class="grid2">
+      <div>
+        <div style="font-size:12px;font-weight:700;color:var(--green);margin-bottom:8px">💵 INCOME</div>
+        <div id="bIncRows"></div>
+        <button class="cpbtn" style="width:100%;padding:7px" onclick="bAddInc()">+ Add income</button>
+      </div>
+      <div>
+        <div style="font-size:12px;font-weight:700;color:var(--red);margin-bottom:8px">💸 EXPENSES</div>
+        <div id="bExpRows"></div>
+        <button class="cpbtn" style="width:100%;padding:7px" onclick="bAddExp()">+ Add expense</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ CATEGORY TABS ═══ -->
+<nav class="cat-nav" aria-label="Tool categories">
+  <button class="cat-btn on" data-cat="all">⚡ All</button>
+  <button class="cat-btn" data-cat="finance">💰 Finance</button>
+  <button class="cat-btn" data-cat="work">💼 Work</button>
+  <button class="cat-btn" data-cat="health">❤️ Health</button>
+  <button class="cat-btn" data-cat="lifestyle">🏠 Lifestyle</button>
+  <button class="cat-btn" data-cat="convert">🔄 Converters</button>
+</nav>
+
+<!-- ═══ TOOLS GRID — every tool expands inline ═══ -->
+<div class="tools-section">
+<div class="tools-grid" id="toolsGrid">
+
+<!-- VAT -->
+<div class="tcard tb-green" data-cat="finance" data-name="vat gst tax calculator uk uae india">
+  <div class="tc-head" onclick="togTool(this)">
+    <div class="tc-icon">🧾</div>
+    <div><div class="tc-name">VAT / GST Calculator</div><div class="tc-desc">Add or remove any tax</div></div>
+    <button class="tc-x" onclick="event.stopPropagation();closeTool(this)">×</button>
+  </div>
+  <div class="tpanel">
+    <div class="mrow"><button class="mb on" onclick="setVM(this,'add')">Add tax</button><button class="mb" onclick="setVM(this,'remove')">Remove tax</button></div>
+    <div class="fr"><label>Amount</label><input type="number" id="va" placeholder="e.g. 1000" oninput="cVAT()"></div>
+    <div class="fr"><label>Tax rate (%)</label>
+      <input type="number" id="vr" value="20" step="0.1" oninput="cVAT()" style="flex:.5">
+      <select onchange="document.getElementById('vr').value=this.value;cVAT()" style="flex:1.2;font-size:12px">
+        <option value="20">UK 20%</option><option value="5">UAE 5%</option><option value="15">Saudi 15%</option>
+        <option value="10">AU GST 10%</option><option value="18">India 18%</option><option value="9">Singapore 9%</option>
+        <option value="19">Germany 19%</option><option value="8.875">NYC 8.875%</option>
+      </select>
+    </div>
+    <div class="rbox" id="vres"><span style="color:var(--ink4)">Enter amount</span></div>
+  </div>
+</div>
+
+<!-- SALARY -->
+<div class="tcard tb-green" data-cat="finance" data-name="salary monthly daily hourly rate">
+  <div class="tc-head" onclick="togTool(this)">
+    <div class="tc-icon">💰</div>
+    <div><div class="tc-name">Salary Calculator</div><div class="tc-desc">Monthly → daily → hourly</div></div>
+    <button class="tc-x" onclick="event.stopPropagation();closeTool(this)">×</button>
+  </div>
+  <div class="tpanel">
+    <div class="fr"><label>Monthly salary</label><input type="number" id="sm" placeholder="e.g. 5000" oninput="cSal()"></div>
+    <div class="fr"><label>Days/week</label><select id="sd" onchange="cSal()"><option value="5">5 days</option><option value="6">6 days</option></select></div>
+    <div class="rbox" id="sres" style="flex-direction:column;align-items:flex-start;gap:3px"><span style="color:var(--ink4)">Enter salary</span></div>
+  </div>
+</div>
+
+<!-- LOAN EMI -->
+<div class="tcard tb-red" data-cat="finance" data-name="loan emi monthly payment mortgage">
+  <div class="tc-head" onclick="togTool(this)">
+    <div class="tc-icon">🏦</div>
+    <div><div class="tc-name">Loan / EMI</div><div class="tc-desc">Monthly loan payment</div></div>
+    <button class="tc-x" onclick="event.stopPropagation();closeTool(this)">×</button>
+  </div>
+  <div class="tpanel">
+    <div class="fr"><label>Loan amount</label><input type="number" id="ea" placeholder="e.g. 50000" oninput="cEMI()"></div>
+    <div class="fr"><label>Annual interest (%)</label><input type="number" id="er" placeholder="e.g. 6.5" step="0.1" oninput="cEMI()"></div>
+    <div class="fr"><label>Term (months)</label><input type="number" id="em" placeholder="e.g. 36" oninput="cEMI()"></div>
+    <div class="rbox" id="eres" style="flex-direction:column;align-items:flex-start;gap:3px"><span style="color:var(--ink4)">Enter loan details</span></div>
+  </div>
+</div>
+
+<!-- TIP -->
+<div class="tcard tb-purple" data-cat="finance" data-name="tip bill splitter restaurant">
+  <div class="tc-head" onclick="togTool(this)">
+    <div class="tc-icon">🍽️</div>
+    <div><div class="tc-name">Tip &amp; Bill Splitter</div><div class="tc-desc">Split any bill with tip</div></div>
+    <button class="tc-x" onclick="event.stopPropagation();closeTool(this)">×</button>
+  </div>
+  <div class="tpanel">
+    <div class="fr"><label>Total bill</label><input type="number" id="tb" placeholder="e.g. 180" oninput="cTip()"></div>
+    <div class="fr"><label>Tip %</label><input type="range" id="tp" min="0" max="30" value="10" oninput="document.getElementById('tpv').textContent=this.value+'%';cTip()" style="flex:1"><span id="tpv" style="font-size:12px;font-weight:600;min-width:30px">10%</span></div>
+    <div class="fr"><label>Split between</label><input type="number" id="ts" value="2" min="1" oninput="cTip()"></div>
+    <div class="rbox" id="tres"><span style="color:var(--ink4)">Enter bill</span></div>
+  </div>
+</div>
+
+<!-- MARGIN -->
+<div class="tcard tb-blue" data-cat="finance" data-name="margin markup profit cost selling">
+  <div class="tc-head" onclick="togTool(this)">
+    <div class="tc-icon">📊</div>
+    <div><div class="tc-name">Margin &amp; Markup</div><div class="tc-desc">Profit margin %</div></div>
+    <button class="tc-x" onclick="event.stopPropagation();closeTool(this)">×</button>
+  </div>
+  <div class="tpanel">
+    <div class="fr"><label>Cost price</label><input type="number" id="mc" placeholder="e.g. 80" oninput="cMG()"></div>
+    <div class="fr"><label>Selling price</label><input type="number" id="ms" placeholder="e.g. 120" oninput="cMG()"></div>
+    <div class="rbox" id="mres" style="flex-direction:column;align-items:flex-start;gap:3px"><span style="color:var(--ink4)">Enter prices</span></div>
+  </div>
+</div>
+
+<!-- COMPOUND INTEREST -->
+<div class="tcard tb-teal" data-cat="finance" data-name="compound interest savings investment growth">
+  <div class="tc-head" onclick="togTool(this)">
+    <div class="tc-icon">📈</div>
+    <div><div class="tc-name">Compound Interest</div><div class="tc-desc">Investment growth</div></div>
+    <button class="tc-x" onclick="event.stopPropagation();closeTool(this)">×</button>
+  </div>
+  <div class="tpanel">
+    <div class="fr"><label>Principal</label><input type="number" id="cip" placeholder="e.g. 10000" oninput="cCI()"></div>
+    <div class="fr"><label>Annual rate (%)</label><input type="number" id="cir" placeholder="e.g. 7" step="0.1" oninput="cCI()"></div>
+    <div class="fr"><label>Years</label><input type="number" id="ciy" placeholder="e.g. 10" oninput="cCI()"></div>
+    <div class="rbox" id="cires"><span style="color:var(--ink4)">Enter details</span></div>
+  </div>
+</div>
+
+<!-- CURRENCY -->
+<div class="tcard tb-amber" data-cat="finance" data-name="currency converter usd aed gbp inr exchange">
+  <div class="tc-head" onclick="togTool(this)">
+    <div class="tc-icon">💱</div>
+    <div><div class="tc-name">Currency Converter</div><div class="tc-desc">12 major currencies</div></div>
+    <button class="tc-x" onclick="event.stopPropagation();closeTool(this)">×</button>
+  </div>
+  <div class="tpanel">
+    <div class="fr"><label>Amount</label><input type="number" id="cca" placeholder="e.g. 100" oninput="cCC()"></div>
+    <div class="fr"><label>From</label><select id="ccf" onchange="cCC()"><option>USD</option><option>EUR</option><option>GBP</option><option>AED</option><option>SAR</option><option>INR</option><option>PKR</option><option>PHP</option><option>NGN</option><option>CAD</option><option>AUD</option><option>EGP</option></select></div>
+    <div class="fr"><label>To</label><select id="cct" onchange="cCC()"><option>AED</option><option>USD</option><option>EUR</option><option>GBP</option><option>SAR</option><option>INR</option><option>PKR</option><option>PHP</option><option>NGN</option><option>CAD</option><option>AUD</option><option>EGP</option></select></div>
+    <div class="rbox" id="ccres"><span style="color:var(--ink4)">Enter amount</span></div>
+  </div>
+</div>
+
+<!-- DISCOUNT -->
+<div class="tcard tb-green" data-cat="finance" data-name="discount sale price percent off">
+  <div class="tc-head" onclick="togTool(this)">
+    <div class="tc-icon">🏷️</div>
+    <div><div class="tc-name">Discount Calculator</div><div class="tc-desc">Price after % off</div></div>
+    <button class="tc-x" onclick="event.stopPropagation();closeTool(this)">×</button>
+  </div>
+  <div class="tpanel">
+    <div class="fr"><label>Original price</label><input type="number" id="dco" placeholder="e.g. 250" oninput="cDisc()"></div>
+    <div class="fr"><label>Discount %</label><input type="number" id="dcp" placeholder="e.g. 20" oninput="cDisc()"></div>
+    <div class="rbox" id="dcres"><span style="color:var(--ink4)">Enter values</span></div>
+  </div>
+</div>
+
+<!-- PERCENTAGE -->
+<div class="tcard tb-blue" data-cat="finance" data-name="percentage calculator percent of number change">
+  <div class="tc-head" onclick="togTool(this)">
+    <div class="tc-icon">%</div>
+    <div><div class="tc-name">Percentage Calculator</div><div class="tc-desc">3 ways to calculate %</div></div>
+    <button class="tc-x" onclick="event.stopPropagation();closeTool(this)">×</button>
+  </div>
+  <div class="tpanel">
+    <div class="mrow"><button class="mb on" onclick="setPM(this,'of')">X% of Y</button><button class="mb" onclick="setPM(this,'what')">X is what %</button><button class="mb" onclick="setPM(this,'chg')">% change</button></div>
+    <div class="fr"><label id="pl1">Percentage %</label><input type="number" id="pa" placeholder="e.g. 15" oninput="cPCT()"></div>
+    <div class="fr"><label id="pl2">Number</label><input type="number" id="pb" placeholder="e.g. 200" oninput="cPCT()"></div>
+    <div class="rbox" id="pres"><span style="color:var(--ink4)">Fill both fields</span></div>
+  </div>
+</div>
+
+<!-- % INCREASE -->
+<div class="tcard tb-blue" data-cat="finance" data-name="percentage increase decrease raise salary">
+  <div class="tc-head" onclick="togTool(this)">
+    <div class="tc-icon">🔼</div>
+    <div><div class="tc-name">% Increase / Decrease</div><div class="tc-desc">Value after raise or cut</div></div>
+    <button class="tc-x" onclick="event.stopPropagation();closeTool(this)">×</button>
+  </div>
+  <div class="tpanel">
+    <div class="fr"><label>Original value</label><input type="number" id="pio" placeholder="e.g. 5000" oninput="cPI()"></div>
+    <div class="fr"><label>Change (%)</label><input type="number" id="pip" placeholder="e.g. 12 or -8" oninput="cPI()"></div>
+    <div class="rbox" id="pires"><span style="color:var(--ink4)">Enter values</span></div>
+  </div>
+</div>
+
+<!-- FUEL -->
+<div class="tcard tb-amber" data-cat="finance" data-name="fuel cost petrol diesel trip km">
+  <div class="tc-head" onclick="togTool(this)">
+    <div class="tc-icon">⛽</div>
+    <div><div class="tc-name">Fuel Cost</div><div class="tc-desc">Trip cost by distance</div></div>
+    <button class="tc-x" onclick="event.stopPropagation();closeTool(this)">×</button>
+  </div>
+  <div class="tpanel">
+    <div class="fr"><label>Distance (km)</label><input type="number" id="fk" placeholder="e.g. 200" oninput="cFuel()"></div>
+    <div class="fr"><label>L per 100km</label><input type="number" id="fe" placeholder="e.g. 8" step="0.1" oninput="cFuel()"></div>
+    <div class="fr"><label>Price per litre</label><input type="number" id="fp" placeholder="e.g. 2.50" step="0.01" oninput="cFuel()"></div>
+    <div class="rbox" id="fres"><span style="color:var(--ink4)">Enter details</span></div>
+  </div>
+</div>
+
+<!-- HOURS WORKED -->
+<div class="tcard tb-amber" data-cat="work" data-name="hours worked time in out break timesheet overtime">
+  <div class="tc-head" onclick="togTool(this)">
+    <div class="tc-icon">⏱️</div>
+    <div><div class="tc-name">Hours Worked</div><div class="tc-desc">Time in → out, minus break</div></div>
+    <button class="tc-x" onclick="event.stopPropagation();closeTool(this)">×</button>
+  </div>
+  <div class="tpanel">
+    <div class="fr"><label>Time in</label><input type="time" id="hwi" value="09:00" oninput="cHW()"></div>
+    <div class="fr"><label>Time out</label><input type="time" id="hwo" value="18:00" oninput="cHW()"></div>
+    <div class="fr"><label>Break (mins)</label><input type="number" id="hwb" value="60" min="0" oninput="cHW()"></div>
+    <div class="rbox" id="hwres"><span style="color:var(--ink4)">Set times</span></div>
+  </div>
+</div>
+
+<!-- INVOICE -->
+<div class="tcard tb-blue" data-cat="work" data-name="invoice number generator sequential id">
+  <div class="tc-head" onclick="togTool(this)">
+    <div class="tc-icon">🔢</div>
+    <div><div class="tc-name">Invoice Numbers</div><div class="tc-desc">Sequential invoice IDs</div></div>
+    <button class="tc-x" onclick="event.stopPropagation();closeTool(this)">×</button>
+  </div>
+  <div class="tpanel">
+    <div class="fr"><label>Prefix</label><input type="text" id="invp" value="INV" oninput="gInv()"></div>
+    <div class="fr"><label>Starting number</label><input type="number" id="invn" value="1001" oninput="gInv()"></div>
+    <div class="rbox" id="invres" style="flex-direction:column;align-items:flex-start;gap:4px"><span style="color:var(--ink4)">Set prefix</span></div>
+    <button class="cpbtn" style="margin-top:6px" onclick="cpInv(this)">Copy current</button>
+  </div>
+</div>
+
+<!-- WORD COUNTER -->
+<div class="tcard tb-purple" data-cat="work" data-name="word counter character count text">
+  <div class="tc-head" onclick="togTool(this)">
+    <div class="tc-icon">📝</div>
+    <div><div class="tc-name">Word Counter</div><div class="tc-desc">Words, chars, sentences</div></div>
+    <button class="tc-x" onclick="event.stopPropagation();closeTool(this)">×</button>
+  </div>
+  <div class="tpanel">
+    <textarea id="wct" placeholder="Paste or type your text…" oninput="cWC()"></textarea>
+    <div class="rbox" id="wcres" style="margin-top:6px"><span style="color:var(--ink4)">Paste text above</span></div>
+  </div>
+</div>
+
+<!-- CASE CONVERTER -->
+<div class="tcard tb-purple" data-cat="work" data-name="text case upper lower title sentence">
+  <div class="tc-head" onclick="togTool(this)">
+    <div class="tc-icon">🔤</div>
+    <div><div class="tc-name">Case Converter</div><div class="tc-desc">UPPER, lower, Title</div></div>
+    <button class="tc-x" onclick="event.stopPropagation();closeTool(this)">×</button>
+  </div>
+  <div class="tpanel">
+    <textarea id="cst" placeholder="Paste text…" style="min-height:56px"></textarea>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:8px 0">
+      <button class="mb on" onclick="dCase('upper')">UPPERCASE</button>
+      <button class="mb on" onclick="dCase('lower')">lowercase</button>
+      <button class="mb on" onclick="dCase('title')">Title Case</button>
+      <button class="mb on" onclick="dCase('sentence')">Sentence</button>
+    </div>
+    <div class="rbox" id="csres" style="word-break:break-word"><span style="color:var(--ink4)">Result here</span></div>
+    <button class="cpbtn" style="margin-top:6px" onclick="cpCase(this)">Copy result</button>
+  </div>
+</div>
+
+<!-- DATE DIFFERENCE -->
+<div class="tcard tb-amber" data-cat="work" data-name="days between dates deadline countdown">
+  <div class="tc-head" onclick="togTool(this)">
+    <div class="tc-icon">📅</div>
+    <div><div class="tc-name">Days Between Dates</div><div class="tc-desc">Deadline counter</div></div>
+    <button class="tc-x" onclick="event.stopPropagation();closeTool(this)">×</button>
+  </div>
+  <div class="tpanel">
+    <div class="fr"><label>Start date</label><input type="date" id="dda" oninput="cDD()"></div>
+    <div class="fr"><label>End date</label><input type="date" id="ddb" oninput="cDD()"></div>
+    <div class="rbox" id="ddres"><span style="color:var(--ink4)">Pick two dates</span></div>
+  </div>
+</div>
+
+<!-- PASSWORD -->
+<div class="tcard tb-red" data-cat="work" data-name="password generator strong secure random">
+  <div class="tc-head" onclick="togTool(this)">
+    <div class="tc-icon">🔐</div>
+    <div><div class="tc-name">Password Generator</div><div class="tc-desc">Strong secure passwords</div></div>
+    <button class="tc-x" onclick="event.stopPropagation();closeTool(this)">×</button>
+  </div>
+  <div class="tpanel">
+    <div class="fr"><label>Length: <span id="pwlenv">16</span></label><input type="range" id="pwlen" min="8" max="40" value="16" oninput="document.getElementById('pwlenv').textContent=this.value;genPW()" style="flex:1"></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px">
+      <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer"><input type="checkbox" id="pwU" checked onchange="genPW()" style="width:auto;flex:none;accent-color:var(--acc)">A-Z</label>
+      <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer"><input type="checkbox" id="pwL" checked onchange="genPW()" style="width:auto;flex:none;accent-color:var(--acc)">a-z</label>
+      <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer"><input type="checkbox" id="pwN" checked onchange="genPW()" style="width:auto;flex:none;accent-color:var(--acc)">0-9</label>
+      <label style="display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer"><input type="checkbox" id="pwS" checked onchange="genPW()" style="width:auto;flex:none;accent-color:var(--acc)">!@#$</label>
+    </div>
+    <div class="rbox" id="pwres" style="font-family:monospace;font-size:13px;word-break:break-all"><span style="color:var(--ink4)">Click generate</span></div>
+    <div style="display:flex;gap:6px;margin-top:8px">
+      <button class="btn" style="flex:1;padding:8px" onclick="genPW()">🔄 New</button>
+      <button class="btn bg" style="flex:1;padding:8px" onclick="cpPW(this)">📋 Copy</button>
+    </div>
+  </div>
+</div>
+
+<!-- POMODORO -->
+<div class="tcard tb-orange" data-cat="work" data-name="pomodoro timer focus productivity">
+  <div class="tc-head" onclick="togTool(this)">
+    <div class="tc-icon">🍅</div>
+    <div><div class="tc-name">Pomodoro Timer</div><div class="tc-desc">Focus timer (25 min)</div></div>
+    <button class="tc-x" onclick="event.stopPropagation();closeTool(this)">×</button>
+  </div>
+  <div class="tpanel" style="text-align:center">
+    <div class="mrow"><button class="mb on" onclick="pmSet(this,25)">Focus 25m</button><button class="mb" onclick="pmSet(this,5)">Break 5m</button><button class="mb" onclick="pmSet(this,15)">Long 15m</button></div>
+    <div style="font-size:52px;font-family:var(--ff);font-weight:800;margin:10px 0" id="pmDisp">25:00</div>
+    <div style="display:flex;gap:8px;justify-content:center">
+      <button class="btn" onclick="pmStart(this)" id="pmBtn">▶ Start</button>
+      <button class="btn" style="background:var(--surf2);color:var(--ink)" onclick="pmReset()">↺ Reset</button>
+    </div>
+  </div>
+</div>
+
+<!-- BMI -->
+<div class="tcard tb-pink" data-cat="health" data-name="bmi body mass index weight height">
+  <div class="tc-head" onclick="togTool(this)">
+    <div class="tc-icon">🏃</div>
+    <div><div class="tc-name">BMI Calculator</div><div class="tc-desc">Body mass index</div></div>
+    <button class="tc-x" onclick="event.stopPropagation();closeTool(this)">×</button>
+  </div>
+  <div class="tpanel">
+    <div class="mrow"><button class="mb on" onclick="setBM(this,'metric')">Metric</button><button class="mb" onclick="setBM(this,'imperial')">Imperial</button></div>
+    <div class="fr"><label id="bwl">Weight (kg)</label><input type="number" id="bw" placeholder="e.g. 70" step="0.1" oninput="cBMI()"></div>
+    <div class="fr"><label id="bhl">Height (cm)</label><input type="number" id="bh" placeholder="e.g. 175" step="0.1" oninput="cBMI()"></div>
+    <div class="rbox" id="bmires"><span style="color:var(--ink4)">Enter measurements</span></div>
+  </div>
+</div>
+
+<!-- CALORIES -->
+<div class="tcard tb-pink" data-cat="health" data-name="calorie calculator daily tdee weight">
+  <div class="tc-head" onclick="togTool(this)">
+    <div class="tc-icon">🥗</div>
+    <div><div class="tc-name">Calorie Calculator</div><div class="tc-desc">Daily calorie needs</div></div>
+    <button class="tc-x" onclick="event.stopPropagation();closeTool(this)">×</button>
+  </div>
+  <div class="tpanel">
+    <div class="fr"><label>Weight (kg)</label><input type="number" id="clw" placeholder="70" oninput="cCal()"></div>
+    <div class="fr"><label>Height (cm)</label><input type="number" id="clh" placeholder="175" oninput="cCal()"></div>
+    <div class="fr"><label>Age</label><input type="number" id="cla" placeholder="30" oninput="cCal()"></div>
+    <div class="fr"><label>Gender</label><select id="clg" onchange="cCal()"><option value="m">Male</option><option value="f">Female</option></select></div>
+    <div class="fr"><label>Activity</label><select id="clact" onchange="cCal()"><option value="1.2">Sedentary</option><option value="1.375">Light</option><option value="1.55" selected>Moderate</option><option value="1.725">Active</option><option value="1.9">Very active</option></select></div>
+    <div class="rbox" id="clres" style="flex-direction:column;align-items:flex-start;gap:3px"><span style="color:var(--ink4)">Enter details</span></div>
+  </div>
+</div>
+
+<!-- WATER -->
+<div class="tcard tb-teal" data-cat="health" data-name="water intake daily hydration">
+  <div class="tc-head" onclick="togTool(this)">
+    <div class="tc-icon">💧</div>
+    <div><div class="tc-name">Water Intake</div><div class="tc-desc">Daily hydration goal</div></div>
+    <button class="tc-x" onclick="event.stopPropagation();closeTool(this)">×</button>
+  </div>
+  <div class="tpanel">
+    <div class="fr"><label>Weight (kg)</label><input type="number" id="wwt" placeholder="e.g. 70" oninput="cWater()"></div>
+    <div class="fr"><label>Activity</label><select id="wact" onchange="cWater()"><option value="1.0">Sedentary</option><option value="1.2">Light</option><option value="1.4" selected>Moderate</option><option value="1.6">Active</option></select></div>
+    <div class="fr"><label>Climate</label><select id="wclim" onchange="cWater()"><option value="1.0">Temperate</option><option value="1.15">Hot &amp; humid (UAE)</option><option value="1.1">Hot &amp; dry</option></select></div>
+    <div class="rbox" id="wres"><span style="color:var(--ink4)">Enter weight</span></div>
+  </div>
+</div>
+
+<!-- SLEEP -->
+<div class="tcard tb-purple" data-cat="health" data-name="sleep calculator wake up bedtime cycles">
+  <div class="tc-head" onclick="togTool(this)">
+    <div class="tc-icon">😴</div>
+    <div><div class="tc-name">Sleep Calculator</div><div class="tc-desc">Best bedtime &amp; wake-up</div></div>
+    <button class="tc-x" onclick="event.stopPropagation();closeTool(this)">×</button>
+  </div>
+  <div class="tpanel">
+    <div class="mrow"><button class="mb on" onclick="setSM2(this,'wake')">Wake up at…</button><button class="mb" onclick="setSM2(this,'sleep')">Sleep at…</button></div>
+    <div class="fr"><label id="slpLbl">Wake-up time</label><input type="time" id="slpT" value="07:00" oninput="cSleep()"></div>
+    <div id="slpRes" style="margin-top:6px"></div>
+  </div>
+</div>
+
+<!-- IDEAL WEIGHT -->
+<div class="tcard tb-pink" data-cat="health" data-name="ideal weight healthy range">
+  <div class="tc-head" onclick="togTool(this)">
+    <div class="tc-icon">⚖️</div>
+    <div><div class="tc-name">Ideal Weight</div><div class="tc-desc">Healthy weight range</div></div>
+    <button class="tc-x" onclick="event.stopPropagation();closeTool(this)">×</button>
+  </div>
+  <div class="tpanel">
+    <div class="fr"><label>Height (cm)</label><input type="number" id="iwh" placeholder="e.g. 175" oninput="cIW()"></div>
+    <div class="fr"><label>Gender</label><select id="iwg" onchange="cIW()"><option value="m">Male</option><option value="f">Female</option></select></div>
+    <div class="rbox" id="iwres" style="flex-direction:column;align-items:flex-start;gap:3px"><span style="color:var(--ink4)">Enter height</span></div>
+  </div>
+</div>
+
+<!-- AGE -->
+<div class="tcard tb-blue" data-cat="health" data-name="age calculator date of birth how old">
+  <div class="tc-head" onclick="togTool(this)">
+    <div class="tc-icon">🎂</div>
+    <div><div class="tc-name">Age Calculator</div><div class="tc-desc">Exact age in Y/M/D</div></div>
+    <button class="tc-x" onclick="event.stopPropagation();closeTool(this)">×</button>
+  </div>
+  <div class="tpanel">
+    <div class="fr"><label>Date of birth</label><input type="date" id="adob" oninput="cAge()"></div>
+    <div class="rbox" id="ageres"><span style="color:var(--ink4)">Enter date of birth</span></div>
+  </div>
+</div>
+
+<!-- GROCERY -->
+<div class="tcard tb-green" data-cat="lifestyle" data-name="grocery shopping list cost budget">
+  <div class="tc-head" onclick="togTool(this)">
+    <div class="tc-icon">🛒</div>
+    <div><div class="tc-name">Grocery Calculator</div><div class="tc-desc">Estimate shopping cost</div></div>
+    <button class="tc-x" onclick="event.stopPropagation();closeTool(this)">×</button>
+  </div>
+  <div class="tpanel">
+    <div id="grocRows"></div>
+    <button class="cpbtn" style="width:100%;padding:7px;margin-bottom:8px" onclick="addGroc()">+ Add item</button>
+    <div class="rbox" id="grocRes"><span style="color:var(--ink4)">Add items above</span></div>
+  </div>
+</div>
+
+<!-- TRIP COST -->
+<div class="tcard tb-amber" data-cat="lifestyle" data-name="trip cost travel budget holiday vacation">
+  <div class="tc-head" onclick="togTool(this)">
+    <div class="tc-icon">✈️</div>
+    <div><div class="tc-name">Trip Cost</div><div class="tc-desc">Plan travel budget</div></div>
+    <button class="tc-x" onclick="event.stopPropagation();closeTool(this)">×</button>
+  </div>
+  <div class="tpanel">
+    <div class="fr"><label>Travellers</label><input type="number" id="tcp" value="2" min="1" oninput="cTrip()"></div>
+    <div class="fr"><label>Days</label><input type="number" id="tcd" value="5" min="1" oninput="cTrip()"></div>
+    <div class="fr"><label>✈️ Flights (total)</label><input type="number" id="tcf" placeholder="0" oninput="cTrip()"></div>
+    <div class="fr"><label>🏨 Hotel/night</label><input type="number" id="tch" placeholder="0" oninput="cTrip()"></div>
+    <div class="fr"><label>🍽️ Food/day/person</label><input type="number" id="tcfo" placeholder="0" oninput="cTrip()"></div>
+    <div class="fr"><label>🚗 Transport/day</label><input type="number" id="tct" placeholder="0" oninput="cTrip()"></div>
+    <div class="fr"><label>🎭 Activities (total)</label><input type="number" id="tca" placeholder="0" oninput="cTrip()"></div>
+    <div class="rbox" id="tcres" style="flex-direction:column;align-items:flex-start;gap:3px"><span style="color:var(--ink4)">Enter details</span></div>
+  </div>
+</div>
+
+<!-- RENT VS BUY -->
+<div class="tcard tb-orange" data-cat="lifestyle" data-name="rent vs buy property mortgage">
+  <div class="tc-head" onclick="togTool(this)">
+    <div class="tc-icon">🏠</div>
+    <div><div class="tc-name">Rent vs Buy</div><div class="tc-desc">Which is cheaper?</div></div>
+    <button class="tc-x" onclick="event.stopPropagation();closeTool(this)">×</button>
+  </div>
+  <div class="tpanel">
+    <div class="fr"><label>Property price</label><input type="number" id="rvp" placeholder="e.g. 1000000" oninput="cRvB()"></div>
+    <div class="fr"><label>Down payment (%)</label><input type="number" id="rvd" value="20" oninput="cRvB()"></div>
+    <div class="fr"><label>Mortgage rate (%)</label><input type="number" id="rvr" value="4.5" step="0.1" oninput="cRvB()"></div>
+    <div class="fr"><label>Monthly rent</label><input type="number" id="rvrent" placeholder="e.g. 5000" oninput="cRvB()"></div>
+    <div class="fr"><label>Years to compare</label><input type="number" id="rvy" value="5" min="1" max="30" oninput="cRvB()"></div>
+    <div class="rbox" id="rvres" style="flex-direction:column;align-items:flex-start;gap:4px"><span style="color:var(--ink4)">Enter details</span></div>
+  </div>
+</div>
+
+<!-- RETIREMENT -->
+<div class="tcard tb-teal" data-cat="lifestyle" data-name="retirement savings pension calculator">
+  <div class="tc-head" onclick="togTool(this)">
+    <div class="tc-icon">👴</div>
+    <div><div class="tc-name">Retirement Calculator</div><div class="tc-desc">How much you'll have</div></div>
+    <button class="tc-x" onclick="event.stopPropagation();closeTool(this)">×</button>
+  </div>
+  <div class="tpanel">
+    <div class="fr"><label>Current age</label><input type="number" id="rta" placeholder="e.g. 30" oninput="cRet()"></div>
+    <div class="fr"><label>Retirement age</label><input type="number" id="rtr" value="60" oninput="cRet()"></div>
+    <div class="fr"><label>Current savings</label><input type="number" id="rts" placeholder="e.g. 50000" oninput="cRet()"></div>
+    <div class="fr"><label>Monthly savings</label><input type="number" id="rtm" placeholder="e.g. 1000" oninput="cRet()"></div>
+    <div class="fr"><label>Annual return (%)</label><input type="number" id="rtrate" value="7" step="0.5" oninput="cRet()"></div>
+    <div class="rbox" id="rtres" style="flex-direction:column;align-items:flex-start;gap:3px"><span style="color:var(--ink4)">Enter details</span></div>
+  </div>
+</div>
+
+<!-- COUNTDOWN -->
+<div class="tcard tb-orange" data-cat="lifestyle" data-name="countdown timer event days until">
+  <div class="tc-head" onclick="togTool(this)">
+    <div class="tc-icon">⏳</div>
+    <div><div class="tc-name">Countdown Timer</div><div class="tc-desc">Days until any event</div></div>
+    <button class="tc-x" onclick="event.stopPropagation();closeTool(this)">×</button>
+  </div>
+  <div class="tpanel">
+    <div class="fr"><label>Event name</label><input type="text" id="cdn" placeholder="e.g. Holiday" oninput="cCD()"></div>
+    <div class="fr"><label>Event date</label><input type="datetime-local" id="cdd" oninput="cCD()"></div>
+    <div id="cdres" style="margin-top:8px"></div>
+  </div>
+</div>
+
+<!-- TIMEZONE -->
+<div class="tcard tb-teal" data-cat="lifestyle" data-name="time zone converter world clock dubai">
+  <div class="tc-head" onclick="togTool(this)">
+    <div class="tc-icon">🕐</div>
+    <div><div class="tc-name">Time Zone Converter</div><div class="tc-desc">World city times</div></div>
+    <button class="tc-x" onclick="event.stopPropagation();closeTool(this)">×</button>
+  </div>
+  <div class="tpanel">
+    <div class="fr"><label>Your time</label><input type="time" id="tzt" oninput="cTZ()"></div>
+    <div class="fr"><label>From</label><select id="tzf" onchange="cTZ()" style="font-size:12px"><option value="4">Dubai +4</option><option value="0">London +0</option><option value="3">Riyadh +3</option><option value="5.5">Mumbai +5:30</option><option value="-5">New York −5</option><option value="-8">LA −8</option><option value="8">Singapore +8</option><option value="9">Tokyo +9</option><option value="10">Sydney +10</option><option value="1">Paris +1</option></select></div>
+    <div class="fr"><label>To</label><select id="tzt2" onchange="cTZ()" style="font-size:12px"><option value="0">London +0</option><option value="4">Dubai +4</option><option value="3">Riyadh +3</option><option value="5.5">Mumbai +5:30</option><option value="-5">New York −5</option><option value="-8">LA −8</option><option value="8">Singapore +8</option><option value="9">Tokyo +9</option><option value="10">Sydney +10</option><option value="1">Paris +1</option></select></div>
+    <div class="rbox" id="tzres"><span style="color:var(--ink4)">Set time</span></div>
+  </div>
+</div>
+
+<!-- TEMPERATURE -->
+<div class="tcard tb-red" data-cat="convert" data-name="celsius fahrenheit kelvin temperature">
+  <div class="tc-head" onclick="togTool(this)">
+    <div class="tc-icon">🌡️</div>
+    <div><div class="tc-name">Temperature</div><div class="tc-desc">°C ↔ °F ↔ K</div></div>
+    <button class="tc-x" onclick="event.stopPropagation();closeTool(this)">×</button>
+  </div>
+  <div class="tpanel">
+    <div class="fr"><label>Value</label><input type="number" id="tmpv" placeholder="e.g. 37" step="0.1" oninput="cTMP()">
+      <select id="tmpf" onchange="cTMP()" style="flex:.8"><option value="c">°C</option><option value="f">°F</option><option value="k">K</option></select></div>
+    <div class="rbox" id="tmpres"><span style="color:var(--ink4)">Enter temperature</span></div>
+  </div>
+</div>
+
+<!-- LENGTH -->
+<div class="tcard tb-gray" data-cat="convert" data-name="length cm inches feet meters km miles">
+  <div class="tc-head" onclick="togTool(this)">
+    <div class="tc-icon">📏</div>
+    <div><div class="tc-name">Length Converter</div><div class="tc-desc">cm ↔ in ↔ ft ↔ km</div></div>
+    <button class="tc-x" onclick="event.stopPropagation();closeTool(this)">×</button>
+  </div>
+  <div class="tpanel">
+    <div class="fr"><label>Value</label><input type="number" id="lnv" placeholder="e.g. 180" step="0.01" oninput="cLen()">
+      <select id="lnf" onchange="cLen()" style="flex:.8"><option value="cm">cm</option><option value="in">in</option><option value="ft">ft</option><option value="m">m</option><option value="km">km</option><option value="mi">mi</option></select></div>
+    <div class="rbox" id="lnres" style="flex-direction:column;align-items:flex-start;gap:3px"><span style="color:var(--ink4)">Enter value</span></div>
+  </div>
+</div>
+
+<!-- WEIGHT -->
+<div class="tcard tb-gray" data-cat="convert" data-name="weight kg lbs pounds stone grams">
+  <div class="tc-head" onclick="togTool(this)">
+    <div class="tc-icon">🏋️</div>
+    <div><div class="tc-name">Weight Converter</div><div class="tc-desc">kg ↔ lbs ↔ stone</div></div>
+    <button class="tc-x" onclick="event.stopPropagation();closeTool(this)">×</button>
+  </div>
+  <div class="tpanel">
+    <div class="fr"><label>Value</label><input type="number" id="wgv" placeholder="e.g. 70" step="0.1" oninput="cWt()">
+      <select id="wgf" onchange="cWt()" style="flex:.8"><option value="kg">kg</option><option value="lb">lb</option><option value="g">g</option><option value="oz">oz</option><option value="st">stone</option></select></div>
+    <div class="rbox" id="wgres"><span style="color:var(--ink4)">Enter value</span></div>
+  </div>
+</div>
+
+<!-- AREA -->
+<div class="tcard tb-gray" data-cat="convert" data-name="area sqft sqm square feet acres">
+  <div class="tc-head" onclick="togTool(this)">
+    <div class="tc-icon">📐</div>
+    <div><div class="tc-name">Area Converter</div><div class="tc-desc">sqft ↔ sqm ↔ acres</div></div>
+    <button class="tc-x" onclick="event.stopPropagation();closeTool(this)">×</button>
+  </div>
+  <div class="tpanel">
+    <div class="fr"><label>Value</label><input type="number" id="arv" placeholder="e.g. 1000" step="0.01" oninput="cAr()">
+      <select id="arf" onchange="cAr()" style="flex:.8"><option value="sqft">sqft</option><option value="sqm">sqm</option><option value="sqyd">sqyd</option><option value="acre">acre</option></select></div>
+    <div class="rbox" id="arres" style="flex-direction:column;align-items:flex-start;gap:3px"><span style="color:var(--ink4)">Enter value</span></div>
+  </div>
+</div>
+
+<!-- DATA SIZE -->
+<div class="tcard tb-teal" data-cat="convert" data-name="data size mb gb tb kb bytes">
+  <div class="tc-head" onclick="togTool(this)">
+    <div class="tc-icon">💾</div>
+    <div><div class="tc-name">Data Size</div><div class="tc-desc">KB ↔ MB ↔ GB ↔ TB</div></div>
+    <button class="tc-x" onclick="event.stopPropagation();closeTool(this)">×</button>
+  </div>
+  <div class="tpanel">
+    <div class="fr"><label>Value</label><input type="number" id="dsv" placeholder="e.g. 500" step="any" oninput="cDS()">
+      <select id="dsf" onchange="cDS()" style="flex:.8"><option value="kb">KB</option><option value="mb" selected>MB</option><option value="gb">GB</option><option value="tb">TB</option></select></div>
+    <div class="rbox" id="dsres" style="flex-direction:column;align-items:flex-start;gap:3px"><span style="color:var(--ink4)">Enter value</span></div>
+  </div>
+</div>
+
+<!-- SPEED -->
+<div class="tcard tb-amber" data-cat="convert" data-name="speed kmh mph knots converter">
+  <div class="tc-head" onclick="togTool(this)">
+    <div class="tc-icon">💨</div>
+    <div><div class="tc-name">Speed Converter</div><div class="tc-desc">km/h ↔ mph ↔ knots</div></div>
+    <button class="tc-x" onclick="event.stopPropagation();closeTool(this)">×</button>
+  </div>
+  <div class="tpanel">
+    <div class="fr"><label>Value</label><input type="number" id="spv" placeholder="e.g. 100" step="0.1" oninput="cSP()">
+      <select id="spf" onchange="cSP()" style="flex:.8"><option value="kmh">km/h</option><option value="mph">mph</option><option value="ms">m/s</option><option value="kn">knots</option></select></div>
+    <div class="rbox" id="spres"><span style="color:var(--ink4)">Enter value</span></div>
+  </div>
+</div>
+
+<!-- READING TIME -->
+<div class="tcard tb-purple" data-cat="work" data-name="reading time estimate text article">
+  <div class="tc-head" onclick="togTool(this)">
+    <div class="tc-icon">📖</div>
+    <div><div class="tc-name">Reading Time</div><div class="tc-desc">How long to read</div></div>
+    <button class="tc-x" onclick="event.stopPropagation();closeTool(this)">×</button>
+  </div>
+  <div class="tpanel">
+    <textarea id="rtt" placeholder="Paste your text…" oninput="cRT()"></textarea>
+    <div class="rbox" id="rtres" style="margin-top:6px"><span style="color:var(--ink4)">Paste text above</span></div>
+  </div>
+</div>
+
+<!-- LOREM IPSUM -->
+<div class="tcard tb-gray" data-cat="work" data-name="lorem ipsum placeholder dummy text">
+  <div class="tc-head" onclick="togTool(this)">
+    <div class="tc-icon">✍️</div>
+    <div><div class="tc-name">Lorem Ipsum</div><div class="tc-desc">Placeholder text</div></div>
+    <button class="tc-x" onclick="event.stopPropagation();closeTool(this)">×</button>
+  </div>
+  <div class="tpanel">
+    <div class="fr"><label>Paragraphs</label><input type="number" id="liN" value="3" min="1" max="10" oninput="genLI()"></div>
+    <div class="rbox" id="lires" style="font-size:12px;line-height:1.6;flex-direction:column;align-items:flex-start;max-height:200px;overflow-y:auto"><span style="color:var(--ink4)">Set count above</span></div>
+    <button class="cpbtn" style="margin-top:6px" onclick="cpLI(this)">Copy text</button>
+  </div>
+</div>
+
+</div>
+<div class="empty" id="noRes" style="display:none">🔍 No tools match. Try a different keyword.</div>
+</div>
+
+<div class="ad-mid">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="REPLACE_SLOT_2" data-ad-format="auto" data-full-width-responsive="true"></ins>
+</div>
+
 <footer>
   <div class="ftop">
     <div class="fbrand">
       <a class="logo" href="/"><span class="lm">W</span>MyWorkKits</a>
-      <p>Free instant tools for everyday work and life. No sign-up, no tracking, works worldwide.</p>
+      <p>Free instant tools for work, finance, health and daily life. No sign-up ever.</p>
     </div>
-    <div class="fcol">
-      <h4>Finance tools</h4>
-      <a href="/vat-calculator.html">VAT / GST calculator</a>
+    <div class="fcol"><h4>Finance</h4>
+      <a href="/budget-planner.html">Budget planner</a>
+      <a href="/vat-calculator.html">VAT / GST</a>
       <a href="/salary-calculator.html">Salary calculator</a>
-      <a href="/loan-emi-calculator.html">Loan / EMI calculator</a>
-      <a href="/margin-calculator.html">Margin &amp; markup</a>
+      <a href="/loan-emi-calculator.html">Loan / EMI</a>
       <a href="/compound-interest.html">Compound interest</a>
-      <a href="/tip-calculator.html">Tip &amp; bill splitter</a>
       <a href="/currency-converter.html">Currency converter</a>
     </div>
-    <div class="fcol">
-      <h4>Math &amp; converters</h4>
-      <a href="/percentage-calculator.html">Percentage calculator</a>
-      <a href="/discount-calculator.html">Discount calculator</a>
-      <a href="/percentage-increase.html">% increase / decrease</a>
-      <a href="/temperature-converter.html">Temperature converter</a>
-      <a href="/unit-converters.html">Unit converters</a>
-      <a href="/currency-converter.html">Currency converter</a>
-    </div>
-    <div class="fcol">
-      <h4>Other tools</h4>
-      <a href="/word-counter.html">Word counter</a>
+    <div class="fcol"><h4>Work</h4>
+      <a href="/qr-code-generator.html">QR code generator</a>
       <a href="/hours-worked.html">Hours worked</a>
-      <a href="/age-calculator.html">Age calculator</a>
-      <a href="/date-difference.html">Days between dates</a>
-      <a href="/bmi-calculator.html">BMI calculator</a>
       <a href="/invoice-generator.html">Invoice numbers</a>
-      <a href="/case-converter.html">Text case converter</a>
+      <a href="/word-counter.html">Word counter</a>
+      <a href="/password-generator.html">Password generator</a>
+      <a href="/pomodoro-timer.html">Pomodoro timer</a>
+    </div>
+    <div class="fcol"><h4>Health</h4>
+      <a href="/bmi-calculator.html">BMI calculator</a>
+      <a href="/calorie-calculator.html">Calorie calculator</a>
+      <a href="/water-intake-calculator.html">Water intake</a>
+      <a href="/sleep-calculator.html">Sleep calculator</a>
+      <a href="/ideal-weight-calculator.html">Ideal weight</a>
+      <a href="/age-calculator.html">Age calculator</a>
+    </div>
+    <div class="fcol"><h4>Lifestyle</h4>
+      <a href="/grocery-calculator.html">Grocery calculator</a>
+      <a href="/trip-cost-calculator.html">Trip cost</a>
+      <a href="/rent-vs-buy.html">Rent vs buy</a>
+      <a href="/retirement-calculator.html">Retirement</a>
+      <a href="/countdown-timer.html">Countdown timer</a>
+      <a href="/timezone-converter.html">Time zones</a>
     </div>
   </div>
   <div class="fbot">
@@ -716,160 +895,217 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
 </footer>
 
 <script>
-// ===== CURRENCY =====
+// ═══ CURRENCY ═══
 const CURRENCIES=[{code:'USD',sym:'$',flag:'🇺🇸'},{code:'EUR',sym:'€',flag:'🇪🇺'},{code:'GBP',sym:'£',flag:'🇬🇧'},{code:'AED',sym:'AED',flag:'🇦🇪'},{code:'SAR',sym:'SAR',flag:'🇸🇦'},{code:'INR',sym:'₹',flag:'🇮🇳'},{code:'PKR',sym:'₨',flag:'🇵🇰'},{code:'PHP',sym:'₱',flag:'🇵🇭'},{code:'NGN',sym:'₦',flag:'🇳🇬'},{code:'CAD',sym:'C$',flag:'🇨🇦'},{code:'AUD',sym:'A$',flag:'🇦🇺'},{code:'EGP',sym:'E£',flag:'🇪🇬'}];
 const FX={USD:1,EUR:1.08,GBP:1.27,AED:0.272,SAR:0.267,INR:0.012,PKR:0.0036,PHP:0.018,NGN:0.00065,CAD:0.74,AUD:0.65,EGP:0.021};
-function detectCur(){try{const tz=Intl.DateTimeFormat().resolvedOptions().timeZone||'';if(tz.includes('Dubai')||tz.includes('Abu_Dhabi'))return CURRENCIES.find(c=>c.code==='AED');if(tz.includes('Riyadh'))return CURRENCIES.find(c=>c.code==='SAR');if(tz.includes('Kolkata'))return CURRENCIES.find(c=>c.code==='INR');if(tz.includes('Karachi'))return CURRENCIES.find(c=>c.code==='PKR');if(tz.includes('Manila'))return CURRENCIES.find(c=>c.code==='PHP');if(tz.includes('Lagos'))return CURRENCIES.find(c=>c.code==='NGN');if(tz.includes('London'))return CURRENCIES.find(c=>c.code==='GBP');if(tz.includes('Paris')||tz.includes('Berlin'))return CURRENCIES.find(c=>c.code==='EUR');if(tz.includes('Toronto')||tz.includes('Vancouver'))return CURRENCIES.find(c=>c.code==='CAD');if(tz.includes('Sydney'))return CURRENCIES.find(c=>c.code==='AUD');}catch(e){}return CURRENCIES[0];}
+function detectCur(){try{const tz=Intl.DateTimeFormat().resolvedOptions().timeZone||'';if(tz.includes('Dubai')||tz.includes('Abu_Dhabi'))return CURRENCIES[3];if(tz.includes('Riyadh'))return CURRENCIES[4];if(tz.includes('Kolkata'))return CURRENCIES[5];if(tz.includes('Karachi'))return CURRENCIES[6];if(tz.includes('Manila'))return CURRENCIES[7];if(tz.includes('London'))return CURRENCIES[2];if(tz.includes('Paris')||tz.includes('Berlin'))return CURRENCIES[1];}catch(e){}return CURRENCIES[0];}
 let CUR=(()=>{try{const s=localStorage.getItem('wk_cur');if(s)return JSON.parse(s);}catch(e){}return detectCur();})();
-function saveCur(c){CUR=c;localStorage.setItem('wk_cur',JSON.stringify(c));document.getElementById('locLabel').textContent=c.code;document.getElementById('locFlag').textContent=c.flag;document.querySelectorAll('.csym').forEach(el=>el.textContent=c.sym);buildCG();document.getElementById('currModal').classList.remove('open');reCalcAll();}
-function buildCG(){const g=document.getElementById('currGrid');g.innerHTML=CURRENCIES.map(c=>`<button class="copt${c.code===CUR.code?' sel':''}" onclick="saveCur({code:'${c.code}',sym:'${c.sym}',flag:'${c.flag}'})"><span style="font-size:18px">${c.flag}</span><span style="font-size:11px;font-weight:600">${c.code}</span></button>`).join('');}
-document.getElementById('locFlag').textContent=CUR.flag||'🌍';
-document.getElementById('locLabel').textContent=CUR.code||'USD';
-document.querySelectorAll('.csym').forEach(el=>el.textContent=CUR.sym);
-buildCG();
+function saveCur(c){CUR=c;localStorage.setItem('wk_cur',JSON.stringify(c));document.getElementById('locLabel').textContent=c.code;document.getElementById('locFlag').textContent=c.flag;buildCG();document.getElementById('currModal').classList.remove('open');}
+function buildCG(){document.getElementById('currGrid').innerHTML=CURRENCIES.map(c=>`<button class="copt${c.code===CUR.code?' sel':''}" onclick="saveCur({code:'${c.code}',sym:'${c.sym}',flag:'${c.flag}'})"><span style="font-size:17px">${c.flag}</span><span style="font-size:11px;font-weight:600">${c.code}</span></button>`).join('');}
+document.getElementById('locFlag').textContent=CUR.flag;document.getElementById('locLabel').textContent=CUR.code;buildCG();
 document.getElementById('currModal').addEventListener('click',function(e){if(e.target===this)this.classList.remove('open');});
-document.getElementById('adDismiss').addEventListener('click',()=>document.getElementById('stickyAd').style.display='none');
 
-// ===== UTILS =====
-function f(n,d=2){return isNaN(n)||!isFinite(n)?'—':Number(n).toLocaleString(undefined,{maximumFractionDigits:d,minimumFractionDigits:d});}
+// ═══ UTILS ═══
+function f(n,d=2){return isNaN(n)||!isFinite(n)?'—':Number(n).toLocaleString(undefined,{maximumFractionDigits:d,minimumFractionDigits:d>0?Math.min(d,2):0});}
 function fc(n){return CUR.sym+' '+f(n);}
-function res(id,html){const e=document.getElementById(id);if(e)e.innerHTML=html;}
+function res(id,h){const e=document.getElementById(id);if(e)e.innerHTML=h;}
 
-// ===== VAT =====
-let vm='add';
-function setVM(b,m){vm=m;document.querySelectorAll('[onclick^="setVM"]').forEach(x=>x.classList.toggle('on',x===b));cVAT();}
-function cVAT(){const a=parseFloat(document.getElementById('va').value),r=parseFloat(document.getElementById('vr').value)||0;if(isNaN(a)){res('vres','<span style="color:var(--ink4)">Enter amount above</span>');return;}if(vm==='add'){const tx=a*r/100,tot=a+tx;res('vres',`<span>Total incl. tax</span><strong>${fc(tot)}</strong><span class="u">Tax = ${fc(tx)}</span>`);}else{const ex=a/(1+r/100),tx=a-ex;res('vres',`<span>Ex-tax price</span><strong>${fc(ex)}</strong><span class="u">Tax = ${fc(tx)}</span>`);}}
+// ═══ ACCORDION ═══
+function togTool(head){
+  const card=head.closest('.tcard');
+  const wasOpen=card.classList.contains('open');
+  document.querySelectorAll('.tcard.open').forEach(c=>c.classList.remove('open'));
+  if(!wasOpen){card.classList.add('open');setTimeout(()=>card.scrollIntoView({behavior:'smooth',block:'nearest'}),100);}
+}
+function closeTool(btn){btn.closest('.tcard').classList.remove('open');}
 
-// ===== SALARY =====
-function cSal(){const m=parseFloat(document.getElementById('sm').value),d=parseInt(document.getElementById('sd').value)||5;if(isNaN(m)){res('sres','<span style="color:var(--ink4)">Enter salary</span>');return;}const ann=m*12,day=m/(d*52/12),hr=day/8;res('sres',`<div style="font-size:11px;color:var(--ink4)">Annual</div><strong>${fc(Math.round(ann))}</strong><div style="font-size:11px;color:var(--ink4);margin-top:2px">Per day &nbsp;·&nbsp; Per hour</div><div style="font-size:15px;font-weight:700;font-family:var(--ff)">${fc(day)} &nbsp;·&nbsp; ${fc(hr)}</div>`);}
+// ═══ FEATURED PANELS ═══
+function toggleFeat(which){
+  const qrP=document.getElementById('featQRPanel'),bP=document.getElementById('featBudgetPanel');
+  const qrB=document.getElementById('featQRBtn'),bB=document.getElementById('featBudgetBtn');
+  if(which==='qr'){
+    const open=qrP.classList.contains('open');
+    qrP.classList.toggle('open',!open);qrB.classList.toggle('open',!open);
+    bP.classList.remove('open');bB.classList.remove('open');
+    if(!open)genQR();
+  }else{
+    const open=bP.classList.contains('open');
+    bP.classList.toggle('open',!open);bB.classList.toggle('open',!open);
+    qrP.classList.remove('open');qrB.classList.remove('open');
+    if(!open)calcBudget();
+  }
+}
 
-// ===== EMI =====
-function cEMI(){const P=parseFloat(document.getElementById('ea').value),aR=parseFloat(document.getElementById('er').value),n=parseInt(document.getElementById('em').value);if(isNaN(P)||isNaN(aR)||isNaN(n)){res('eres','<span style="color:var(--ink4)">Enter all fields</span>');return;}const r=aR/100/12;const emi=r===0?P/n:P*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);const tot=emi*n,int=tot-P;res('eres',`<div>Monthly payment <strong>${fc(emi)}</strong></div><div style="font-size:11px;color:var(--ink4)">Total repaid ${fc(tot)} · Interest ${fc(int)}</div>`);}
-
-// ===== TIP =====
-function cTip(){const b=parseFloat(document.getElementById('tb').value),p=parseFloat(document.getElementById('tp').value)||0,s=parseInt(document.getElementById('ts').value)||1;if(isNaN(b)){res('tres','<span style="color:var(--ink4)">Enter bill</span>');return;}const tip=b*p/100,tot=b+tip,pp=tot/s;res('tres',`<span>Each pays</span><strong>${fc(pp)}</strong><span class="u">Total ${fc(tot)} (tip ${fc(tip)})</span>`);}
-
-// ===== MARGIN =====
-function cMG(){const c=parseFloat(document.getElementById('mc').value),s=parseFloat(document.getElementById('ms').value);if(isNaN(c)||isNaN(s)){res('mres','<span style="color:var(--ink4)">Enter prices</span>');return;}const p=s-c,mg=p/s*100,mu=p/c*100;res('mres',`<div>Profit <strong>${fc(p)}</strong></div><div style="font-size:12px">Margin <strong>${f(mg)}%</strong> &nbsp;·&nbsp; Markup <strong>${f(mu)}%</strong></div>`);}
-
-// ===== COMPOUND INTEREST =====
-function cCI(){const p=parseFloat(document.getElementById('ci_p').value),r=parseFloat(document.getElementById('ci_r').value),y=parseFloat(document.getElementById('ci_y').value);if(isNaN(p)||isNaN(r)||isNaN(y)){res('ci_res','<span style="color:var(--ink4)">Enter details</span>');return;}const tot=p*Math.pow(1+r/100,y),int=tot-p;res('ci_res',`<span>Final value</span><strong>${fc(tot)}</strong><span class="u">Interest ${fc(int)}</span>`);}
-
-// ===== CURRENCY CONVERTER =====
-function cCC(){const a=parseFloat(document.getElementById('ca').value),fr=document.getElementById('cf').value,t=document.getElementById('ct').value;if(isNaN(a)){res('cc_r','<span style="color:var(--ink4)">Enter amount</span>');return;}const usd=a*(FX[fr]||1),out=usd/(FX[t]||1);res('cc_r',`<strong>${f(out)} ${t}</strong><span class="u">approx. rate</span>`);}
-
-// ===== FUEL =====
-function updateFuLbl(){document.getElementById('feff_l').textContent=document.getElementById('fu').value==='mi'?'MPG (US)':'L per 100km';}
-function cFuel(){const km=parseFloat(document.getElementById('fk').value),un=document.getElementById('fu').value,ef=parseFloat(document.getElementById('fe').value),pr=parseFloat(document.getElementById('fp').value);if(isNaN(km)||isNaN(ef)||isNaN(pr)){res('fres','<span style="color:var(--ink4)">Enter details</span>');return;}const kma=un==='mi'?km*1.609:km,lit=kma*ef/100,cost=lit*pr;res('fres',`<strong>${fc(cost)}</strong><span class="u">${f(lit,1)}L used</span>`);}
-
-// ===== PERCENTAGE =====
-let pm='of';
-function setPM(b,m){pm=m;document.querySelectorAll('[onclick^="setPM"]').forEach(x=>x.classList.toggle('on',x===b));document.getElementById('pl1').textContent=m==='of'?'Percentage %':(m==='what'?'Value (X)':'Old value');document.getElementById('pl2').textContent=m==='of'?'Number':(m==='what'?'Total (Y)':'New value');cPCT();}
-function cPCT(){const a=parseFloat(document.getElementById('pa').value),b=parseFloat(document.getElementById('pb').value);if(isNaN(a)||isNaN(b)){res('pres','<span style="color:var(--ink4)">Fill in both fields</span>');return;}if(pm==='of')res('pres',`<span>${a}% of ${b} =</span><strong>${f(a/100*b)}</strong>`);else if(pm==='what')res('pres',`<span>${a} is</span><strong>${f(a/b*100)}%</strong><span class="u">of ${b}</span>`);else{const ch=(b-a)/a*100;const col=ch>=0?'var(--green)':'var(--red)';res('pres',`<span>Change:</span><strong style="color:${col}">${ch>=0?'▲':'▼'} ${f(Math.abs(ch))}%</strong>`);}}
-
-// ===== DISCOUNT =====
-function cDisc(){const o=parseFloat(document.getElementById('do').value),p=parseFloat(document.getElementById('dp').value);if(isNaN(o)||isNaN(p)){res('dres','<span style="color:var(--ink4)">Enter values</span>');return;}const sv=o*p/100,fn=o-sv;res('dres',`<span>You pay</span><strong>${fc(fn)}</strong><span class="u">saving ${fc(sv)}</span>`);}
-
-// ===== % INCREASE =====
-function cPI(){const o=parseFloat(document.getElementById('po').value),p=parseFloat(document.getElementById('pp').value);if(isNaN(o)||isNaN(p)){res('pires','<span style="color:var(--ink4)">Enter values</span>');return;}const nv=o*(1+p/100),d=nv-o;const col=d>=0?'var(--green)':'var(--red)';res('pires',`<span>New value</span><strong style="color:${col}">${f(nv)}</strong><span class="u">${d>=0?'▲':'▼'} ${f(Math.abs(d))}</span>`);}
-
-// ===== RATIO =====
-function cRatio(){const a=parseFloat(document.getElementById('ra').value),b=parseFloat(document.getElementById('rb').value),c=parseFloat(document.getElementById('rc').value);if(isNaN(a)||isNaN(b)||isNaN(c)){res('rres','<span style="color:var(--ink4)">Enter values</span>');return;}res('rres',`<span>D =</span><strong>${f(c*b/a)}</strong><span class="u">(${a}:${b} = ${c}:${f(c*b/a)})</span>`);}
-
-// ===== WORD COUNTER =====
-function cWC(){const t=document.getElementById('wct').value;const w=t.trim()===''?0:t.trim().split(/\s+/).length;const c=t.length,s=t.split(/[.!?]+/).filter(x=>x.trim()).length;res('wcres',`<span style="font-size:11px;color:var(--ink4)">Words</span><strong>${w.toLocaleString()}</strong><span style="color:var(--ink5)">·</span><span style="font-size:11px;color:var(--ink4)">Chars</span><strong>${c.toLocaleString()}</strong><span style="color:var(--ink5)">·</span><span style="font-size:11px;color:var(--ink4)">Sentences</span><strong>${s}</strong>`);}
-
-// ===== CASE CONVERTER =====
-let csResult='';
-function dCase(type){const t=document.getElementById('cst').value;if(!t)return;if(type==='upper')csResult=t.toUpperCase();else if(type==='lower')csResult=t.toLowerCase();else if(type==='title')csResult=t.toLowerCase().replace(/(?:^|\s|[-])\S/g,c=>c.toUpperCase());else csResult=t.toLowerCase().replace(/(^\s*\w|[.!?]\s*\w)/g,c=>c.toUpperCase());res('csres',`<span style="font-size:13px;color:var(--ink)">${csResult}</span>`);}
-function cpCase(){if(csResult)navigator.clipboard.writeText(csResult);}
-
-// ===== READING TIME =====
-function cRT(){const t=document.getElementById('rtt').value.trim();if(!t){res('rtres','<span style="color:var(--ink4)">Paste text</span>');return;}const w=t.split(/\s+/).length,m=Math.ceil(w/238);res('rtres',`<strong>${m} min${m!==1?'s':''}</strong><span class="u">${w.toLocaleString()} words @ 238 wpm</span>`);}
-
-// ===== INVOICE =====
-let invCurrent='';
-function gInv(){const pfx=(document.getElementById('invp').value||'INV').trim().toUpperCase(),num=parseInt(document.getElementById('invn').value)||1001;const ids=[num,num+1,num+2].map(n=>pfx+'-'+String(n).padStart(4,'0'));invCurrent=ids[0];res('invres',ids.map((id,i)=>`<div style="font-size:${i===0?'16px':'12px'};font-weight:${i===0?'700':'400'};color:var(--ink${i===0?'':'3'})">${id}</div>`).join(''));}
-gInv();
-function cpInv(){if(invCurrent)navigator.clipboard.writeText(invCurrent);}
-
-// ===== HOURS WORKED =====
-function cHW(){const i=document.getElementById('hwi').value,o=document.getElementById('hwo').value,b=parseInt(document.getElementById('hwb').value)||0;if(!i||!o)return;const[ih,im]=i.split(':').map(Number),[oh,om]=o.split(':').map(Number);let m=(oh*60+om)-(ih*60+im);if(m<0)m+=1440;const net=m-b;if(net<0){res('hwres','<span style="color:var(--red)">Break exceeds working time</span>');return;}res('hwres',`<strong>${Math.floor(net/60)}h ${net%60}m</strong><span class="u">worked</span>`);}
-cHW();
-
-// ===== DATE DIFF =====
-function cDD(){const a=new Date(document.getElementById('dda').value),b=new Date(document.getElementById('ddb').value);if(isNaN(a)||isNaN(b)){res('ddres','<span style="color:var(--ink4)">Pick two dates</span>');return;}const days=Math.round((b-a)/86400000);if(days<0){res('ddres','<span style="color:var(--red)">End before start</span>');return;}const wks=Math.floor(days/7),mo=(b.getFullYear()-a.getFullYear())*12+(b.getMonth()-a.getMonth());res('ddres',`<strong>${days.toLocaleString()}</strong><span class="u">days · ${wks}w ${days%7}d · ~${mo} months</span>`);}
-
-// ===== AGE =====
-function cAge(){const d=new Date(document.getElementById('adob').value);if(isNaN(d)){res('ageres','<span style="color:var(--ink4)">Enter date of birth</span>');return;}const n=new Date();let y=n.getFullYear()-d.getFullYear(),m=n.getMonth()-d.getMonth(),dd=n.getDate()-d.getDate();if(dd<0){m--;dd+=new Date(n.getFullYear(),n.getMonth(),0).getDate();}if(m<0){y--;m+=12;}res('ageres',`<strong>${y}</strong><span class="u">years, ${m} months, ${dd} days</span>`);}
-
-// ===== TIME ZONE =====
-function cTZ(){const t=document.getElementById('tzt').value,f=parseFloat(document.getElementById('tzf').value),t2=parseFloat(document.getElementById('tzt2').value);if(!t){res('tzres','<span style="color:var(--ink4)">Set time above</span>');return;}const[h,m]=t.split(':').map(Number);let tot=h*60+m+(t2-f)*60;tot=((tot%1440)+1440)%1440;const rh=Math.floor(tot/60),rm=tot%60;const p=n=>String(n).padStart(2,'0');res('tzres',`<strong>${p(rh)}:${p(rm)}</strong><span class="u">destination time</span>`);}
-
-// ===== TEMPERATURE =====
-function cTMP(){const v=parseFloat(document.getElementById('tv').value),fr=document.getElementById('tf').value;if(isNaN(v)){res('tmpres','<span style="color:var(--ink4)">Enter temperature</span>');return;}let c;if(fr==='c')c=v;else if(fr==='f')c=(v-32)*5/9;else c=v-273.15;res('tmpres',`<div><strong>${f(c,1)}°C</strong> · <strong>${f(c*9/5+32,1)}°F</strong> · <strong>${f(c+273.15,1)}K</strong></div>`);}
-
-// ===== LENGTH =====
-function cLen(){const v=parseFloat(document.getElementById('lv').value),fr=document.getElementById('lf').value;if(isNaN(v)){res('lres','<span style="color:var(--ink4)">Enter value</span>');return;}let m;if(fr==='cm')m=v/100;else if(fr==='in')m=v*0.0254;else if(fr==='ft')m=v*0.3048;else if(fr==='km')m=v*1000;else if(fr==='mi')m=v*1609.34;else m=v;res('lres',`<div><strong>${f(m*100)} cm</strong> · <strong>${f(m/0.0254)} in</strong> · <strong>${f(m/0.3048)} ft</strong></div><div style="font-size:12px;color:var(--ink4)">${f(m)} m · ${f(m/1000)} km · ${f(m/1609.34)} mi</div>`);}
-
-// ===== WEIGHT =====
-function cWt(){const v=parseFloat(document.getElementById('wv').value),fr=document.getElementById('wf').value;if(isNaN(v)){res('wres','<span style="color:var(--ink4)">Enter value</span>');return;}let kg;if(fr==='kg')kg=v;else if(fr==='lb')kg=v*0.453592;else if(fr==='g')kg=v/1000;else if(fr==='oz')kg=v*0.0283495;else kg=v*6.35029;res('wres',`<div><strong>${f(kg)} kg</strong> · <strong>${f(kg*2.20462)} lb</strong> · <strong>${f(kg/6.35029,2)} stone</strong></div>`);}
-
-// ===== AREA =====
-function cAr(){const v=parseFloat(document.getElementById('arv').value),fr=document.getElementById('arf').value;if(isNaN(v)){res('arres','<span style="color:var(--ink4)">Enter value</span>');return;}let sqm;if(fr==='sqft')sqm=v*0.0929;else if(fr==='sqm')sqm=v;else if(fr==='sqyd')sqm=v*0.8361;else sqm=v*4046.86;res('arres',`<div><strong>${f(sqm)} sqm</strong> · <strong>${f(sqm/0.0929)} sqft</strong></div><div style="font-size:12px;color:var(--ink4)">${f(sqm/0.8361)} sq yards · ${f(sqm/4046.86,4)} acres</div>`);}
-
-// ===== DATA SIZE =====
-function cDS(){const v=parseFloat(document.getElementById('dsv').value),fr=document.getElementById('dsf').value;if(isNaN(v)){res('dsres','<span style="color:var(--ink4)">Enter value</span>');return;}const bytes={b:1,kb:1024,mb:1048576,gb:1073741824,tb:1099511627776};const b=v*bytes[fr];const fmt=n=>n>=1e12?f(n/1e12)+'TB':n>=1e9?f(n/1e9)+'GB':n>=1e6?f(n/1e6)+'MB':n>=1024?f(n/1024)+'KB':f(n)+'B';res('dsres',`<div><strong>${fmt(b)}</strong></div><div style="font-size:12px;color:var(--ink4)">${f(b/1048576,2)} MB · ${f(b/1073741824,4)} GB</div>`);}
-
-// ===== SPEED =====
-function cSP(){const v=parseFloat(document.getElementById('spv').value),fr=document.getElementById('spf').value;if(isNaN(v)){res('spres','<span style="color:var(--ink4)">Enter value</span>');return;}let ms;if(fr==='kmh')ms=v/3.6;else if(fr==='mph')ms=v*0.44704;else if(fr==='kn')ms=v*0.51444;else ms=v;res('spres',`<div><strong>${f(ms*3.6)} km/h</strong> · <strong>${f(ms*2.23694)} mph</strong></div><div style="font-size:12px;color:var(--ink4)">${f(ms)} m/s · ${f(ms/0.51444)} knots</div>`);}
-
-// ===== BMI =====
-let bmiM='metric';
-function setBMI(b,m){bmiM=m;document.querySelectorAll('[onclick^="setBMI"]').forEach(x=>x.classList.toggle('on',x===b));document.getElementById('bwl').textContent=m==='metric'?'Weight (kg)':'Weight (lb)';document.getElementById('bhl').textContent=m==='metric'?'Height (cm)':'Height (in)';cBMI();}
-function cBMI(){const w=parseFloat(document.getElementById('bw').value),h=parseFloat(document.getElementById('bh').value);if(isNaN(w)||isNaN(h)){res('bmires','<span style="color:var(--ink4)">Enter measurements</span>');return;}const kg=bmiM==='metric'?w:w*0.453592,m=bmiM==='metric'?h/100:h*0.0254;const bmi=kg/(m*m);let cat,col;if(bmi<18.5){cat='Underweight';col='var(--amber)';}else if(bmi<25){cat='Normal weight';col='var(--green)';}else if(bmi<30){cat='Overweight';col='var(--amber)';}else{cat='Obese';col='var(--red)';}res('bmires',`<strong>${f(bmi,1)}</strong><span class="u">BMI</span><span style="color:${col};font-weight:600">${cat}</span>`);}
-
-// ===== CALORIES =====
-function cCal(){const w=parseFloat(document.getElementById('cal_w').value),h=parseFloat(document.getElementById('cal_h').value),a=parseFloat(document.getElementById('cal_a').value),act=parseFloat(document.getElementById('cal_act').value);if(isNaN(w)||isNaN(h)||isNaN(a)){res('calres','<span style="color:var(--ink4)">Enter all fields</span>');return;}const bmr=10*w+6.25*h-5*a+5;const tdee=Math.round(bmr*act);res('calres',`<strong>${tdee.toLocaleString()}</strong><span class="u">kcal/day to maintain weight</span>`);}
-
-// ===== SEARCH & FILTER =====
-document.querySelectorAll('.cbt').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    document.querySelectorAll('.cbt').forEach(b=>b.classList.remove('on'));
-    btn.classList.add('on');
-    filterTools(document.getElementById('msearch').value, btn.dataset.cat);
-  });
-});
-document.getElementById('msearch').addEventListener('input',function(){
-  const ac=document.querySelector('.cbt.on')?.dataset.cat||'all';
-  filterTools(this.value, ac);
-});
-function filterTools(q,cat){
-  q=(q||'').toLowerCase().trim();
+// ═══ SEARCH & TABS ═══
+document.getElementById('msearch').addEventListener('input',function(){filter(this.value.toLowerCase().trim(),document.querySelector('.cat-btn.on')?.dataset.cat||'all');});
+document.querySelectorAll('.cat-btn').forEach(btn=>{btn.addEventListener('click',()=>{document.querySelectorAll('.cat-btn').forEach(b=>b.classList.remove('on'));btn.classList.add('on');filter(document.getElementById('msearch').value.toLowerCase().trim(),btn.dataset.cat);});});
+function filter(q,cat){
   let n=0;
-  document.querySelectorAll('.tc').forEach(c=>{
+  document.querySelectorAll('.tcard').forEach(c=>{
     const cm=cat==='all'||c.dataset.cat===cat;
-    const txt=(c.dataset.name||'')+' '+(c.querySelector('.tname')?.textContent||'');
-    const qm=!q||txt.toLowerCase().includes(q);
-    const show=cm&&qm;
-    c.style.display=show?'block':'none';
-    if(show)n++;
-  });
-  // Show/hide section labels
-  document.querySelectorAll('.slabel').forEach(sl=>{
-    const sec=sl.dataset.section;
-    const hasVisible=Array.from(document.querySelectorAll(`.tc[data-cat="${sec}"]`)).some(c=>c.style.display!=='none');
-    sl.style.display=(!q&&cat==='all')||hasVisible?'block':'none';
+    const qm=!q||((c.dataset.name||'')+' '+(c.querySelector('.tc-name')?.textContent||'')).toLowerCase().includes(q);
+    const show=cm&&qm;c.style.display=show?'flex':'none';if(show)n++;
   });
   document.getElementById('noRes').style.display=n===0?'block':'none';
 }
+
+// ═══ QR GENERATOR ═══
+let qrType='url',qrObj=null;
+const QF={
+url:'<div class="fr"><label>Website URL</label><input type="url" id="qf1" placeholder="https://example.com" oninput="genQR()"></div>',
+text:'<div class="fr"><label>Text</label><textarea id="qf1" placeholder="Any text…" oninput="genQR()" style="width:100%"></textarea></div>',
+wifi:'<div class="fr"><label>Network (SSID)</label><input type="text" id="qf1" placeholder="MyWiFi" oninput="genQR()"></div><div class="fr"><label>Password</label><input type="text" id="qf2" placeholder="password" oninput="genQR()"></div>',
+whatsapp:'<div class="fr"><label>Number (+countrycode)</label><input type="tel" id="qf1" placeholder="+971501234567" oninput="genQR()"></div><div class="fr"><label>Message (optional)</label><input type="text" id="qf2" placeholder="Hi…" oninput="genQR()"></div>',
+email:'<div class="fr"><label>Email</label><input type="email" id="qf1" placeholder="hi@example.com" oninput="genQR()"></div>',
+phone:'<div class="fr"><label>Phone (+countrycode)</label><input type="tel" id="qf1" placeholder="+971501234567" oninput="genQR()"></div>'
+};
+function setQT(btn,t){qrType=t;btn.parentElement.querySelectorAll('.mb').forEach(b=>b.classList.toggle('on',b===btn));document.getElementById('qrForm').innerHTML=QF[t];genQR();}
+function qrContent(){
+  const g=id=>{const e=document.getElementById(id);return e?e.value.trim():'';};
+  const v1=g('qf1'),v2=g('qf2');
+  if(!v1)return '';
+  switch(qrType){
+    case 'url':return v1;
+    case 'text':return v1;
+    case 'wifi':return `WIFI:T:WPA;S:${v1};P:${v2};;`;
+    case 'whatsapp':{const num=v1.replace(/[^0-9]/g,'');return v2?`https://wa.me/${num}?text=${encodeURIComponent(v2)}`:`https://wa.me/${num}`;}
+    case 'email':return `mailto:${v1}`;
+    case 'phone':return `tel:${v1}`;
+  }return '';
+}
+function genQR(){
+  const content=qrContent(),box=document.getElementById('qrBox');
+  const size=parseInt(document.getElementById('qrSize').value)||300;
+  if(!content){box.innerHTML='<span style="color:var(--ink4);font-size:13px;text-align:center">Enter content<br>to generate QR</span>';document.getElementById('qrDlBtn').disabled=true;return;}
+  box.innerHTML='';
+  try{
+    qrObj=new QRCode(box,{text:content,width:Math.min(size,260),height:Math.min(size,260),colorDark:'#000000',colorLight:'#ffffff',correctLevel:QRCode.CorrectLevel.H});
+    document.getElementById('qrDlBtn').disabled=false;
+  }catch(e){box.innerHTML='<span style="color:var(--red);font-size:12px">Content too long</span>';}
+}
+function dlQR(){
+  const img=document.querySelector('#qrBox img')||document.querySelector('#qrBox canvas');
+  if(!img)return;
+  const link=document.createElement('a');
+  link.download='qrcode-myworkkits.png';
+  link.href=img.tagName==='IMG'?img.src:img.toDataURL('image/png');
+  link.click();
+}
+document.getElementById('qrForm').innerHTML=QF.url;
+
+// ═══ BUDGET PLANNER ═══
+let bInc=[{n:'Salary',a:''}],bExp=[{n:'Rent',a:''},{n:'Groceries',a:''},{n:'Transport',a:''},{n:'Utilities',a:''}];
+function bRender(){
+  document.getElementById('bIncRows').innerHTML=bInc.map((it,i)=>`<div style="display:flex;gap:6px;margin-bottom:6px"><input type="text" value="${it.n}" placeholder="Source" oninput="bInc[${i}].n=this.value" style="flex:1.4"><input type="number" value="${it.a}" placeholder="0" oninput="bInc[${i}].a=this.value;calcBudget()" style="flex:1"><button onclick="bInc.splice(${i},1);bRender();calcBudget()" style="width:26px;height:32px;border-radius:6px;background:var(--surf2);border:none;cursor:pointer;color:var(--ink4)">×</button></div>`).join('');
+  document.getElementById('bExpRows').innerHTML=bExp.map((it,i)=>`<div style="display:flex;gap:6px;margin-bottom:6px"><input type="text" value="${it.n}" placeholder="Expense" oninput="bExp[${i}].n=this.value" style="flex:1.4"><input type="number" value="${it.a}" placeholder="0" oninput="bExp[${i}].a=this.value;calcBudget()" style="flex:1"><button onclick="bExp.splice(${i},1);bRender();calcBudget()" style="width:26px;height:32px;border-radius:6px;background:var(--surf2);border:none;cursor:pointer;color:var(--ink4)">×</button></div>`).join('');
+}
+function bAddInc(){bInc.push({n:'',a:''});bRender();}
+function bAddExp(){bExp.push({n:'',a:''});bRender();}
+function calcBudget(){
+  const cur=document.getElementById('bCur').value;
+  const inc=bInc.reduce((s,i)=>s+(parseFloat(i.a)||0),0);
+  const exp=bExp.reduce((s,i)=>s+(parseFloat(i.a)||0),0);
+  const sav=inc-exp,pct=inc>0?(sav/inc*100):0;
+  document.getElementById('bSumInc').textContent=f(inc,0);
+  document.getElementById('bSumExp').textContent=f(exp,0);
+  document.getElementById('bSumSav').textContent=f(sav,0);
+  document.getElementById('bSumSav').style.color=sav>=0?'var(--accd)':'var(--red)';
+  document.getElementById('bSumPct').textContent=pct.toFixed(1)+'%';
+  try{localStorage.setItem('wk_budget2',JSON.stringify({bInc,bExp,name:document.getElementById('bName').value,month:document.getElementById('bMonth').value,cur}));}catch(e){}
+}
+function dlBudgetPDF(){
+  const cur=document.getElementById('bCur').value,name=document.getElementById('bName').value||'My Budget',month=document.getElementById('bMonth').value;
+  const inc=bInc.reduce((s,i)=>s+(parseFloat(i.a)||0),0),exp=bExp.reduce((s,i)=>s+(parseFloat(i.a)||0),0);
+  const sav=inc-exp,pct=inc>0?(sav/inc*100).toFixed(1):'0';
+  const rows=(arr,col)=>arr.filter(i=>i.n||parseFloat(i.a)>0).map(i=>`<tr><td style="padding:5px 8px;font-size:12px">${i.n||'—'}</td><td style="padding:5px 8px;text-align:right;font-size:12px;color:${col};font-weight:500">${cur} ${f(parseFloat(i.a)||0,0)}</td></tr>`).join('');
+  const html=`<!DOCTYPE html><html><head><title>Budget — ${name} — ${month}</title><style>body{font-family:Arial;padding:24px;color:#111}h1{font-size:20px;margin-bottom:2px}p{color:#666;font-size:12px;margin-bottom:16px}table{width:100%;border-collapse:collapse;margin-bottom:16px}th{background:#f4f3f0;padding:6px 8px;text-align:left;font-size:11px;color:#666;text-transform:uppercase}tr{border-bottom:1px solid #eee}.sum{display:flex;gap:10px;margin-bottom:16px}.sc{flex:1;border-radius:8px;padding:10px;border:1px solid #e5e7eb}.sl{font-size:10px;font-weight:700;text-transform:uppercase}.sv{font-size:18px;font-weight:800}</style></head><body>
+<h1>Monthly Budget — ${month}</h1><p>Prepared by ${name} · Generated by MyWorkKits.com</p>
+<div class="sum">
+<div class="sc" style="background:#d1fae5"><div class="sl" style="color:#059669">Income</div><div class="sv" style="color:#059669">${cur} ${f(inc,0)}</div></div>
+<div class="sc" style="background:#fee2e2"><div class="sl" style="color:#dc2626">Expenses</div><div class="sv" style="color:#dc2626">${cur} ${f(exp,0)}</div></div>
+<div class="sc" style="background:#dbeafe"><div class="sl" style="color:#2563ff">Savings</div><div class="sv" style="color:${sav>=0?'#2563ff':'#dc2626'}">${cur} ${f(sav,0)}</div></div>
+<div class="sc" style="background:#fef3c7"><div class="sl" style="color:#d97706">Rate</div><div class="sv" style="color:#d97706">${pct}%</div></div>
+</div>
+<table><tr><th>Income source</th><th style="text-align:right">Amount</th></tr>${rows(bInc,'#059669')}</table>
+<table><tr><th>Expense</th><th style="text-align:right">Amount</th></tr>${rows(bExp,'#dc2626')}</table>
+<p style="text-align:center;border-top:1px solid #eee;padding-top:10px">www.myworkkits.com — free monthly budget planner</p>
+</body></html>`;
+  const w=window.open('','_blank');w.document.write(html);w.document.close();setTimeout(()=>w.print(),500);
+}
+try{const s=localStorage.getItem('wk_budget2');if(s){const d=JSON.parse(s);if(d.bInc)bInc=d.bInc;if(d.bExp)bExp=d.bExp;if(d.name)document.getElementById('bName').value=d.name;if(d.month)document.getElementById('bMonth').value=d.month;if(d.cur)document.getElementById('bCur').value=d.cur;}}catch(e){}
+bRender();
+const MONTHS=['January','February','March','April','May','June','July','August','September','October','November','December'];
+if(!localStorage.getItem('wk_budget2'))document.getElementById('bMonth').value=MONTHS[new Date().getMonth()];
+
+// ═══ TOOL CALCS ═══
+let vm='add';
+function setVM(b,m){vm=m;b.parentElement.querySelectorAll('.mb').forEach(x=>x.classList.toggle('on',x===b));cVAT();}
+function cVAT(){const a=parseFloat(document.getElementById('va').value),r=parseFloat(document.getElementById('vr').value)||0;if(isNaN(a)){res('vres','<span style="color:var(--ink4)">Enter amount</span>');return;}if(vm==='add'){const tx=a*r/100;res('vres',`<span>Total</span><strong>${fc(a+tx)}</strong><span class="u">Tax ${fc(tx)}</span>`);}else{const ex=a/(1+r/100);res('vres',`<span>Ex-tax</span><strong>${fc(ex)}</strong><span class="u">Tax ${fc(a-ex)}</span>`);}}
+function cSal(){const m=parseFloat(document.getElementById('sm').value),d=parseInt(document.getElementById('sd').value)||5;if(isNaN(m)){res('sres','<span style="color:var(--ink4)">Enter salary</span>');return;}const day=m/(d*52/12),hr=day/8;res('sres',`<div style="font-size:11px;color:var(--ink4)">Annual</div><strong>${fc(m*12)}</strong><div style="font-size:13px;font-weight:600;font-family:var(--ff)">Day ${fc(day)} · Hour ${fc(hr)}</div>`);}
+function cEMI(){const P=parseFloat(document.getElementById('ea').value),aR=parseFloat(document.getElementById('er').value),n=parseInt(document.getElementById('em').value);if(isNaN(P)||isNaN(aR)||isNaN(n)){res('eres','<span style="color:var(--ink4)">Enter all fields</span>');return;}const r=aR/100/12;const emi=r===0?P/n:P*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);res('eres',`<div>Monthly <strong>${fc(emi)}</strong></div><div style="font-size:11px;color:var(--ink4)">Total ${fc(emi*n)} · Interest ${fc(emi*n-P)}</div>`);}
+function cTip(){const b=parseFloat(document.getElementById('tb').value),p=parseFloat(document.getElementById('tp').value)||0,s=parseInt(document.getElementById('ts').value)||1;if(isNaN(b)){res('tres','<span style="color:var(--ink4)">Enter bill</span>');return;}const tot=b*(1+p/100);res('tres',`<span>Each pays</span><strong>${fc(tot/s)}</strong><span class="u">Total ${fc(tot)}</span>`);}
+function cMG(){const c=parseFloat(document.getElementById('mc').value),s=parseFloat(document.getElementById('ms').value);if(isNaN(c)||isNaN(s)){res('mres','<span style="color:var(--ink4)">Enter prices</span>');return;}const p=s-c;res('mres',`<div>Profit <strong>${fc(p)}</strong></div><div style="font-size:12px">Margin <strong>${f(p/s*100)}%</strong> · Markup <strong>${f(p/c*100)}%</strong></div>`);}
+function cCI(){const p=parseFloat(document.getElementById('cip').value),r=parseFloat(document.getElementById('cir').value),y=parseFloat(document.getElementById('ciy').value);if(isNaN(p)||isNaN(r)||isNaN(y)){res('cires','<span style="color:var(--ink4)">Enter details</span>');return;}const tot=p*Math.pow(1+r/100,y);res('cires',`<span>Final</span><strong>${fc(tot)}</strong><span class="u">Interest ${fc(tot-p)}</span>`);}
+function cCC(){const a=parseFloat(document.getElementById('cca').value),fr=document.getElementById('ccf').value,t=document.getElementById('cct').value;if(isNaN(a)){res('ccres','<span style="color:var(--ink4)">Enter amount</span>');return;}res('ccres',`<strong>${f(a*(FX[fr]||1)/(FX[t]||1))} ${t}</strong><span class="u">approx</span>`);}
+function cDisc(){const o=parseFloat(document.getElementById('dco').value),p=parseFloat(document.getElementById('dcp').value);if(isNaN(o)||isNaN(p)){res('dcres','<span style="color:var(--ink4)">Enter values</span>');return;}res('dcres',`<span>You pay</span><strong>${fc(o*(1-p/100))}</strong><span class="u">Save ${fc(o*p/100)}</span>`);}
+let pm='of';
+function setPM(b,m){pm=m;b.parentElement.querySelectorAll('.mb').forEach(x=>x.classList.toggle('on',x===b));document.getElementById('pl1').textContent=m==='of'?'Percentage %':(m==='what'?'Value (X)':'Old value');document.getElementById('pl2').textContent=m==='of'?'Number':(m==='what'?'Total (Y)':'New value');cPCT();}
+function cPCT(){const a=parseFloat(document.getElementById('pa').value),b=parseFloat(document.getElementById('pb').value);if(isNaN(a)||isNaN(b)){res('pres','<span style="color:var(--ink4)">Fill both fields</span>');return;}if(pm==='of')res('pres',`<strong>${f(a/100*b)}</strong>`);else if(pm==='what')res('pres',`<strong>${f(a/b*100)}%</strong>`);else{const ch=(b-a)/a*100;res('pres',`<strong style="color:${ch>=0?'var(--green)':'var(--red)'}">${ch>=0?'▲':'▼'} ${f(Math.abs(ch))}%</strong>`);}}
+function cPI(){const o=parseFloat(document.getElementById('pio').value),p=parseFloat(document.getElementById('pip').value);if(isNaN(o)||isNaN(p)){res('pires','<span style="color:var(--ink4)">Enter values</span>');return;}const nv=o*(1+p/100);res('pires',`<strong style="color:${nv>=o?'var(--green)':'var(--red)'}">${f(nv)}</strong><span class="u">${nv>=o?'▲':'▼'} ${f(Math.abs(nv-o))}</span>`);}
+function cFuel(){const km=parseFloat(document.getElementById('fk').value),ef=parseFloat(document.getElementById('fe').value),pr=parseFloat(document.getElementById('fp').value);if(isNaN(km)||isNaN(ef)||isNaN(pr)){res('fres','<span style="color:var(--ink4)">Enter details</span>');return;}const lit=km*ef/100;res('fres',`<strong>${fc(lit*pr)}</strong><span class="u">${f(lit,1)}L used</span>`);}
+function cHW(){const i=document.getElementById('hwi').value,o=document.getElementById('hwo').value,b=parseInt(document.getElementById('hwb').value)||0;if(!i||!o)return;const[ih,im]=i.split(':').map(Number),[oh,om]=o.split(':').map(Number);let m=(oh*60+om)-(ih*60+im);if(m<0)m+=1440;const net=m-b;if(net<0){res('hwres','<span style="color:var(--red)">Break too long</span>');return;}res('hwres',`<strong>${Math.floor(net/60)}h ${net%60}m</strong><span class="u">worked</span>`);}
+let invCur='';
+function gInv(){const pfx=(document.getElementById('invp').value||'INV').trim().toUpperCase(),num=parseInt(document.getElementById('invn').value)||1001;const ids=[num,num+1,num+2].map(n=>pfx+'-'+String(n).padStart(4,'0'));invCur=ids[0];res('invres',ids.map((id,i)=>`<div style="font-size:${i===0?'15px':'11px'};font-weight:${i===0?'700':'400'}">${id}</div>`).join(''));}
+function cpInv(btn){if(invCur)navigator.clipboard.writeText(invCur).then(()=>{btn.textContent='✓ Copied';setTimeout(()=>btn.textContent='Copy current',1400);});}
+function cWC(){const t=document.getElementById('wct').value;const w=t.trim()===''?0:t.trim().split(/\s+/).length;res('wcres',`<span style="font-size:11px;color:var(--ink4)">Words</span><strong>${w}</strong><span style="font-size:11px;color:var(--ink4)">Chars</span><strong>${t.length}</strong>`);}
+let csR='';
+function dCase(t){const v=document.getElementById('cst').value;if(!v)return;if(t==='upper')csR=v.toUpperCase();else if(t==='lower')csR=v.toLowerCase();else if(t==='title')csR=v.toLowerCase().replace(/(?:^|\s)\S/g,c=>c.toUpperCase());else csR=v.toLowerCase().replace(/(^\s*\w|[.!?]\s*\w)/g,c=>c.toUpperCase());res('csres',`<span style="font-size:12px">${csR}</span>`);}
+function cpCase(btn){if(csR)navigator.clipboard.writeText(csR).then(()=>{btn.textContent='✓ Copied';setTimeout(()=>btn.textContent='Copy result',1400);});}
+function cDD(){const a=new Date(document.getElementById('dda').value),b=new Date(document.getElementById('ddb').value);if(isNaN(a)||isNaN(b)){res('ddres','<span style="color:var(--ink4)">Pick dates</span>');return;}const d=Math.round((b-a)/86400000);if(d<0){res('ddres','<span style="color:var(--red)">End before start</span>');return;}res('ddres',`<strong>${d}</strong><span class="u">days · ${Math.floor(d/7)}w ${d%7}d</span>`);}
+let pwV='';
+function genPW(){const len=parseInt(document.getElementById('pwlen').value);let ch='';if(document.getElementById('pwU').checked)ch+='ABCDEFGHJKLMNPQRSTUVWXYZ';if(document.getElementById('pwL').checked)ch+='abcdefghijkmnpqrstuvwxyz';if(document.getElementById('pwN').checked)ch+='23456789';if(document.getElementById('pwS').checked)ch+='!@#$%^&*-_=+';if(!ch){res('pwres','<span style="color:var(--ink4)">Pick a type</span>');return;}let pw='';const arr=new Uint32Array(len);crypto.getRandomValues(arr);arr.forEach(v=>pw+=ch[v%ch.length]);pwV=pw;res('pwres',pw);}
+function cpPW(btn){if(pwV)navigator.clipboard.writeText(pwV).then(()=>{btn.textContent='✓ Copied';setTimeout(()=>btn.textContent='📋 Copy',1400);});}
+let pmDur=25*60,pmRem=pmDur,pmRun=false,pmT=null;
+function pmSet(b,mins){clearInterval(pmT);pmRun=false;pmDur=mins*60;pmRem=pmDur;b.parentElement.querySelectorAll('.mb').forEach(x=>x.classList.toggle('on',x===b));pmUpd();document.getElementById('pmBtn').textContent='▶ Start';}
+function pmUpd(){document.getElementById('pmDisp').textContent=String(Math.floor(pmRem/60)).padStart(2,'0')+':'+String(pmRem%60).padStart(2,'0');}
+function pmStart(btn){if(pmRun){clearInterval(pmT);pmRun=false;btn.textContent='▶ Resume';}else{pmRun=true;btn.textContent='⏸ Pause';pmT=setInterval(()=>{pmRem--;pmUpd();if(pmRem<=0){clearInterval(pmT);pmRun=false;btn.textContent='▶ Start';alert('⏰ Time is up!');pmRem=pmDur;pmUpd();}},1000);}}
+function pmReset(){clearInterval(pmT);pmRun=false;pmRem=pmDur;pmUpd();document.getElementById('pmBtn').textContent='▶ Start';}
+let bm='metric';
+function setBM(b,m){bm=m;b.parentElement.querySelectorAll('.mb').forEach(x=>x.classList.toggle('on',x===b));document.getElementById('bwl').textContent=m==='metric'?'Weight (kg)':'Weight (lb)';document.getElementById('bhl').textContent=m==='metric'?'Height (cm)':'Height (in)';cBMI();}
+function cBMI(){const w=parseFloat(document.getElementById('bw').value),h=parseFloat(document.getElementById('bh').value);if(isNaN(w)||isNaN(h)){res('bmires','<span style="color:var(--ink4)">Enter measurements</span>');return;}const kg=bm==='metric'?w:w*0.4536,m=bm==='metric'?h/100:h*0.0254;const bmi=kg/(m*m);let cat,col;if(bmi<18.5){cat='Underweight';col='var(--amber)';}else if(bmi<25){cat='Normal';col='var(--green)';}else if(bmi<30){cat='Overweight';col='var(--amber)';}else{cat='Obese';col='var(--red)';}res('bmires',`<strong>${f(bmi,1)}</strong><span style="color:${col};font-weight:600;font-size:12px">${cat}</span>`);}
+function cCal(){const w=parseFloat(document.getElementById('clw').value),h=parseFloat(document.getElementById('clh').value),a=parseFloat(document.getElementById('cla').value);if(isNaN(w)||isNaN(h)||isNaN(a)){res('clres','<span style="color:var(--ink4)">Enter details</span>');return;}const g=document.getElementById('clg').value,act=parseFloat(document.getElementById('clact').value);const bmr=g==='m'?10*w+6.25*h-5*a+5:10*w+6.25*h-5*a-161;const t=Math.round(bmr*act);res('clres',`<div>Maintain <strong>${t} kcal</strong></div><div style="font-size:11px;color:var(--ink4)">Lose: ${t-500} · Gain: ${t+300}</div>`);}
+function cWater(){const w=parseFloat(document.getElementById('wwt').value);if(isNaN(w)){res('wres','<span style="color:var(--ink4)">Enter weight</span>');return;}const l=(w*0.033*parseFloat(document.getElementById('wact').value)*parseFloat(document.getElementById('wclim').value)).toFixed(1);res('wres',`<strong>${l}L</strong><span class="u">~${Math.round(l/0.25)} glasses/day</span>`);}
+let sm2='wake';
+function setSM2(b,m){sm2=m;b.parentElement.querySelectorAll('.mb').forEach(x=>x.classList.toggle('on',x===b));document.getElementById('slpLbl').textContent=m==='wake'?'Wake-up time':'Bedtime';cSleep();}
+function cSleep(){const t=document.getElementById('slpT').value;if(!t)return;const[h,m]=t.split(':').map(Number);const base=h*60+m;let out='';for(let c=6;c>=3;c--){const mins=sm2==='wake'?base-c*90-14:base+c*90+14;const adj=((mins%1440)+1440)%1440;out+=`<div style="display:flex;gap:10px;padding:5px 0;border-bottom:1px solid var(--bdr);font-size:13px"><strong style="font-family:var(--ff)">${String(Math.floor(adj/60)).padStart(2,'0')}:${String(adj%60).padStart(2,'0')}</strong><span style="color:var(--ink4);font-size:11px">${c} cycles · ${c*1.5}h${c>=5?' ✓':''}</span></div>`;}document.getElementById('slpRes').innerHTML=out;}
+function cIW(){const hv=parseFloat(document.getElementById('iwh').value);if(isNaN(hv)){res('iwres','<span style="color:var(--ink4)">Enter height</span>');return;}const g=document.getElementById('iwg').value;const hIn=hv/2.54;const dev=g==='m'?50+2.3*(hIn-60):45.5+2.3*(hIn-60);const bmiL=(18.5*Math.pow(hv/100,2)).toFixed(1),bmiH=(24.9*Math.pow(hv/100,2)).toFixed(1);res('iwres',`<div style="font-size:12px">Healthy range <strong>${bmiL}–${bmiH} kg</strong></div><div style="font-size:12px">Devine formula <strong>${f(dev,1)} kg</strong></div>`);}
+function cAge(){const d=new Date(document.getElementById('adob').value);if(isNaN(d)){res('ageres','<span style="color:var(--ink4)">Enter DOB</span>');return;}const n=new Date();let y=n.getFullYear()-d.getFullYear(),m=n.getMonth()-d.getMonth(),dd=n.getDate()-d.getDate();if(dd<0){m--;dd+=new Date(n.getFullYear(),n.getMonth(),0).getDate();}if(m<0){y--;m+=12;}res('ageres',`<strong>${y}</strong><span class="u">years ${m}m ${dd}d</span>`);}
+let grocI=[{n:'',q:1,p:''},{n:'',q:1,p:''}];
+function renderGroc(){document.getElementById('grocRows').innerHTML=grocI.map((it,i)=>`<div style="display:flex;gap:5px;margin-bottom:6px"><input type="text" value="${it.n}" placeholder="Item" oninput="grocI[${i}].n=this.value" style="flex:1.4"><input type="number" value="${it.q}" min="1" oninput="grocI[${i}].q=this.value;cGroc()" style="flex:.6"><input type="number" value="${it.p}" placeholder="0" step="0.01" oninput="grocI[${i}].p=this.value;cGroc()" style="flex:.8"><button onclick="grocI.splice(${i},1);renderGroc();cGroc()" style="width:24px;border-radius:6px;background:var(--surf2);border:none;cursor:pointer;color:var(--ink4)">×</button></div>`).join('');}
+function addGroc(){grocI.push({n:'',q:1,p:''});renderGroc();}
+function cGroc(){const t=grocI.reduce((s,it)=>s+(parseFloat(it.p)||0)*(parseFloat(it.q)||1),0);res('grocRes',`<span>Total</span><strong>${fc(t)}</strong>`);}
+function cTrip(){const g=id=>parseFloat(document.getElementById(id).value)||0;const d=g('tcd')||1,p=g('tcp')||1;const tot=g('tcf')+g('tch')*d+g('tcfo')*d*p+g('tct')*d+g('tca');if(tot===0){res('tcres','<span style="color:var(--ink4)">Enter details</span>');return;}res('tcres',`<div>Total <strong>${fc(tot)}</strong></div><div style="font-size:11px;color:var(--ink4)">Per person ${fc(tot/p)} · Per day ${fc(tot/d)}</div>`);}
+function cRvB(){const g=id=>parseFloat(document.getElementById(id).value)||0;const price=g('rvp'),rent=g('rvrent');if(!price||!rent){res('rvres','<span style="color:var(--ink4)">Enter price &amp; rent</span>');return;}const dp=g('rvd')/100,r=g('rvr')/100/12,yrs=g('rvy')||5,n=yrs*12;const loan=price*(1-dp);const emi=r===0?loan/n:loan*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);const buy=price*dp+emi*n+price*0.01*yrs;let rentT=0,mo=rent;for(let y=0;y<yrs;y++){rentT+=mo*12;mo*=1.03;}const win=buy<rentT?['Buying','var(--green)']:['Renting','var(--acc)'];res('rvres',`<div style="font-size:12px">Buy: <strong>${fc(buy)}</strong> · Rent: <strong>${fc(rentT)}</strong></div><div style="font-weight:600;color:${win[1]};font-size:13px">💡 ${win[0]} cheaper by ${fc(Math.abs(buy-rentT))} over ${yrs}y</div>`);}
+function cRet(){const g=id=>parseFloat(document.getElementById(id).value)||0;const ca=g('rta'),ra=g('rtr');if(!ca||!ra||ra<=ca){res('rtres','<span style="color:var(--ink4)">Enter valid ages</span>');return;}const r=g('rtrate')/100/12,n=(ra-ca)*12;const fv=g('rts')*Math.pow(1+r,n)+g('rtm')*(Math.pow(1+r,n)-1)/(r||1);res('rtres',`<div>At ${ra} you'll have</div><strong style="color:var(--green)">${fc(fv)}</strong>`);}
+let cdT=null;
+function cCD(){clearInterval(cdT);const name=document.getElementById('cdn').value||'Event';const dt=new Date(document.getElementById('cdd').value);if(isNaN(dt)){document.getElementById('cdres').innerHTML='';return;}function tick(){const diff=dt-new Date();if(diff<=0){clearInterval(cdT);document.getElementById('cdres').innerHTML=`<div style="text-align:center;font-weight:800;color:var(--green)">🎉 ${name} is here!</div>`;return;}const d=Math.floor(diff/86400000),h=Math.floor(diff%86400000/3600000),m=Math.floor(diff%3600000/60000),s=Math.floor(diff%60000/1000);document.getElementById('cdres').innerHTML=`<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;text-align:center">${[['Days',d],['Hrs',h],['Min',m],['Sec',s]].map(([l,v])=>`<div style="background:var(--surf);border-radius:8px;padding:8px 4px"><div style="font-size:20px;font-weight:800;font-family:var(--ff);color:var(--acc)">${v}</div><div style="font-size:10px;color:var(--ink4)">${l}</div></div>`).join('')}</div>`;}tick();cdT=setInterval(tick,1000);}
+function cTZ(){const t=document.getElementById('tzt').value;if(!t){res('tzres','<span style="color:var(--ink4)">Set time</span>');return;}const f1=parseFloat(document.getElementById('tzf').value),t2=parseFloat(document.getElementById('tzt2').value);const[h,m]=t.split(':').map(Number);let tot=h*60+m+(t2-f1)*60;tot=((tot%1440)+1440)%1440;res('tzres',`<strong>${String(Math.floor(tot/60)).padStart(2,'0')}:${String(tot%60).padStart(2,'0')}</strong><span class="u">destination time</span>`);}
+function cTMP(){const v=parseFloat(document.getElementById('tmpv').value),fr=document.getElementById('tmpf').value;if(isNaN(v)){res('tmpres','<span style="color:var(--ink4)">Enter temp</span>');return;}let c;if(fr==='c')c=v;else if(fr==='f')c=(v-32)*5/9;else c=v-273.15;res('tmpres',`<strong>${f(c,1)}°C</strong><span class="u">${f(c*9/5+32,1)}°F · ${f(c+273.15,1)}K</span>`);}
+function cLen(){const v=parseFloat(document.getElementById('lnv').value),fr=document.getElementById('lnf').value;if(isNaN(v)){res('lnres','<span style="color:var(--ink4)">Enter value</span>');return;}let m;if(fr==='cm')m=v/100;else if(fr==='in')m=v*0.0254;else if(fr==='ft')m=v*0.3048;else if(fr==='km')m=v*1000;else if(fr==='mi')m=v*1609.34;else m=v;res('lnres',`<div style="font-size:13px"><strong>${f(m*100)}cm</strong> · <strong>${f(m/0.0254)}in</strong> · <strong>${f(m/0.3048)}ft</strong></div><div style="font-size:11px;color:var(--ink4)">${f(m)}m · ${f(m/1000,4)}km</div>`);}
+function cWt(){const v=parseFloat(document.getElementById('wgv').value),fr=document.getElementById('wgf').value;if(isNaN(v)){res('wgres','<span style="color:var(--ink4)">Enter value</span>');return;}let kg;if(fr==='kg')kg=v;else if(fr==='lb')kg=v*0.4536;else if(fr==='g')kg=v/1000;else if(fr==='oz')kg=v*0.02835;else kg=v*6.3503;res('wgres',`<strong>${f(kg)}kg</strong><span class="u">${f(kg*2.2046)}lb · ${f(kg/6.3503,2)}st</span>`);}
+function cAr(){const v=parseFloat(document.getElementById('arv').value),fr=document.getElementById('arf').value;if(isNaN(v)){res('arres','<span style="color:var(--ink4)">Enter value</span>');return;}let sqm;if(fr==='sqft')sqm=v*0.0929;else if(fr==='sqm')sqm=v;else if(fr==='sqyd')sqm=v*0.8361;else sqm=v*4046.86;res('arres',`<div style="font-size:13px"><strong>${f(sqm)}sqm</strong> · <strong>${f(sqm/0.0929)}sqft</strong></div><div style="font-size:11px;color:var(--ink4)">${f(sqm/4046.86,4)} acres</div>`);}
+function cDS(){const v=parseFloat(document.getElementById('dsv').value),fr=document.getElementById('dsf').value;if(isNaN(v)){res('dsres','<span style="color:var(--ink4)">Enter value</span>');return;}const u={kb:1024,mb:1048576,gb:1073741824,tb:1099511627776};const b=v*u[fr];res('dsres',`<div style="font-size:13px"><strong>${f(b/1048576)}MB</strong> · <strong>${f(b/1073741824,3)}GB</strong></div><div style="font-size:11px;color:var(--ink4)">${f(b/1099511627776,5)}TB</div>`);}
+function cSP(){const v=parseFloat(document.getElementById('spv').value),fr=document.getElementById('spf').value;if(isNaN(v)){res('spres','<span style="color:var(--ink4)">Enter value</span>');return;}let ms;if(fr==='kmh')ms=v/3.6;else if(fr==='mph')ms=v*0.447;else if(fr==='kn')ms=v*0.5144;else ms=v;res('spres',`<strong>${f(ms*3.6)}km/h</strong><span class="u">${f(ms*2.237)}mph · ${f(ms/0.5144)}kn</span>`);}
+function cRT(){const t=document.getElementById('rtt').value.trim();if(!t){res('rtres','<span style="color:var(--ink4)">Paste text</span>');return;}const w=t.split(/\s+/).length;res('rtres',`<strong>${Math.ceil(w/238)} min</strong><span class="u">${w} words</span>`);}
+const LP=['Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.','Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.','Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis molestie dictum semper, enim libero id enim, vel vehicula urna risus sed tellus.','Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.'];
+let liT='';
+function genLI(){const n=Math.min(parseInt(document.getElementById('liN').value)||3,10);let out=[];for(let i=0;i<n;i++)out.push(LP[i%LP.length]);liT=out.join('\n\n');res('lires',out.map(p=>`<p style="margin-bottom:6px">${p}</p>`).join(''));}
+function cpLI(btn){if(liT)navigator.clipboard.writeText(liT).then(()=>{btn.textContent='✓ Copied';setTimeout(()=>btn.textContent='Copy text',1400);});}
+
+// ═══ INIT ═══
+gInv();genPW();genLI();renderGroc();cHW();
+const nw=new Date();document.getElementById('tzt').value=String(nw.getHours()).padStart(2,'0')+':'+String(nw.getMinutes()).padStart(2,'0');cTZ();
 document.addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key==='k'){e.preventDefault();document.getElementById('msearch').focus();}});
-
-// ===== RECALC ALL when currency changes =====
-function reCalcAll(){cVAT();cSal();cEMI();cTip();cMG();cCI();cFuel();cDisc();}
-
-// AdSense init
-(adsbygoogle=window.adsbygoogle||[]).push({});
 (adsbygoogle=window.adsbygoogle||[]).push({});
 (adsbygoogle=window.adsbygoogle||[]).push({});
 </script>
