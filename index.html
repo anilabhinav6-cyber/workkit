@@ -22,9 +22,12 @@
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4G7CH7PCCF');</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet"></noscript>
+<!-- ADSENSE: uncomment after approval and replace pub ID
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+-->
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -125,9 +128,9 @@ nav{background:rgba(255,255,255,.97);border-bottom:1px solid var(--bdr);height:5
 .cpbtn{background:none;border:1px solid var(--bdr);border-radius:6px;padding:4px 10px;font-size:11px;color:var(--ink4);cursor:pointer;font-family:var(--fb)}
 input[type=range]{-webkit-appearance:none;height:4px;background:var(--bdr);border-radius:99px;outline:none;border:none;padding:0}
 input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:17px;height:17px;background:var(--acc);border-radius:50%;cursor:pointer;border:2px solid #fff}
-.ad-top{max-width:1100px;margin:0 auto;padding:12px 4% 0}
+.ad-top{display:none}
 .ad-top ins:empty{display:none!important}
-.ad-mid{max-width:1100px;margin:0 auto;padding:0 4% 14px}
+.ad-mid{display:none}
 .ad-mid ins:empty{display:none!important}
 .empty{text-align:center;padding:40px 24px;color:var(--ink4);grid-column:1/-1}
 footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:36px 4% 24px}
@@ -927,7 +930,7 @@ function toggleFeat(which){
     const open=qrP.classList.contains('open');
     qrP.classList.toggle('open',!open);qrB.classList.toggle('open',!open);
     bP.classList.remove('open');bB.classList.remove('open');
-    if(!open)genQR();
+    if(!open)loadQRLib(genQR);
   }else{
     const open=bP.classList.contains('open');
     bP.classList.toggle('open',!open);bB.classList.toggle('open',!open);
@@ -973,7 +976,18 @@ function qrContent(){
     case 'phone':return `tel:${v1}`;
   }return '';
 }
+let qrLibLoading=false;
+function loadQRLib(cb){
+  if(window.QRCode){cb();return;}
+  if(qrLibLoading)return;
+  qrLibLoading=true;
+  const s=document.createElement('script');
+  s.src='https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js';
+  s.onload=cb;
+  document.head.appendChild(s);
+}
 function genQR(){
+  if(!window.QRCode){loadQRLib(genQR);return;}
   const content=qrContent(),box=document.getElementById('qrBox');
   const size=parseInt(document.getElementById('qrSize').value)||300;
   if(!content){box.innerHTML='<span style="color:var(--ink4);font-size:13px;text-align:center">Enter content<br>to generate QR</span>';document.getElementById('qrDlBtn').disabled=true;return;}
@@ -1103,11 +1117,12 @@ function genLI(){const n=Math.min(parseInt(document.getElementById('liN').value)
 function cpLI(btn){if(liT)navigator.clipboard.writeText(liT).then(()=>{btn.textContent='✓ Copied';setTimeout(()=>btn.textContent='Copy text',1400);});}
 
 // ═══ INIT ═══
+try{if(window.adsbygoogle&&document.querySelector("ins.adsbygoogle")){}}catch(e){}
 gInv();genPW();genLI();renderGroc();cHW();
 const nw=new Date();document.getElementById('tzt').value=String(nw.getHours()).padStart(2,'0')+':'+String(nw.getMinutes()).padStart(2,'0');cTZ();
 document.addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key==='k'){e.preventDefault();document.getElementById('msearch').focus();}});
-(adsbygoogle=window.adsbygoogle||[]).push({});
-(adsbygoogle=window.adsbygoogle||[]).push({});
+
+
 </script>
 </body>
 </html>
