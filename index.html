@@ -143,7 +143,11 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
 .fcol a:hover{color:#fff}
 .fbot{border-top:1px solid rgba(255,255,255,.07);padding-top:14px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:11px}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-@media(max-width:720px){.featured{grid-template-columns:1fr}.grid2{grid-template-columns:1fr}.ftop{grid-template-columns:1fr 1fr}.fbrand{grid-column:1/-1}.fr{flex-direction:column;align-items:flex-start}.fr label{min-width:auto}}
+@media(max-width:720px){.featured{grid-template-columns:1fr}.grid2{grid-template-columns:1fr}.ftop{grid-template-columns:1fr 1fr}.fbrand{grid-column:1/-1}.fr{flex-direction:column;align-items:flex-start}.fr label{min-width:auto}
+#budgetSummary{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+.feat-panel-inner{padding:14px}
+.feat-panel-inner input,.feat-panel-inner select{font-size:16px}
+html,body{overflow-x:hidden;max-width:100vw}}
 @media(max-width:420px){.tools-grid{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
@@ -230,7 +234,7 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
       <div style="flex:.7;min-width:90px"><label style="font-size:11px;font-weight:600;color:var(--ink4)">CURRENCY</label><select id="bCur" onchange="calcBudget()" style="width:100%"><option>AED</option><option>USD</option><option>GBP</option><option>EUR</option><option>INR</option><option>SAR</option><option>PKR</option><option>PHP</option></select></div>
       <button class="btn bg" onclick="dlBudgetPDF()">⬇ PDF</button>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px" id="budgetSummary">
+    <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-bottom:14px" id="budgetSummary">
       <div style="background:var(--gl);border-radius:10px;padding:10px 12px"><div style="font-size:10px;font-weight:700;color:var(--green);text-transform:uppercase">Income</div><div style="font-size:18px;font-weight:800;font-family:var(--ff);color:var(--green)" id="bSumInc">0</div></div>
       <div style="background:var(--rl);border-radius:10px;padding:10px 12px"><div style="font-size:10px;font-weight:700;color:var(--red);text-transform:uppercase">Expenses</div><div style="font-size:18px;font-weight:800;font-family:var(--ff);color:var(--red)" id="bSumExp">0</div></div>
       <div style="background:var(--accl);border-radius:10px;padding:10px 12px"><div style="font-size:10px;font-weight:700;color:var(--accd);text-transform:uppercase">Savings</div><div style="font-size:18px;font-weight:800;font-family:var(--ff);color:var(--accd)" id="bSumSav">0</div></div>
