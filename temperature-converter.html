@@ -12,7 +12,11 @@
   gtag('js', new Date());
   gtag('config', 'G-4G7CH7PCCF');
 </script>
+<!-- ADSENSE LOADER — uncomment after approval and replace pub ID:
+<!-- ADSENSE LOADER — uncomment after approval and replace pub ID:
+<!-- ADSENSE: uncomment after approval
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+--> --> -->
 <meta name="description" content="Convert temperatures instantly between Celsius, Fahrenheit and Kelvin. Works for weather, cooking, science and medical use.">
 <meta name="keywords" content="celsius to fahrenheit, fahrenheit to celsius, temperature converter, 37 celsius in fahrenheit, kelvin converter, body temperature">
 <meta name="robots" content="index, follow">
@@ -27,7 +31,11 @@
 <meta property="og:url" content="https://www.myworkkits.com/temperature-converter.html">
 <meta name="twitter:card" content="summary">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I convert Celsius to Fahrenheit?","acceptedAnswer":{"@type":"Answer","text":"Formula: °F = (°C × 9/5) + 32. Quick mental shortcut: double the Celsius temp, subtract 10%, then add 32. Example: 20°C × 2 = 40, minus 4 = 36, plus 32 = 68°F (exact: 68°F)."}},{"@type":"Question","name":"What is normal body temperature in Fahrenheit?","acceptedAnswer":{"@type":"Answer","text":"37°C = 98.6°F. A fever is typically defined as above 38°C (100.4°F). Hypothermia is below 35°C (95°F)."}},{"@type":"Question","name":"What is Kelvin and when is it used?","acceptedAnswer":{"@type":"Answer","text":"Kelvin is the SI unit of temperature used in science and engineering. 0 K = absolute zero (−273.15°C). Kelvin = Celsius + 273.15. There are no negative Kelvin temperatures."}}]}</script>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet"></noscript></noscript>
 <style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --ink:#0c0c0e;--ink2:#1e1e24;--ink3:#44444f;--ink4:#888896;--ink5:#c8c8d4;
@@ -222,6 +230,7 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
       <a href="/temperature-converter.html">Temperature converter</a>
     </div>
     <div class="fcol"><h4>Tools</h4>
+      <a href="/qr-code-generator.html">QR code generator</a>
       <a href="/word-counter.html">Word counter</a>
       <a href="/hours-worked.html">Hours worked</a>
       <a href="/bmi-calculator.html">BMI calculator</a>
@@ -295,9 +304,9 @@ function initPage(){
 function cTMP(){const v=parseFloat(document.getElementById("tv").value),fr=document.getElementById("tf").value;if(isNaN(v)){res("tmpres","<span style='color:var(--ink4)'>Enter temperature</span>");return;}let c;if(fr==="c")c=v;else if(fr==="f")c=(v-32)*5/9;else c=v-273.15;res("tmpres",`<div><strong>${f(c,1)}°C</strong> &nbsp;·&nbsp; <strong>${f(c*9/5+32,1)}°F</strong> &nbsp;·&nbsp; <strong>${f(c+273.15,1)} K</strong></div>`);}
 window.addEventListener("DOMContentLoaded",initPage);window.addEventListener("load",function(){setTimeout(function(){var sa=document.getElementById("stickyAd");if(sa){var ins=sa.querySelector(".adsbygoogle");if(ins&&ins.getAttribute("data-ad-status")==="filled")sa.style.display="flex";}},2000);});</script>
 <script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-(adsbygoogle = window.adsbygoogle || []).push({});
-(adsbygoogle = window.adsbygoogle || []).push({});
+
+
+
 </script>
 </body>
 </html>
