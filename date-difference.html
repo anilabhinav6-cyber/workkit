@@ -12,7 +12,11 @@
   gtag('js', new Date());
   gtag('config', 'G-4G7CH7PCCF');
 </script>
+<!-- ADSENSE LOADER — uncomment after approval and replace pub ID:
+<!-- ADSENSE LOADER — uncomment after approval and replace pub ID:
+<!-- ADSENSE: uncomment after approval
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+--> --> -->
 <meta name="description" content="Calculate the exact number of days, weeks and months between any two dates. Perfect for project deadlines, contract durations and countdowns.">
 <meta name="keywords" content="days between dates, date difference calculator, deadline calculator, how many days until, days counter, date calculator">
 <meta name="robots" content="index, follow">
@@ -27,7 +31,11 @@
 <meta property="og:url" content="https://www.myworkkits.com/date-difference.html">
 <meta name="twitter:card" content="summary">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I calculate the number of working days between two dates?","acceptedAnswer":{"@type":"Answer","text":"Our calculator shows total days. To find working days (excluding weekends), subtract approximately 2 days per week in the period. For exact working day counts excluding holidays, use a dedicated business day calculator."}},{"@type":"Question","name":"How many days are in a year?","acceptedAnswer":{"@type":"Answer","text":"A standard year has 365 days. A leap year (divisible by 4, except centuries unless divisible by 400) has 366 days. The next leap year after 2026 is 2028."}},{"@type":"Question","name":"How do I calculate months between two dates?","acceptedAnswer":{"@type":"Answer","text":"Our calculator shows approximate months. For billing, rental, and contract purposes, the method used varies — some count calendar months, others use 30-day periods."}}]}</script>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet"></noscript></noscript>
 <style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --ink:#0c0c0e;--ink2:#1e1e24;--ink3:#44444f;--ink4:#888896;--ink5:#c8c8d4;
@@ -214,6 +222,7 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
       <a href="/temperature-converter.html">Temperature converter</a>
     </div>
     <div class="fcol"><h4>Tools</h4>
+      <a href="/qr-code-generator.html">QR code generator</a>
       <a href="/word-counter.html">Word counter</a>
       <a href="/hours-worked.html">Hours worked</a>
       <a href="/bmi-calculator.html">BMI calculator</a>
@@ -287,9 +296,9 @@ function initPage(){
 function cDD(){const a=new Date(document.getElementById("dda").value),b=new Date(document.getElementById("ddb").value);if(isNaN(a)||isNaN(b)){res("ddres","<span style='color:var(--ink4)'>Pick two dates</span>");return;}const days=Math.round((b-a)/86400000);if(days<0){res("ddres","<span style='color:var(--red)'>End date is before start date</span>");return;}const wks=Math.floor(days/7),mo=(b.getFullYear()-a.getFullYear())*12+(b.getMonth()-a.getMonth());res("ddres",`<strong>${days.toLocaleString()}</strong><span class="u">days &nbsp;·&nbsp; ${wks} weeks ${days%7} days &nbsp;·&nbsp; ~${mo} months</span>`);}
 window.addEventListener("DOMContentLoaded",initPage);window.addEventListener("load",function(){setTimeout(function(){var sa=document.getElementById("stickyAd");if(sa){var ins=sa.querySelector(".adsbygoogle");if(ins&&ins.getAttribute("data-ad-status")==="filled")sa.style.display="flex";}},2000);});</script>
 <script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-(adsbygoogle = window.adsbygoogle || []).push({});
-(adsbygoogle = window.adsbygoogle || []).push({});
+
+
+
 </script>
 </body>
 </html>
