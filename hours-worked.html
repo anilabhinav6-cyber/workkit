@@ -12,7 +12,11 @@
   gtag('js', new Date());
   gtag('config', 'G-4G7CH7PCCF');
 </script>
+<!-- ADSENSE LOADER — uncomment after approval and replace pub ID:
+<!-- ADSENSE LOADER — uncomment after approval and replace pub ID:
+<!-- ADSENSE: uncomment after approval
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+--> --> -->
 <meta name="description" content="Calculate hours worked from start time to end time with optional break deduction. Perfect for timesheets, freelancer invoicing, and overtime calculation.">
 <meta name="keywords" content="hours worked calculator, timesheet calculator, overtime calculator, work hours, break time deduction, time tracking">
 <meta name="robots" content="index, follow">
@@ -27,7 +31,11 @@
 <meta property="og:url" content="https://www.myworkkits.com/hours-worked.html">
 <meta name="twitter:card" content="summary">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I calculate overtime hours?","acceptedAnswer":{"@type":"Answer","text":"Standard working hours vary by country. UK and UAE: typically 8 hours/day or 40–48 hours/week. Hours beyond this threshold are overtime, usually paid at 1.25x–1.5x the regular rate."}},{"@type":"Question","name":"Can this calculator handle overnight shifts?","acceptedAnswer":{"@type":"Answer","text":"Yes — if you start at 10pm and finish at 6am, enter 22:00 and 06:00. The calculator automatically adds 24 hours to handle shifts crossing midnight."}},{"@type":"Question","name":"How do I track hours for a freelance invoice?","acceptedAnswer":{"@type":"Answer","text":"Log your start and end times for each work session, then add up the totals. Multiply total hours by your hourly rate to calculate the invoice amount."}}]}</script>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet"></noscript></noscript>
 <style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --ink:#0c0c0e;--ink2:#1e1e24;--ink3:#44444f;--ink4:#888896;--ink5:#c8c8d4;
@@ -289,9 +297,9 @@ function initPage(){
 function cHW(){const i=document.getElementById("hwi").value,o=document.getElementById("hwo").value,b=parseInt(document.getElementById("hwb").value)||0;if(!i||!o)return;const[ih,im]=i.split(":").map(Number),[oh,om]=o.split(":").map(Number);let m=(oh*60+om)-(ih*60+im);if(m<0)m+=1440;const net=m-b;if(net<0){res("hwres","<span style='color:var(--red)'>Break exceeds working time</span>");return;}res("hwres",`<strong>${Math.floor(net/60)}h ${net%60}m</strong><span class="u">worked (${b}min break deducted)</span>`);}
 window.addEventListener("DOMContentLoaded",initPage);window.addEventListener("load",function(){setTimeout(function(){var sa=document.getElementById("stickyAd");if(sa){var ins=sa.querySelector(".adsbygoogle");if(ins&&ins.getAttribute("data-ad-status")==="filled")sa.style.display="flex";}},2000);});</script>
 <script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-(adsbygoogle = window.adsbygoogle || []).push({});
-(adsbygoogle = window.adsbygoogle || []).push({});
+
+
+
 </script>
 </body>
 </html>
