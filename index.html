@@ -364,6 +364,73 @@ html,body{overflow-x:hidden;max-width:100vw}}
   </div>
 </div>
 
+
+<!-- SIP CALCULATOR -->
+<div class="tcard tb-teal" data-cat="finance" data-name="sip calculator mutual fund monthly investment india returns systematic">
+  <div class="tc-head" onclick="togTool(this)">
+    <div class="tc-icon">📊</div>
+    <div><div class="tc-name">SIP Calculator</div><div class="tc-desc">Monthly investment returns</div></div>
+    <button class="tc-x" onclick="event.stopPropagation();closeTool(this)">×</button>
+  </div>
+  <div class="tpanel">
+    <div class="fr"><label>Monthly investment</label><input type="number" id="sipM" placeholder="e.g. 10000" oninput="cSIP()"></div>
+    <div class="fr"><label>Expected return (% p.a.)</label><input type="number" id="sipR" value="12" step="0.5" oninput="cSIP()"></div>
+    <div class="fr"><label>Time period (years)</label><input type="number" id="sipY" placeholder="e.g. 20" oninput="cSIP()"></div>
+    <div class="rbox" id="sipRes" style="flex-direction:column;align-items:flex-start;gap:3px"><span style="color:var(--ink4)">Enter details</span></div>
+  </div>
+</div>
+
+<!-- LUMPSUM CALCULATOR -->
+<div class="tcard tb-teal" data-cat="finance" data-name="lumpsum calculator one time investment returns mutual fund">
+  <div class="tc-head" onclick="togTool(this)">
+    <div class="tc-icon">💎</div>
+    <div><div class="tc-name">Lumpsum Calculator</div><div class="tc-desc">One-time investment growth</div></div>
+    <button class="tc-x" onclick="event.stopPropagation();closeTool(this)">×</button>
+  </div>
+  <div class="tpanel">
+    <div class="fr"><label>Investment amount</label><input type="number" id="lsA" placeholder="e.g. 100000" oninput="cLS()"></div>
+    <div class="fr"><label>Expected return (% p.a.)</label><input type="number" id="lsR" value="12" step="0.5" oninput="cLS()"></div>
+    <div class="fr"><label>Time period (years)</label><input type="number" id="lsY" placeholder="e.g. 10" oninput="cLS()"></div>
+    <div class="rbox" id="lsRes" style="flex-direction:column;align-items:flex-start;gap:3px"><span style="color:var(--ink4)">Enter details</span></div>
+  </div>
+</div>
+
+<!-- FD CALCULATOR -->
+<div class="tcard tb-amber" data-cat="finance" data-name="fd fixed deposit calculator maturity interest bank india">
+  <div class="tc-head" onclick="togTool(this)">
+    <div class="tc-icon">🏛️</div>
+    <div><div class="tc-name">FD Calculator</div><div class="tc-desc">Fixed deposit maturity</div></div>
+    <button class="tc-x" onclick="event.stopPropagation();closeTool(this)">×</button>
+  </div>
+  <div class="tpanel">
+    <div class="fr"><label>Deposit amount</label><input type="number" id="fdA" placeholder="e.g. 100000" oninput="cFD()"></div>
+    <div class="fr"><label>Interest rate (% p.a.)</label><input type="number" id="fdR" value="7" step="0.1" oninput="cFD()"></div>
+    <div class="fr"><label>Period (years)</label><input type="number" id="fdY" placeholder="e.g. 5" step="0.5" oninput="cFD()"></div>
+    <div class="fr"><label>Compounding</label><select id="fdC" onchange="cFD()"><option value="4" selected>Quarterly (bank standard)</option><option value="12">Monthly</option><option value="2">Half-yearly</option><option value="1">Yearly</option></select></div>
+    <div class="rbox" id="fdRes" style="flex-direction:column;align-items:flex-start;gap:3px"><span style="color:var(--ink4)">Enter details</span></div>
+  </div>
+</div>
+
+<!-- GST INDIA -->
+<div class="tcard tb-green" data-cat="finance" data-name="gst calculator india cgst sgst igst 18 percent slab">
+  <div class="tc-head" onclick="togTool(this)">
+    <div class="tc-icon">🇮🇳</div>
+    <div><div class="tc-name">GST Calculator (India)</div><div class="tc-desc">CGST + SGST split, all slabs</div></div>
+    <button class="tc-x" onclick="event.stopPropagation();closeTool(this)">×</button>
+  </div>
+  <div class="tpanel">
+    <div class="mrow"><button class="mb on" onclick="setGM(this,'add')">Add GST</button><button class="mb" onclick="setGM(this,'remove')">Remove GST</button></div>
+    <div class="fr"><label>Amount (₹)</label><input type="number" id="gstA" placeholder="e.g. 1000" oninput="cGST()"></div>
+    <div class="mrow">
+      <button class="mb" onclick="setGR(this,5)">5%</button>
+      <button class="mb" onclick="setGR(this,12)">12%</button>
+      <button class="mb on" onclick="setGR(this,18)">18%</button>
+      <button class="mb" onclick="setGR(this,28)">28%</button>
+    </div>
+    <div class="rbox" id="gstRes" style="flex-direction:column;align-items:flex-start;gap:3px"><span style="color:var(--ink4)">Enter amount</span></div>
+  </div>
+</div>
+
 <!-- CURRENCY -->
 <div class="tcard tb-amber" data-cat="finance" data-name="currency converter usd aed gbp inr exchange">
   <div class="tc-head" onclick="togTool(this)">
@@ -434,6 +501,73 @@ html,body{overflow-x:hidden;max-width:100vw}}
     <div class="fr"><label>L per 100km</label><input type="number" id="fe" placeholder="e.g. 8" step="0.1" oninput="cFuel()"></div>
     <div class="fr"><label>Price per litre</label><input type="number" id="fp" placeholder="e.g. 2.50" step="0.01" oninput="cFuel()"></div>
     <div class="rbox" id="fres"><span style="color:var(--ink4)">Enter details</span></div>
+  </div>
+</div>
+
+
+<!-- SIP CALCULATOR -->
+<div class="tcard tb-green" data-cat="finance" data-name="sip calculator mutual fund monthly investment india returns">
+  <div class="tc-head" onclick="togTool(this)">
+    <div class="tc-icon">📈</div>
+    <div><div class="tc-name">SIP Calculator</div><div class="tc-desc">Monthly investment returns</div></div>
+    <button class="tc-x" onclick="event.stopPropagation();closeTool(this)">×</button>
+  </div>
+  <div class="tpanel">
+    <div class="fr"><label>Monthly investment</label><input type="number" id="sipA" value="10000" oninput="cSIP()"></div>
+    <div class="fr"><label>Annual return (%)</label><input type="number" id="sipR" value="12" step="0.5" oninput="cSIP()"></div>
+    <div class="fr"><label>Years</label><input type="number" id="sipY" value="10" min="1" oninput="cSIP()"></div>
+    <div class="rbox" id="sipRes2" style="flex-direction:column;align-items:flex-start;gap:3px"></div>
+    <a href="/sip-calculator.html" style="font-size:11px;color:var(--acc);text-decoration:none">Full SIP calculator with guide →</a>
+  </div>
+</div>
+
+<!-- FD CALCULATOR -->
+<div class="tcard tb-teal" data-cat="finance" data-name="fd fixed deposit calculator maturity interest bank india">
+  <div class="tc-head" onclick="togTool(this)">
+    <div class="tc-icon">🏛️</div>
+    <div><div class="tc-name">FD Calculator</div><div class="tc-desc">Fixed deposit maturity</div></div>
+    <button class="tc-x" onclick="event.stopPropagation();closeTool(this)">×</button>
+  </div>
+  <div class="tpanel">
+    <div class="fr"><label>Deposit amount</label><input type="number" id="fdA" value="100000" oninput="cFD()"></div>
+    <div class="fr"><label>Interest rate (%/yr)</label><input type="number" id="fdR" value="7" step="0.05" oninput="cFD()"></div>
+    <div class="fr"><label>Years</label><input type="number" id="fdY" value="5" min="0.25" step="0.25" oninput="cFD()"></div>
+    <div class="rbox" id="fdRes2" style="flex-direction:column;align-items:flex-start;gap:3px"></div>
+    <a href="/fd-calculator.html" style="font-size:11px;color:var(--acc);text-decoration:none">Full FD calculator with guide →</a>
+  </div>
+</div>
+
+<!-- LUMPSUM -->
+<div class="tcard tb-blue" data-cat="finance" data-name="lumpsum one time investment calculator mutual fund">
+  <div class="tc-head" onclick="togTool(this)">
+    <div class="tc-icon">💼</div>
+    <div><div class="tc-name">Lumpsum Calculator</div><div class="tc-desc">One-time investment growth</div></div>
+    <button class="tc-x" onclick="event.stopPropagation();closeTool(this)">×</button>
+  </div>
+  <div class="tpanel">
+    <div class="fr"><label>Investment amount</label><input type="number" id="lsA" value="100000" oninput="cLS2()"></div>
+    <div class="fr"><label>Annual return (%)</label><input type="number" id="lsR" value="12" step="0.5" oninput="cLS2()"></div>
+    <div class="fr"><label>Years</label><input type="number" id="lsY" value="10" min="1" oninput="cLS2()"></div>
+    <div class="rbox" id="lsRes2"></div>
+    <a href="/lumpsum-calculator.html" style="font-size:11px;color:var(--acc);text-decoration:none">Full lumpsum calculator →</a>
+  </div>
+</div>
+
+<!-- GST INDIA -->
+<div class="tcard tb-amber" data-cat="finance" data-name="gst calculator india cgst sgst igst 18 percent slab">
+  <div class="tc-head" onclick="togTool(this)">
+    <div class="tc-icon">🧾</div>
+    <div><div class="tc-name">GST India (CGST/SGST)</div><div class="tc-desc">5/12/18/28% slabs with split</div></div>
+    <button class="tc-x" onclick="event.stopPropagation();closeTool(this)">×</button>
+  </div>
+  <div class="tpanel">
+    <div class="mrow"><button class="mb on" onclick="setGIM(this,'add')">Add GST</button><button class="mb" onclick="setGIM(this,'remove')">Remove GST</button></div>
+    <div class="fr"><label>Amount (₹)</label><input type="number" id="giA" placeholder="e.g. 10000" oninput="cGI()"></div>
+    <div class="fr"><label>GST slab</label>
+      <select id="giR" onchange="cGI()"><option value="5">5%</option><option value="12">12%</option><option value="18" selected>18%</option><option value="28">28%</option></select>
+    </div>
+    <div class="rbox" id="giRes" style="flex-direction:column;align-items:flex-start;gap:3px"><span style="color:var(--ink4)">Enter amount</span></div>
+    <a href="/gst-calculator-india.html" style="font-size:11px;color:var(--acc);text-decoration:none">Full GST India calculator →</a>
   </div>
 </div>
 
@@ -919,7 +1053,14 @@ html,body{overflow-x:hidden;max-width:100vw}}
       <a href="/salary-calculator.html">Salary calculator</a>
       <a href="/loan-emi-calculator.html">Loan / EMI</a>
       <a href="/compound-interest.html">Compound interest</a>
+      <a href="/sip-calculator.html">SIP calculator</a>
+      <a href="/fd-calculator.html">FD calculator</a>
+      <a href="/gst-calculator-india.html">GST India</a>
       <a href="/currency-converter.html">Currency converter</a>
+      <a href="/sip-calculator.html">SIP calculator</a>
+      <a href="/fd-calculator.html">FD calculator</a>
+      <a href="/lumpsum-calculator.html">Lumpsum calculator</a>
+      <a href="/gst-calculator-india.html">GST India</a>
     </div>
     <div class="fcol"><h4>Work</h4>
       <a href="/qr-code-generator.html">QR code generator</a>
@@ -1284,6 +1425,28 @@ function mergePDFs(btn){
     }
   });
 }
+
+
+// ═══ INDIA PACK ═══
+function inr(n){return '₹'+Number(n).toLocaleString('en-IN',{maximumFractionDigits:0});}
+function cSIP(){const m=parseFloat(document.getElementById('sipM').value),r=parseFloat(document.getElementById('sipR').value),y=parseFloat(document.getElementById('sipY').value);if(isNaN(m)||isNaN(r)||isNaN(y)){res('sipRes','<span style="color:var(--ink4)">Enter details</span>');return;}const i=r/100/12,n=y*12;const fv=m*((Math.pow(1+i,n)-1)/i)*(1+i);const inv=m*n;res('sipRes',`<div>Maturity value <strong style="color:var(--green)">${fc(fv)}</strong></div><div style="font-size:11px;color:var(--ink4)">Invested ${fc(inv)} · Returns ${fc(fv-inv)}</div>`);}
+function cLS(){const a=parseFloat(document.getElementById('lsA').value),r=parseFloat(document.getElementById('lsR').value),y=parseFloat(document.getElementById('lsY').value);if(isNaN(a)||isNaN(r)||isNaN(y)){res('lsRes','<span style="color:var(--ink4)">Enter details</span>');return;}const fv=a*Math.pow(1+r/100,y);res('lsRes',`<div>Maturity value <strong style="color:var(--green)">${fc(fv)}</strong></div><div style="font-size:11px;color:var(--ink4)">Invested ${fc(a)} · Returns ${fc(fv-a)}</div>`);}
+function cFD(){const a=parseFloat(document.getElementById('fdA').value),r=parseFloat(document.getElementById('fdR').value),y=parseFloat(document.getElementById('fdY').value),c=parseInt(document.getElementById('fdC').value);if(isNaN(a)||isNaN(r)||isNaN(y)){res('fdRes','<span style="color:var(--ink4)">Enter details</span>');return;}const fv=a*Math.pow(1+r/100/c,c*y);res('fdRes',`<div>Maturity value <strong style="color:var(--green)">${fc(fv)}</strong></div><div style="font-size:11px;color:var(--ink4)">Deposit ${fc(a)} · Interest ${fc(fv-a)}</div>`);}
+let gm='add',gr=18;
+function setGM(b,m){gm=m;b.parentElement.querySelectorAll('.mb').forEach(x=>x.classList.toggle('on',x===b));cGST();}
+function setGR(b,r){gr=r;b.parentElement.querySelectorAll('.mb').forEach(x=>x.classList.toggle('on',x===b));cGST();}
+function cGST(){const a=parseFloat(document.getElementById('gstA').value);if(isNaN(a)){res('gstRes','<span style="color:var(--ink4)">Enter amount</span>');return;}let base,tax,total;if(gm==='add'){base=a;tax=a*gr/100;total=a+tax;}else{base=a/(1+gr/100);tax=a-base;total=a;}res('gstRes',`<div>${gm==='add'?'Total incl. GST':'Base price'} <strong>${inr(gm==='add'?total:base)}</strong></div><div style="font-size:11px;color:var(--ink4)">GST ${gr}% = ${inr(tax)} → CGST ${inr(tax/2)} + SGST ${inr(tax/2)} (or IGST ${inr(tax)})</div>`);}
+
+
+// ═══ INDIA PACK ═══
+function inr(v){return '₹'+Math.round(v).toLocaleString('en-IN');}
+function cSIP(){const P=parseFloat(document.getElementById('sipA').value)||0,r=parseFloat(document.getElementById('sipR').value)||0,y=parseFloat(document.getElementById('sipY').value)||0;if(!P||!y){res('sipRes2','<span style="color:var(--ink4)">Enter details</span>');return;}const i=r/100/12,n=y*12;const fv=i===0?P*n:P*((Math.pow(1+i,n)-1)/i)*(1+i);res('sipRes2',`<div>Maturity <strong style="color:var(--accd)">${inr(fv)}</strong></div><div style="font-size:11px;color:var(--ink4)">Invested ${inr(P*n)} · Returns ${inr(fv-P*n)}</div>`);}
+function cFD(){const P=parseFloat(document.getElementById('fdA').value)||0,r=parseFloat(document.getElementById('fdR').value)||0,t=parseFloat(document.getElementById('fdY').value)||0;if(!P||!t){res('fdRes2','<span style="color:var(--ink4)">Enter details</span>');return;}const A=P*Math.pow(1+r/100/4,4*t);res('fdRes2',`<div>Maturity <strong style="color:var(--accd)">${inr(A)}</strong></div><div style="font-size:11px;color:var(--ink4)">Interest earned ${inr(A-P)} (quarterly compounding)</div>`);}
+function cLS2(){const P=parseFloat(document.getElementById('lsA').value)||0,r=parseFloat(document.getElementById('lsR').value)||0,y=parseFloat(document.getElementById('lsY').value)||0;if(!P||!y){res('lsRes2','<span style="color:var(--ink4)">Enter details</span>');return;}const A=P*Math.pow(1+r/100,y);res('lsRes2',`<strong style="color:var(--accd)">${inr(A)}</strong><span class="u">gain ${inr(A-P)}</span>`);}
+let giM='add';
+function setGIM(b,m){giM=m;b.parentElement.querySelectorAll('.mb').forEach(x=>x.classList.toggle('on',x===b));cGI();}
+function cGI(){const a=parseFloat(document.getElementById('giA').value);if(isNaN(a)){res('giRes','<span style="color:var(--ink4)">Enter amount</span>');return;}const r=parseFloat(document.getElementById('giR').value);let base,gst,total;if(giM==='add'){base=a;gst=a*r/100;total=a+gst;}else{base=a/(1+r/100);gst=a-base;total=a;}res('giRes',`<div>Total <strong style="color:var(--accd)">${inr(total)}</strong> <span class="u">base ${inr(base)}</span></div><div style="font-size:11px;color:var(--ink4)">CGST ${inr(gst/2)} + SGST ${inr(gst/2)} (or IGST ${inr(gst)})</div>`);}
+cSIP();cFD();cLS2();
 
 // ═══ INIT ═══
 try{if(window.adsbygoogle&&document.querySelector("ins.adsbygoogle")){}}catch(e){}
