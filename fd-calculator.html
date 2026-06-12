@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FD Calculator — Fixed Deposit Maturity & Interest Calculator | MyWorkKits</title>
+<meta name="description" content="Free FD calculator online. Calculate fixed deposit maturity amount and interest earned with quarterly compounding. Works for all Indian banks — SBI, HDFC, ICICI rates.">
+<meta name="keywords" content="fd calculator, fixed deposit calculator, fd maturity calculator, fd interest calculator, fixed deposit interest calculator, bank fd calculator">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.myworkkits.com/fd-calculator.html">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicon-192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:title" content="FD Calculator — Fixed Deposit Maturity & Interest Calculator | MyWorkKits">
+<meta property="og:description" content="Free FD calculator online. Calculate fixed deposit maturity amount and interest earned with quarterly compounding. Works for all Indian banks — SBI, HDFC, ICICI rates.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.myworkkits.com/fd-calculator.html">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"FD Calculator","url":"https://www.myworkkits.com/fd-calculator.html","applicationCategory":"FinanceApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is FD interest taxable?","acceptedAnswer":{"@type":"Answer","text":"Yes, FD interest is fully taxable per your income tax slab in India. Banks deduct TDS at 10% if annual interest exceeds Rs 40,000 (Rs 50,000 for senior citizens)."}},{"@type":"Question","name":"What happens if I break my FD early?","acceptedAnswer":{"@type":"Answer","text":"Premature withdrawal typically incurs a 0.5-1% penalty on the interest rate, and you earn interest only for the actual period held."}},{"@type":"Question","name":"Why quarterly compounding?","acceptedAnswer":{"@type":"Answer","text":"RBI convention - virtually all Indian banks compound FD interest quarterly. 7% compounded quarterly is effectively 7.19% per year."}}]}</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4G7CH7PCCF"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4G7CH7PCCF');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet"></noscript>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0c0c0e;--ink3:#44444f;--ink4:#888896;--w:#fff;--surf:#f4f3f0;--surf2:#eae9e5;--acc:#2563ff;--accl:#dbeafe;--accd:#1d4ed8;--green:#059669;--gl:#d1fae5;--amber:#d97706;--bdr:rgba(12,12,14,0.08);--ff:'Bricolage Grotesque',sans-serif;--fb:'Instrument Sans',sans-serif}
+body{font-family:var(--fb);background:var(--surf);color:var(--ink);font-size:15px;line-height:1.7;min-height:100vh;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+nav{background:rgba(255,255,255,.97);border-bottom:1px solid var(--bdr);height:56px;padding:0 4%;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.logo{font-family:var(--ff);font-weight:800;font-size:19px;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:7px}
+.lm{width:26px;height:26px;background:var(--acc);border-radius:7px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:800}
+.back{font-size:13px;color:var(--acc);text-decoration:none;font-weight:500}
+.page{max-width:660px;margin:0 auto;padding:24px 5% 80px}
+.ptag{display:inline-flex;background:var(--accl);color:var(--accd);border-radius:99px;padding:3px 12px;font-size:11px;font-weight:600;margin-bottom:10px;text-transform:uppercase;letter-spacing:.04em}
+h1{font-family:var(--ff);font-size:clamp(24px,4vw,36px);font-weight:800;line-height:1.1;margin-bottom:8px}
+.intro{font-size:15px;color:var(--ink3);margin-bottom:8px}
+.kpills{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0 18px}
+.kp{background:var(--surf2);border:1px solid var(--bdr);border-radius:6px;padding:3px 9px;font-size:11px;color:var(--ink4);font-weight:500}
+.box{background:var(--w);border:1px solid var(--bdr);border-radius:14px;padding:24px;margin-bottom:16px}
+.fr{display:flex;gap:8px;align-items:center;margin-bottom:11px}
+.fr label{font-size:12px;font-weight:500;color:var(--ink3);min-width:150px;flex-shrink:0}
+input,select{flex:1;border:1.5px solid var(--bdr);border-radius:8px;padding:9px 11px;font-size:14px;font-family:var(--fb);background:var(--surf);outline:none;min-width:0}
+input:focus,select:focus{border-color:var(--acc);background:var(--w)}
+.mrow{display:flex;gap:6px;margin-bottom:11px;flex-wrap:wrap}
+.mb{flex:1;min-width:64px;padding:7px;border-radius:7px;border:1.5px solid var(--bdr);background:var(--surf);color:var(--ink3);font-size:12px;font-weight:500;cursor:pointer;font-family:var(--fb);text-align:center}
+.mb.on{background:var(--acc);color:#fff;border-color:var(--acc)}
+.rbox{background:var(--surf);border:1px solid var(--bdr);border-radius:10px;padding:13px 16px;min-height:48px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:4px}
+.rbox strong{font-size:22px;font-weight:800;font-family:var(--ff)}
+.rbox .u{font-size:12px;color:var(--ink4)}
+h2.s{font-family:var(--ff);font-size:20px;font-weight:700;margin:28px 0 8px}
+h3.s{font-family:var(--ff);font-size:16px;font-weight:700;margin:18px 0 6px}
+p.b{font-size:14px;color:var(--ink3);margin-bottom:12px}
+ul.b{padding-left:18px;margin-bottom:12px}
+ul.b li{font-size:14px;color:var(--ink3);margin-bottom:4px}
+.formula{background:var(--surf2);border-radius:8px;padding:10px 14px;font-family:monospace;font-size:13px;margin:8px 0 14px}
+.faq-item{border-bottom:1px solid var(--bdr)}
+.faq-q{width:100%;background:none;border:none;text-align:left;padding:13px 0;font-size:15px;font-weight:500;color:var(--ink);cursor:pointer;font-family:var(--fb);display:flex;justify-content:space-between;gap:12px}
+.faq-q i{color:var(--ink4);transition:transform .2s;flex-shrink:0;font-style:normal}
+.faq-q.open i{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s}
+.faq-a.open{max-height:300px;padding-bottom:12px}
+.faq-a p{font-size:14px;color:var(--ink3)}
+.related{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:9px;margin:14px 0}
+.rc{background:var(--w);border:1px solid var(--bdr);border-radius:10px;padding:11px 13px;text-decoration:none;color:inherit;display:block}
+.rc:hover{border-color:var(--accd);background:var(--accl)}
+.rc .rt{font-size:13px;font-weight:600;font-family:var(--ff);margin-bottom:2px}
+.rc .rd{font-size:11px;color:var(--ink4)}
+footer{background:#1e1e24;color:rgba(255,255,255,.5);font-size:12px;padding:28px 4%;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media(max-width:600px){.fr{flex-direction:column;align-items:flex-start}.fr label{min-width:auto}input,select{width:100%;font-size:16px}}
+</style>
+</head>
+<body>
+<nav><a class="logo" href="/index.html"><span class="lm">W</span>MyWorkKits</a><a class="back" href="/index.html">← All tools</a></nav>
+<main class="page">
+<div class="ptag">🏛️ Savings</div>
+<h1>FD Calculator (Fixed Deposit)</h1>
+<p class="intro">Calculate your fixed deposit maturity amount and total interest earned. Uses quarterly compounding — the standard for Indian banks.</p>
+<div class="kpills"><span class="kp">fd calculator</span><span class="kp">fixed deposit calculator</span><span class="kp">fd maturity amount</span><span class="kp">fd interest calculator</span></div>
+<div class="box">
+<div class="fr"><label>Deposit amount (₹)</label><input type="number" id="fdAmt" value="100000" oninput="calcFD()"></div>
+<div class="fr"><label>Interest rate (% per year)</label><input type="number" id="fdRate" value="7" step="0.05" oninput="calcFD()"></div>
+<div class="fr"><label>Tenure</label>
+<input type="number" id="fdT" value="5" min="0.25" step="0.25" oninput="calcFD()" style="flex:.5">
+<select id="fdUnit" onchange="calcFD()" style="flex:.8"><option value="y">Years</option><option value="m">Months</option></select></div>
+<div class="fr"><label>Compounding</label>
+<select id="fdComp" onchange="calcFD()"><option value="4" selected>Quarterly (bank standard)</option><option value="12">Monthly</option><option value="2">Half-yearly</option><option value="1">Yearly</option></select></div>
+<div class="rbox" id="fdRes" style="flex-direction:column;align-items:flex-start;gap:6px"></div>
+</div>
+<h2 class="s">How FD interest is calculated</h2>
+<p class="b">Indian banks compound fixed deposit interest quarterly. The maturity formula:</p>
+<div class="formula">A = P × (1 + r/n)^(n×t)</div>
+<p class="b">Where P = principal, r = annual rate, n = compounding frequency (4 for quarterly), t = years. A ₹1,00,000 FD at 7% for 5 years matures to approximately ₹1,41,478 — earning ₹41,478 in interest.</p>
+<h3 class="s">FD vs SIP — which is better?</h3>
+<p class="b">FDs offer guaranteed, fixed returns (currently 6–7.5% at major banks) with zero market risk — ideal for capital protection. SIPs in equity funds historically return more (10–14%) but fluctuate with markets. Most planners suggest FDs for short-term goals and emergency funds, SIPs for long-term wealth. Compare with our <a href="/sip-calculator.html" style="color:var(--acc)">SIP calculator</a>.</p>
+<h2 class="s">Frequently asked questions</h2>
+<div class="faq-item"><button class="faq-q">Is FD interest taxable? <i>+</i></button><div class="faq-a"><p>Yes, FD interest is fully taxable as per your income tax slab in India. Banks deduct TDS at 10% if annual interest exceeds ₹40,000 (₹50,000 for senior citizens). This calculator shows pre-tax maturity value.</p></div></div>
+<div class="faq-item"><button class="faq-q">What happens if I break my FD early? <i>+</i></button><div class="faq-a"><p>Premature withdrawal typically incurs a penalty of 0.5–1% on the interest rate, and you earn interest only for the actual period held at the applicable rate for that period.</p></div></div>
+<div class="faq-item"><button class="faq-q">Why quarterly compounding? <i>+</i></button><div class="faq-a"><p>RBI convention — virtually all Indian banks compound FD interest quarterly. Quarterly compounding earns slightly more than yearly: 7% compounded quarterly is effectively 7.19% per year.</p></div></div>
+<h2 class="s">Related tools</h2>
+<div class="related">
+<a href="/sip-calculator.html" class="rc"><div class="rt">SIP calculator</div><div class="rd">Monthly investment returns</div></a>
+<a href="/lumpsum-calculator.html" class="rc"><div class="rt">Lumpsum calculator</div><div class="rd">One-time investment</div></a>
+<a href="/compound-interest.html" class="rc"><div class="rt">Compound interest</div><div class="rd">General savings growth</div></a>
+<a href="/loan-emi-calculator.html" class="rc"><div class="rt">EMI calculator</div><div class="rd">Loan payments</div></a>
+</div>
+</main>
+<footer><span>© 2026 MyWorkKits · www.myworkkits.com</span><span>Free forever · No sign-up</span></footer>
+<script>
+function calcFD(){
+const P=parseFloat(document.getElementById('fdAmt').value)||0,r=parseFloat(document.getElementById('fdRate').value)||0;
+let t=parseFloat(document.getElementById('fdT').value)||0;
+if(document.getElementById('fdUnit').value==='m')t=t/12;
+const n=parseInt(document.getElementById('fdComp').value);
+if(!P||!t){document.getElementById('fdRes').innerHTML='<span style="color:var(--ink4)">Enter details above</span>';return;}
+const A=P*Math.pow(1+r/100/n,n*t),interest=A-P;
+const f=v=>'₹ '+Math.round(v).toLocaleString('en-IN');
+document.getElementById('fdRes').innerHTML=`
+<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;width:100%">
+<div><div style="font-size:11px;color:var(--ink4)">Deposit</div><div style="font-size:16px;font-weight:700;font-family:var(--ff)">${f(P)}</div></div>
+<div><div style="font-size:11px;color:var(--ink4)">Interest earned</div><div style="font-size:16px;font-weight:700;font-family:var(--ff);color:var(--green)">${f(interest)}</div></div>
+<div><div style="font-size:11px;color:var(--ink4)">Maturity value</div><div style="font-size:16px;font-weight:700;font-family:var(--ff);color:var(--accd)">${f(A)}</div></div>
+</div>`;
+}
+calcFD();
+document.querySelectorAll('.faq-q').forEach(b=>{b.addEventListener('click',()=>{const a=b.nextElementSibling,o=a.classList.contains('open');document.querySelectorAll('.faq-a').forEach(x=>x.classList.remove('open'));document.querySelectorAll('.faq-q').forEach(x=>x.classList.remove('open'));if(!o){a.classList.add('open');b.classList.add('open');}});});
+</script>
+</body>
+</html>
