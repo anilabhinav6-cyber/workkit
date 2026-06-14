@@ -791,10 +791,28 @@ document.querySelectorAll('.faq-q').forEach(btn => {
 
 
 </script>
+<script id="wk-no-auto-translate">
+(function(){
+  // Page defaults to English. Only clear Google's cookie if the user has NOT
+  // deliberately chosen a language this session — this stops auto-translation
+  // by browser language while still honouring the user's own choice as they browse.
+  try{
+    if(!sessionStorage.getItem('wk_lang_choice')){
+      document.cookie='googtrans=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/';
+      document.cookie='googtrans=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;domain='+location.hostname;
+      document.cookie='googtrans=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;domain=.'+location.hostname;
+    }
+  }catch(e){}
+})();
+</script>
 <div id="google_translate_element"></div>
 <script>
 function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:'en',includedLanguages:'ar,hi,ur,ta,ml,bn,fr,es,de,zh-CN,ru,tl,fa,id,tr,pt',autoDisplay:false},'google_translate_element');}
 function wkSetLang(lang){
+  try{
+    if(lang==='en'){sessionStorage.removeItem('wk_lang_choice');document.cookie='googtrans=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/';location.reload();return;}
+    sessionStorage.setItem('wk_lang_choice',lang);
+  }catch(e){}
   var tries=0;
   (function trySet(){
     var sel=document.querySelector('#google_translate_element select')||document.querySelector('select.goog-te-combo');
