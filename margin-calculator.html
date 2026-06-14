@@ -18,7 +18,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
 --> --> -->
 <meta name="description" content="Calculate gross profit margin and markup percentage from cost and selling price. Essential for pricing products and evaluating business profitability.">
-<meta name="keywords" content="profit margin calculator, markup calculator, gross margin, cost price selling price, retail pricing, business profit">
+<meta name="keywords" content="margin calculator, markup calculator, profit margin calculator, how to calculate profit margin, gross margin calculator, markup vs margin, selling price calculator, retail margin calculator">
 <meta name="robots" content="index, follow">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" type="image/png" href="/favicon-192.png" sizes="192x192">
@@ -141,8 +141,167 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
 .ad1,.ad2{min-height:0;padding:0}
 .ad1:empty,.ad2:empty{display:none}
 </style>
+<style id="wk-dark-theme">
+/* ═══ MyWorkKits universal dark glassmorphism theme ═══ */
+:root{--bg:#0d0d18;--txt:#f0f0f8;--txt2:#a8a8c0;--txt3:#6e6e8c;--glass:rgba(255,255,255,.05);--glass2:rgba(255,255,255,.08);--border:rgba(255,255,255,.1);--border2:rgba(255,255,255,.16);--indigo:#818cf8;--purple:#c084fc;--blue:#60a5fa;--teal:#2dd4bf;--green:#34d399;--amber:#fbbf24;--red:#f87171;--pink:#f472b6}
+body{background:#0d0d18!important;color:#f0f0f8!important;position:relative}
+.wk-bg{position:fixed;inset:0;z-index:-2;overflow:hidden;pointer-events:none}
+.wk-blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:.4;will-change:transform}
+.wk-blob1{width:440px;height:440px;background:radial-gradient(circle,#6366f1,transparent 70%);top:-120px;right:-80px;animation:wkf1 24s ease-in-out infinite}
+.wk-blob2{width:400px;height:400px;background:radial-gradient(circle,#a855f7,transparent 70%);bottom:-100px;left:-80px;animation:wkf2 28s ease-in-out infinite}
+@keyframes wkf1{0%,100%{transform:translate(0,0)}50%{transform:translate(-60px,50px)}}
+@keyframes wkf2{0%,100%{transform:translate(0,0)}50%{transform:translate(50px,-40px)}}
+@media(prefers-reduced-motion:reduce){.wk-blob{animation:none}}
+/* nav */
+nav{background:rgba(13,13,24,.7)!important;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--border)!important}
+.logo{color:#f0f0f8!important}
+.lm{background:linear-gradient(135deg,#6366f1,#a855f7)!important;box-shadow:0 0 20px rgba(129,140,248,.5);color:#fff!important}
+.back,.nav-back{color:var(--indigo)!important}
+/* page + text */
+.page{position:relative;z-index:1}
+.bc{color:var(--txt3)!important}.bc a{color:var(--indigo)!important}
+h1,h2,h3,h2.s,h3.s{color:#f0f0f8!important}
+h1 span,.grad{background:linear-gradient(120deg,#818cf8,#c084fc);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent!important;color:transparent!important}
+.intro,p.b,ul.b li{color:var(--txt2)!important}
+.ptag{background:rgba(129,140,248,.15)!important;border:1px solid rgba(129,140,248,.3)!important;color:var(--indigo)!important}
+.kp{background:var(--glass)!important;border:1px solid var(--border)!important;color:var(--txt3)!important}
+.formula{background:var(--glass2)!important;color:var(--indigo)!important}
+/* cards / boxes */
+.box,.tool-left,.tool-right,.cat-section,.bsec,.budget-header,.tips-box,.rule-card{background:var(--glass)!important;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--border2)!important;border-radius:18px!important;box-shadow:0 12px 50px rgba(0,0,0,.4)}
+.cat-head,.bsec-head{background:transparent!important;border-color:var(--border)!important}
+/* inputs */
+input,select,textarea{background:rgba(255,255,255,.06)!important;border:1.5px solid var(--border)!important;color:#f0f0f8!important;border-radius:10px!important}
+input::placeholder,textarea::placeholder{color:var(--txt3)!important}
+input:focus,select:focus,textarea:focus{border-color:var(--indigo)!important;background:rgba(255,255,255,.1)!important;box-shadow:0 0 0 3px rgba(129,140,248,.12)!important}
+select option{background:#1a1a2e!important;color:#f0f0f8!important}
+label,.fr label,.field label,.bh-field label,.opt-label{color:var(--txt2)!important}
+input[type=file]{border:1.5px dashed var(--border2)!important;background:var(--glass)!important;color:var(--txt2)!important}
+/* result boxes */
+.rbox,.disp{background:rgba(0,0,0,.3)!important;border:1px solid var(--border)!important;color:#f0f0f8!important}
+.rbox strong{color:#f0f0f8!important}
+.rbox .u{color:var(--txt3)!important}
+/* buttons */
+.btn,.btn-dl,.btn-pdf{background:linear-gradient(135deg,#6366f1,#a855f7)!important;color:#fff!important;border:none!important;box-shadow:0 4px 16px rgba(129,140,248,.3)}
+.btn:hover,.btn-dl:hover,.btn-pdf:hover{filter:brightness(1.1)}
+.btn.bg{background:linear-gradient(135deg,#059669,#34d399)!important}
+.btn-copy,.btn-reset,.cpbtn,.sz,.add-row-btn,.ttab,.mb,.sw,.cclose{background:var(--glass)!important;border:1px solid var(--border)!important;color:var(--txt2)!important}
+.mb.on,.ttab.on,.sz.on{background:linear-gradient(135deg,#6366f1,#a855f7)!important;border-color:transparent!important;color:#fff!important}
+.del-btn{background:var(--glass2)!important;color:var(--txt3)!important}
+/* segmented / mode rows */
+.mrow .mb,.seg button,.type-tabs .ttab{background:var(--glass)!important;color:var(--txt2)!important}
+/* QR specific */
+.qr-box,#qrBox{background:#fff!important;border:2px solid var(--border2)!important}
+.tool-left,.tool-right{background:var(--glass)!important}
+/* budget summary cards keep their tints but darken text bg */
+.sum-card,.bd-cell,.metric,.box .metric{backdrop-filter:blur(8px)}
+/* tables */
+table,.rtbl,.income-table{color:var(--txt2)!important}
+th,.rtbl th,.income-table th{background:var(--glass2)!important;color:var(--txt2)!important;border-color:var(--border)!important}
+td,.rtbl td,.income-table td{border-color:var(--border)!important;color:var(--txt2)!important}
+.income-table tr:last-child td{color:#f0f0f8!important}
+/* FAQ */
+.faq-item{border-color:var(--border)!important}
+.faq-q{color:#f0f0f8!important}.faq-q:hover{color:var(--indigo)!important}
+.faq-q i{color:var(--txt3)!important}
+.faq-a p{color:var(--txt2)!important}
+.ibox{background:rgba(129,140,248,.1)!important;border-left-color:var(--indigo)!important}
+.ibox p{color:var(--txt2)!important}
+/* related */
+.related .rc,.rc{background:var(--glass)!important;border:1px solid var(--border)!important;color:inherit!important}
+.rc:hover{border-color:var(--indigo)!important;background:var(--glass2)!important}
+.rc .rt{color:#f0f0f8!important}.rc .rd{color:var(--txt3)!important}
+/* footer */
+footer{background:rgba(13,13,24,.6)!important;backdrop-filter:blur(12px);border-top:1px solid var(--border)!important;color:var(--txt3)!important;position:relative;z-index:1}
+.fcol h4,.fbrand .logo{color:#f0f0f8!important}
+.fcol a{color:var(--txt3)!important}.fcol a:hover{color:var(--indigo)!important}
+.fbrand p{color:var(--txt3)!important}
+.fbot{border-top-color:var(--border)!important;color:var(--txt3)!important}
+/* misc text catch-all for muted greys */
+.tdesc,.qr-meta,.priv,.pglist{color:var(--txt3)!important}
+.slabel{color:var(--txt3)!important}
+.slabel::after{background:var(--border)!important}
+</style>
+<link rel="alternate" hreflang="en" href="https://www.myworkkits.com/margin-calculator.html">
+<link rel="alternate" hreflang="en-ae" href="https://www.myworkkits.com/margin-calculator.html">
+<link rel="alternate" hreflang="en-in" href="https://www.myworkkits.com/margin-calculator.html">
+<link rel="alternate" hreflang="en-gb" href="https://www.myworkkits.com/margin-calculator.html">
+<link rel="alternate" hreflang="x-default" href="https://www.myworkkits.com/margin-calculator.html">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"MyWorkKits","item":"https://www.myworkkits.com/"},{"@type":"ListItem","position":2,"name":"Margin & Markup","item":"https://www.myworkkits.com/margin-calculator.html"}]}</script>
+<style id="wk-dark-fix">
+/* Remap legacy light-theme variables so every element that uses them turns dark */
+:root{
+  --ink:#f0f0f8!important;--ink2:#f0f0f8!important;--ink3:#c4c4d6!important;--ink4:#9a9ab0!important;--ink5:#6e6e8c!important;
+  --w:#16162a!important;--surf:#16162a!important;--surf2:#1e1e38!important;--paper:#16162a!important;--card:#16162a!important;
+  --bdr:rgba(255,255,255,.1)!important;
+  --acc:#818cf8!important;
+}
+/* Force any near-white card/panel/result background to dark glass */
+.box,.card,.panel,.tool-card,.tool-left,.tool-right,.calc-card,.result-card,.bsec,.section-card,.budget-header,.tips-box{
+  background:rgba(255,255,255,.05)!important;border:1px solid rgba(255,255,255,.14)!important;
+}
+/* Result boxes (rbox/disp/result) were rgba(255,255,255,.9x) — force dark */
+.rbox,.disp,.result,.res-box,#result,[id$="res"],[id$="Res"],[id$="result"]{
+  background:rgba(0,0,0,.28)!important;border:1px solid rgba(255,255,255,.12)!important;color:#f0f0f8!important;
+}
+/* Any inline near-white backgrounds */
+[style*="background:#fff"],[style*="background: #fff"],[style*="background:#ffffff"],[style*="background:white"],
+[style*="rgba(255,255,255,.9"],[style*="rgba(255, 255, 255, 0.9"],[style*="rgba(255,255,255,.96"],[style*="rgba(255,255,255,.95"]{
+  background:rgba(255,255,255,.05)!important;
+}
+/* Text: anything using the old dark ink vars or inline dark greys becomes light */
+h1,h2,h3,h4,h5,p,span,label,div,td,th,li,a,strong,small,.intro,.tdesc,.tc-name,.tc-desc{color:inherit}
+body,.box,.card,.panel{color:#e8e8f4!important}
+[style*="color:var(--ink4)"],[style*="color:var(--ink3)"],[style*="color:var(--ink5)"],[style*="color:#888"],[style*="color:#666"],[style*="color:#444"],[style*="color:#999"]{color:#9a9ab0!important}
+[style*="color:var(--ink)"],[style*="color:var(--ink2)"],[style*="color:#0c0c0e"],[style*="color:#111"],[style*="color:#222"],[style*="color:#000"]{color:#f0f0f8!important}
+.rbox strong,.disp strong{color:#f0f0f8!important}
+/* Tinted result chips (green/red/amber backgrounds) — keep colored bg but ensure dark-readable via brightening text handled inline; soften very light tints */
+[style*="background:var(--gl)"],[style*="background:var(--rl)"],[style*="background:var(--al)"],[style*="background:var(--pl)"],[style*="background:var(--tl)"]{filter:saturate(1.4) brightness(.5)}
+/* keep inputs readable */
+input,select,textarea{color:#f0f0f8!important;background:rgba(255,255,255,.06)!important}
+input::placeholder,textarea::placeholder{color:#8a8aa0!important}
+select option{background:#16162a!important;color:#f0f0f8!important}
+</style>
+<style id="wk-dark-refine">
+/* QR code must stay on a white background to remain scannable */
+#qrBox,.qr-box,#qrCanvas{background:#ffffff!important;filter:none!important}
+#qrBox *,.qr-box *{filter:none!important}
+/* Replace muddy filter approach: give tinted summary cards proper dark-glass tints with readable colored text */
+.sum-card,[style*="background:var(--gl)"],[style*="background:#d1fae5"]{background:rgba(52,211,153,.14)!important;filter:none!important}
+[style*="background:var(--rl)"],[style*="background:#fee2e2"]{background:rgba(248,113,113,.14)!important;filter:none!important}
+[style*="background:var(--al)"],[style*="background:#fef3c7"]{background:rgba(251,191,36,.14)!important;filter:none!important}
+[style*="background:var(--pl)"],[style*="background:#ede9fe"]{background:rgba(192,132,252,.14)!important;filter:none!important}
+[style*="background:var(--tl)"],[style*="background:#ccfbf1"]{background:rgba(45,212,191,.14)!important;filter:none!important}
+[style*="background:var(--accl)"],[style*="background:#dbeafe"]{background:rgba(129,140,248,.14)!important;filter:none!important}
+/* keep the bold colored numbers in those cards readable (they use --green/--red/--amber/--accd which are dark) */
+[style*="color:var(--green)"]{color:#34d399!important}
+[style*="color:var(--red)"]{color:#f87171!important}
+[style*="color:var(--amber)"]{color:#fbbf24!important}
+[style*="color:var(--accd)"],[style*="color:var(--acc)"]{color:#818cf8!important}
+[style*="color:var(--purple)"]{color:#c084fc!important}
+[style*="color:var(--teal)"]{color:#2dd4bf!important}
+</style>
+<style id="wk-related-center">
+.related{width:100%!important;max-width:100%!important;margin-left:0!important;margin-right:0!important;justify-content:start!important}
+.related .rc{text-align:center!important}
+</style>
+<style id="wk-translate-css">
+.wk-lang{position:relative;display:inline-flex;align-items:center}
+.wk-lang select{appearance:none;-webkit-appearance:none;background:var(--glass,rgba(255,255,255,.06));border:1px solid var(--border,rgba(255,255,255,.14));border-radius:99px;padding:6px 28px 6px 13px;font-size:12px;color:var(--txt2,#a8a8c0);font-family:var(--fb,sans-serif);cursor:pointer;outline:none;transition:all .15s}
+.wk-lang select:hover{border-color:var(--border2,rgba(255,255,255,.25));color:var(--txt,#f0f0f8)}
+.wk-lang::after{content:'▾';position:absolute;right:11px;top:50%;transform:translateY(-50%);font-size:10px;color:var(--txt3,#6e6e8c);pointer-events:none}
+.wk-lang select option{background:#16162a;color:#f0f0f8}
+/* hide Google's injected UI chrome */
+.goog-te-banner-frame,.skiptranslate{display:none!important}
+body{top:0!important}
+#google_translate_element{display:none}
+.goog-tooltip,.goog-tooltip:hover{display:none!important}
+.goog-text-highlight{background:none!important;box-shadow:none!important}
+</style>
 </head>
+
 <body>
+<div class="wk-bg"><div class="wk-blob wk-blob1"></div><div class="wk-blob wk-blob2"></div></div>
+
 <div class="curr-modal" id="currModal">
   <div class="curr-box">
     <h3>Choose your currency</h3>
@@ -167,7 +326,25 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
     </button>
     <a class="nav-all" href="/index.html">← All tools</a>
   </div>
-</nav>
+<div class="wk-lang"><select onchange="wkSetLang(this.value)" aria-label="Select language">
+<option value="en">🌐 EN</option>
+<option value="ar">العربية</option>
+<option value="hi">हिन्दी</option>
+<option value="ur">اردو</option>
+<option value="ta">தமிழ்</option>
+<option value="ml">മലയാളം</option>
+<option value="bn">বাংলা</option>
+<option value="tl">Filipino</option>
+<option value="fa">فارسی</option>
+<option value="fr">Français</option>
+<option value="es">Español</option>
+<option value="de">Deutsch</option>
+<option value="pt">Português</option>
+<option value="ru">Русский</option>
+<option value="tr">Türkçe</option>
+<option value="id">Indonesia</option>
+<option value="zh-CN">中文</option>
+</select></div></nav>
 <main class="page">
   <div class="bc"><a href="/index.html">MyWorkKit</a><span>›</span><span>Profit Margin & Markup Calculator</span></div>
   <div class="phero">
@@ -303,5 +480,18 @@ window.addEventListener("DOMContentLoaded",initPage);window.addEventListener("lo
 
 
 </script>
+<div id="google_translate_element"></div>
+<script>
+function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:'en',includedLanguages:'ar,hi,ur,ta,ml,bn,fr,es,de,zh-CN,ru,tl,fa,id,tr,pt',autoDisplay:false},'google_translate_element');}
+function wkSetLang(lang){
+  var tries=0;
+  (function trySet(){
+    var sel=document.querySelector('#google_translate_element select')||document.querySelector('select.goog-te-combo');
+    if(sel){sel.value=lang;sel.dispatchEvent(new Event('change'));}
+    else if(tries++<20){setTimeout(trySet,150);}
+  })();
+}
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
 </body>
 </html>
