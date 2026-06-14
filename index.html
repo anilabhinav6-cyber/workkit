@@ -99,6 +99,9 @@ nav{background:rgba(255,255,255,.97);border-bottom:1px solid var(--bdr);height:5
 .tc-desc{font-size:10.5px;color:var(--ink4);line-height:1.35}
 .tc-x{display:none;margin-left:auto;width:26px;height:26px;border-radius:7px;background:var(--surf2);border:none;cursor:pointer;font-size:14px;color:var(--ink3);flex-shrink:0;align-items:center;justify-content:center}
 .tcard.open .tc-x{display:flex}
+.tcard.tlink{cursor:pointer}.tcard.tlink:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.07);border-color:var(--acc)}
+.tnew{position:absolute;top:8px;right:8px;background:var(--acc);color:#fff;font-size:9px;font-weight:700;padding:2px 6px;border-radius:5px;letter-spacing:.04em}
+.tlink .tc-head{cursor:pointer}
 .tpanel{display:none;padding-top:14px;margin-top:12px;border-top:1px solid var(--bdr)}
 .tcard.open .tpanel{display:block}
 .tb-blue .tc-icon{background:var(--accl);color:var(--accd)}
@@ -1006,6 +1009,34 @@ html,body{overflow-x:hidden;max-width:100vw}}
   </div>
 </div>
 
+
+<!-- COMPRESS PDF (link to page) -->
+<a class="tcard tlink tb-red" href="/compress-pdf.html" data-cat="convert" data-name="compress pdf reduce file size shrink" style="text-decoration:none;color:inherit">
+  <span class="tnew">NEW</span>
+  <div class="tc-head">
+    <div class="tc-icon">📉</div>
+    <div><div class="tc-name">Compress PDF</div><div class="tc-desc">Reduce PDF file size →</div></div>
+  </div>
+</a>
+
+<!-- SPLIT PDF (link to page) -->
+<a class="tcard tlink tb-amber" href="/split-pdf.html" data-cat="convert" data-name="split pdf extract pages separate" style="text-decoration:none;color:inherit">
+  <span class="tnew">NEW</span>
+  <div class="tc-head">
+    <div class="tc-icon">✂️</div>
+    <div><div class="tc-name">Split PDF</div><div class="tc-desc">Extract pages from PDF →</div></div>
+  </div>
+</a>
+
+<!-- PDF TO JPG (link to page) -->
+<a class="tcard tlink tb-teal" href="/pdf-to-jpg.html" data-cat="convert" data-name="pdf to jpg image convert jpeg png" style="text-decoration:none;color:inherit">
+  <span class="tnew">NEW</span>
+  <div class="tc-head">
+    <div class="tc-icon">🖼️</div>
+    <div><div class="tc-name">PDF to JPG</div><div class="tc-desc">Convert pages to images →</div></div>
+  </div>
+</a>
+
 <!-- READING TIME -->
 <div class="tcard tb-purple" data-cat="work" data-name="reading time estimate text article">
   <div class="tc-head" onclick="togTool(this)">
@@ -1064,6 +1095,9 @@ html,body{overflow-x:hidden;max-width:100vw}}
     </div>
     <div class="fcol"><h4>Work</h4>
       <a href="/qr-code-generator.html">QR code generator</a>
+      <a href="/compress-pdf.html">Compress PDF</a>
+      <a href="/split-pdf.html">Split PDF</a>
+      <a href="/pdf-to-jpg.html">PDF to JPG</a>
       <a href="/hours-worked.html">Hours worked</a>
       <a href="/invoice-generator.html">Invoice numbers</a>
       <a href="/word-counter.html">Word counter</a>
