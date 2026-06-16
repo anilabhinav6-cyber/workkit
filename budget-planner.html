@@ -1437,8 +1437,17 @@ function showSection(name, btn) {
   document.querySelectorAll('.snav-btn').forEach(b=>b.classList.remove('active'));
   const panel = document.getElementById('panel-'+name);
   if(panel) panel.classList.add('active');
-  if(btn) btn.classList.add('active');
+  if(btn) {
+    btn.classList.add('active');
+  } else {
+    // Activate matching top tab when called from Next/Back buttons
+    document.querySelectorAll('.snav-btn').forEach(b => {
+      if(b.getAttribute('onclick') && b.getAttribute('onclick').includes("'"+name+"'")) b.classList.add('active');
+    });
+  }
+  window.scrollTo({top: document.querySelector('.section-nav').offsetTop - 80, behavior:'smooth'});
 }
+function showSectionByName(name) { showSection(name, null); }
 
 // ===== INIT =====
 const nowM = MONTHS[new Date().getMonth()];
