@@ -521,5 +521,268 @@ function wkSetLang(lang){
 }
 </script>
 <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
+<!-- ═══ MyWorkKits Feedback Widget ═══ -->
+<style id="wk-feedback-css">
+/* Overlay */
+#wkFbOverlay{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:9998;opacity:0;transition:opacity .3s;pointer-events:none;backdrop-filter:blur(4px)}
+#wkFbOverlay.show{opacity:1;pointer-events:all}
+
+/* Modal */
+#wkFbModal{position:fixed;bottom:24px;right:24px;width:340px;max-width:calc(100vw - 32px);background:linear-gradient(145deg,#13132a,#1a1a35);border:1px solid rgba(129,140,248,.35);border-radius:20px;padding:22px;z-index:9999;box-shadow:0 24px 60px rgba(0,0,0,.6),0 0 0 1px rgba(129,140,248,.1);transform:translateY(30px) scale(.96);opacity:0;transition:all .35s cubic-bezier(.34,1.56,.64,1);pointer-events:none}
+#wkFbModal.show{transform:translateY(0) scale(1);opacity:1;pointer-events:all}
+
+/* Header */
+.wkfb-head{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:14px}
+.wkfb-icon{width:36px;height:36px;background:linear-gradient(135deg,#6366f1,#a855f7);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
+.wkfb-titles{flex:1;margin:0 10px}
+.wkfb-title{font-family:'Bricolage Grotesque',sans-serif;font-size:15px;font-weight:700;color:#f0f0f8;line-height:1.2}
+.wkfb-sub{font-size:11px;color:#9a9ab0;margin-top:2px}
+.wkfb-close{background:rgba(255,255,255,.08);border:none;border-radius:8px;width:26px;height:26px;cursor:pointer;color:#9a9ab0;font-size:15px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .15s}
+.wkfb-close:hover{background:rgba(248,113,113,.2);color:#f87171}
+
+/* Stars */
+.wkfb-stars-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:#9a9ab0;margin-bottom:7px}
+.wkfb-stars{display:flex;gap:5px;margin-bottom:14px}
+.wkfb-star{font-size:26px;cursor:pointer;transition:transform .12s;line-height:1;filter:grayscale(1) opacity(.4);user-select:none}
+.wkfb-star.active,.wkfb-star:hover{filter:none;transform:scale(1.18)}
+.wkfb-star.active{filter:drop-shadow(0 0 6px #fbbf24)}
+
+/* Textarea */
+.wkfb-ta{width:100%;background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.12);border-radius:10px;padding:10px 12px;font-size:13px;color:#f0f0f8;font-family:'Instrument Sans',sans-serif;resize:none;outline:none;transition:border-color .15s;box-sizing:border-box}
+.wkfb-ta::placeholder{color:#6e6e8c}
+.wkfb-ta:focus{border-color:rgba(129,140,248,.6);background:rgba(255,255,255,.09)}
+
+/* Quick tags */
+.wkfb-tags{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0 12px}
+.wkfb-tag{padding:4px 11px;border-radius:99px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);font-size:11px;color:#a8a8c0;cursor:pointer;transition:all .15s;user-select:none}
+.wkfb-tag:hover,.wkfb-tag.sel{background:rgba(129,140,248,.2);border-color:rgba(129,140,248,.5);color:#f0f0f8}
+
+/* Submit */
+.wkfb-submit{width:100%;padding:11px;background:linear-gradient(135deg,#6366f1,#a855f7);border:none;border-radius:10px;color:#fff;font-size:14px;font-weight:600;cursor:pointer;font-family:'Instrument Sans',sans-serif;transition:all .18s;margin-top:4px}
+.wkfb-submit:hover{filter:brightness(1.1);transform:translateY(-1px)}
+.wkfb-submit:disabled{opacity:.5;cursor:not-allowed;transform:none}
+
+/* Success state */
+.wkfb-success{text-align:center;padding:10px 0}
+.wkfb-success-icon{font-size:36px;margin-bottom:8px}
+.wkfb-success-msg{font-size:14px;color:#f0f0f8;font-weight:600;margin-bottom:4px}
+.wkfb-success-sub{font-size:12px;color:#9a9ab0}
+
+/* Snooze link */
+.wkfb-snooze{text-align:center;margin-top:10px}
+.wkfb-snooze a{font-size:11px;color:#6e6e8c;cursor:pointer;text-decoration:none}
+.wkfb-snooze a:hover{color:#a8a8c0}
+
+/* Floating tab when dismissed */
+#wkFbTab{position:fixed;bottom:20px;right:-90px;background:linear-gradient(135deg,#6366f1,#a855f7);color:#fff;border:none;border-radius:99px 0 0 99px;padding:9px 14px 9px 16px;font-size:12px;font-weight:600;cursor:pointer;z-index:9997;box-shadow:0 4px 18px rgba(129,140,248,.4);transition:right .4s cubic-bezier(.34,1.56,.64,1);font-family:'Instrument Sans',sans-serif;display:flex;align-items:center;gap:6px}
+#wkFbTab.show{right:0}
+
+/* Star display on page (rating badge) */
+.wkfb-rating-badge{display:inline-flex;align-items:center;gap:5px;background:rgba(251,191,36,.12);border:1px solid rgba(251,191,36,.25);border-radius:99px;padding:4px 12px;font-size:12px;color:#fbbf24;font-weight:600;margin-left:8px}
+</style>
+
+<div id="wkFbOverlay"></div>
+<div id="wkFbModal" role="dialog" aria-modal="true" aria-label="Feedback">
+  <div class="wkfb-head">
+    <div class="wkfb-icon">💬</div>
+    <div class="wkfb-titles">
+      <div class="wkfb-title">Quick feedback?</div>
+      <div class="wkfb-sub" id="wkfb-tool-name">Help us improve this tool</div>
+    </div>
+    <button class="wkfb-close" onclick="wkFbSnooze()" aria-label="Close">×</button>
+  </div>
+
+  <div id="wkfb-form-body">
+    <div class="wkfb-stars-label">Rate this tool</div>
+    <div class="wkfb-stars" id="wkfbStars">
+      <span class="wkfb-star" data-v="1" onclick="wkFbSetStar(1)">★</span>
+      <span class="wkfb-star" data-v="2" onclick="wkFbSetStar(2)">★</span>
+      <span class="wkfb-star" data-v="3" onclick="wkFbSetStar(3)">★</span>
+      <span class="wkfb-star" data-v="4" onclick="wkFbSetStar(4)">★</span>
+      <span class="wkfb-star" data-v="5" onclick="wkFbSetStar(5)">★</span>
+    </div>
+
+    <div class="wkfb-tags" id="wkfbTags">
+      <span class="wkfb-tag" onclick="wkFbToggleTag(this)">🐛 Bug found</span>
+      <span class="wkfb-tag" onclick="wkFbToggleTag(this)">✨ Feature idea</span>
+      <span class="wkfb-tag" onclick="wkFbToggleTag(this)">🤔 Confusing UI</span>
+      <span class="wkfb-tag" onclick="wkFbToggleTag(this)">💡 New tool idea</span>
+      <span class="wkfb-tag" onclick="wkFbToggleTag(this)">👍 Works great</span>
+    </div>
+
+    <textarea class="wkfb-ta" id="wkfbText" rows="3"
+      placeholder="Tell us what you think or what tool you'd love to see…"></textarea>
+
+    <button class="wkfb-submit" id="wkfbSubmit" onclick="wkFbSubmit()">Send Feedback</button>
+    <div class="wkfb-snooze"><a onclick="wkFbSnooze()">Remind me later</a></div>
+  </div>
+
+  <div id="wkfb-success" style="display:none">
+    <div class="wkfb-success">
+      <div class="wkfb-success-icon">🎉</div>
+      <div class="wkfb-success-msg">Thank you!</div>
+      <div class="wkfb-success-sub">Your feedback helps us build better tools.</div>
+    </div>
+  </div>
+</div>
+
+<button id="wkFbTab" onclick="wkFbOpen()" aria-label="Give feedback">
+  💬 Feedback
+</button>
+
+<script id="wk-feedback-js">
+(function(){
+  // ── Config ──────────────────────────────────────────────────────────────────
+  const SHEET_URL = 'https://script.google.com/macros/s/REPLACE_WITH_YOUR_APPS_SCRIPT_URL/exec';
+  const TRIGGER_MS = 60000; // 1 minute
+  const SNOOZE_DAYS = 3;
+
+  // ── Tool name from page title ────────────────────────────────────────────────
+  const rawTitle = document.title || '';
+  const toolName = rawTitle.split('|')[0].split('—')[0].replace(/^Free\s+/i,'').trim() || 'This tool';
+  document.getElementById('wkfb-tool-name').textContent = toolName;
+  const pageUrl = window.location.pathname;
+
+  // ── State ────────────────────────────────────────────────────────────────────
+  let selectedStar = 0;
+  let hasShown = false;
+
+  // ── Check snooze ────────────────────────────────────────────────────────────
+  function isSnoozed() {
+    try {
+      const s = localStorage.getItem('wkfb_snooze_'+pageUrl);
+      if (!s) return false;
+      return Date.now() < parseInt(s);
+    } catch(e){ return false; }
+  }
+  function setSnooze() {
+    try { localStorage.setItem('wkfb_snooze_'+pageUrl, Date.now() + SNOOZE_DAYS*86400000); } catch(e){}
+  }
+
+  // ── Trigger after 1 min of engagement ───────────────────────────────────────
+  let engageTimer = null;
+  function startTimer() {
+    if (isSnoozed() || hasShown) return;
+    engageTimer = setTimeout(() => {
+      if (!isSnoozed() && !hasShown) wkFbOpen();
+    }, TRIGGER_MS);
+  }
+  function resetTimer() {
+    clearTimeout(engageTimer);
+    startTimer();
+  }
+
+  // Only start timer on user interaction (not just page load)
+  ['click','keydown','scroll','touchstart'].forEach(ev =>
+    document.addEventListener(ev, resetTimer, {once:true, passive:true})
+  );
+  // Also start on page load in case user is already reading
+  setTimeout(startTimer, 2000);
+
+  // ── Open / close ────────────────────────────────────────────────────────────
+  window.wkFbOpen = function() {
+    hasShown = true;
+    document.getElementById('wkFbModal').classList.add('show');
+    document.getElementById('wkFbOverlay').classList.add('show');
+    document.getElementById('wkFbTab').classList.remove('show');
+    // Pre-fill any saved star rating for this page
+    const saved = getSavedRating();
+    if (saved) wkFbSetStar(saved, true);
+  };
+
+  window.wkFbClose = function() {
+    document.getElementById('wkFbModal').classList.remove('show');
+    document.getElementById('wkFbOverlay').classList.remove('show');
+    // Show the floating tab
+    setTimeout(() => document.getElementById('wkFbTab').classList.add('show'), 400);
+  };
+
+  window.wkFbSnooze = function() {
+    setSnooze();
+    wkFbClose();
+  };
+
+  // Close on overlay click
+  document.getElementById('wkFbOverlay').addEventListener('click', wkFbSnooze);
+
+  // ── Stars ────────────────────────────────────────────────────────────────────
+  window.wkFbSetStar = function(val, silent) {
+    selectedStar = val;
+    document.querySelectorAll('.wkfb-star').forEach(s => {
+      s.classList.toggle('active', parseInt(s.dataset.v) <= val);
+    });
+    if (!silent) saveRating(val);
+  };
+
+  function saveRating(val) {
+    try { localStorage.setItem('wkfb_rating_'+pageUrl, val); } catch(e){}
+  }
+  function getSavedRating() {
+    try { return parseInt(localStorage.getItem('wkfb_rating_'+pageUrl))||0; } catch(e){ return 0; }
+  }
+
+  // ── Tags ─────────────────────────────────────────────────────────────────────
+  window.wkFbToggleTag = function(el) { el.classList.toggle('sel'); };
+
+  // ── Submit ────────────────────────────────────────────────────────────────────
+  window.wkFbSubmit = async function() {
+    const text = document.getElementById('wkfbText').value.trim();
+    const tags = [...document.querySelectorAll('.wkfb-tag.sel')].map(t=>t.textContent.trim()).join(', ');
+    const btn = document.getElementById('wkfbSubmit');
+
+    if (!selectedStar && !text && !tags) {
+      document.getElementById('wkfbText').placeholder = 'Please rate or leave a comment first…';
+      document.getElementById('wkfbText').focus();
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+
+    const payload = {
+      tool: toolName,
+      page: pageUrl,
+      stars: selectedStar || '—',
+      tags: tags || '—',
+      comment: text || '—',
+      timestamp: new Date().toISOString(),
+      userAgent: navigator.userAgent.substring(0,80)
+    };
+
+    try {
+      await fetch(SHEET_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify(payload)
+      });
+    } catch(e) {
+      // no-cors always throws but still sends — ignore
+    }
+
+    // Save rating locally regardless
+    if (selectedStar) saveRating(selectedStar);
+    // Mark as submitted so we don't ask again for a while
+    try { localStorage.setItem('wkfb_done_'+pageUrl, Date.now()); } catch(e){}
+
+    // Show success
+    document.getElementById('wkfb-form-body').style.display = 'none';
+    document.getElementById('wkfb-success').style.display = 'block';
+    setTimeout(wkFbClose, 2500);
+  };
+
+  // ── Show floating tab after 5s if already submitted ─────────────────────────
+  try {
+    const done = localStorage.getItem('wkfb_done_'+pageUrl);
+    if (done) {
+      setTimeout(() => document.getElementById('wkFbTab').classList.add('show'), 5000);
+      hasShown = true;
+    }
+  } catch(e){}
+
+})();
+</script>
+<!-- ═══ End Feedback Widget ═══ -->
+
 </body>
 </html>
