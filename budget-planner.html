@@ -297,6 +297,18 @@ footer{background:var(--ink2);color:rgba(255,255,255,.5);font-size:13px;padding:
 @media(max-width:700px){.budget-grid{grid-template-columns:1fr}.summary-row{grid-template-columns:1fr 1fr}.budget-header{flex-direction:column;align-items:stretch}.ftop{grid-template-columns:1fr 1fr}.fbrand{grid-column:1/-1}}
 @media(max-width:420px){.summary-row{grid-template-columns:1fr 1fr}}
 </style>
+<style>
+/* ── Flow nav buttons ── */
+.flow-nav{display:flex;justify-content:flex-end;gap:10px;margin-top:18px;padding-top:14px;border-top:1px solid rgba(255,255,255,.08)}
+.flow-nav.has-back{justify-content:space-between}
+.btn-next{background:linear-gradient(135deg,#6366f1,#a855f7);color:#fff;border:none;border-radius:99px;padding:12px 28px;font-size:14px;font-weight:700;cursor:pointer;font-family:var(--fb,sans-serif);display:inline-flex;align-items:center;gap:8px;letter-spacing:.01em;box-shadow:0 4px 18px rgba(129,140,248,.45);transition:all .18s}
+.btn-next:hover{filter:brightness(1.12);transform:translateY(-2px);box-shadow:0 6px 24px rgba(129,140,248,.55)}
+.btn-next:active{transform:translateY(0)}
+.btn-back{background:rgba(255,255,255,.07);color:var(--txt2,#a8a8c0);border:1px solid rgba(255,255,255,.14);border-radius:99px;padding:11px 22px;font-size:13px;font-weight:500;cursor:pointer;font-family:var(--fb,sans-serif);transition:all .18s}
+.btn-back:hover{background:rgba(255,255,255,.13);color:#f0f0f8;border-color:rgba(255,255,255,.25)}
+.btn-dl-main{background:linear-gradient(135deg,#6366f1,#a855f7);color:#fff;border:none;border-radius:99px;padding:12px 28px;font-size:14px;font-weight:700;cursor:pointer;font-family:var(--fb,sans-serif);display:inline-flex;align-items:center;gap:8px;letter-spacing:.01em;box-shadow:0 4px 18px rgba(129,140,248,.45);transition:all .18s}
+.btn-dl-main:hover{filter:brightness(1.12);transform:translateY(-2px);box-shadow:0 6px 24px rgba(129,140,248,.55)}
+</style>
 <style id="wk-dark-theme">
 /* ═══ MyWorkKits universal dark glassmorphism theme ═══ */
 :root{--bg:#0d0d18;--txt:#f0f0f8;--txt2:#a8a8c0;--txt3:#6e6e8c;--glass:rgba(255,255,255,.05);--glass2:rgba(255,255,255,.08);--border:rgba(255,255,255,.1);--border2:rgba(255,255,255,.16);--indigo:#818cf8;--purple:#c084fc;--blue:#60a5fa;--teal:#2dd4bf;--green:#34d399;--amber:#fbbf24;--red:#f87171;--pink:#f472b6}
@@ -645,11 +657,18 @@ body{top:0!important}
             <button class="add-row-btn" onclick="addRow('income')">+ Add income source</button>
           </div>
         </div>
+        <div class="flow-nav">
+          <button class="btn-next" onclick="showSectionByName('expenses')">Next: Expenses →</button>
+        </div>
       </div>
 
       <!-- EXPENSES PANEL -->
       <div class="section-panel" id="panel-expenses">
         <div id="expenseSection"></div>
+        <div class="flow-nav has-back">
+          <button class="btn-back" onclick="showSectionByName('income')">← Back: Income</button>
+          <button class="btn-next" onclick="showSectionByName('summary')">Next: Summary →</button>
+        </div>
       </div>
 
       <!-- SUMMARY PANEL -->
@@ -718,6 +737,10 @@ body{top:0!important}
             <h3>✨ Personalised Savings Tips</h3>
             <div id="aiContent"></div>
           </div>
+        </div>
+        <div class="flow-nav has-back" style="margin-top:16px">
+          <button class="btn-back" onclick="showSectionByName('expenses')">← Back: Expenses</button>
+          <button class="btn-dl-main" onclick="downloadPDF()">⬇ Download PDF</button>
         </div>
       </div>
 
@@ -1308,20 +1331,84 @@ async function triggerAI() {
     return `${cat.name}: ${cur} ${fmt(total)} (${totalIncome>0?(total/totalIncome*100).toFixed(1):0}% of income)`;
   }).join('\n');
 
-  const prompt=`You are a personal finance advisor. Analyse this monthly budget and give 4-5 specific, actionable, encouraging money-saving tips. Mention actual numbers from their data. Each tip: 2-3 sentences. Return ONLY a JSON array of objects with "title" (5 words max) and "tip". No preamble, no markdown.\n\nBudget (${cur}):\nIncome: ${cur} ${fmt(totalIncome)}\nExpenses: ${cur} ${fmt(totalExpenses)}\nSavings: ${cur} ${fmt(savings)} (${savingsPct}%)\n\n${catSummary}`;
+  // Smart rule-based tips — works fully client-side
+  const tips = generateBudgetTips(t, cur, totalIncome, totalExpenses, savings, parseFloat(savingsPct));
+  setTimeout(() => {
+    content.innerHTML = tips.map(tip =>
+      `<div class="ai-tip"><strong>💡 ${tip.title}</strong> ${tip.tip}</div>`
+    ).join('') +
+    `<div style="font-size:11px;color:var(--txt3,#6e6e8c);margin-top:10px">Based on your actual numbers · For guidance only, not financial advice.</div>`;
+    btn.disabled = false;
+  }, 800);
+}
 
-  try {
-    const resp=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({model:'claude-sonnet-4-6',max_tokens:1000,messages:[{role:'user',content:prompt}]})});
-    const data=await resp.json();
-    const raw=(data.content||[]).map(b=>b.text||'').join('').trim().replace(/```json|```/gi,'').trim();
-    const tips=JSON.parse(raw);
-    content.innerHTML=tips.map(tip=>`<div class="ai-tip"><strong>💡 ${tip.title}</strong>${tip.tip}</div>`).join('')+
-      `<div style="font-size:11px;color:var(--txt3,#6e6e8c);margin-top:8px">Powered by Claude AI · Guidance only, not financial advice.</div>`;
-  } catch(err) {
-    content.innerHTML=`<div class="ai-error">Could not load recommendations. Please try again.</div>`;
+function generateBudgetTips(t, cur, totalIncome, totalExpenses, savings, savingsPct) {
+  const tips = [];
+  const catAmt = id => { const c=t.cats.find(x=>x.id===id); return c?c.items.reduce((s,i)=>s+effectiveAmount(i),0):0; };
+  const pct = amt => totalIncome > 0 ? (amt/totalIncome*100) : 0;
+
+  const housing=catAmt('housing'), food=catAmt('food'), transport=catAmt('transport');
+  const entertainment=catAmt('entertainment'), shopping=catAmt('shopping');
+  const savings_cat=catAmt('savings'), utilities=catAmt('utilities'), health=catAmt('health');
+
+  // 1. Savings rate — always shown first
+  if (savingsPct < 0) {
+    tips.push({title:'Spending exceeds income',
+      tip:`Your expenses of ${cur} ${fmt(totalExpenses)} exceed income of ${cur} ${fmt(totalIncome)} by ${cur} ${fmt(Math.abs(savings))}. Review each category below and identify at least one item to cut or reduce this month.`});
+  } else if (savingsPct < 10) {
+    tips.push({title:'Boost your savings rate',
+      tip:`You're saving only ${savingsPct.toFixed(1)}% of income. Aim for 20%. Automating an extra ${cur} ${fmt(Math.round(totalIncome*0.05))} transfer on payday — before you can spend it — is the single most effective habit.`});
+  } else if (savingsPct >= 20) {
+    tips.push({title:'Excellent savings discipline',
+      tip:`Saving ${savingsPct.toFixed(1)}% is above the 20% target. Consider putting the surplus into a high-yield savings account or low-cost index fund so it compounds over time.`});
+  } else {
+    tips.push({title:'You are on the right track',
+      tip:`Saving ${savingsPct.toFixed(1)}% is good — push toward 20% by automating an extra ${cur} ${fmt(Math.round(totalIncome*0.03))} monthly. Small consistent increases beat large one-time efforts.`});
   }
-  btn.disabled=false;
+
+  // 2. Housing
+  if (housing > 0) {
+    const hp = pct(housing);
+    if (hp > 40) tips.push({title:'Housing is over 40% of income',
+      tip:`At ${hp.toFixed(1)}%, your housing cost of ${cur} ${fmt(housing)} is above the recommended 30% ceiling. Since rent is often fixed, offset this by keeping food and entertainment lean.`});
+  }
+
+  // 3. Food
+  if (food > 0 && pct(food) > 15) {
+    tips.push({title:'Reduce food spend',
+      tip:`Food is ${pct(food).toFixed(1)}% of income (${cur} ${fmt(food)}). Meal-prepping 3 days a week cuts costs by 25–35%. Replacing two dining-out meals monthly could save around ${cur} ${fmt(Math.round(food*0.2))}.`});
+  }
+
+  // 4. Transport
+  if (transport > 0 && pct(transport) > 15) {
+    tips.push({title:'Transport costs are elevated',
+      tip:`Transport at ${cur} ${fmt(transport)} (${pct(transport).toFixed(1)}%) is above 15%. Consolidating errands, carpooling one day a week, or using public transit for short trips could save an estimated ${cur} ${fmt(Math.round(transport*0.2))}/month.`});
+  }
+
+  // 5. Entertainment
+  if (entertainment > 0 && pct(entertainment) > 8) {
+    tips.push({title:'Audit your subscriptions',
+      tip:`Entertainment is ${pct(entertainment).toFixed(1)}% of income (${cur} ${fmt(entertainment)}). List every subscription and cancel any you haven't used in 30 days — most people find at least one they forgot about.`});
+  }
+
+  // 6. No savings category
+  if (savings_cat === 0 && totalIncome > 0) {
+    tips.push({title:'Start a savings bucket today',
+      tip:`No amount is set aside in Savings yet. Even ${cur} ${fmt(Math.round(totalIncome*0.1))} monthly (10% of income) builds a solid 3-month emergency fund within a year.`});
+  }
+
+  // 7. Wants vs needs 50/30/20
+  const needs = housing + food + transport + utilities + health;
+  const wants = entertainment + shopping + catAmt('other');
+  if (pct(needs) > 55) {
+    tips.push({title:'Essential needs over 50%',
+      tip:`Your needs (housing, food, transport, utilities, health) total ${cur} ${fmt(needs)} — ${pct(needs).toFixed(1)}% of income. The 50/30/20 guideline targets ≤50%. Focus cuts on the single biggest category first.`});
+  } else if (pct(wants) > 30) {
+    tips.push({title:'Discretionary spending is high',
+      tip:`Wants (entertainment, shopping) total ${cur} ${fmt(wants)} — ${pct(wants).toFixed(1)}% of income vs the 30% guideline. Trimming by ${cur} ${fmt(Math.round(wants*0.1))} would meaningfully improve your savings rate.`});
+  }
+
+  return tips.slice(0, 5);
 }
 
 // ===== RESET CURRENT TAB =====
