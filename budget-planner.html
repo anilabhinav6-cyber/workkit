@@ -77,6 +77,133 @@ h1{font-family:var(--ff);font-size:clamp(26px,4vw,42px);font-weight:800;line-hei
 .btn-reset{background:var(--surf2);color:var(--ink3);border:1.5px solid var(--bdr);border-radius:10px;padding:10px 18px;font-size:13px;font-weight:500;cursor:pointer;font-family:var(--fb);transition:all .15s;white-space:nowrap;flex-shrink:0}
 .btn-reset:hover{border-color:var(--red);color:var(--red)}
 
+/* ── Compact header ── */
+.budget-header{padding:12px 16px;gap:10px}
+.bh-field{min-width:120px}
+.bh-field input,.bh-field select{padding:6px 10px;font-size:13px}
+.btn-pdf{padding:9px 16px;font-size:13px}
+.btn-reset{padding:8px 12px;font-size:12px}
+.btn-save-file,.btn-load-file{padding:8px 12px;font-size:12px}
+
+/* ── Section tabs (Income / Expenses / Summary) ── */
+.section-nav{display:flex;gap:6px;margin:10px 0 0;border-bottom:1px solid rgba(255,255,255,.1);padding-bottom:0}
+.snav-btn{padding:8px 18px;background:none;border:none;border-bottom:2px solid transparent;font-size:13px;font-weight:500;color:var(--txt2,#a8a8c0);cursor:pointer;font-family:var(--fb,sans-serif);transition:all .18s;white-space:nowrap;margin-bottom:-1px}
+.snav-btn:hover{color:#f0f0f8}
+.snav-btn.active{color:#f0f0f8;border-bottom-color:var(--indigo,#818cf8);font-weight:600}
+
+/* ── Section panels ── */
+.section-panel{display:none}
+.section-panel.active{display:block}
+
+/* ── Compact summary cards ── */
+.summary-row{gap:8px;margin:12px 0}
+.sum-card{padding:12px 14px}
+.sum-card .sc-val{font-size:20px}
+
+/* ── Compact bar ── */
+.budget-bar-wrap{padding:12px 16px;margin:8px 0}
+.bar-track{height:10px}
+.bar-legend{gap:8px;margin-top:8px}
+.bl-item{font-size:11px}
+
+/* ── Sticky summary sidebar on wide screens ── */
+@media(min-width:860px){
+  .planner-shell{display:grid;grid-template-columns:260px 1fr;gap:16px;align-items:start;margin:10px 0}
+  .planner-sidebar{position:sticky;top:70px}
+  .planner-main{min-width:0}
+}
+@media(max-width:859px){
+  .planner-shell{display:block}
+  .planner-sidebar{margin-bottom:12px}
+}
+
+/* ── Sidebar summary ── */
+.sidebar-summary{background:var(--glass,rgba(255,255,255,.05));border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:14px}
+.ss-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--txt3,#6e6e8c);margin-bottom:10px}
+.ss-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.ss-row:last-child{border-bottom:none;padding-top:8px;margin-top:2px}
+.ss-lbl{font-size:12px;color:var(--txt2,#a8a8c0)}
+.ss-val{font-size:13px;font-weight:700;font-family:var(--ff,sans-serif)}
+.ss-bar-wrap{margin:10px 0 8px}
+.ss-bar-track{height:8px;background:rgba(255,255,255,.08);border-radius:99px;overflow:hidden;display:flex;margin-top:4px}
+
+/* ── Category rows collapsed by default ── */
+.cat-body{display:none}
+.cat-body.open{display:block}
+
+/* ── Tighter category heads ── */
+.cat-head{padding:10px 14px}
+.cat-body{padding:10px 14px}
+
+/* ── 50/30/20 compact ── */
+.tips-box{padding:12px 16px;margin-top:10px}
+.tips-box ul{margin:0}
+.tips-box li{font-size:12px;line-height:1.6}
+.rule-card{padding:8px 10px}
+.rule-pct{font-size:22px}
+.rule-label{font-size:11px}
+
+
+/* ── Month Tabs ── */
+.tab-bar-wrap{margin:12px 0 0;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tab-bar{display:flex;gap:6px;align-items:center;min-width:max-content;padding:2px 2px 8px}
+.bud-tab{display:flex;align-items:center;gap:5px;padding:7px 14px;border-radius:99px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);cursor:pointer;transition:all .18s;white-space:nowrap;font-size:13px;font-weight:500;color:var(--txt2,#a8a8c0)}
+.bud-tab:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.2);color:#f0f0f8}
+.bud-tab.active{background:linear-gradient(135deg,rgba(129,140,248,.3),rgba(192,132,252,.25));border-color:rgba(129,140,248,.5);color:#f0f0f8;font-weight:600;box-shadow:0 0 12px rgba(129,140,248,.15)}
+.bud-tab-label{pointer-events:none}
+.bud-tab-del{width:16px;height:16px;border-radius:50%;background:rgba(255,255,255,.1);border:none;cursor:pointer;font-size:11px;color:rgba(255,255,255,.5);display:flex;align-items:center;justify-content:center;line-height:1;padding:0;transition:all .15s}
+.bud-tab-del:hover{background:rgba(248,113,113,.35);color:#f87171}
+.bud-tab-add{padding:7px 14px;border-radius:99px;background:rgba(129,140,248,.1);border:1px dashed rgba(129,140,248,.4);cursor:pointer;font-size:13px;color:var(--indigo,#818cf8);font-family:var(--fb,sans-serif);font-weight:500;transition:all .18s;white-space:nowrap}
+.bud-tab-add:hover{background:rgba(129,140,248,.2);border-style:solid}
+
+
+/* Save / Load file buttons */
+.btn-save-file{background:rgba(45,212,191,.15);color:#2dd4bf;border:1px solid rgba(45,212,191,.35);border-radius:10px;padding:10px 16px;font-size:13px;font-weight:500;cursor:pointer;font-family:var(--fb);transition:all .15s;white-space:nowrap;flex-shrink:0;display:flex;align-items:center;gap:6px}
+.btn-save-file:hover{background:rgba(45,212,191,.28);border-color:rgba(45,212,191,.6)}
+.btn-load-file{background:rgba(251,191,36,.12);color:#fbbf24;border:1px solid rgba(251,191,36,.3);border-radius:10px;padding:10px 16px;font-size:13px;font-weight:500;cursor:pointer;font-family:var(--fb);transition:all .15s;white-space:nowrap;flex-shrink:0;display:flex;align-items:center;gap:6px}
+.btn-load-file:hover{background:rgba(251,191,36,.22);border-color:rgba(251,191,36,.55)}
+#fileImportInput{display:none}
+.import-toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%);background:rgba(30,30,56,.95);border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:12px 22px;font-size:14px;color:#f0f0f8;z-index:999;pointer-events:none;opacity:0;transition:opacity .3s;backdrop-filter:blur(12px)}
+.import-toast.show{opacity:1}
+.btn-group-files{display:flex;gap:8px;flex-shrink:0;flex-wrap:wrap}
+
+
+/* ── Accumulator styles ── */
+.brow-wrap{margin-bottom:8px}
+.brow{margin-bottom:0}
+.acc-panel{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:10px;margin-top:4px;padding:8px 10px;display:none}
+.acc-panel.open{display:block}
+.acc-entries{display:flex;flex-direction:column;gap:4px;margin-bottom:6px}
+.acc-entry{display:flex;gap:6px;align-items:center}
+.acc-entry input{flex:1;border:1.5px solid var(--bdr);border-radius:7px;padding:5px 8px;font-size:12px;font-family:var(--fb);color:var(--ink);background:var(--surf);outline:none}
+.acc-entry input:focus{border-color:var(--acc)}
+.acc-entry .acc-del{width:22px;height:22px;border-radius:5px;background:var(--glass,rgba(255,255,255,.05));border:none;cursor:pointer;font-size:12px;color:var(--ink4);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.acc-entry .acc-del:hover{background:var(--rl,rgba(248,113,113,.14));color:var(--red,#f87171)}
+.acc-add-btn{font-size:11px;color:var(--acc,#818cf8);background:none;border:none;cursor:pointer;padding:0;font-family:var(--fb)}
+.acc-total-row{display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,.08);padding-top:5px;margin-top:4px}
+.acc-total-lbl{font-size:11px;color:var(--ink4,#9a9ab0)}
+.acc-total-val{font-size:13px;font-weight:700;color:var(--green,#34d399)}
+.plus-btn{width:26px;height:26px;border-radius:6px;background:rgba(129,140,248,.15);border:1px solid rgba(129,140,248,.3);cursor:pointer;font-size:15px;color:var(--indigo,#818cf8);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .15s;font-weight:700;line-height:1}
+.plus-btn:hover{background:rgba(129,140,248,.3)}
+
+/* ── AI Recommendation panel ── */
+#aiSection{margin:16px 0}
+.ai-trigger-btn{width:100%;padding:14px 20px;background:linear-gradient(135deg,rgba(129,140,248,.2),rgba(192,132,252,.2));border:1px solid rgba(129,140,248,.35);border-radius:14px;color:#f0f0f8;font-family:var(--fb);font-size:15px;font-weight:600;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:10px}
+.ai-trigger-btn:hover{background:linear-gradient(135deg,rgba(129,140,248,.35),rgba(192,132,252,.35));box-shadow:0 4px 20px rgba(129,140,248,.2)}
+.ai-trigger-btn:disabled{opacity:.5;cursor:not-allowed}
+.ai-panel{background:var(--glass,rgba(255,255,255,.05));border:1px solid rgba(129,140,248,.3);border-radius:14px;padding:20px;margin-top:10px;display:none}
+.ai-panel.open{display:block}
+.ai-panel h3{font-family:var(--ff);font-size:16px;font-weight:700;color:#f0f0f8;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.ai-loading{display:flex;align-items:center;gap:10px;color:var(--txt2,#a8a8c0);font-size:14px;padding:12px 0}
+.ai-loading-dot{width:8px;height:8px;border-radius:50%;background:var(--indigo,#818cf8);animation:aipulse 1.2s ease-in-out infinite}
+.ai-loading-dot:nth-child(2){animation-delay:.2s}
+.ai-loading-dot:nth-child(3){animation-delay:.4s}
+@keyframes aipulse{0%,100%{opacity:.3;transform:scale(.8)}50%{opacity:1;transform:scale(1.2)}}
+.ai-tip{background:rgba(255,255,255,.04);border-left:3px solid var(--indigo,#818cf8);border-radius:0 8px 8px 0;padding:10px 14px;margin-bottom:10px;font-size:14px;line-height:1.65;color:#e8e8f4}
+.ai-tip strong{color:#f0f0f8;display:block;margin-bottom:2px;font-size:13px}
+.ai-error{color:var(--red,#f87171);font-size:13px;padding:8px 0}
+
+
 /* SUMMARY CARDS */
 .summary-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0}
 .sum-card{border-radius:12px;padding:16px 18px;border:1px solid transparent}
@@ -138,9 +265,9 @@ h1{font-family:var(--ff);font-size:clamp(26px,4vw,42px);font-weight:800;line-hei
 .tips-box h3{font-family:var(--ff);font-size:15px;font-weight:700;color:var(--amber);margin-bottom:10px}
 .tips-box ul{padding-left:16px}
 .tips-box li{font-size:13px;color:var(--ink2);line-height:1.7;margin-bottom:4px}
-.rule-card{background:var(--w);border:1px solid var(--bdr);border-radius:10px;padding:12px 16px;text-align:center}
-.rule-pct{font-family:var(--ff);font-size:28px;font-weight:800}
-.rule-label{font-size:12px;color:var(--ink4);margin-top:2px}
+.rule-card{background:var(--w);border:1px solid var(--bdr);border-radius:10px;padding:10px 8px;text-align:center;min-width:0}
+.rule-pct{font-family:var(--ff);font-size:24px;font-weight:800;line-height:1.1}
+.rule-label{font-size:11px;color:var(--ink4);margin-top:3px;line-height:1.3}
 
 /* CONTENT */
 h2.s{font-family:var(--ff);font-size:22px;font-weight:700;color:var(--ink);margin:28px 0 10px}
@@ -413,106 +540,189 @@ body{top:0!important}
         <option value="AUD">AUD — Dollar</option>
       </select>
     </div>
+    <div class="btn-group-files">
+      <button class="btn-save-file" onclick="saveToFile()" title="Save budget as a file to your device">💾 Save File</button>
+      <label class="btn-load-file" title="Open a previously saved budget file">
+        📂 Open File
+        <input type="file" id="fileImportInput" accept=".wkb,.json" onchange="loadFromFile(event)">
+      </label>
+    </div>
     <button class="btn-pdf" onclick="downloadPDF()">⬇ Download PDF</button>
     <button class="btn-reset" onclick="resetAll()">↺ Reset</button>
   </div>
+  <div class="import-toast" id="importToast"></div>
 
-  <!-- SUMMARY CARDS -->
-  <div class="summary-row">
-    <div class="sum-card sc-income">
-      <div class="sc-label">Total Income</div>
-      <div class="sc-val" id="sumIncome">0</div>
-      <div class="sc-sub" id="sumCurrency">AED</div>
-    </div>
-    <div class="sum-card sc-expense">
-      <div class="sc-label">Total Expenses</div>
-      <div class="sc-val" id="sumExpense">0</div>
-      <div class="sc-sub" id="sumCurrency2">AED</div>
-    </div>
-    <div class="sum-card sc-savings">
-      <div class="sc-label">Savings / Balance</div>
-      <div class="sc-val" id="sumSavings">0</div>
-      <div class="sc-sub" id="sumCurrency3">AED</div>
-    </div>
-    <div class="sum-card sc-pct">
-      <div class="sc-label">Savings Rate</div>
-      <div class="sc-val" id="sumPct">0%</div>
-      <div class="sc-sub">of total income</div>
-    </div>
+
+  <!-- MONTH TABS -->
+  <div class="tab-bar-wrap">
+    <div class="tab-bar" id="tabBar"></div>
   </div>
 
-  <!-- BUDGET BAR -->
-  <div class="budget-bar-wrap">
-    <div class="bar-label">
-      <span>Budget breakdown</span>
-      <span id="barPctText">No data yet</span>
-    </div>
-    <div class="bar-track" id="budgetBar">
-      <div class="bar-seg" id="barHousing" style="width:0%;background:#3b82f6" title="Housing"></div>
-      <div class="bar-seg" id="barFood" style="width:0%;background:#10b981" title="Food"></div>
-      <div class="bar-seg" id="barTransport" style="width:0%;background:#f59e0b" title="Transport"></div>
-      <div class="bar-seg" id="barUtilities" style="width:0%;background:#8b5cf6" title="Utilities"></div>
-      <div class="bar-seg" id="barHealth" style="width:0%;background:#ef4444" title="Health"></div>
-      <div class="bar-seg" id="barEducation" style="width:0%;background:#06b6d4" title="Education"></div>
-      <div class="bar-seg" id="barEntertainment" style="width:0%;background:#f97316" title="Entertainment"></div>
-      <div class="bar-seg" id="barShopping" style="width:0%;background:#ec4899" title="Shopping"></div>
-      <div class="bar-seg" id="barSavingsBar" style="width:0%;background:#2563ff" title="Savings"></div>
-      <div class="bar-seg" id="barOther" style="width:0%;background:#6b7280" title="Other"></div>
-    </div>
-    <div class="bar-legend">
-      <div class="bl-item"><div class="bl-dot" style="background:#3b82f6"></div>Housing</div>
-      <div class="bl-item"><div class="bl-dot" style="background:#10b981"></div>Food</div>
-      <div class="bl-item"><div class="bl-dot" style="background:#f59e0b"></div>Transport</div>
-      <div class="bl-item"><div class="bl-dot" style="background:#8b5cf6"></div>Utilities</div>
-      <div class="bl-item"><div class="bl-dot" style="background:#ef4444"></div>Health</div>
-      <div class="bl-item"><div class="bl-dot" style="background:#06b6d4"></div>Education</div>
-      <div class="bl-item"><div class="bl-dot" style="background:#f97316"></div>Entertainment</div>
-      <div class="bl-item"><div class="bl-dot" style="background:#ec4899"></div>Shopping</div>
-      <div class="bl-item"><div class="bl-dot" style="background:#2563ff"></div>Savings</div>
-      <div class="bl-item"><div class="bl-dot" style="background:#6b7280"></div>Other</div>
-    </div>
+  <!-- SECTION NAV -->
+  <div class="section-nav">
+    <button class="snav-btn active" onclick="showSection('income',this)">💵 Income</button>
+    <button class="snav-btn" onclick="showSection('expenses',this)">📊 Expenses</button>
+    <button class="snav-btn" onclick="showSection('summary',this)">📈 Summary</button>
   </div>
 
-  <div class="budget-grid">
-    <!-- LEFT: INCOME -->
-    <div>
-      <div class="bsec">
-        <div class="bsec-head">
-          <div class="bsec-title">💵 Income</div>
-          <div class="bsec-total" id="incomeTotal" style="color:var(--green)">0</div>
+  <!-- PLANNER SHELL: sidebar + main content -->
+  <div class="planner-shell">
+
+    <!-- STICKY SIDEBAR -->
+    <div class="planner-sidebar">
+      <div class="sidebar-summary">
+        <div class="ss-title">This month</div>
+        <div class="ss-row">
+          <span class="ss-lbl">Income</span>
+          <span class="ss-val" id="sumIncome" style="color:var(--green,#34d399)">0</span>
         </div>
-        <div class="bsec-body">
-          <div style="display:flex;gap:8px;margin-bottom:6px">
-            <span style="font-size:11px;font-weight:600;color:var(--ink4);flex:1.4">SOURCE</span>
-            <span style="font-size:11px;font-weight:600;color:var(--ink4);flex:1">AMOUNT</span>
-            <span style="width:26px"></span>
+        <div class="ss-row">
+          <span class="ss-lbl">Expenses</span>
+          <span class="ss-val" id="sumExpense" style="color:var(--red,#f87171)">0</span>
+        </div>
+        <div class="ss-row">
+          <span class="ss-lbl">Balance</span>
+          <span class="ss-val" id="sumSavings" style="color:var(--indigo,#818cf8)">0</span>
+        </div>
+        <div class="ss-bar-wrap">
+          <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--txt3,#6e6e8c)">
+            <span>Spending bar</span>
+            <span id="barPctText" style="font-size:10px"></span>
           </div>
-          <div id="incomeRows"></div>
-          <button class="add-row-btn" onclick="addRow('income')">+ Add income source</button>
+          <div class="ss-bar-track">
+            <div class="bar-seg" id="barHousing" style="width:0%;background:#3b82f6"></div>
+            <div class="bar-seg" id="barFood" style="width:0%;background:#10b981"></div>
+            <div class="bar-seg" id="barTransport" style="width:0%;background:#f59e0b"></div>
+            <div class="bar-seg" id="barUtilities" style="width:0%;background:#8b5cf6"></div>
+            <div class="bar-seg" id="barHealth" style="width:0%;background:#ef4444"></div>
+            <div class="bar-seg" id="barEducation" style="width:0%;background:#06b6d4"></div>
+            <div class="bar-seg" id="barEntertainment" style="width:0%;background:#f97316"></div>
+            <div class="bar-seg" id="barShopping" style="width:0%;background:#ec4899"></div>
+            <div class="bar-seg" id="barSavingsBar" style="width:0%;background:#2563ff"></div>
+            <div class="bar-seg" id="barOther" style="width:0%;background:#6b7280"></div>
+          </div>
+        </div>
+        <div class="ss-row" style="border-bottom:none">
+          <span class="ss-lbl">Savings rate</span>
+          <span class="ss-val" id="sumPct" style="color:var(--amber,#fbbf24)">0%</span>
+        </div>
+        <div style="font-size:10px;color:var(--txt3,#6e6e8c);margin-top:8px;text-align:center">
+          <span id="sumCurrency" style="display:none">AED</span>
+          <span id="sumCurrency2" style="display:none">AED</span>
+          <span id="sumCurrency3" style="display:none">AED</span>
+          <span id="incomeTotal" style="display:none">0</span>
         </div>
       </div>
 
-      <!-- 50/30/20 GUIDE -->
-      <div class="tips-box" style="margin-top:12px">
-        <h3>💡 50 / 30 / 20 Rule</h3>
-        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:10px">
-          <div class="rule-card"><div class="rule-pct" style="color:#ef4444">50%</div><div class="rule-label">Needs<br>(rent, food, bills)</div></div>
-          <div class="rule-card"><div class="rule-pct" style="color:#f97316">30%</div><div class="rule-label">Wants<br>(dining, fun)</div></div>
-          <div class="rule-card"><div class="rule-pct" style="color:#2563ff">20%</div><div class="rule-label">Savings<br>(emergency, goals)</div></div>
+      <!-- 50/30/20 compact -->
+      <div class="tips-box" style="margin-top:10px">
+        <h3 style="font-size:13px;margin-bottom:8px">💡 50 / 30 / 20 Rule</h3>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:8px">
+          <div class="rule-card"><div class="rule-pct" style="color:#ef4444">50%</div><div class="rule-label">Needs</div></div>
+          <div class="rule-card"><div class="rule-pct" style="color:#f97316">30%</div><div class="rule-label">Wants</div></div>
+          <div class="rule-card"><div class="rule-pct" style="color:#2563ff">20%</div><div class="rule-label">Savings</div></div>
         </div>
-        <ul>
-          <li>Needs = rent, groceries, transport, utilities, insurance</li>
-          <li>Wants = restaurants, entertainment, shopping, subscriptions</li>
-          <li>Savings = emergency fund, investments, loan repayments</li>
-        </ul>
       </div>
     </div>
 
-    <!-- RIGHT: EXPENSES -->
-    <div id="expenseSection">
-      <!-- Categories injected by JS -->
-    </div>
-  </div>
+    <!-- MAIN CONTENT PANELS -->
+    <div class="planner-main">
+
+      <!-- INCOME PANEL -->
+      <div class="section-panel active" id="panel-income">
+        <div class="bsec">
+          <div class="bsec-head">
+            <div class="bsec-title">💵 Income</div>
+            <div class="bsec-total" id="incomeTotal2" style="color:var(--green,#34d399)">0</div>
+          </div>
+          <div class="bsec-body">
+            <div style="display:flex;gap:8px;margin-bottom:6px">
+              <span style="font-size:11px;font-weight:600;color:var(--ink4);flex:1.4">SOURCE</span>
+              <span style="font-size:11px;font-weight:600;color:var(--ink4);flex:1">AMOUNT</span>
+              <span style="width:58px"></span>
+            </div>
+            <div id="incomeRows"></div>
+            <button class="add-row-btn" onclick="addRow('income')">+ Add income source</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXPENSES PANEL -->
+      <div class="section-panel" id="panel-expenses">
+        <div id="expenseSection"></div>
+      </div>
+
+      <!-- SUMMARY PANEL -->
+      <div class="section-panel" id="panel-summary">
+        <div class="summary-row">
+          <div class="sum-card sc-income">
+            <div class="sc-label">Total Income</div>
+            <div class="sc-val" id="sumIncome2" style="color:var(--green,#34d399)">0</div>
+            <div class="sc-sub">income</div>
+          </div>
+          <div class="sum-card sc-expense">
+            <div class="sc-label">Total Expenses</div>
+            <div class="sc-val" id="sumExpense2" style="color:var(--red,#f87171)">0</div>
+            <div class="sc-sub">expenses</div>
+          </div>
+          <div class="sum-card sc-savings">
+            <div class="sc-label">Balance</div>
+            <div class="sc-val" id="sumSavings2" style="color:var(--indigo,#818cf8)">0</div>
+            <div class="sc-sub">remaining</div>
+          </div>
+          <div class="sum-card sc-pct">
+            <div class="sc-label">Savings Rate</div>
+            <div class="sc-val" id="sumPct2">0%</div>
+            <div class="sc-sub">of income</div>
+          </div>
+        </div>
+
+        <!-- Full breakdown bar on summary tab -->
+        <div class="budget-bar-wrap">
+          <div class="bar-label">
+            <span>Budget breakdown</span>
+            <span id="barPctText2"></span>
+          </div>
+          <div class="bar-track">
+            <div class="bar-seg" id="barHousing2" style="width:0%;background:#3b82f6"></div>
+            <div class="bar-seg" id="barFood2" style="width:0%;background:#10b981"></div>
+            <div class="bar-seg" id="barTransport2" style="width:0%;background:#f59e0b"></div>
+            <div class="bar-seg" id="barUtilities2" style="width:0%;background:#8b5cf6"></div>
+            <div class="bar-seg" id="barHealth2" style="width:0%;background:#ef4444"></div>
+            <div class="bar-seg" id="barEducation2" style="width:0%;background:#06b6d4"></div>
+            <div class="bar-seg" id="barEntertainment2" style="width:0%;background:#f97316"></div>
+            <div class="bar-seg" id="barShopping2" style="width:0%;background:#ec4899"></div>
+            <div class="bar-seg" id="barSavingsBar2" style="width:0%;background:#2563ff"></div>
+            <div class="bar-seg" id="barOther2" style="width:0%;background:#6b7280"></div>
+          </div>
+          <div class="bar-legend">
+            <div class="bl-item"><div class="bl-dot" style="background:#3b82f6"></div>Housing</div>
+            <div class="bl-item"><div class="bl-dot" style="background:#10b981"></div>Food</div>
+            <div class="bl-item"><div class="bl-dot" style="background:#f59e0b"></div>Transport</div>
+            <div class="bl-item"><div class="bl-dot" style="background:#8b5cf6"></div>Utilities</div>
+            <div class="bl-item"><div class="bl-dot" style="background:#ef4444"></div>Health</div>
+            <div class="bl-item"><div class="bl-dot" style="background:#06b6d4"></div>Education</div>
+            <div class="bl-item"><div class="bl-dot" style="background:#f97316"></div>Entertainment</div>
+            <div class="bl-item"><div class="bl-dot" style="background:#ec4899"></div>Shopping</div>
+            <div class="bl-item"><div class="bl-dot" style="background:#2563ff"></div>Savings</div>
+            <div class="bl-item"><div class="bl-dot" style="background:#6b7280"></div>Other</div>
+          </div>
+        </div>
+
+        <!-- AI tips here too -->
+        <div id="aiSection" style="margin-top:12px">
+          <button class="ai-trigger-btn" id="aiTriggerBtn" onclick="triggerAI()">
+            ✨ Get AI Savings Recommendations
+          </button>
+          <div class="ai-panel" id="aiPanel">
+            <h3>✨ Personalised Savings Tips</h3>
+            <div id="aiContent"></div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /planner-main -->
+  </div><!-- /planner-shell -->
 
   <!-- AD SLOT 2 -->
   <div class="ad2" style="margin-top:8px">
@@ -574,54 +784,210 @@ body{top:0!important}
 </footer>
 
 <script>
+// ===== TAB-AWARE BUDGET ENGINE =====
+
+// Category template factory — returns a fresh set of categories
+function makeCats() {
+  return [
+    { id:'housing',       name:'Housing',              icon:'🏠', color:'#3b82f6', items:[{n:'Rent / Mortgage',a:'',subs:[]},{n:'',a:'',subs:[]}] },
+    { id:'food',          name:'Food',                 icon:'🍽️', color:'#10b981', items:[{n:'Groceries',a:'',subs:[]},{n:'Dining out',a:'',subs:[]}] },
+    { id:'transport',     name:'Transport',            icon:'🚗', color:'#f59e0b', items:[{n:'Fuel / Petrol',a:'',subs:[]},{n:'Car payment / Taxi',a:'',subs:[]}] },
+    { id:'utilities',     name:'Utilities',            icon:'💡', color:'#8b5cf6', items:[{n:'Electricity',a:'',subs:[]},{n:'Internet / Phone',a:'',subs:[]}] },
+    { id:'health',        name:'Health',               icon:'🏥', color:'#ef4444', items:[{n:'Insurance',a:'',subs:[]},{n:'Medicine / Doctor',a:'',subs:[]}] },
+    { id:'education',     name:'Education',            icon:'📚', color:'#06b6d4', items:[{n:'Tuition / School',a:'',subs:[]},{n:'Books / Courses',a:'',subs:[]}] },
+    { id:'entertainment', name:'Entertainment',        icon:'🎬', color:'#f97316', items:[{n:'Subscriptions',a:'',subs:[]},{n:'Activities',a:'',subs:[]}] },
+    { id:'shopping',      name:'Shopping',             icon:'🛍️', color:'#ec4899', items:[{n:'Clothing',a:'',subs:[]},{n:'Personal care',a:'',subs:[]}] },
+    { id:'savings',       name:'Savings & Investments',icon:'💰', color:'#2563ff', items:[{n:'Emergency fund',a:'',subs:[]},{n:'Investments',a:'',subs:[]}] },
+    { id:'other',         name:'Other',                icon:'📦', color:'#6b7280', items:[{n:'',a:'',subs:[]},{n:'',a:'',subs:[]}] },
+  ];
+}
+
+function makeTab(month, year, currency) {
+  return {
+    id: Date.now() + Math.random(),
+    month, year, currency,
+    incomeItems: [{n:'Salary',a:'',subs:[]},{n:'',a:'',subs:[]}],
+    cats: makeCats()
+  };
+}
+
 // ===== STATE =====
-const CATS = [
-  { id:'housing',    name:'Housing',       icon:'🏠', color:'#3b82f6', items:[{n:'Rent / Mortgage',a:''},{n:'',a:''}] },
-  { id:'food',       name:'Food',          icon:'🍽️', color:'#10b981', items:[{n:'Groceries',a:''},{n:'Dining out',a:''}] },
-  { id:'transport',  name:'Transport',     icon:'🚗', color:'#f59e0b', items:[{n:'Fuel / Petrol',a:''},{n:'Car payment / Taxi',a:''}] },
-  { id:'utilities',  name:'Utilities',     icon:'💡', color:'#8b5cf6', items:[{n:'Electricity',a:''},{n:'Internet / Phone',a:''}] },
-  { id:'health',     name:'Health',        icon:'🏥', color:'#ef4444', items:[{n:'Insurance',a:''},{n:'Medicine / Doctor',a:''}] },
-  { id:'education',  name:'Education',     icon:'📚', color:'#06b6d4', items:[{n:'Tuition / School',a:''},{n:'Books / Courses',a:''}] },
-  { id:'entertainment', name:'Entertainment', icon:'🎬', color:'#f97316', items:[{n:'Subscriptions',a:''},{n:'Activities',a:''}] },
-  { id:'shopping',   name:'Shopping',      icon:'🛍️', color:'#ec4899', items:[{n:'Clothing',a:''},{n:'Personal care',a:''}] },
-  { id:'savings',    name:'Savings & Investments', icon:'💰', color:'#2563ff', items:[{n:'Emergency fund',a:''},{n:'Investments',a:''}] },
-  { id:'other',      name:'Other',         icon:'📦', color:'#6b7280', items:[{n:'',a:''},{n:'',a:''}] },
-];
+const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+let tabs = [];
+let activeTabIdx = 0;
 
-let incomeItems = [{n:'Salary',a:''},{n:'',a:''}];
-let currency = 'AED';
+function curTab() { return tabs[activeTabIdx]; }
+function getCur()  { return curTab().currency || 'AED'; }
+function f(n)      { return isNaN(n)||n===''?0:parseFloat(n)||0; }
+function fmt(n)    { return Number(n).toLocaleString(undefined,{maximumFractionDigits:2,minimumFractionDigits:0}); }
+function effectiveAmount(item) {
+  if (item.subs && item.subs.length > 0) return item.subs.reduce((s,v)=>s+f(v),0);
+  return f(item.a);
+}
 
-function getCur() { return document.getElementById('bCurrency').value || 'AED'; }
-function f(n) { return isNaN(n)||n===''?0:parseFloat(n)||0; }
-function fmt(n) { return Number(n).toLocaleString(undefined,{maximumFractionDigits:2,minimumFractionDigits:0}); }
+// ===== TAB BAR =====
+function renderTabBar() {
+  const bar = document.getElementById('tabBar');
+  bar.innerHTML = tabs.map((t,i) => `
+    <div class="bud-tab${i===activeTabIdx?' active':''}" onclick="switchTab(${i})">
+      <span class="bud-tab-label">${t.month.slice(0,3)} ${t.year}</span>
+      ${tabs.length > 1 ? `<button class="bud-tab-del" onclick="event.stopPropagation();deleteTab(${i})" title="Remove tab">×</button>` : ''}
+    </div>`).join('') +
+    `<button class="bud-tab-add" onclick="addTab()" title="Add month">＋ Add month</button>`;
+}
+
+function switchTab(i) {
+  // Save header fields of current tab before switching
+  syncHeaderToTab();
+  activeTabIdx = i;
+  loadTabToUI();
+  renderTabBar();
+  updateAll();
+}
+
+function addTab() {
+  syncHeaderToTab();
+  // Suggest next month
+  const last = tabs[tabs.length - 1];
+  const lastMIdx = MONTHS.indexOf(last.month);
+  const nextMIdx = (lastMIdx + 1) % 12;
+  const nextY = nextMIdx === 0 ? parseInt(last.year) + 1 : parseInt(last.year);
+  tabs.push(makeTab(MONTHS[nextMIdx], nextY, last.currency));
+  activeTabIdx = tabs.length - 1;
+  loadTabToUI();
+  renderTabBar();
+  updateAll();
+}
+
+function deleteTab(i) {
+  if (tabs.length <= 1) { showToast('You need at least one month tab.'); return; }
+  if (!confirm(`Remove ${tabs[i].month} ${tabs[i].year}?`)) return;
+  tabs.splice(i, 1);
+  if (activeTabIdx >= tabs.length) activeTabIdx = tabs.length - 1;
+  loadTabToUI();
+  renderTabBar();
+  updateAll();
+}
+
+// Sync name/month/year/currency inputs → active tab object
+function syncHeaderToTab() {
+  const t = curTab();
+  t.month    = document.getElementById('bMonth').value;
+  t.year     = document.getElementById('bYear').value;
+  t.currency = document.getElementById('bCurrency').value;
+}
+
+// Load active tab data into UI inputs
+function loadTabToUI() {
+  const t = curTab();
+  document.getElementById('bName').value     = document.getElementById('bName').value; // name is global
+  document.getElementById('bMonth').value    = t.month;
+  document.getElementById('bYear').value     = t.year;
+  document.getElementById('bCurrency').value = t.currency;
+  renderIncome();
+  renderExpenses();
+}
+
+// ===== ACCUMULATOR =====
+function toggleAcc(type, catId, idx) {
+  const key = type==='income' ? `iacc_${idx}` : `acc_${catId}_${idx}`;
+  const panel = document.getElementById(key);
+  if (panel) panel.classList.toggle('open');
+}
+
+function addSubEntry(type, catId, idx) {
+  const item = type==='income' ? curTab().incomeItems[idx] : curTab().cats.find(c=>c.id===catId).items[idx];
+  if (!item.subs) item.subs = [];
+  item.subs.push('');
+  if (type==='income') renderIncome();
+  else { const cat=curTab().cats.find(c=>c.id===catId); document.getElementById('catRows_'+catId).innerHTML=renderCatRows(cat); }
+  updateAll();
+  const key = type==='income' ? `iacc_${idx}` : `acc_${catId}_${idx}`;
+  const panel = document.getElementById(key);
+  if (panel) panel.classList.add('open');
+}
+
+function updateSub(type, catId, idx, subIdx, val) {
+  const item = type==='income' ? curTab().incomeItems[idx] : curTab().cats.find(c=>c.id===catId).items[idx];
+  item.subs[subIdx] = val;
+  const key = type==='income' ? `iacc_${idx}` : `acc_${catId}_${idx}`;
+  const totEl = document.getElementById(key+'_tot');
+  const sum = item.subs.reduce((s,v)=>s+f(v),0);
+  if (totEl) totEl.textContent = getCur()+' '+fmt(sum);
+  const mainInput = document.getElementById(key+'_main');
+  if (mainInput) { mainInput.value = sum > 0 ? sum : ''; mainInput.readOnly = true; }
+  item.a = sum.toString();
+  updateAll();
+}
+
+function delSub(type, catId, idx, subIdx) {
+  const item = type==='income' ? curTab().incomeItems[idx] : curTab().cats.find(c=>c.id===catId).items[idx];
+  item.subs.splice(subIdx, 1);
+  if (item.subs.length === 0) { item.a = ''; }
+  else { item.a = item.subs.reduce((s,v)=>s+f(v),0).toString(); }
+  if (type==='income') renderIncome();
+  else { const cat=curTab().cats.find(c=>c.id===catId); document.getElementById('catRows_'+catId).innerHTML=renderCatRows(cat); }
+  const key = type==='income' ? `iacc_${idx}` : `acc_${catId}_${idx}`;
+  const panel = document.getElementById(key);
+  if (panel) panel.classList.add('open');
+  updateAll();
+}
+
+function buildAccPanel(type, catId, idx, item, cur) {
+  const key = type==='income' ? `iacc_${idx}` : `acc_${catId}_${idx}`;
+  const sum = (item.subs||[]).reduce((s,v)=>s+f(v),0);
+  const subsHtml = (item.subs||[]).map((v,si) => `
+    <div class="acc-entry">
+      <input type="number" value="${v}" placeholder="Amount" min="0" oninput="updateSub('${type}','${catId}',${idx},${si},this.value)">
+      <button class="acc-del" onclick="delSub('${type}','${catId}',${idx},${si})">×</button>
+    </div>`).join('');
+  return `
+    <div class="acc-panel${(item.subs&&item.subs.length>0)?' open':''}" id="${key}">
+      <div class="acc-entries">${subsHtml}</div>
+      <button class="acc-add-btn" onclick="addSubEntry('${type}','${catId}',${idx})">+ Add another amount</button>
+      <div class="acc-total-row">
+        <span class="acc-total-lbl">Accumulated total</span>
+        <span class="acc-total-val" id="${key}_tot">${cur} ${fmt(sum)}</span>
+      </div>
+    </div>`;
+}
 
 // ===== RENDER INCOME =====
 function renderIncome() {
   const cur = getCur();
+  const items = curTab().incomeItems;
   const container = document.getElementById('incomeRows');
-  container.innerHTML = incomeItems.map((item, i) => `
-    <div class="brow" id="irow_${i}">
-      <input type="text" value="${item.n}" placeholder="Income source" oninput="incomeItems[${i}].n=this.value;updateAll()" style="flex:1.4">
-      <input type="number" value="${item.a}" placeholder="0" min="0" oninput="incomeItems[${i}].a=this.value;updateAll()" style="flex:1">
-      <button class="del-btn" onclick="delIncome(${i})">×</button>
-    </div>`).join('');
+  container.innerHTML = items.map((item,i) => {
+    const hasSubs = item.subs && item.subs.length > 0;
+    const effAmt = hasSubs ? item.subs.reduce((s,v)=>s+f(v),0) : f(item.a);
+    const key = `iacc_${i}`;
+    return `
+    <div class="brow-wrap" id="iwrap_${i}">
+      <div class="brow">
+        <input type="text" value="${item.n}" placeholder="Income source" oninput="curTab().incomeItems[${i}].n=this.value;updateAll()" style="flex:1.4">
+        <input type="number" id="${key}_main" value="${effAmt||''}" placeholder="0" min="0" ${hasSubs?'readonly':''}
+          oninput="if(!curTab().incomeItems[${i}].subs||curTab().incomeItems[${i}].subs.length===0){curTab().incomeItems[${i}].a=this.value;updateAll()}" style="flex:1">
+        <button class="plus-btn" onclick="addSubEntry('income','',${i})" title="Add multiple amounts">+</button>
+        <button class="del-btn" onclick="delIncome(${i})">×</button>
+      </div>
+      ${buildAccPanel('income','',i,item,cur)}
+    </div>`;
+  }).join('');
 }
 
 function addRow(type) {
-  if(type==='income') { incomeItems.push({n:'',a:''}); renderIncome(); }
+  if(type==='income') { curTab().incomeItems.push({n:'',a:'',subs:[]}); renderIncome(); }
 }
-
 function delIncome(i) {
-  if(incomeItems.length <= 1) return;
-  incomeItems.splice(i,1);
-  renderIncome();
-  updateAll();
+  if(curTab().incomeItems.length<=1) return;
+  curTab().incomeItems.splice(i,1);
+  renderIncome(); updateAll();
 }
 
 // ===== RENDER EXPENSES =====
 function renderExpenses() {
   const container = document.getElementById('expenseSection');
-  container.innerHTML = CATS.map(cat => `
+  container.innerHTML = curTab().cats.map(cat => `
     <div class="cat-section" id="cat_${cat.id}">
       <div class="cat-head" onclick="toggleCat('${cat.id}')">
         <div class="cat-head-left">
@@ -630,14 +996,14 @@ function renderExpenses() {
         </div>
         <div style="display:flex;align-items:center;gap:8px">
           <span class="cat-total" id="catTotal_${cat.id}" style="color:${cat.color}">0</span>
-          <span class="cat-chevron open" id="catChev_${cat.id}">▾</span>
+          <span class="cat-chevron" id="catChev_${cat.id}">▾</span>
         </div>
       </div>
-      <div class="cat-body open" id="catBody_${cat.id}">
+      <div class="cat-body" id="catBody_${cat.id}">
         <div style="display:flex;gap:8px;margin-bottom:6px">
           <span style="font-size:11px;font-weight:600;color:var(--ink4);flex:1.4">ITEM</span>
           <span style="font-size:11px;font-weight:600;color:var(--ink4);flex:1">AMOUNT</span>
-          <span style="width:26px"></span>
+          <span style="width:58px"></span>
         </div>
         <div id="catRows_${cat.id}">${renderCatRows(cat)}</div>
         <button class="add-row-btn" onclick="addCatRow('${cat.id}')">+ Add item</button>
@@ -646,234 +1012,359 @@ function renderExpenses() {
 }
 
 function renderCatRows(cat) {
-  return cat.items.map((item, i) => `
-    <div class="brow">
-      <input type="text" value="${item.n}" placeholder="Item name" oninput="CATS.find(c=>c.id==='${cat.id}').items[${i}].n=this.value;updateAll()" style="flex:1.4">
-      <input type="number" value="${item.a}" placeholder="0" min="0" oninput="CATS.find(c=>c.id==='${cat.id}').items[${i}].a=this.value;updateAll()" style="flex:1">
-      <button class="del-btn" onclick="delCatRow('${cat.id}',${i})">×</button>
-    </div>`).join('');
+  const cur = getCur();
+  return cat.items.map((item,i) => {
+    const hasSubs = item.subs && item.subs.length > 0;
+    const effAmt  = hasSubs ? item.subs.reduce((s,v)=>s+f(v),0) : f(item.a);
+    const key = `acc_${cat.id}_${i}`;
+    return `
+    <div class="brow-wrap">
+      <div class="brow">
+        <input type="text" value="${item.n}" placeholder="Item name"
+          oninput="curTab().cats.find(c=>c.id==='${cat.id}').items[${i}].n=this.value;updateAll()" style="flex:1.4">
+        <input type="number" id="${key}_main" value="${effAmt||''}" placeholder="0" min="0" ${hasSubs?'readonly':''}
+          oninput="if(!curTab().cats.find(c=>c.id==='${cat.id}').items[${i}].subs||curTab().cats.find(c=>c.id==='${cat.id}').items[${i}].subs.length===0){curTab().cats.find(c=>c.id==='${cat.id}').items[${i}].a=this.value;updateAll()}" style="flex:1">
+        <button class="plus-btn" onclick="addSubEntry('cat','${cat.id}',${i})" title="Add multiple amounts">+</button>
+        <button class="del-btn" onclick="delCatRow('${cat.id}',${i})">×</button>
+      </div>
+      ${buildAccPanel('cat',cat.id,i,item,cur)}
+    </div>`;
+  }).join('');
 }
 
 function addCatRow(catId) {
-  const cat = CATS.find(c => c.id === catId);
-  cat.items.push({n:'',a:''});
+  curTab().cats.find(c=>c.id===catId).items.push({n:'',a:'',subs:[]});
+  const cat = curTab().cats.find(c=>c.id===catId);
   document.getElementById('catRows_'+catId).innerHTML = renderCatRows(cat);
   updateAll();
 }
-
 function delCatRow(catId, i) {
-  const cat = CATS.find(c => c.id === catId);
-  if(cat.items.length <= 1) return;
+  const cat = curTab().cats.find(c=>c.id===catId);
+  if(cat.items.length<=1) return;
   cat.items.splice(i,1);
   document.getElementById('catRows_'+catId).innerHTML = renderCatRows(cat);
   updateAll();
 }
-
 function toggleCat(catId) {
-  const body = document.getElementById('catBody_'+catId);
-  const chev = document.getElementById('catChev_'+catId);
-  body.classList.toggle('open');
-  chev.classList.toggle('open');
+  document.getElementById('catBody_'+catId).classList.toggle('open');
+  document.getElementById('catChev_'+catId).classList.toggle('open');
 }
 
 // ===== CALCULATE & UPDATE =====
 function updateAll() {
+  syncHeaderToTab();
   const cur = getCur();
-  currency = cur;
-
-  // Income total
-  const totalIncome = incomeItems.reduce((s,i) => s + f(i.a), 0);
-
-  // Category totals
+  const t = curTab();
+  const totalIncome = t.incomeItems.reduce((s,i)=>s+effectiveAmount(i),0);
   let totalExpenses = 0;
   const catTotals = {};
-  CATS.forEach(cat => {
-    const t = cat.items.reduce((s,i) => s + f(i.a), 0);
-    catTotals[cat.id] = t;
-    totalExpenses += t;
+  t.cats.forEach(cat => {
+    const v = cat.items.reduce((s,i)=>s+effectiveAmount(i),0);
+    catTotals[cat.id] = v; totalExpenses += v;
     const el = document.getElementById('catTotal_'+cat.id);
-    if(el) el.textContent = cur + ' ' + fmt(t);
+    if(el) el.textContent = cur+' '+fmt(v);
   });
+  const savings    = totalIncome - totalExpenses;
+  const savingsPct = totalIncome > 0 ? (savings/totalIncome*100) : 0;
 
-  const savings = totalIncome - totalExpenses;
-  const savingsPct = totalIncome > 0 ? (savings / totalIncome * 100) : 0;
-
-  // Update summary cards
-  document.getElementById('sumIncome').textContent = fmt(totalIncome);
+  document.getElementById('sumIncome').textContent  = fmt(totalIncome);
   document.getElementById('sumExpense').textContent = fmt(totalExpenses);
   document.getElementById('sumSavings').textContent = fmt(savings);
-  document.getElementById('sumSavings').style.color = savings >= 0 ? 'var(--accd)' : 'var(--red)';
-  document.getElementById('sumPct').textContent = savingsPct.toFixed(1) + '%';
-  document.getElementById('sumPct').style.color = savingsPct >= 20 ? 'var(--green)' : savingsPct >= 10 ? 'var(--amber)' : 'var(--red)';
-  ['sumCurrency','sumCurrency2','sumCurrency3'].forEach(id => {
-    const el = document.getElementById(id);
-    if(el) el.textContent = cur;
-  });
-  document.getElementById('incomeTotal').textContent = cur + ' ' + fmt(totalIncome);
-
-  // Bar chart
-  if(totalIncome > 0) {
-    const barIds = ['housing','food','transport','utilities','health','education','entertainment','shopping','savings','other'];
-    barIds.forEach(id => {
-      const el = document.getElementById('bar' + id.charAt(0).toUpperCase() + id.slice(1) + (id==='savings'?'Bar':''));
-      if(!el) return;
-      const pct = (catTotals[id] / totalIncome * 100);
-      el.style.width = Math.min(pct, 100) + '%';
+  document.getElementById('sumSavings').style.color = savings>=0?'var(--accd)':'var(--red)';
+  document.getElementById('sumPct').textContent     = savingsPct.toFixed(1)+'%';
+  document.getElementById('sumPct').style.color     = savingsPct>=20?'var(--green)':savingsPct>=10?'var(--amber)':'var(--red)';
+  ['sumCurrency','sumCurrency2','sumCurrency3'].forEach(id=>{const el=document.getElementById(id);if(el)el.textContent=cur;});
+  const incomeTotalEl = document.getElementById('incomeTotal');
+  if(incomeTotalEl) incomeTotalEl.textContent = cur+' '+fmt(totalIncome);
+  const incomeTotalEl2 = document.getElementById('incomeTotal2');
+  if(incomeTotalEl2) incomeTotalEl2.textContent = cur+' '+fmt(totalIncome);
+  // Sync summary panel duplicates
+  const sync2 = [['sumIncome2',fmt(totalIncome)],['sumExpense2',fmt(totalExpenses)],
+                 ['sumSavings2',fmt(savings)],['sumPct2',savingsPct.toFixed(1)+'%'],
+                 ['barPctText2',totalIncome>0?`Expenses: ${(totalExpenses/totalIncome*100).toFixed(1)}% · Savings: ${savingsPct.toFixed(1)}%`:'']];
+  sync2.forEach(([id,val])=>{const el=document.getElementById(id);if(el)el.textContent=val;});
+  const sv2=document.getElementById('sumSavings2');if(sv2)sv2.style.color=savings>=0?'var(--accd)':'var(--red)';
+  const sp2=document.getElementById('sumPct2');if(sp2)sp2.style.color=savingsPct>=20?'var(--green)':savingsPct>=10?'var(--amber)':'var(--red)';
+  // Sync summary bar duplicates
+  if(totalIncome>0){
+    ['housing','food','transport','utilities','health','education','entertainment','shopping','other'].forEach(id=>{
+      const el2=document.getElementById('bar'+id.charAt(0).toUpperCase()+id.slice(1)+'2');
+      if(el2) el2.style.width=Math.min((catTotals[id]/totalIncome*100),100)+'%';
     });
-    // Special: savings bar is remaining
-    const remainPct = Math.max(0, savingsPct);
-    document.getElementById('barSavingsBar').style.width = remainPct + '%';
+    const sb2=document.getElementById('barSavingsBar2');if(sb2)sb2.style.width=Math.max(0,savingsPct)+'%';
+  }
+
+  if(totalIncome > 0) {
+    ['housing','food','transport','utilities','health','education','entertainment','shopping','other'].forEach(id=>{
+      const el=document.getElementById('bar'+id.charAt(0).toUpperCase()+id.slice(1));
+      if(el) el.style.width=Math.min((catTotals[id]/totalIncome*100),100)+'%';
+    });
+    document.getElementById('barSavingsBar').style.width = Math.max(0,savingsPct)+'%';
     document.getElementById('barPctText').textContent = `Expenses: ${(totalExpenses/totalIncome*100).toFixed(1)}% · Savings: ${savingsPct.toFixed(1)}%`;
   } else {
     document.getElementById('barPctText').textContent = 'Add income to see breakdown';
   }
-
   saveToStorage();
 }
 
-// ===== LOCAL STORAGE =====
+// ===== STORAGE =====
 function saveToStorage() {
   try {
-    localStorage.setItem('wk_budget', JSON.stringify({
-      incomeItems, cats: CATS.map(c => ({id:c.id,items:c.items})),
-      name: document.getElementById('bName').value,
-      month: document.getElementById('bMonth').value,
-      year: document.getElementById('bYear').value,
-      currency: getCur()
+    localStorage.setItem('wk_budget_v3', JSON.stringify({
+      tabs, activeTabIdx,
+      ownerName: document.getElementById('bName').value
     }));
   } catch(e) {}
 }
 
 function loadFromStorage() {
   try {
-    const s = localStorage.getItem('wk_budget');
-    if (!s) return;
+    const s = localStorage.getItem('wk_budget_v3');
+    if (!s) return false;
     const d = JSON.parse(s);
-    if (d.incomeItems) incomeItems = d.incomeItems;
-    if (d.cats) d.cats.forEach(dc => { const c = CATS.find(x => x.id === dc.id); if(c) c.items = dc.items; });
-    if (d.name) document.getElementById('bName').value = d.name;
-    if (d.month) document.getElementById('bMonth').value = d.month;
-    if (d.year) document.getElementById('bYear').value = d.year;
-    if (d.currency) document.getElementById('bCurrency').value = d.currency;
-  } catch(e) {}
+    if (!d.tabs || !d.tabs.length) return false;
+    tabs = d.tabs.map(t => {
+      // Always rebuild cats from fresh template so name/icon/color are never undefined
+      const freshCats = makeCats();
+      const mergedCats = freshCats.map(fresh => {
+        const saved = (t.cats || []).find(c => c.id === fresh.id);
+        if (!saved) return fresh;
+        return {
+          ...fresh, // name, icon, color always from template
+          items: saved.items && saved.items.length
+            ? saved.items.map(i => ({...i, subs: i.subs || []}))
+            : fresh.items
+        };
+      });
+      return {
+        ...t,
+        cats: mergedCats,
+        incomeItems: (t.incomeItems || []).map(i => ({...i, subs: i.subs || []}))
+      };
+    });
+    activeTabIdx = d.activeTabIdx || 0;
+    if (d.ownerName) document.getElementById('bName').value = d.ownerName;
+    return true;
+  } catch(e) { return false; }
 }
 
-// ===== PDF DOWNLOAD =====
+// ===== SAVE FILE / LOAD FILE (multi-tab) =====
+function saveToFile() {
+  syncHeaderToTab();
+  const ownerName = document.getElementById('bName').value || 'Budget';
+  const data = {
+    _app: 'MyWorkKits Budget Planner',
+    _version: 3,
+    _saved: new Date().toISOString(),
+    ownerName,
+    tabs
+  };
+  const blob = new Blob([JSON.stringify(data, null, 2)], {type:'application/json'});
+  const url  = URL.createObjectURL(blob);
+  const a    = document.createElement('a');
+  const safe = ownerName.replace(/[^a-z0-9_\-]/gi,'_');
+  a.href = url; a.download = safe+'_budget.wkb'; a.click();
+  URL.revokeObjectURL(url);
+  showToast(`✅ Saved ${tabs.length} month tab${tabs.length>1?'s':''} to ${safe}_budget.wkb`);
+}
+
+function loadFromFile(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    try {
+      const d = JSON.parse(e.target.result);
+      if (!d._app) throw new Error('Invalid file');
+
+      // Support v2 (single-tab) files too
+      let loadedTabs;
+      if (d._version >= 3 && d.tabs) {
+        loadedTabs = d.tabs;
+      } else if (d.incomeItems && d.cats) {
+        // v2 single-tab — wrap it
+        loadedTabs = [{ id: Date.now(), month: d.month, year: d.year, currency: d.currency,
+          incomeItems: d.incomeItems, cats: d.cats }];
+      } else throw new Error('Unrecognised format');
+
+      const tabCount = loadedTabs.length;
+      if (!confirm(`Load ${tabCount} month tab${tabCount>1?'s':''} from this file?\nThis will replace your current budget.`)) {
+        event.target.value=''; return;
+      }
+
+      tabs = loadedTabs.map(t => {
+        const freshCats = makeCats();
+        const mergedCats = freshCats.map(fresh => {
+          const saved = (t.cats || []).find(c => c.id === fresh.id);
+          if (!saved) return fresh;
+          return {
+            ...fresh,
+            items: saved.items && saved.items.length
+              ? saved.items.map(i => ({...i, subs: i.subs || []}))
+              : fresh.items
+          };
+        });
+        return {
+          ...t,
+          cats: mergedCats,
+          incomeItems: (t.incomeItems || []).map(i => ({...i, subs: i.subs || []}))
+        };
+      });
+      activeTabIdx = 0;
+      if (d.ownerName) document.getElementById('bName').value = d.ownerName;
+      renderTabBar();
+      loadTabToUI();
+      updateAll();
+      showToast(`✅ Loaded ${tabCount} month tab${tabCount>1?'s':''} successfully`);
+    } catch(err) {
+      showToast('❌ Could not read file — use a .wkb file saved from this tool');
+    }
+    event.target.value = '';
+  };
+  reader.readAsText(file);
+}
+
+function showToast(msg) {
+  const t = document.getElementById('importToast');
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'), 3500);
+}
+
+// ===== PDF DOWNLOAD (current tab) =====
 function downloadPDF() {
-  const cur = getCur();
-  const name = document.getElementById('bName').value || 'My Budget';
-  const month = document.getElementById('bMonth').value;
-  const year = document.getElementById('bYear').value;
+  syncHeaderToTab();
+  const t   = curTab();
+  const cur = t.currency;
+  const name  = document.getElementById('bName').value || 'My Budget';
+  const month = t.month, year = t.year;
 
-  const totalIncome = incomeItems.reduce((s,i) => s + f(i.a), 0);
-  const totalExpenses = CATS.reduce((s,cat) => s + cat.items.reduce((cs,i) => cs+f(i.a),0), 0);
-  const savings = totalIncome - totalExpenses;
-  const savingsPct = totalIncome > 0 ? (savings/totalIncome*100).toFixed(1) : '0';
+  const totalIncome   = t.incomeItems.reduce((s,i)=>s+effectiveAmount(i),0);
+  const totalExpenses = t.cats.reduce((s,cat)=>s+cat.items.reduce((cs,i)=>cs+effectiveAmount(i),0),0);
+  const savings       = totalIncome - totalExpenses;
+  const savingsPct    = totalIncome>0?(savings/totalIncome*100).toFixed(1):'0';
+  const savCol        = savings>=0?'#2563ff':'#dc2626';
+  const savPctCol     = parseFloat(savingsPct)>=20?'#059669':parseFloat(savingsPct)>=10?'#d97706':'#dc2626';
 
-  // Build HTML for PDF
-  const catRows = CATS.map(cat => {
-    const total = cat.items.reduce((s,i) => s+f(i.a),0);
-    if (total === 0 && cat.items.every(i => !i.n)) return '';
-    const itemRows = cat.items.filter(i => i.n||f(i.a)>0).map(i =>
-      `<tr><td style="padding:4px 8px;font-size:11px;color:#555">&nbsp;&nbsp;&nbsp;${i.n||'—'}</td><td style="padding:4px 8px;font-size:11px;text-align:right;color:#555">${f(i.a)>0?cur+' '+fmt(f(i.a)):''}</td></tr>`
+  const catRows = t.cats.map(cat=>{
+    const total=cat.items.reduce((s,i)=>s+effectiveAmount(i),0);
+    if(total===0&&cat.items.every(i=>!i.n)) return '';
+    const itemRows=cat.items.filter(i=>i.n||effectiveAmount(i)>0).map(i=>
+      `<tr><td style="padding:4px 8px;font-size:11px;color:#555">&nbsp;&nbsp;&nbsp;${i.n||'—'}</td><td style="padding:4px 8px;font-size:11px;text-align:right;color:#555">${effectiveAmount(i)>0?cur+' '+fmt(effectiveAmount(i)):''}</td></tr>`
     ).join('');
     return `<tr style="background:#f9f9f9"><td style="padding:6px 8px;font-size:12px;font-weight:600">${cat.icon} ${cat.name}</td><td style="padding:6px 8px;font-size:12px;font-weight:600;text-align:right;color:${cat.color}">${cur} ${fmt(total)}</td></tr>${itemRows}`;
   }).join('');
 
-  const incomeRows = incomeItems.filter(i=>i.n||f(i.a)>0).map(i =>
-    `<tr><td style="padding:5px 8px;font-size:12px">${i.n||'Income'}</td><td style="padding:5px 8px;font-size:12px;text-align:right;color:#059669;font-weight:500">${cur} ${fmt(f(i.a))}</td></tr>`
+  const incomeRows = t.incomeItems.filter(i=>i.n||effectiveAmount(i)>0).map(i=>
+    `<tr><td style="padding:5px 8px;font-size:12px">${i.n||'Income'}</td><td style="padding:5px 8px;font-size:12px;text-align:right;color:#059669;font-weight:500">${cur} ${fmt(effectiveAmount(i))}</td></tr>`
   ).join('');
 
-  const savCol = savings >= 0 ? '#2563ff' : '#dc2626';
-  const savPctCol = parseFloat(savingsPct) >= 20 ? '#059669' : parseFloat(savingsPct) >= 10 ? '#d97706' : '#dc2626';
-
-  const html = `<!DOCTYPE html><html><head><meta charset="UTF-8">
-<title>Budget — ${name} — ${month} ${year}</title>
-<style>
-  body{font-family:Arial,sans-serif;margin:0;padding:24px;color:#111;font-size:13px}
-  h1{font-size:22px;font-weight:800;margin:0 0 2px;color:#0c0c0e}
-  .subtitle{font-size:13px;color:#666;margin-bottom:20px}
-  .summary{display:flex;gap:12px;margin-bottom:20px;flex-wrap:wrap}
-  .sc{flex:1;min-width:120px;border-radius:8px;padding:12px 14px;border:1px solid #e5e7eb}
-  .sc-l{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px}
-  .sc-v{font-size:20px;font-weight:800}
-  table{width:100%;border-collapse:collapse;margin-bottom:16px}
-  th{background:#f4f3f0;padding:7px 8px;text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:#666;border-bottom:1px solid #e5e7eb}
-  tr{border-bottom:1px solid #f0f0f0}
-  .footer-note{font-size:10px;color:#999;margin-top:16px;text-align:center;border-top:1px solid #e5e7eb;padding-top:10px}
-</style>
-</head><body>
+  const pdfHtml=`<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Budget — ${name} — ${month} ${year}</title>
+<style>body{font-family:Arial,sans-serif;margin:0;padding:24px;color:#111;font-size:13px}h1{font-size:22px;font-weight:800;margin:0 0 2px}
+.subtitle{font-size:13px;color:#666;margin-bottom:20px}.summary{display:flex;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+.sc{flex:1;min-width:120px;border-radius:8px;padding:12px 14px;border:1px solid #e5e7eb}
+.sc-l{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px}.sc-v{font-size:20px;font-weight:800}
+table{width:100%;border-collapse:collapse;margin-bottom:16px}th{background:#f4f3f0;padding:7px 8px;text-align:left;font-size:11px;text-transform:uppercase;color:#666;border-bottom:1px solid #e5e7eb}
+tr{border-bottom:1px solid #f0f0f0}.footer-note{font-size:10px;color:#999;margin-top:16px;text-align:center;border-top:1px solid #e5e7eb;padding-top:10px}
+</style></head><body>
 <h1>Monthly Budget — ${month} ${year}</h1>
 <div class="subtitle">Prepared by: ${name} &nbsp;·&nbsp; Generated by MyWorkKits.com</div>
 <div class="summary">
   <div class="sc" style="background:#d1fae5;border-color:#a7f3d0"><div class="sc-l" style="color:#059669">Total Income</div><div class="sc-v" style="color:#059669">${cur} ${fmt(totalIncome)}</div></div>
   <div class="sc" style="background:#fee2e2;border-color:#fca5a5"><div class="sc-l" style="color:#dc2626">Total Expenses</div><div class="sc-v" style="color:#dc2626">${cur} ${fmt(totalExpenses)}</div></div>
-  <div class="sc" style="background:#dbeafe;border-color:#93c5fd"><div class="sc-l" style="color:#2563ff">Balance / Savings</div><div class="sc-v" style="color:${savCol}">${cur} ${fmt(savings)}</div></div>
+  <div class="sc" style="background:#dbeafe;border-color:#93c5fd"><div class="sc-l" style="color:#2563ff">Balance</div><div class="sc-v" style="color:${savCol}">${cur} ${fmt(savings)}</div></div>
   <div class="sc" style="background:#fef3c7;border-color:#fcd34d"><div class="sc-l" style="color:#d97706">Savings Rate</div><div class="sc-v" style="color:${savPctCol}">${savingsPct}%</div></div>
 </div>
-<table>
-  <tr><th>Income Source</th><th style="text-align:right">Amount</th></tr>
-  ${incomeRows}
-  <tr style="background:#d1fae5"><td style="padding:7px 8px;font-weight:700;font-size:13px">Total Income</td><td style="padding:7px 8px;font-weight:700;font-size:13px;text-align:right;color:#059669">${cur} ${fmt(totalIncome)}</td></tr>
-</table>
-<table>
-  <tr><th>Expense Category / Item</th><th style="text-align:right">Amount</th></tr>
-  ${catRows}
-  <tr style="background:#fee2e2"><td style="padding:7px 8px;font-weight:700;font-size:13px">Total Expenses</td><td style="padding:7px 8px;font-weight:700;font-size:13px;text-align:right;color:#dc2626">${cur} ${fmt(totalExpenses)}</td></tr>
-</table>
-<table>
-  <tr><th>Summary</th><th style="text-align:right">Amount</th></tr>
-  <tr><td style="padding:6px 8px">Total Income</td><td style="padding:6px 8px;text-align:right;color:#059669;font-weight:500">${cur} ${fmt(totalIncome)}</td></tr>
-  <tr><td style="padding:6px 8px">Total Expenses</td><td style="padding:6px 8px;text-align:right;color:#dc2626;font-weight:500">${cur} ${fmt(totalExpenses)}</td></tr>
-  <tr style="background:#dbeafe"><td style="padding:7px 8px;font-weight:700">Balance (Income − Expenses)</td><td style="padding:7px 8px;text-align:right;font-weight:700;color:${savCol}">${cur} ${fmt(savings)}</td></tr>
-  <tr><td style="padding:6px 8px">Savings Rate</td><td style="padding:6px 8px;text-align:right;font-weight:600;color:${savPctCol}">${savingsPct}%</td></tr>
-</table>
-<div class="footer-note">Generated by MyWorkKits.com · Free monthly budget planner · www.myworkkits.com</div>
+<table><tr><th>Income Source</th><th style="text-align:right">Amount</th></tr>${incomeRows}
+<tr style="background:#d1fae5"><td style="padding:7px 8px;font-weight:700;font-size:13px">Total Income</td><td style="padding:7px 8px;font-weight:700;font-size:13px;text-align:right;color:#059669">${cur} ${fmt(totalIncome)}</td></tr></table>
+<table><tr><th>Expense Category / Item</th><th style="text-align:right">Amount</th></tr>${catRows}
+<tr style="background:#fee2e2"><td style="padding:7px 8px;font-weight:700;font-size:13px">Total Expenses</td><td style="padding:7px 8px;font-weight:700;font-size:13px;text-align:right;color:#dc2626">${cur} ${fmt(totalExpenses)}</td></tr></table>
+<div class="footer-note">Generated by MyWorkKits.com · Free monthly budget planner</div>
 </body></html>`;
 
-  // Open in new window and trigger print as PDF
-  const win = window.open('', '_blank');
-  win.document.write(html);
-  win.document.close();
-  win.focus();
-  setTimeout(() => { win.print(); }, 600);
+  const win=window.open('','_blank');
+  win.document.write(pdfHtml); win.document.close(); win.focus();
+  setTimeout(()=>win.print(),600);
 }
 
-// ===== RESET =====
+// ===== AI RECOMMENDATIONS =====
+async function triggerAI() {
+  const cur=getCur();
+  const t=curTab();
+  const totalIncome=t.incomeItems.reduce((s,i)=>s+effectiveAmount(i),0);
+  if(totalIncome<=0){alert('Please add your income first to get personalised tips.');return;}
+
+  const btn=document.getElementById('aiTriggerBtn');
+  const panel=document.getElementById('aiPanel');
+  const content=document.getElementById('aiContent');
+  btn.disabled=true;
+  panel.classList.add('open');
+  content.innerHTML=`<div class="ai-loading"><div class="ai-loading-dot"></div><div class="ai-loading-dot"></div><div class="ai-loading-dot"></div><span>Analysing your budget…</span></div>`;
+
+  const totalExpenses=t.cats.reduce((s,cat)=>s+cat.items.reduce((cs,i)=>cs+effectiveAmount(i),0),0);
+  const savings=totalIncome-totalExpenses;
+  const savingsPct=totalIncome>0?(savings/totalIncome*100).toFixed(1):'0';
+  const catSummary=t.cats.map(cat=>{
+    const total=cat.items.reduce((s,i)=>s+effectiveAmount(i),0);
+    return `${cat.name}: ${cur} ${fmt(total)} (${totalIncome>0?(total/totalIncome*100).toFixed(1):0}% of income)`;
+  }).join('\n');
+
+  const prompt=`You are a personal finance advisor. Analyse this monthly budget and give 4-5 specific, actionable, encouraging money-saving tips. Mention actual numbers from their data. Each tip: 2-3 sentences. Return ONLY a JSON array of objects with "title" (5 words max) and "tip". No preamble, no markdown.\n\nBudget (${cur}):\nIncome: ${cur} ${fmt(totalIncome)}\nExpenses: ${cur} ${fmt(totalExpenses)}\nSavings: ${cur} ${fmt(savings)} (${savingsPct}%)\n\n${catSummary}`;
+
+  try {
+    const resp=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({model:'claude-sonnet-4-6',max_tokens:1000,messages:[{role:'user',content:prompt}]})});
+    const data=await resp.json();
+    const raw=(data.content||[]).map(b=>b.text||'').join('').trim().replace(/```json|```/gi,'').trim();
+    const tips=JSON.parse(raw);
+    content.innerHTML=tips.map(tip=>`<div class="ai-tip"><strong>💡 ${tip.title}</strong>${tip.tip}</div>`).join('')+
+      `<div style="font-size:11px;color:var(--txt3,#6e6e8c);margin-top:8px">Powered by Claude AI · Guidance only, not financial advice.</div>`;
+  } catch(err) {
+    content.innerHTML=`<div class="ai-error">Could not load recommendations. Please try again.</div>`;
+  }
+  btn.disabled=false;
+}
+
+// ===== RESET CURRENT TAB =====
 function resetAll() {
-  if (!confirm('Reset all budget data? This cannot be undone.')) return;
-  incomeItems = [{n:'Salary',a:''},{n:'',a:''}];
-  CATS.forEach(cat => { cat.items = [{n:'',a:''},{n:'',a:''}]; });
-  document.getElementById('bName').value = '';
-  localStorage.removeItem('wk_budget');
-  renderIncome();
-  renderExpenses();
-  updateAll();
+  if(!confirm(`Reset ${curTab().month} ${curTab().year} budget? This cannot be undone.`)) return;
+  const t=curTab();
+  t.incomeItems=[{n:'Salary',a:'',subs:[]},{n:'',a:'',subs:[]}];
+  t.cats=makeCats();
+  renderIncome(); renderExpenses(); updateAll();
 }
 
 // ===== FAQ =====
-document.querySelectorAll('.faq-q').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const a = btn.nextElementSibling, open = a.classList.contains('open');
-    document.querySelectorAll('.faq-a').forEach(x => x.classList.remove('open'));
-    document.querySelectorAll('.faq-q').forEach(b => { b.classList.remove('open'); b.setAttribute('aria-expanded','false'); });
-    if (!open) { a.classList.add('open'); btn.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+document.querySelectorAll('.faq-q').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const a=btn.nextElementSibling,open=a.classList.contains('open');
+    document.querySelectorAll('.faq-a').forEach(x=>x.classList.remove('open'));
+    document.querySelectorAll('.faq-q').forEach(b=>{b.classList.remove('open');b.setAttribute('aria-expanded','false');});
+    if(!open){a.classList.add('open');btn.classList.add('open');btn.setAttribute('aria-expanded','true');}
   });
 });
 
-// Set current month
-const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-document.getElementById('bMonth').value = MONTHS[new Date().getMonth()];
-document.getElementById('bYear').value = new Date().getFullYear();
+
+// ===== SECTION NAV =====
+function showSection(name, btn) {
+  document.querySelectorAll('.section-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.snav-btn').forEach(b=>b.classList.remove('active'));
+  const panel = document.getElementById('panel-'+name);
+  if(panel) panel.classList.add('active');
+  if(btn) btn.classList.add('active');
+}
 
 // ===== INIT =====
-loadFromStorage();
-renderIncome();
-renderExpenses();
+const nowM = MONTHS[new Date().getMonth()];
+const nowY = new Date().getFullYear();
+
+if (!loadFromStorage()) {
+  tabs = [makeTab(nowM, nowY, 'AED')];
+  activeTabIdx = 0;
+}
+
+renderTabBar();
+loadTabToUI();
 updateAll();
-
-// AdSense
-
 
 </script>
 <script id="wk-no-auto-translate">
