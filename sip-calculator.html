@@ -266,10 +266,16 @@ body{top:0!important}
 <p class="intro">Calculate the future value of your monthly SIP (Systematic Investment Plan) investments. See your total invested amount, estimated returns and maturity value instantly.</p>
 <div class="kpills"><span class="kp">sip calculator</span><span class="kp">sip return calculator</span><span class="kp">mutual fund sip</span><span class="kp">monthly investment calculator</span><span class="kp">sip maturity value</span></div>
 <div class="box">
-<div class="fr"><label>Monthly investment (₹)</label><input type="number" id="sipAmt" value="10000" oninput="calcSIP()"></div>
-<div class="fr"><label>Expected annual return (%)</label><input type="number" id="sipRate" value="12" step="0.5" oninput="calcSIP()"></div>
-<div class="fr"><label>Investment period (years)</label><input type="number" id="sipYears" value="10" min="1" max="40" oninput="calcSIP()"></div>
-<div class="rbox" id="sipRes" style="flex-direction:column;align-items:flex-start;gap:6px"></div>
+  <div class="mrow" style="margin-bottom:14px">
+    <button class="mb on" onclick="setSIPMode('sip',this)">SIP (Monthly)</button>
+    <button class="mb" onclick="setSIPMode('lump',this)">Lumpsum (One-time)</button>
+  </div>
+  <div id="sipAmt_wrap"><div class="fr"><label>Monthly SIP amount (₹)</label><input type="number" id="sipAmt" value="10000" step="500" oninput="calcSIP()"></div></div>
+  <div id="lsAmt_wrap" style="display:none"><div class="fr"><label>Lumpsum amount (₹)</label><input type="number" id="lsAmt" value="500000" step="10000" oninput="calcSIP()"></div></div>
+  <div class="fr"><label>Expected annual return (%)</label><input type="number" id="sipRate" value="12" step="0.5" oninput="calcSIP()"></div>
+  <div class="fr"><label>Investment period (years)</label><input type="number" id="sipYears" value="15" min="1" max="40" oninput="calcSIP()"></div>
+  <div class="rbox" id="sipRes" style="flex-direction:column;align-items:flex-start;gap:6px"></div>
+  <p id="sipCmpNote" style="font-size:12px;color:var(--ink4);margin-top:6px"></p>
 </div>
 <h2 class="s">How SIP returns are calculated</h2>
 <p class="b">A SIP (Systematic Investment Plan) invests a fixed amount every month into mutual funds. Returns compound monthly, which is why long-term SIPs grow dramatically. The standard formula used by all fund houses:</p>
@@ -292,19 +298,35 @@ body{top:0!important}
 </main>
 
 <script>
+let sipMode='sip';
+function setSIPMode(m,btn){
+  sipMode=m;
+  document.querySelectorAll('.mrow .mb').forEach(b=>b.classList.remove('on'));btn.classList.add('on');
+  document.getElementById('sipAmt_wrap').style.display=m==='sip'?'':'none';
+  document.getElementById('lsAmt_wrap').style.display=m==='lump'?'':'none';
+  calcSIP();
+}
 function calcSIP(){
-const P=parseFloat(document.getElementById('sipAmt').value)||0,r=parseFloat(document.getElementById('sipRate').value)||0,y=parseFloat(document.getElementById('sipYears').value)||0;
-if(!P||!y){document.getElementById('sipRes').innerHTML='<span style="color:var(--ink4)">Enter details above</span>';return;}
-const i=r/100/12,n=y*12;
-const fv=i===0?P*n:P*((Math.pow(1+i,n)-1)/i)*(1+i);
-const invested=P*n,gain=fv-invested;
-const f=v=>'₹ '+Math.round(v).toLocaleString('en-IN');
-document.getElementById('sipRes').innerHTML=`
-<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;width:100%">
-<div><div style="font-size:11px;color:var(--ink4)">Invested</div><div style="font-size:16px;font-weight:700;font-family:var(--ff)">${f(invested)}</div></div>
-<div><div style="font-size:11px;color:var(--ink4)">Est. returns</div><div style="font-size:16px;font-weight:700;font-family:var(--ff);color:var(--green)">${f(gain)}</div></div>
-<div><div style="font-size:11px;color:var(--ink4)">Maturity value</div><div style="font-size:16px;font-weight:700;font-family:var(--ff);color:var(--accd)">${f(fv)}</div></div>
-</div>`;
+  const r=parseFloat(document.getElementById('sipRate').value)||0;
+  const y=parseFloat(document.getElementById('sipYears').value)||0;
+  const f=v=>'₹ '+Math.round(v).toLocaleString('en-IN');
+  if(!y){document.getElementById('sipRes').innerHTML='<span style="color:var(--ink4)">Enter details above</span>';return;}
+  if(sipMode==='sip'){
+    const P=parseFloat(document.getElementById('sipAmt').value)||0;
+    if(!P){document.getElementById('sipRes').innerHTML='<span style="color:var(--ink4)">Enter SIP amount</span>';return;}
+    const i=r/100/12,n=y*12;
+    const fv=i===0?P*n:P*((Math.pow(1+i,n)-1)/i)*(1+i);
+    const invested=P*n,gain=fv-invested;
+    document.getElementById('sipRes').innerHTML=`<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;width:100%"><div><div style="font-size:11px;color:var(--ink4)">Invested</div><div style="font-size:16px;font-weight:700;font-family:var(--ff)">${f(invested)}</div></div><div><div style="font-size:11px;color:var(--ink4)">Est. returns</div><div style="font-size:16px;font-weight:700;font-family:var(--ff);color:var(--green)">${f(gain)}</div></div><div><div style="font-size:11px;color:var(--ink4)">Maturity value</div><div style="font-size:16px;font-weight:700;font-family:var(--ff);color:var(--accd)">${f(fv)}</div></div></div>`;
+    document.getElementById('sipCmpNote').textContent='';
+  } else {
+    const ls=parseFloat(document.getElementById('lsAmt').value)||0;
+    if(!ls){document.getElementById('sipRes').innerHTML='<span style="color:var(--ink4)">Enter lumpsum amount</span>';return;}
+    const fv=ls*Math.pow(1+r/100,y);
+    const gain=fv-ls;
+    document.getElementById('sipRes').innerHTML=`<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;width:100%"><div><div style="font-size:11px;color:var(--ink4)">Invested</div><div style="font-size:16px;font-weight:700;font-family:var(--ff)">${f(ls)}</div></div><div><div style="font-size:11px;color:var(--ink4)">Est. returns</div><div style="font-size:16px;font-weight:700;font-family:var(--ff);color:var(--green)">${f(gain)}</div></div><div><div style="font-size:11px;color:var(--ink4)">Maturity value</div><div style="font-size:16px;font-weight:700;font-family:var(--ff);color:var(--accd)">${f(fv)}</div></div></div>`;
+    document.getElementById('sipCmpNote').textContent='SIPs use rupee cost averaging — lower timing risk than a one-time lumpsum.';
+  }
 }
 calcSIP();
 document.querySelectorAll('.faq-q').forEach(b=>{b.addEventListener('click',()=>{const a=b.nextElementSibling,o=a.classList.contains('open');document.querySelectorAll('.faq-a').forEach(x=>x.classList.remove('open'));document.querySelectorAll('.faq-q').forEach(x=>x.classList.remove('open'));if(!o){a.classList.add('open');b.classList.add('open');}});});
