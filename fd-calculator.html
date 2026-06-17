@@ -275,6 +275,30 @@ body{top:0!important}
 <select id="fdComp" onchange="calcFD()"><option value="4" selected>Quarterly (bank standard)</option><option value="12">Monthly</option><option value="2">Half-yearly</option><option value="1">Yearly</option></select></div>
 <div class="rbox" id="fdRes" style="flex-direction:column;align-items:flex-start;gap:6px"></div>
 </div>
+
+<div class="box" style="margin-top:0">
+  <h3 class="s" style="margin-top:0">Current FD rates — top Indian banks (2025)</h3>
+  <p style="font-size:12px;color:var(--ink4);margin-bottom:10px">For 1–2 year tenure. Senior citizens get +0.25–0.50% extra. Rates updated June 2025.</p>
+  <table style="width:100%;border-collapse:collapse;font-size:13px" class="income-table">
+    <thead><tr>
+      <th style="text-align:left;padding:7px 8px">Bank</th>
+      <th style="text-align:right;padding:7px 8px">1 yr</th>
+      <th style="text-align:right;padding:7px 8px">2 yr</th>
+      <th style="text-align:right;padding:7px 8px">3 yr</th>
+      <th style="text-align:right;padding:7px 8px">Senior +</th>
+    </tr></thead>
+    <tbody>
+      <tr><td style="padding:6px 8px;border-top:1px solid var(--bdr)">SBI</td><td style="text-align:right;padding:6px 8px;border-top:1px solid var(--bdr)">6.80%</td><td style="text-align:right;padding:6px 8px;border-top:1px solid var(--bdr)">7.00%</td><td style="text-align:right;padding:6px 8px;border-top:1px solid var(--bdr)">6.75%</td><td style="text-align:right;padding:6px 8px;border-top:1px solid var(--bdr);color:var(--green)">+0.50%</td></tr>
+      <tr><td style="padding:6px 8px;border-top:1px solid var(--bdr)">HDFC Bank</td><td style="text-align:right;padding:6px 8px;border-top:1px solid var(--bdr)">6.60%</td><td style="text-align:right;padding:6px 8px;border-top:1px solid var(--bdr)">7.00%</td><td style="text-align:right;padding:6px 8px;border-top:1px solid var(--bdr)">7.00%</td><td style="text-align:right;padding:6px 8px;border-top:1px solid var(--bdr);color:var(--green)">+0.50%</td></tr>
+      <tr><td style="padding:6px 8px;border-top:1px solid var(--bdr)">ICICI Bank</td><td style="text-align:right;padding:6px 8px;border-top:1px solid var(--bdr)">6.70%</td><td style="text-align:right;padding:6px 8px;border-top:1px solid var(--bdr)">7.00%</td><td style="text-align:right;padding:6px 8px;border-top:1px solid var(--bdr)">7.00%</td><td style="text-align:right;padding:6px 8px;border-top:1px solid var(--bdr);color:var(--green)">+0.50%</td></tr>
+      <tr><td style="padding:6px 8px;border-top:1px solid var(--bdr)">Axis Bank</td><td style="text-align:right;padding:6px 8px;border-top:1px solid var(--bdr)">6.70%</td><td style="text-align:right;padding:6px 8px;border-top:1px solid var(--bdr)">7.10%</td><td style="text-align:right;padding:6px 8px;border-top:1px solid var(--bdr)">7.10%</td><td style="text-align:right;padding:6px 8px;border-top:1px solid var(--bdr);color:var(--green)">+0.50%</td></tr>
+      <tr><td style="padding:6px 8px;border-top:1px solid var(--bdr)">Kotak Bank</td><td style="text-align:right;padding:6px 8px;border-top:1px solid var(--bdr)">7.10%</td><td style="text-align:right;padding:6px 8px;border-top:1px solid var(--bdr)">7.10%</td><td style="text-align:right;padding:6px 8px;border-top:1px solid var(--bdr)">7.10%</td><td style="text-align:right;padding:6px 8px;border-top:1px solid var(--bdr);color:var(--green)">+0.50%</td></tr>
+      <tr><td style="padding:6px 8px;border-top:1px solid var(--bdr)">IDFC First</td><td style="text-align:right;padding:6px 8px;border-top:1px solid var(--bdr)">7.25%</td><td style="text-align:right;padding:6px 8px;border-top:1px solid var(--bdr)">7.25%</td><td style="text-align:right;padding:6px 8px;border-top:1px solid var(--bdr)">7.25%</td><td style="text-align:right;padding:6px 8px;border-top:1px solid var(--bdr);color:var(--green)">+0.50%</td></tr>
+      <tr style="font-weight:600"><td style="padding:6px 8px;border-top:1px solid var(--bdr)">Small Finance Banks*</td><td style="text-align:right;padding:6px 8px;border-top:1px solid var(--bdr);color:var(--amber)">8.00–9.00%</td><td style="text-align:right;padding:6px 8px;border-top:1px solid var(--bdr);color:var(--amber)">8.25–9.00%</td><td style="text-align:right;padding:6px 8px;border-top:1px solid var(--bdr);color:var(--amber)">8.00–9.00%</td><td style="text-align:right;padding:6px 8px;border-top:1px solid var(--bdr);color:var(--green)">+0.50%</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:11px;color:var(--ink4);margin-top:6px">*Includes AU, Ujjivan, Jana, Equitas. DICGC insured up to ₹5 lakh. Verify rates on bank websites before investing.</p>
+</div>
 <h2 class="s">How FD interest is calculated</h2>
 <p class="b">Indian banks compound fixed deposit interest quarterly. The maturity formula:</p>
 <div class="formula">A = P × (1 + r/n)^(n×t)</div>
