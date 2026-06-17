@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CTC Salary Calculator India — Take-Home Pay After Tax & PF | MyWorkKits</title>
+<meta name="description" content="Free CTC to in-hand salary calculator for India. Enter your annual CTC and see monthly take-home pay after income tax, PF, and professional tax deductions.">
+<meta name="keywords" content="ctc calculator, salary calculator india, ctc to in-hand calculator, take home salary calculator, gross salary calculator, pf deduction calculator, in hand salary">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.myworkkits.com/ctc-salary-calculator.html">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicon-192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:title" content="CTC Salary Calculator India — Take-Home Pay After Tax & PF | MyWorkKits">
+<meta property="og:description" content="Free CTC to in-hand salary calculator for India. Enter your annual CTC and see monthly take-home pay after income tax, PF, and professional tax deductions.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.myworkkits.com/ctc-salary-calculator.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CTC Salary Calculator India — Take-Home Pay After Tax & PF | MyWorkKits">
+<meta name="twitter:description" content="Free CTC to in-hand salary calculator for India. Enter your annual CTC and see monthly take-home pay after income tax, PF, and professional tax deductions.">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4G7CH7PCCF"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4G7CH7PCCF');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet"></noscript>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0c0c0e;--ink3:#44444f;--ink4:#888896;--w:#fff;--surf:#f4f3f0;--surf2:#eae9e5;--acc:#2563ff;--accl:#dbeafe;--accd:#1d4ed8;--green:#059669;--gl:#d1fae5;--amber:#d97706;--bdr:rgba(12,12,14,0.08);--ff:'Bricolage Grotesque',sans-serif;--fb:'Instrument Sans',sans-serif}
+body{font-family:var(--fb);background:var(--surf);color:var(--ink);font-size:15px;line-height:1.7;min-height:100vh;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+nav{background:rgba(255,255,255,.97);border-bottom:1px solid var(--bdr);height:56px;padding:0 4%;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.logo{font-family:var(--ff);font-weight:800;font-size:19px;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:7px}
+.lm{width:26px;height:26px;background:var(--acc);border-radius:7px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:800}
+.back{font-size:13px;color:var(--acc);text-decoration:none;font-weight:500}
+.page{max-width:660px;margin:0 auto;padding:24px 5% 80px}
+.ptag{display:inline-flex;background:var(--accl);color:var(--accd);border-radius:99px;padding:3px 12px;font-size:11px;font-weight:600;margin-bottom:10px;text-transform:uppercase;letter-spacing:.04em}
+h1{font-family:var(--ff);font-size:clamp(24px,4vw,36px);font-weight:800;line-height:1.1;margin-bottom:8px}
+.intro{font-size:15px;color:var(--ink3);margin-bottom:8px}
+.kpills{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0 18px}
+.kp{background:var(--surf2);border:1px solid var(--bdr);border-radius:6px;padding:3px 9px;font-size:11px;color:var(--ink4);font-weight:500}
+.box{background:var(--w);border:1px solid var(--bdr);border-radius:14px;padding:24px;margin-bottom:16px}
+.fr{display:flex;gap:8px;align-items:center;margin-bottom:11px}
+.fr label{font-size:12px;font-weight:500;color:var(--ink3);min-width:150px;flex-shrink:0}
+input,select{flex:1;border:1.5px solid var(--bdr);border-radius:8px;padding:9px 11px;font-size:14px;font-family:var(--fb);background:var(--surf);outline:none;min-width:0}
+input:focus,select:focus{border-color:var(--acc);background:var(--w)}
+.mrow{display:flex;gap:6px;margin-bottom:11px;flex-wrap:wrap}
+.mb{flex:1;min-width:64px;padding:7px;border-radius:7px;border:1.5px solid var(--bdr);background:var(--surf);color:var(--ink3);font-size:12px;font-weight:500;cursor:pointer;font-family:var(--fb);text-align:center}
+.mb.on{background:var(--acc);color:#fff;border-color:var(--acc)}
+.rbox{background:var(--surf);border:1px solid var(--bdr);border-radius:10px;padding:13px 16px;min-height:48px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:4px}
+.rbox strong{font-size:22px;font-weight:800;font-family:var(--ff)}
+.rbox .u{font-size:12px;color:var(--ink4)}
+h2.s{font-family:var(--ff);font-size:20px;font-weight:700;margin:28px 0 8px}
+h3.s{font-family:var(--ff);font-size:16px;font-weight:700;margin:18px 0 6px}
+p.b{font-size:14px;color:var(--ink3);margin-bottom:12px}
+ul.b{padding-left:18px;margin-bottom:12px}
+ul.b li{font-size:14px;color:var(--ink3);margin-bottom:4px}
+.formula{background:var(--surf2);border-radius:8px;padding:10px 14px;font-family:monospace;font-size:13px;margin:8px 0 14px}
+.faq-item{border-bottom:1px solid var(--bdr)}
+.faq-q{width:100%;background:none;border:none;text-align:left;padding:13px 0;font-size:15px;font-weight:500;color:var(--ink);cursor:pointer;font-family:var(--fb);display:flex;justify-content:space-between;gap:12px}
+.faq-q i{color:var(--ink4);transition:transform .2s;flex-shrink:0;font-style:normal}
+.faq-q.open i{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s}
+.faq-a.open{max-height:300px;padding-bottom:12px}
+.faq-a p{font-size:14px;color:var(--ink3)}
+.related{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:9px;margin:14px 0}
+.rc{background:var(--w);border:1px solid var(--bdr);border-radius:10px;padding:11px 13px;text-decoration:none;color:inherit;display:block}
+.rc:hover{border-color:var(--accd);background:var(--accl)}
+.rc .rt{font-size:13px;font-weight:600;font-family:var(--ff);margin-bottom:2px}
+.rc .rd{font-size:11px;color:var(--ink4)}
+footer{background:#1e1e24;color:rgba(255,255,255,.5);font-size:12px;padding:28px 4%;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media(max-width:600px){.fr{flex-direction:column;align-items:flex-start}.fr label{min-width:auto}input,select{width:100%;font-size:16px}}
+</style>
+<style id="wk-dark-theme">
+/* ═══ MyWorkKits universal dark glassmorphism theme ═══ */
+:root{--bg:#0d0d18;--txt:#f0f0f8;--txt2:#a8a8c0;--txt3:#6e6e8c;--glass:rgba(255,255,255,.05);--glass2:rgba(255,255,255,.08);--border:rgba(255,255,255,.1);--border2:rgba(255,255,255,.16);--indigo:#818cf8;--purple:#c084fc;--blue:#60a5fa;--teal:#2dd4bf;--green:#34d399;--amber:#fbbf24;--red:#f87171;--pink:#f472b6}
+body{background:#0d0d18!important;color:#f0f0f8!important;position:relative}
+.wk-bg{position:fixed;inset:0;z-index:-2;overflow:hidden;pointer-events:none}
+.wk-blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:.4;will-change:transform}
+.wk-blob1{width:440px;height:440px;background:radial-gradient(circle,#6366f1,transparent 70%);top:-120px;right:-80px;animation:wkf1 24s ease-in-out infinite}
+.wk-blob2{width:400px;height:400px;background:radial-gradient(circle,#a855f7,transparent 70%);bottom:-100px;left:-80px;animation:wkf2 28s ease-in-out infinite}
+@keyframes wkf1{0%,100%{transform:translate(0,0)}50%{transform:translate(-60px,50px)}}
+@keyframes wkf2{0%,100%{transform:translate(0,0)}50%{transform:translate(50px,-40px)}}
+@media(prefers-reduced-motion:reduce){.wk-blob{animation:none}}
+/* nav */
+nav{background:rgba(13,13,24,.7)!important;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--border)!important}
+.logo{color:#f0f0f8!important}
+.lm{background:linear-gradient(135deg,#6366f1,#a855f7)!important;box-shadow:0 0 20px rgba(129,140,248,.5);color:#fff!important}
+.back,.nav-back{color:var(--indigo)!important}
+/* page + text */
+.page{position:relative;z-index:1}
+.bc{color:var(--txt3)!important}.bc a{color:var(--indigo)!important}
+h1,h2,h3,h2.s,h3.s{color:#f0f0f8!important}
+h1 span,.grad{background:linear-gradient(120deg,#818cf8,#c084fc);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent!important;color:transparent!important}
+.intro,p.b,ul.b li{color:var(--txt2)!important}
+.ptag{background:rgba(129,140,248,.15)!important;border:1px solid rgba(129,140,248,.3)!important;color:var(--indigo)!important}
+.kp{background:var(--glass)!important;border:1px solid var(--border)!important;color:var(--txt3)!important}
+.formula{background:var(--glass2)!important;color:var(--indigo)!important}
+/* cards / boxes */
+.box,.tool-left,.tool-right,.cat-section,.bsec,.budget-header,.tips-box,.rule-card{background:var(--glass)!important;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--border2)!important;border-radius:18px!important;box-shadow:0 12px 50px rgba(0,0,0,.4)}
+.cat-head,.bsec-head{background:transparent!important;border-color:var(--border)!important}
+/* inputs */
+input,select,textarea{background:rgba(255,255,255,.06)!important;border:1.5px solid var(--border)!important;color:#f0f0f8!important;border-radius:10px!important}
+input::placeholder,textarea::placeholder{color:var(--txt3)!important}
+input:focus,select:focus,textarea:focus{border-color:var(--indigo)!important;background:rgba(255,255,255,.1)!important;box-shadow:0 0 0 3px rgba(129,140,248,.12)!important}
+select option{background:#1a1a2e!important;color:#f0f0f8!important}
+label,.fr label,.field label,.bh-field label,.opt-label{color:var(--txt2)!important}
+input[type=file]{border:1.5px dashed var(--border2)!important;background:var(--glass)!important;color:var(--txt2)!important}
+/* result boxes */
+.rbox,.disp{background:rgba(0,0,0,.3)!important;border:1px solid var(--border)!important;color:#f0f0f8!important}
+.rbox strong{color:#f0f0f8!important}
+.rbox .u{color:var(--txt3)!important}
+/* buttons */
+.btn,.btn-dl,.btn-pdf{background:linear-gradient(135deg,#6366f1,#a855f7)!important;color:#fff!important;border:none!important;box-shadow:0 4px 16px rgba(129,140,248,.3)}
+.btn:hover,.btn-dl:hover,.btn-pdf:hover{filter:brightness(1.1)}
+.btn.bg{background:linear-gradient(135deg,#059669,#34d399)!important}
+.btn-copy,.btn-reset,.cpbtn,.sz,.add-row-btn,.ttab,.mb,.sw,.cclose{background:var(--glass)!important;border:1px solid var(--border)!important;color:var(--txt2)!important}
+.mb.on,.ttab.on,.sz.on{background:linear-gradient(135deg,#6366f1,#a855f7)!important;border-color:transparent!important;color:#fff!important}
+.del-btn{background:var(--glass2)!important;color:var(--txt3)!important}
+/* segmented / mode rows */
+.mrow .mb,.seg button,.type-tabs .ttab{background:var(--glass)!important;color:var(--txt2)!important}
+/* QR specific */
+.qr-box,#qrBox{background:#fff!important;border:2px solid var(--border2)!important}
+.tool-left,.tool-right{background:var(--glass)!important}
+/* budget summary cards keep their tints but darken text bg */
+.sum-card,.bd-cell,.metric,.box .metric{backdrop-filter:blur(8px)}
+/* tables */
+table,.rtbl,.income-table{color:var(--txt2)!important}
+th,.rtbl th,.income-table th{background:var(--glass2)!important;color:var(--txt2)!important;border-color:var(--border)!important}
+td,.rtbl td,.income-table td{border-color:var(--border)!important;color:var(--txt2)!important}
+.income-table tr:last-child td{color:#f0f0f8!important}
+/* FAQ */
+.faq-item{border-color:var(--border)!important}
+.faq-q{color:#f0f0f8!important}.faq-q:hover{color:var(--indigo)!important}
+.faq-q i{color:var(--txt3)!important}
+.faq-a p{color:var(--txt2)!important}
+.ibox{background:rgba(129,140,248,.1)!important;border-left-color:var(--indigo)!important}
+.ibox p{color:var(--txt2)!important}
+/* related */
+.related .rc,.rc{background:var(--glass)!important;border:1px solid var(--border)!important;color:inherit!important}
+.rc:hover{border-color:var(--indigo)!important;background:var(--glass2)!important}
+.rc .rt{color:#f0f0f8!important}.rc .rd{color:var(--txt3)!important}
+/* footer */
+footer{background:rgba(13,13,24,.6)!important;backdrop-filter:blur(12px);border-top:1px solid var(--border)!important;color:var(--txt3)!important;position:relative;z-index:1}
+.fcol h4,.fbrand .logo{color:#f0f0f8!important}
+.fcol a{color:var(--txt3)!important}.fcol a:hover{color:var(--indigo)!important}
+.fbrand p{color:var(--txt3)!important}
+.fbot{border-top-color:var(--border)!important;color:var(--txt3)!important}
+/* misc text catch-all for muted greys */
+.tdesc,.qr-meta,.priv,.pglist{color:var(--txt3)!important}
+.slabel{color:var(--txt3)!important}
+.slabel::after{background:var(--border)!important}
+</style>
+<style id="wk-dark-theme">
+/* ═══ MyWorkKits universal dark glassmorphism theme ═══ */
+:root{--bg:#0d0d18;--txt:#f0f0f8;--txt2:#a8a8c0;--txt3:#6e6e8c;--glass:rgba(255,255,255,.05);--glass2:rgba(255,255,255,.08);--border:rgba(255,255,255,.1);--border2:rgba(255,255,255,.16);--indigo:#818cf8;--purple:#c084fc;--blue:#60a5fa;--teal:#2dd4bf;--green:#34d399;--amber:#fbbf24;--red:#f87171;--pink:#f472b6}
+body{background:#0d0d18!important;color:#f0f0f8!important;position:relative}
+.wk-bg{position:fixed;inset:0;z-index:-2;overflow:hidden;pointer-events:none}
+.wk-blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:.4;will-change:transform}
+.wk-blob1{width:440px;height:440px;background:radial-gradient(circle,#6366f1,transparent 70%);top:-120px;right:-80px;animation:wkf1 24s ease-in-out infinite}
+.wk-blob2{width:400px;height:400px;background:radial-gradient(circle,#a855f7,transparent 70%);bottom:-100px;left:-80px;animation:wkf2 28s ease-in-out infinite}
+@keyframes wkf1{0%,100%{transform:translate(0,0)}50%{transform:translate(-60px,50px)}}
+@keyframes wkf2{0%,100%{transform:translate(0,0)}50%{transform:translate(50px,-40px)}}
+@media(prefers-reduced-motion:reduce){.wk-blob{animation:none}}
+/* nav */
+nav{background:rgba(13,13,24,.7)!important;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--border)!important}
+.logo{color:#f0f0f8!important}
+.lm{background:linear-gradient(135deg,#6366f1,#a855f7)!important;box-shadow:0 0 20px rgba(129,140,248,.5);color:#fff!important}
+.back,.nav-back{color:var(--indigo)!important}
+/* page + text */
+.page{position:relative;z-index:1}
+.bc{color:var(--txt3)!important}.bc a{color:var(--indigo)!important}
+h1,h2,h3,h2.s,h3.s{color:#f0f0f8!important}
+h1 span,.grad{background:linear-gradient(120deg,#818cf8,#c084fc);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent!important;color:transparent!important}
+.intro,p.b,ul.b li{color:var(--txt2)!important}
+.ptag{background:rgba(129,140,248,.15)!important;border:1px solid rgba(129,140,248,.3)!important;color:var(--indigo)!important}
+.kp{background:var(--glass)!important;border:1px solid var(--border)!important;color:var(--txt3)!important}
+.formula{background:var(--glass2)!important;color:var(--indigo)!important}
+/* cards / boxes */
+.box,.tool-left,.tool-right,.cat-section,.bsec,.budget-header,.tips-box,.rule-card{background:var(--glass)!important;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--border2)!important;border-radius:18px!important;box-shadow:0 12px 50px rgba(0,0,0,.4)}
+.cat-head,.bsec-head{background:transparent!important;border-color:var(--border)!important}
+/* inputs */
+input,select,textarea{background:rgba(255,255,255,.06)!important;border:1.5px solid var(--border)!important;color:#f0f0f8!important;border-radius:10px!important}
+input::placeholder,textarea::placeholder{color:var(--txt3)!important}
+input:focus,select:focus,textarea:focus{border-color:var(--indigo)!important;background:rgba(255,255,255,.1)!important;box-shadow:0 0 0 3px rgba(129,140,248,.12)!important}
+select option{background:#1a1a2e!important;color:#f0f0f8!important}
+label,.fr label,.field label,.bh-field label,.opt-label{color:var(--txt2)!important}
+input[type=file]{border:1.5px dashed var(--border2)!important;background:var(--glass)!important;color:var(--txt2)!important}
+/* result boxes */
+.rbox,.disp{background:rgba(0,0,0,.3)!important;border:1px solid var(--border)!important;color:#f0f0f8!important}
+.rbox strong{color:#f0f0f8!important}
+.rbox .u{color:var(--txt3)!important}
+/* buttons */
+.btn,.btn-dl,.btn-pdf{background:linear-gradient(135deg,#6366f1,#a855f7)!important;color:#fff!important;border:none!important;box-shadow:0 4px 16px rgba(129,140,248,.3)}
+.btn:hover,.btn-dl:hover,.btn-pdf:hover{filter:brightness(1.1)}
+.btn.bg{background:linear-gradient(135deg,#059669,#34d399)!important}
+.btn-copy,.btn-reset,.cpbtn,.sz,.add-row-btn,.ttab,.mb,.sw,.cclose{background:var(--glass)!important;border:1px solid var(--border)!important;color:var(--txt2)!important}
+.mb.on,.ttab.on,.sz.on{background:linear-gradient(135deg,#6366f1,#a855f7)!important;border-color:transparent!important;color:#fff!important}
+.del-btn{background:var(--glass2)!important;color:var(--txt3)!important}
+/* segmented / mode rows */
+.mrow .mb,.seg button,.type-tabs .ttab{background:var(--glass)!important;color:var(--txt2)!important}
+/* QR specific */
+.qr-box,#qrBox{background:#fff!important;border:2px solid var(--border2)!important}
+.tool-left,.tool-right{background:var(--glass)!important}
+/* budget summary cards keep their tints but darken text bg */
+.sum-card,.bd-cell,.metric,.box .metric{backdrop-filter:blur(8px)}
+/* tables */
+table,.rtbl,.income-table{color:var(--txt2)!important}
+th,.rtbl th,.income-table th{background:var(--glass2)!important;color:var(--txt2)!important;border-color:var(--border)!important}
+td,.rtbl td,.income-table td{border-color:var(--border)!important;color:var(--txt2)!important}
+.income-table tr:last-child td{color:#f0f0f8!important}
+/* FAQ */
+.faq-item{border-color:var(--border)!important}
+.faq-q{color:#f0f0f8!important}.faq-q:hover{color:var(--indigo)!important}
+.faq-q i{color:var(--txt3)!important}
+.faq-a p{color:var(--txt2)!important}
+.ibox{background:rgba(129,140,248,.1)!important;border-left-color:var(--indigo)!important}
+.ibox p{color:var(--txt2)!important}
+/* related */
+.related .rc,.rc{background:var(--glass)!important;border:1px solid var(--border)!important;color:inherit!important}
+.rc:hover{border-color:var(--indigo)!important;background:var(--glass2)!important}
+.rc .rt{color:#f0f0f8!important}.rc .rd{color:var(--txt3)!important}
+/* footer */
+footer{background:rgba(13,13,24,.6)!important;backdrop-filter:blur(12px);border-top:1px solid var(--border)!important;color:var(--txt3)!important;position:relative;z-index:1}
+.fcol h4,.fbrand .logo{color:#f0f0f8!important}
+.fcol a{color:var(--txt3)!important}.fcol a:hover{color:var(--indigo)!important}
+.fbrand p{color:var(--txt3)!important}
+.fbot{border-top-color:var(--border)!important;color:var(--txt3)!important}
+/* misc text catch-all for muted greys */
+.tdesc,.qr-meta,.priv,.pglist{color:var(--txt3)!important}
+.slabel{color:var(--txt3)!important}
+.slabel::after{background:var(--border)!important}
+</style>
+<link rel="alternate" hreflang="en" href="https://www.myworkkits.com/sip-calculator.html">
+<link rel="alternate" hreflang="en-ae" href="https://www.myworkkits.com/sip-calculator.html">
+<link rel="alternate" hreflang="en-in" href="https://www.myworkkits.com/sip-calculator.html">
+<link rel="alternate" hreflang="en-gb" href="https://www.myworkkits.com/sip-calculator.html">
+<link rel="alternate" hreflang="x-default" href="https://www.myworkkits.com/sip-calculator.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SIP Calculator — Mutual Fund Returns Online Free | MyWorkKits">
+<meta name="twitter:description" content="Free SIP calculator. Calculate mutual fund SIP returns and maturity value. See how monthly investments grow. Best SIP calculator for India and NRIs.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"MyWorkKits","item":"https://www.myworkkits.com/"},{"@type":"ListItem","position":2,"name":"SIP Calculator","item":"https://www.myworkkits.com/sip-calculator.html"}]}</script>
+<style id="wk-footer-css">
+.wk-seo-footer{border-top:1px solid var(--border,rgba(255,255,255,.1));padding:40px 5% 28px;margin-top:40px;position:relative;z-index:1;font-size:13px}
+.wk-seo-footer .ftop{max-width:1000px;margin:0 auto 24px;display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.wk-seo-footer h4{font-family:var(--ff,sans-serif);font-size:11px;font-weight:700;color:var(--txt,#f0f0f8);margin-bottom:10px;letter-spacing:.07em;text-transform:uppercase}
+.wk-seo-footer a{display:block;color:var(--txt3,#6e6e8c);text-decoration:none;margin-bottom:6px;font-size:12px;transition:color .15s}
+.wk-seo-footer a:hover{color:var(--indigo,#818cf8)}
+.wk-seo-footer .fbot{max-width:1000px;margin:0 auto;border-top:1px solid var(--border,rgba(255,255,255,.1));padding-top:16px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:11px;color:var(--txt3,#6e6e8c)}
+@media(max-width:640px){.wk-seo-footer .ftop{grid-template-columns:1fr 1fr}}
+</style>
+<style id="wk-dark-fix">
+/* Remap legacy light-theme variables so every element that uses them turns dark */
+:root{
+  --ink:#f0f0f8!important;--ink2:#f0f0f8!important;--ink3:#c4c4d6!important;--ink4:#9a9ab0!important;--ink5:#6e6e8c!important;
+  --w:#16162a!important;--surf:#16162a!important;--surf2:#1e1e38!important;--paper:#16162a!important;--card:#16162a!important;
+  --bdr:rgba(255,255,255,.1)!important;
+  --acc:#818cf8!important;
+}
+/* Force any near-white card/panel/result background to dark glass */
+.box,.card,.panel,.tool-card,.tool-left,.tool-right,.calc-card,.result-card,.bsec,.section-card,.budget-header,.tips-box{
+  background:rgba(255,255,255,.05)!important;border:1px solid rgba(255,255,255,.14)!important;
+}
+/* Result boxes (rbox/disp/result) were rgba(255,255,255,.9x) — force dark */
+.rbox,.disp,.result,.res-box,#result,[id$="res"],[id$="Res"],[id$="result"]{
+  background:rgba(0,0,0,.28)!important;border:1px solid rgba(255,255,255,.12)!important;color:#f0f0f8!important;
+}
+/* Any inline near-white backgrounds */
+[style*="background:#fff"],[style*="background: #fff"],[style*="background:#ffffff"],[style*="background:white"],
+[style*="rgba(255,255,255,.9"],[style*="rgba(255, 255, 255, 0.9"],[style*="rgba(255,255,255,.96"],[style*="rgba(255,255,255,.95"]{
+  background:rgba(255,255,255,.05)!important;
+}
+/* Text: anything using the old dark ink vars or inline dark greys becomes light */
+h1,h2,h3,h4,h5,p,span,label,div,td,th,li,a,strong,small,.intro,.tdesc,.tc-name,.tc-desc{color:inherit}
+body,.box,.card,.panel{color:#e8e8f4!important}
+[style*="color:var(--ink4)"],[style*="color:var(--ink3)"],[style*="color:var(--ink5)"],[style*="color:#888"],[style*="color:#666"],[style*="color:#444"],[style*="color:#999"]{color:#9a9ab0!important}
+[style*="color:var(--ink)"],[style*="color:var(--ink2)"],[style*="color:#0c0c0e"],[style*="color:#111"],[style*="color:#222"],[style*="color:#000"]{color:#f0f0f8!important}
+.rbox strong,.disp strong{color:#f0f0f8!important}
+/* Tinted result chips (green/red/amber backgrounds) — keep colored bg but ensure dark-readable via brightening text handled inline; soften very light tints */
+[style*="background:var(--gl)"],[style*="background:var(--rl)"],[style*="background:var(--al)"],[style*="background:var(--pl)"],[style*="background:var(--tl)"]{filter:saturate(1.4) brightness(.5)}
+/* keep inputs readable */
+input,select,textarea{color:#f0f0f8!important;background:rgba(255,255,255,.06)!important}
+input::placeholder,textarea::placeholder{color:#8a8aa0!important}
+select option{background:#16162a!important;color:#f0f0f8!important}
+</style>
+<style id="wk-dark-refine">
+/* QR code must stay on a white background to remain scannable */
+#qrBox,.qr-box,#qrCanvas{background:#ffffff!important;filter:none!important}
+#qrBox *,.qr-box *{filter:none!important}
+/* Replace muddy filter approach: give tinted summary cards proper dark-glass tints with readable colored text */
+.sum-card,[style*="background:var(--gl)"],[style*="background:#d1fae5"]{background:rgba(52,211,153,.14)!important;filter:none!important}
+[style*="background:var(--rl)"],[style*="background:#fee2e2"]{background:rgba(248,113,113,.14)!important;filter:none!important}
+[style*="background:var(--al)"],[style*="background:#fef3c7"]{background:rgba(251,191,36,.14)!important;filter:none!important}
+[style*="background:var(--pl)"],[style*="background:#ede9fe"]{background:rgba(192,132,252,.14)!important;filter:none!important}
+[style*="background:var(--tl)"],[style*="background:#ccfbf1"]{background:rgba(45,212,191,.14)!important;filter:none!important}
+[style*="background:var(--accl)"],[style*="background:#dbeafe"]{background:rgba(129,140,248,.14)!important;filter:none!important}
+/* keep the bold colored numbers in those cards readable (they use --green/--red/--amber/--accd which are dark) */
+[style*="color:var(--green)"]{color:#34d399!important}
+[style*="color:var(--red)"]{color:#f87171!important}
+[style*="color:var(--amber)"]{color:#fbbf24!important}
+[style*="color:var(--accd)"],[style*="color:var(--acc)"]{color:#818cf8!important}
+[style*="color:var(--purple)"]{color:#c084fc!important}
+[style*="color:var(--teal)"]{color:#2dd4bf!important}
+</style>
+<style id="wk-related-center">
+.related{width:100%!important;max-width:100%!important;margin-left:0!important;margin-right:0!important;justify-content:start!important}
+.related .rc{text-align:center!important}
+</style>
+<style id="wk-translate-css">
+.wk-lang{position:relative;display:inline-flex;align-items:center}
+.wk-lang select{appearance:none;-webkit-appearance:none;background:var(--glass,rgba(255,255,255,.06));border:1px solid var(--border,rgba(255,255,255,.14));border-radius:99px;padding:6px 28px 6px 13px;font-size:12px;color:var(--txt2,#a8a8c0);font-family:var(--fb,sans-serif);cursor:pointer;outline:none;transition:all .15s}
+.wk-lang select:hover{border-color:var(--border2,rgba(255,255,255,.25));color:var(--txt,#f0f0f8)}
+.wk-lang::after{content:'▾';position:absolute;right:11px;top:50%;transform:translateY(-50%);font-size:10px;color:var(--txt3,#6e6e8c);pointer-events:none}
+.wk-lang select option{background:#16162a;color:#f0f0f8}
+/* hide Google's injected UI chrome */
+.goog-te-banner-frame,.skiptranslate{display:none!important}
+body{top:0!important}
+#google_translate_element{display:none}
+.goog-tooltip,.goog-tooltip:hover{display:none!important}
+.goog-text-highlight{background:none!important;box-shadow:none!important}
+</style>
+
+</head>
+<body>
+<div class="wk-bg"><div class="wk-blob wk-blob1"></div><div class="wk-blob wk-blob2"></div></div>
+<nav><a class="logo" href="/index.html"><span class="lm">W</span>MyWorkKits</a><a class="back" href="/index.html">← All tools</a><div class="wk-lang"><select onchange="wkSetLang(this.value)" aria-label="Select language">
+<option value="en">🌐 EN</option><option value="ar">العربية</option><option value="hi">हिन्दी</option><option value="ur">اردو</option><option value="ta">தமிழ்</option><option value="ml">മലയാളം</option>
+</select></div></nav>
+<main class="page">
+<p class="bc" style="font-size:12px;color:var(--ink4);margin-bottom:12px"><a href="/index.html">MyWorkKits</a> › CTC Salary Calculator</p>
+<span class="ptag">💰 Finance Tool</span>
+<h1>CTC Salary Calculator</h1>
+<p class="intro">Find your exact monthly take-home pay from your annual CTC. Full breakdown of basic, HRA, PF, income tax, and professional tax deductions.</p>
+<div class="kpills"><span class="kp">CTC to in-hand</span><span class="kp">PF deduction</span><span class="kp">Professional tax</span><span class="kp">New & old regime</span></div>
+
+<div class="box">
+  <div class="fr"><label>Annual CTC (₹)</label><input type="number" id="ctcAmt" value="1200000" step="10000" oninput="calcCTC()"></div>
+  <div class="fr"><label>Basic salary % of CTC</label>
+    <div style="display:flex;gap:8px;align-items:center;flex:1">
+      <input type="range" id="ctcBasicPct" min="30" max="60" value="40" step="5" oninput="calcCTC()" style="flex:1">
+      <span id="ctcBasicPctLbl" style="min-width:36px;font-size:13px;font-weight:600">40%</span>
+    </div>
+  </div>
+  <div class="fr"><label>HRA % of basic</label>
+    <div style="display:flex;gap:8px;align-items:center;flex:1">
+      <input type="range" id="ctcHraPct" min="0" max="50" value="40" step="5" oninput="calcCTC()" style="flex:1">
+      <span id="ctcHraPctLbl" style="min-width:36px;font-size:13px;font-weight:600">40%</span>
+    </div>
+  </div>
+  <div class="fr"><label>PF contribution by employee</label>
+    <select id="ctcPF" onchange="calcCTC()">
+      <option value="12">12% of basic (standard)</option>
+      <option value="0">Opted out / NPS instead</option>
+    </select>
+  </div>
+  <div class="fr"><label>Professional tax (state)</label>
+    <select id="ctcPT" onchange="calcCTC()">
+      <option value="2400">₹200/month — Maharashtra / Karnataka</option>
+      <option value="2500">₹208/month — West Bengal / Telangana</option>
+      <option value="0">No professional tax</option>
+    </select>
+  </div>
+  <div class="fr"><label>Tax regime</label>
+    <select id="ctcRegime" onchange="calcCTC()">
+      <option value="new">New regime (default 2025)</option>
+      <option value="old">Old regime</option>
+    </select>
+  </div>
+  <div id="ctcRes" class="rbox" style="margin-top:8px"></div>
+</div>
+<script>
+function calcCTC(){
+  const ctc=parseFloat(document.getElementById('ctcAmt').value)||0;
+  const bPct=parseInt(document.getElementById('ctcBasicPct').value)/100;
+  const hPct=parseInt(document.getElementById('ctcHraPct').value)/100;
+  const pfPct=parseInt(document.getElementById('ctcPF').value)/100;
+  const pt=parseInt(document.getElementById('ctcPT').value);
+  const regime=document.getElementById('ctcRegime').value;
+  document.getElementById('ctcBasicPctLbl').textContent=Math.round(bPct*100)+'%';
+  document.getElementById('ctcHraPctLbl').textContent=Math.round(hPct*100)+'%';
+  const f=v=>'₹ '+Math.round(v).toLocaleString('en-IN');
+
+  const basic=ctc*bPct;
+  const hra=basic*hPct;
+  const employeePF=basic*pfPct;
+  const employerPF=basic*0.12; // employer PF is part of CTC
+  const gratuity=basic/26*15; // statutory gratuity accrual ~4.81% of basic/yr
+  const specialAllow=ctc-basic-hra-employerPF-gratuity;
+  const grossSalary=basic+hra+specialAllow; // before deductions
+
+  // Tax computation
+  let tax=0;
+  if(regime==='new'){
+    const taxable=Math.max(0,grossSalary-75000);
+    const slabs=[[400000,0],[400000,0.05],[400000,0.10],[400000,0.15],[400000,0.20],[400000,0.25],[Infinity,0.30]];
+    let rem=taxable;
+    for(const[s,r]of slabs){if(rem<=0)break;const c=Math.min(rem,s);tax+=c*r;rem-=c;}
+    if(taxable<=1200000)tax=Math.max(0,tax-Math.min(tax,60000));
+  } else {
+    // old regime — assume modest deductions
+    const taxable=Math.max(0,grossSalary-50000-150000); // std dedn + 80C
+    if(taxable>500000)tax+=Math.min(taxable-500000,500000)*0.20;
+    if(taxable>1000000)tax+=(taxable-1000000)*0.30;
+    if(taxable>250000&&taxable<=500000)tax+=(taxable-250000)*0.05;
+    if(taxable<=500000)tax=Math.max(0,tax-Math.min(tax,12500));
+  }
+  tax=tax*1.04; // + 4% cess
+
+  const monthlyTax=tax/12;
+  const monthlyPF=employeePF/12;
+  const monthlyPT=pt/12;
+  const totalDeductions=monthlyTax+monthlyPF+monthlyPT;
+  const inHand=(grossSalary/12)-totalDeductions;
+
+  document.getElementById('ctcRes').innerHTML=`
+<div style="width:100%">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px">
+    <div><div style="font-size:11px;color:var(--ink4)">Monthly in-hand</div><div style="font-size:24px;font-weight:800;font-family:var(--ff);color:var(--green)">${f(inHand)}</div></div>
+    <div><div style="font-size:11px;color:var(--ink4)">Annual gross salary</div><div style="font-size:18px;font-weight:700;font-family:var(--ff)">${f(grossSalary)}</div></div>
+  </div>
+  <table style="width:100%;font-size:12px;border-collapse:collapse" class="income-table">
+    <thead><tr><th style="text-align:left;padding:5px 8px">Component</th><th style="text-align:right;padding:5px 8px">Annual</th><th style="text-align:right;padding:5px 8px">Monthly</th></tr></thead>
+    <tbody>
+      <tr><td style="padding:5px 8px;border-top:1px solid var(--bdr)">Basic salary</td><td style="text-align:right;padding:5px 8px;border-top:1px solid var(--bdr)">${f(basic)}</td><td style="text-align:right;padding:5px 8px;border-top:1px solid var(--bdr)">${f(basic/12)}</td></tr>
+      <tr><td style="padding:5px 8px;border-top:1px solid var(--bdr)">HRA</td><td style="text-align:right;padding:5px 8px;border-top:1px solid var(--bdr)">${f(hra)}</td><td style="text-align:right;padding:5px 8px;border-top:1px solid var(--bdr)">${f(hra/12)}</td></tr>
+      <tr><td style="padding:5px 8px;border-top:1px solid var(--bdr)">Special allowance</td><td style="text-align:right;padding:5px 8px;border-top:1px solid var(--bdr)">${f(Math.max(0,specialAllow))}</td><td style="text-align:right;padding:5px 8px;border-top:1px solid var(--bdr)">${f(Math.max(0,specialAllow)/12)}</td></tr>
+      <tr><td style="padding:5px 8px;border-top:1px solid var(--bdr);color:var(--amber)">− Employee PF (${pfPct*100}%)</td><td style="text-align:right;padding:5px 8px;border-top:1px solid var(--bdr);color:var(--amber)">(${f(employeePF)})</td><td style="text-align:right;padding:5px 8px;border-top:1px solid var(--bdr);color:var(--amber)">(${f(monthlyPF)})</td></tr>
+      <tr><td style="padding:5px 8px;border-top:1px solid var(--bdr);color:var(--amber)">− Income tax (${regime} regime)</td><td style="text-align:right;padding:5px 8px;border-top:1px solid var(--bdr);color:var(--amber)">(${f(tax)})</td><td style="text-align:right;padding:5px 8px;border-top:1px solid var(--bdr);color:var(--amber)">(${f(monthlyTax)})</td></tr>
+      <tr><td style="padding:5px 8px;border-top:1px solid var(--bdr);color:var(--amber)">− Professional tax</td><td style="text-align:right;padding:5px 8px;border-top:1px solid var(--bdr);color:var(--amber)">(${f(pt)})</td><td style="text-align:right;padding:5px 8px;border-top:1px solid var(--bdr);color:var(--amber)">(${f(monthlyPT)})</td></tr>
+      <tr style="font-weight:700"><td style="padding:6px 8px;border-top:2px solid var(--bdr)">Take-home pay</td><td style="text-align:right;padding:6px 8px;border-top:2px solid var(--bdr);color:var(--green)">${f(inHand*12)}</td><td style="text-align:right;padding:6px 8px;border-top:2px solid var(--bdr);color:var(--green)">${f(inHand)}</td></tr>
+    </tbody>
+  </table>
+</div>`;
+}
+calcCTC();
+document.querySelectorAll('.faq-q').forEach(b=>{b.addEventListener('click',()=>{const a=b.nextElementSibling,o=a.classList.contains('open');document.querySelectorAll('.faq-a').forEach(x=>x.classList.remove('open'));document.querySelectorAll('.faq-q').forEach(x=>x.classList.remove('open'));if(!o){a.classList.add('open');b.classList.add('open');}});});
+</script>
+<h2 class="s">CTC vs gross salary vs net salary — what's the difference?</h2>
+<p class="b">CTC (Cost to Company) is the total annual expense for your employer — it includes basic, HRA, all allowances, employer's PF contribution (12% of basic), and gratuity accrual (~4.81% of basic). Gross salary is what you actually receive before deductions. Net (in-hand) salary is what hits your bank after TDS, employee PF, and professional tax.</p>
+<p class="b">A ₹12 LPA CTC typically translates to ₹90,000–₹95,000 gross per month, with ₹75,000–₹80,000 in-hand after deductions. The exact breakup depends on how the employer structures the salary (basic %, HRA %, allowances).</p>
+<h3 class="s">PF contribution and its impact</h3>
+<p class="b">Employee PF = 12% of basic salary, deducted from your gross. Employer PF = another 12% — included in CTC but never in your pay packet. At 40% basic on a ₹12L CTC: basic = ₹4,800/month, employee PF deduction = ₹5,760/year. PF earns 8.25% interest (FY 2023-24) and is tax-free on withdrawal after 5 years.</p>
+<div class="faq-item"><button class="faq-q">What is the typical basic salary percentage in India? <i>+</i></button><div class="faq-a"><p>Most private sector companies keep basic at 40–50% of CTC. Lower basic reduces PF deductions and increases in-hand pay — which is why many employees request lower basic structures. However, gratuity, provident fund corpus, and leave encashment all get reduced proportionally.</p></div></div>
+<div class="faq-item"><button class="faq-q">Is gratuity part of CTC? <i>+</i></button><div class="faq-a"><p>Yes, most companies include gratuity accrual (~4.81% of basic per year) in the CTC. However, gratuity is payable only if you complete 5 continuous years with the employer. So CTC "looks" higher but you may not realise the gratuity component for years.</p></div></div>
+<div class="faq-item"><button class="faq-q">How is professional tax calculated? <i>+</i></button><div class="faq-a"><p>Professional tax varies by state. Maharashtra and Karnataka charge ₹200/month (₹300 in February). West Bengal and Telangana charge ₹2,500/year. Several states including Rajasthan, UP, and Delhi have no professional tax. It is deducted by employers and remitted to the state government.</p></div></div>
+<h2 class="s">Related tools</h2>
+<div class="related">
+<a href="/income-tax-calculator.html" class="rc"><div class="rt">Income tax calculator</div><div class="rd">Old vs new regime 2025</div></a>
+<a href="/hra-calculator.html" class="rc"><div class="rt">HRA calculator</div><div class="rd">Rent exemption for salaried</div></a>
+<a href="/emi-calculator.html" class="rc"><div class="rt">EMI calculator</div><div class="rd">Loan affordability check</div></a>
+<a href="/budget-planner.html" class="rc"><div class="rt">Budget planner</div><div class="rd">Plan monthly expenses</div></a>
+</div>
+</main>
+<footer class="wk-seo-footer">
+<div class="ftop">
+  <div class="fcol"><h4>Finance India</h4>
+    <a href="/emi-calculator.html">EMI Calculator</a>
+    <a href="/income-tax-calculator.html">Income Tax</a>
+    <a href="/hra-calculator.html">HRA Calculator</a>
+    <a href="/ctc-salary-calculator.html">CTC / Salary</a>
+    <a href="/sip-calculator.html">SIP Calculator</a>
+    <a href="/fd-calculator.html">FD Calculator</a>
+    <a href="/gst-calculator-india.html">GST India</a>
+  </div>
+  <div class="fcol"><h4>Finance</h4>
+    <a href="/budget-planner.html">Budget Planner</a>
+    <a href="/loan-emi-calculator.html">Loan EMI</a>
+    <a href="/compound-interest.html">Compound Interest</a>
+    <a href="/currency-converter.html">Currency Converter</a>
+    <a href="/vat-calculator.html">VAT / GST</a>
+    <a href="/retirement-calculator.html">Retirement</a>
+    <a href="/rent-vs-buy.html">Rent vs Buy</a>
+  </div>
+  <div class="fcol"><h4>Work & PDF</h4>
+    <a href="/qr-code-generator.html">QR Generator</a>
+    <a href="/merge-pdf.html">Merge PDF</a>
+    <a href="/compress-pdf.html">Compress PDF</a>
+    <a href="/word-counter.html">Word Counter</a>
+    <a href="/image-to-pdf.html">Image to PDF</a>
+  </div>
+  <div class="fcol"><h4>Health</h4>
+    <a href="/bmi-calculator.html">BMI Calculator</a>
+    <a href="/calorie-calculator.html">Calorie Calculator</a>
+    <a href="/age-calculator.html">Age Calculator</a>
+    <a href="/sleep-calculator.html">Sleep Calculator</a>
+    <a href="/ideal-weight-calculator.html">Ideal Weight</a>
+  </div>
+</div>
+<div class="fbot"><span>© 2026 MyWorkKits · <a href="/index.html" style="color:inherit">All tools</a></span><span>Free forever · No sign-up</span></div>
+</footer>
+<script id="wk-no-auto-translate">
+(function(){
+  // Page defaults to English. Only clear Google's cookie if the user has NOT
+  // deliberately chosen a language this session — this stops auto-translation
+  // by browser language while still honouring the user's own choice as they browse.
+  try{
+    if(!sessionStorage.getItem('wk_lang_choice')){
+      document.cookie='googtrans=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/';
+      document.cookie='googtrans=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;domain='+location.hostname;
+      document.cookie='googtrans=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;domain=.'+location.hostname;
+    }
+  }catch(e){}
+})();
+</script>
+<div id="google_translate_element"></div>
+<script>
+function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:'en',includedLanguages:'ar,hi,ur,ta,ml,bn,fr,es,de,zh-CN,ru,tl,fa,id,tr,pt',autoDisplay:false},'google_translate_element');}
+function wkSetLang(lang){
+  try{
+    if(lang==='en'){sessionStorage.removeItem('wk_lang_choice');document.cookie='googtrans=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/';location.reload();return;}
+    sessionStorage.setItem('wk_lang_choice',lang);
+  }catch(e){}
+  var tries=0;
+  (function trySet(){
+    var sel=document.querySelector('#google_translate_element select')||document.querySelector('select.goog-te-combo');
+    if(sel){sel.value=lang;sel.dispatchEvent(new Event('change'));}
+    else if(tries++<20){setTimeout(trySet,150);}
+  })();
+}
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
+<!-- ═══ MyWorkKits Feedback Widget ═══ -->
+<style id="wk-feedback-css">
+/* Overlay */
+#wkFbOverlay{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:9998;opacity:0;transition:opacity .3s;pointer-events:none;backdrop-filter:blur(4px)}
+#wkFbOverlay.show{opacity:1;pointer-events:all}
+
+/* Modal */
+#wkFbModal{position:fixed;bottom:24px;right:24px;width:340px;max-width:calc(100vw - 32px);background:linear-gradient(145deg,#13132a,#1a1a35);border:1px solid rgba(129,140,248,.35);border-radius:20px;padding:22px;z-index:9999;box-shadow:0 24px 60px rgba(0,0,0,.6),0 0 0 1px rgba(129,140,248,.1);transform:translateY(30px) scale(.96);opacity:0;transition:all .35s cubic-bezier(.34,1.56,.64,1);pointer-events:none}
+#wkFbModal.show{transform:translateY(0) scale(1);opacity:1;pointer-events:all}
+
+/* Header */
+.wkfb-head{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:14px}
+.wkfb-icon{width:36px;height:36px;background:linear-gradient(135deg,#6366f1,#a855f7);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
+.wkfb-titles{flex:1;margin:0 10px}
+.wkfb-title{font-family:'Bricolage Grotesque',sans-serif;font-size:15px;font-weight:700;color:#f0f0f8;line-height:1.2}
+.wkfb-sub{font-size:11px;color:#9a9ab0;margin-top:2px}
+.wkfb-close{background:rgba(255,255,255,.08);border:none;border-radius:8px;width:26px;height:26px;cursor:pointer;color:#9a9ab0;font-size:15px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .15s}
+.wkfb-close:hover{background:rgba(248,113,113,.2);color:#f87171}
+
+/* Stars */
+.wkfb-stars-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:#9a9ab0;margin-bottom:7px}
+.wkfb-stars{display:flex;gap:5px;margin-bottom:14px}
+.wkfb-star{font-size:26px;cursor:pointer;transition:transform .12s;line-height:1;filter:grayscale(1) opacity(.4);user-select:none}
+.wkfb-star.active,.wkfb-star:hover{filter:none;transform:scale(1.18)}
+.wkfb-star.active{filter:drop-shadow(0 0 6px #fbbf24)}
+
+/* Textarea */
+.wkfb-ta{width:100%;background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.12);border-radius:10px;padding:10px 12px;font-size:13px;color:#f0f0f8;font-family:'Instrument Sans',sans-serif;resize:none;outline:none;transition:border-color .15s;box-sizing:border-box}
+.wkfb-ta::placeholder{color:#6e6e8c}
+.wkfb-ta:focus{border-color:rgba(129,140,248,.6);background:rgba(255,255,255,.09)}
+
+/* Quick tags */
+.wkfb-tags{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0 12px}
+.wkfb-tag{padding:4px 11px;border-radius:99px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);font-size:11px;color:#a8a8c0;cursor:pointer;transition:all .15s;user-select:none}
+.wkfb-tag:hover,.wkfb-tag.sel{background:rgba(129,140,248,.2);border-color:rgba(129,140,248,.5);color:#f0f0f8}
+
+/* Submit */
+.wkfb-submit{width:100%;padding:11px;background:linear-gradient(135deg,#6366f1,#a855f7);border:none;border-radius:10px;color:#fff;font-size:14px;font-weight:600;cursor:pointer;font-family:'Instrument Sans',sans-serif;transition:all .18s;margin-top:4px}
+.wkfb-submit:hover{filter:brightness(1.1);transform:translateY(-1px)}
+.wkfb-submit:disabled{opacity:.5;cursor:not-allowed;transform:none}
+
+/* Success state */
+.wkfb-success{text-align:center;padding:10px 0}
+.wkfb-success-icon{font-size:36px;margin-bottom:8px}
+.wkfb-success-msg{font-size:14px;color:#f0f0f8;font-weight:600;margin-bottom:4px}
+.wkfb-success-sub{font-size:12px;color:#9a9ab0}
+
+/* Snooze link */
+.wkfb-snooze{text-align:center;margin-top:10px}
+.wkfb-snooze a{font-size:11px;color:#6e6e8c;cursor:pointer;text-decoration:none}
+.wkfb-snooze a:hover{color:#a8a8c0}
+
+/* Floating tab when dismissed */
+#wkFbTab{position:fixed;bottom:20px;right:-90px;background:linear-gradient(135deg,#6366f1,#a855f7);color:#fff;border:none;border-radius:99px 0 0 99px;padding:9px 14px 9px 16px;font-size:12px;font-weight:600;cursor:pointer;z-index:9997;box-shadow:0 4px 18px rgba(129,140,248,.4);transition:right .4s cubic-bezier(.34,1.56,.64,1);font-family:'Instrument Sans',sans-serif;display:flex;align-items:center;gap:6px}
+#wkFbTab.show{right:0}
+
+/* Star display on page (rating badge) */
+.wkfb-rating-badge{display:inline-flex;align-items:center;gap:5px;background:rgba(251,191,36,.12);border:1px solid rgba(251,191,36,.25);border-radius:99px;padding:4px 12px;font-size:12px;color:#fbbf24;font-weight:600;margin-left:8px}
+</style>
+
+<div id="wkFbOverlay"></div>
+<div id="wkFbModal" role="dialog" aria-modal="true" aria-label="Feedback">
+  <div class="wkfb-head">
+    <div class="wkfb-icon">💬</div>
+    <div class="wkfb-titles">
+      <div class="wkfb-title">Quick feedback?</div>
+      <div class="wkfb-sub" id="wkfb-tool-name">Help us improve this tool</div>
+    </div>
+    <button class="wkfb-close" onclick="wkFbSnooze()" aria-label="Close">×</button>
+  </div>
+
+  <div id="wkfb-form-body">
+    <div class="wkfb-stars-label">Rate this tool</div>
+    <div class="wkfb-stars" id="wkfbStars">
+      <span class="wkfb-star" data-v="1" onclick="wkFbSetStar(1)">★</span>
+      <span class="wkfb-star" data-v="2" onclick="wkFbSetStar(2)">★</span>
+      <span class="wkfb-star" data-v="3" onclick="wkFbSetStar(3)">★</span>
+      <span class="wkfb-star" data-v="4" onclick="wkFbSetStar(4)">★</span>
+      <span class="wkfb-star" data-v="5" onclick="wkFbSetStar(5)">★</span>
+    </div>
+
+    <div class="wkfb-tags" id="wkfbTags">
+      <span class="wkfb-tag" onclick="wkFbToggleTag(this)">🐛 Bug found</span>
+      <span class="wkfb-tag" onclick="wkFbToggleTag(this)">✨ Feature idea</span>
+      <span class="wkfb-tag" onclick="wkFbToggleTag(this)">🤔 Confusing UI</span>
+      <span class="wkfb-tag" onclick="wkFbToggleTag(this)">💡 New tool idea</span>
+      <span class="wkfb-tag" onclick="wkFbToggleTag(this)">👍 Works great</span>
+    </div>
+
+    <textarea class="wkfb-ta" id="wkfbText" rows="3"
+      placeholder="Tell us what you think or what tool you'd love to see…"></textarea>
+
+    <button class="wkfb-submit" id="wkfbSubmit" onclick="wkFbSubmit()">Send Feedback</button>
+    <div class="wkfb-snooze"><a onclick="wkFbSnooze()">Remind me later</a></div>
+  </div>
+
+  <div id="wkfb-success" style="display:none">
+    <div class="wkfb-success">
+      <div class="wkfb-success-icon">🎉</div>
+      <div class="wkfb-success-msg">Thank you!</div>
+      <div class="wkfb-success-sub">Your feedback helps us build better tools.</div>
+    </div>
+  </div>
+</div>
+
+<button id="wkFbTab" onclick="wkFbOpen()" aria-label="Give feedback">
+  💬 Feedback
+</button>
+
+<script id="wk-feedback-js">
+(function(){
+  // ── Config ──────────────────────────────────────────────────────────────────
+  const SHEET_URL = 'https://script.google.com/macros/s/AKfycbwLHiFGv2-Gkjdq9myP8wqX8zLvcAIbejRGKHgOTZclD4FPRbx0nzWJtjO_vVc7idcZ-w/exec';
+  const TRIGGER_MS = 60000; // 1 minute
+  const SNOOZE_DAYS = 3;
+
+  // ── Tool name from page title ────────────────────────────────────────────────
+  const rawTitle = document.title || '';
+  const toolName = rawTitle.split('|')[0].split('—')[0].replace(/^Free\s+/i,'').trim() || 'This tool';
+  document.getElementById('wkfb-tool-name').textContent = toolName;
+  const pageUrl = window.location.pathname;
+
+  // ── State ────────────────────────────────────────────────────────────────────
+  let selectedStar = 0;
+  let hasShown = false;
+
+  // ── Check snooze ────────────────────────────────────────────────────────────
+  function isSnoozed() {
+    try {
+      const s = localStorage.getItem('wkfb_snooze_'+pageUrl);
+      if (!s) return false;
+      return Date.now() < parseInt(s);
+    } catch(e){ return false; }
+  }
+  function setSnooze() {
+    try { localStorage.setItem('wkfb_snooze_'+pageUrl, Date.now() + SNOOZE_DAYS*86400000); } catch(e){}
+  }
+
+  // ── Trigger after 1 min of engagement ───────────────────────────────────────
+  let engageTimer = null;
+  function startTimer() {
+    if (isSnoozed() || hasShown) return;
+    engageTimer = setTimeout(() => {
+      if (!isSnoozed() && !hasShown) wkFbOpen();
+    }, TRIGGER_MS);
+  }
+  function resetTimer() {
+    clearTimeout(engageTimer);
+    startTimer();
+  }
+
+  // Only start timer on user interaction (not just page load)
+  ['click','keydown','scroll','touchstart'].forEach(ev =>
+    document.addEventListener(ev, resetTimer, {once:true, passive:true})
+  );
+  // Also start on page load in case user is already reading
+  setTimeout(startTimer, 2000);
+
+  // ── Open / close ────────────────────────────────────────────────────────────
+  window.wkFbOpen = function() {
+    hasShown = true;
+    document.getElementById('wkFbModal').classList.add('show');
+    document.getElementById('wkFbOverlay').classList.add('show');
+    document.getElementById('wkFbTab').classList.remove('show');
+    // Pre-fill any saved star rating for this page
+    const saved = getSavedRating();
+    if (saved) wkFbSetStar(saved, true);
+  };
+
+  window.wkFbClose = function() {
+    document.getElementById('wkFbModal').classList.remove('show');
+    document.getElementById('wkFbOverlay').classList.remove('show');
+    // Show the floating tab
+    setTimeout(() => document.getElementById('wkFbTab').classList.add('show'), 400);
+  };
+
+  window.wkFbSnooze = function() {
+    setSnooze();
+    wkFbClose();
+  };
+
+  // Close on overlay click
+  document.getElementById('wkFbOverlay').addEventListener('click', wkFbSnooze);
+
+  // ── Stars ────────────────────────────────────────────────────────────────────
+  window.wkFbSetStar = function(val, silent) {
+    selectedStar = val;
+    document.querySelectorAll('.wkfb-star').forEach(s => {
+      s.classList.toggle('active', parseInt(s.dataset.v) <= val);
+    });
+    if (!silent) saveRating(val);
+  };
+
+  function saveRating(val) {
+    try { localStorage.setItem('wkfb_rating_'+pageUrl, val); } catch(e){}
+  }
+  function getSavedRating() {
+    try { return parseInt(localStorage.getItem('wkfb_rating_'+pageUrl))||0; } catch(e){ return 0; }
+  }
+
+  // ── Tags ─────────────────────────────────────────────────────────────────────
+  window.wkFbToggleTag = function(el) { el.classList.toggle('sel'); };
+
+  // ── Submit ────────────────────────────────────────────────────────────────────
+  window.wkFbSubmit = async function() {
+    const text = document.getElementById('wkfbText').value.trim();
+    const tags = [...document.querySelectorAll('.wkfb-tag.sel')].map(t=>t.textContent.trim()).join(', ');
+    const btn = document.getElementById('wkfbSubmit');
+
+    if (!selectedStar && !text && !tags) {
+      document.getElementById('wkfbText').placeholder = 'Please rate or leave a comment first…';
+      document.getElementById('wkfbText').focus();
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+
+    const payload = {
+      tool: toolName,
+      page: pageUrl,
+      stars: selectedStar || '—',
+      tags: tags || '—',
+      comment: text || '—',
+      timestamp: new Date().toISOString(),
+      userAgent: navigator.userAgent.substring(0,80)
+    };
+
+    try {
+      await fetch(SHEET_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify(payload)
+      });
+    } catch(e) {
+      // no-cors always throws but still sends — ignore
+    }
+
+    // Save rating locally regardless
+    if (selectedStar) saveRating(selectedStar);
+    // Mark as submitted so we don't ask again for a while
+    try { localStorage.setItem('wkfb_done_'+pageUrl, Date.now()); } catch(e){}
+
+    // Show success
+    document.getElementById('wkfb-form-body').style.display = 'none';
+    document.getElementById('wkfb-success').style.display = 'block';
+    setTimeout(wkFbClose, 2500);
+  };
+
+  // ── Show floating tab after 5s if already submitted ─────────────────────────
+  try {
+    const done = localStorage.getItem('wkfb_done_'+pageUrl);
+    if (done) {
+      setTimeout(() => document.getElementById('wkFbTab').classList.add('show'), 5000);
+      hasShown = true;
+    }
+  } catch(e){}
+
+})();
+</script>
+<!-- ═══ End Feedback Widget ═══ -->
+
+</body>
+</html>
