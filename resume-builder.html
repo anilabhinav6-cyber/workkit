@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Resume Builder – Modern Templates | MyWorkKits</title>
+<meta name="description" content="Build a stunning professional resume online for free. Modern templates, photo upload, live preview, instant PDF download. No sign-up required.">
+<meta name="keywords" content="free resume builder, resume maker online, CV builder, professional resume template, ATS resume, UAE resume, India resume, resume with photo">
+<link rel="canonical" href="https://myworkkits.com/resume-builder.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0a0e1a;--bg2:#0d1225;--bg3:#111827;
+  --card:rgba(255,255,255,.04);--card2:rgba(255,255,255,.07);
+  --border:rgba(255,255,255,.08);--border2:rgba(255,255,255,.13);
+  --accent:#4f8ef7;--accent2:#7c3aed;--accent-glow:rgba(79,142,247,.15);
+  --accent-border:rgba(79,142,247,.3);
+  --text:#e8eaf6;--text2:#8892a4;--text3:#5a6375;
+  --green:#10b981;--amber:#f59e0b;--red:#ef4444;
+  --r:12px;--rlg:16px;
+  --sh:0 4px 24px rgba(0,0,0,.35);--sh2:0 8px 40px rgba(0,0,0,.5);
+}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden}
+
+/* scrollbar */
+::-webkit-scrollbar{width:5px;height:5px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--border2);border-radius:4px}
+
+/* ── NAV ── */
+.nav{display:flex;align-items:center;justify-content:space-between;padding:13px 28px;
+  background:rgba(10,14,26,.92);backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);position:sticky;top:0;z-index:200}
+.nav-logo{display:flex;align-items:center;gap:9px;text-decoration:none}
+.logo-ic{width:32px;height:32px;background:linear-gradient(135deg,var(--accent),var(--accent2));
+  border-radius:9px;display:flex;align-items:center;justify-content:center;
+  color:#fff;font-weight:800;font-size:.88rem;box-shadow:0 2px 12px rgba(79,142,247,.3)}
+.logo-tx{font-size:.98rem;font-weight:700;color:var(--text)}
+.nav-r{display:flex;gap:8px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:5px;padding:8px 16px;border-radius:9px;
+  font-size:.81rem;font-weight:600;cursor:pointer;border:none;font-family:inherit;
+  transition:all .18s;text-decoration:none;white-space:nowrap}
+.btn-ghost{background:transparent;color:var(--text2);border:1px solid var(--border)}
+.btn-ghost:hover{background:var(--card2);color:var(--text);border-color:var(--accent-border)}
+.btn-accent{background:var(--accent);color:#fff;box-shadow:0 2px 12px rgba(79,142,247,.25)}
+.btn-accent:hover{background:#6b9ff7;box-shadow:0 4px 20px rgba(79,142,247,.4);transform:translateY(-1px)}
+.btn-green{background:var(--green);color:#fff}
+.btn-green:hover{background:#0ea572;transform:translateY(-1px)}
+
+/* ── VIEWS ── */
+.view{display:none}.view.active{display:block}
+#vb.active{display:grid;grid-template-columns:420px 1fr;height:calc(100vh - 57px)}
+
+/* ═══ LANDING ═══ */
+.hero{text-align:center;padding:72px 20px 52px;
+  background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(79,142,247,.1),transparent)}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;padding:5px 14px;
+  background:var(--accent-glow);border:1px solid var(--accent-border);
+  border-radius:20px;font-size:.73rem;font-weight:600;color:var(--accent);
+  margin-bottom:20px;letter-spacing:.3px}
+.hero h1{font-size:2.75rem;font-weight:800;letter-spacing:-.7px;line-height:1.12;
+  margin-bottom:14px;color:var(--text)}
+.hero h1 em{font-style:normal;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{color:var(--text2);font-size:.97rem;margin-bottom:38px;
+  max-width:500px;margin-left:auto;margin-right:auto;line-height:1.65}
+.hero-ctas{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.cta{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;
+  border-radius:13px;font-size:.93rem;font-weight:700;cursor:pointer;
+  border:none;font-family:inherit;transition:all .2s;letter-spacing:.1px}
+.cta-solid{background:var(--accent);color:#fff;box-shadow:0 4px 20px rgba(79,142,247,.3)}
+.cta-solid:hover{background:#6b9ff7;box-shadow:0 6px 28px rgba(79,142,247,.45);transform:translateY(-2px)}
+.cta-outline{background:var(--card);color:var(--text);border:1px solid var(--border2)}
+.cta-outline:hover{border-color:var(--accent-border);color:var(--accent);background:var(--accent-glow)}
+
+/* GALLERY */
+.gallery{max-width:1160px;margin:0 auto;padding:0 22px 80px}
+.gal-hd{font-size:1.6rem;font-weight:800;text-align:center;margin-bottom:6px;color:var(--text)}
+.gal-sub{text-align:center;color:var(--text2);font-size:.88rem;margin-bottom:26px}
+.cat-bar{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-bottom:30px}
+.cat-pill{padding:7px 17px;border-radius:30px;font-size:.79rem;font-weight:600;
+  cursor:pointer;border:1px solid var(--border);background:var(--card);
+  color:var(--text2);font-family:inherit;transition:all .15s}
+.cat-pill.on{background:var(--accent);color:#fff;border-color:var(--accent);
+  box-shadow:0 2px 12px rgba(79,142,247,.3)}
+.cat-pill:hover:not(.on){border-color:var(--accent-border);color:var(--accent);background:var(--accent-glow)}
+
+.tpl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:900px){.tpl-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:540px){.tpl-grid{grid-template-columns:1fr}}
+
+.tpl-card{background:var(--card);border:1px solid var(--border);border-radius:18px;
+  overflow:hidden;cursor:pointer;transition:all .22s;position:relative}
+.tpl-card:hover{border-color:var(--accent-border);box-shadow:0 8px 32px rgba(79,142,247,.14);
+  transform:translateY(-4px);background:var(--card2)}
+.tpl-card.sel{border-color:var(--accent);box-shadow:0 0 0 3px rgba(79,142,247,.15)}
+.tpl-badge{position:absolute;top:10px;left:10px;font-size:.66rem;font-weight:700;
+  padding:4px 10px;border-radius:20px;letter-spacing:.3px;z-index:2}
+.badge-rec{background:var(--text);color:var(--bg)}
+.badge-ats{background:var(--accent);color:#fff}
+.badge-new{background:var(--accent2);color:#fff}
+.tpl-thumb{height:272px;overflow:hidden;position:relative;background:#1a1f35}
+.tpl-thumb .doc-scale{transform:scale(.37);transform-origin:top center;
+  width:794px;position:absolute;left:50%;margin-left:-397px;pointer-events:none}
+.tpl-foot{padding:13px 16px;border-top:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between}
+.tpl-name{font-size:.85rem;font-weight:700;color:var(--text)}
+.tpl-cat{font-size:.69rem;color:var(--text3);background:rgba(255,255,255,.06);
+  padding:3px 8px;border-radius:6px;font-weight:500;margin-top:2px}
+.use-btn{font-size:.76rem;font-weight:600;color:var(--accent);
+  background:var(--accent-glow);border:1px solid var(--accent-border);
+  padding:6px 12px;border-radius:8px;cursor:pointer;transition:all .15s;font-family:inherit}
+.use-btn:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+/* ═══ BUILDER ═══ */
+.editor{background:var(--bg2);border-right:1px solid var(--border);
+  display:flex;flex-direction:column;overflow:hidden}
+.etabs{display:flex;border-bottom:1px solid var(--border);flex-shrink:0;
+  overflow-x:auto;scrollbar-width:none}
+.etabs::-webkit-scrollbar{display:none}
+.etab{flex:1;min-width:64px;padding:11px 4px;font-size:.67rem;font-weight:600;
+  background:transparent;color:var(--text3);border:none;cursor:pointer;
+  border-bottom:2px solid transparent;transition:all .15s;font-family:inherit;
+  text-transform:uppercase;letter-spacing:.5px;white-space:nowrap}
+.etab.on{color:var(--accent);border-bottom-color:var(--accent);background:var(--accent-glow)}
+.etab:hover:not(.on){color:var(--text2);background:var(--card)}
+.escroll{flex:1;overflow-y:auto;padding:18px 18px;scrollbar-width:thin;
+  scrollbar-color:var(--border) transparent}
+.epane{display:none;animation:fadeUp .2s ease}.epane.on{display:block}
+@keyframes fadeUp{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+
+label{display:block;font-size:.72rem;font-weight:600;color:var(--text2);margin-bottom:4px;letter-spacing:.1px}
+.fg{margin-bottom:12px}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+input,textarea,select{width:100%;padding:8px 11px;border-radius:9px;
+  background:rgba(255,255,255,.05);border:1px solid var(--border);
+  color:var(--text);font-size:.82rem;font-family:inherit;transition:all .18s;outline:none}
+input:focus,textarea:focus{border-color:var(--accent-border);
+  background:rgba(79,142,247,.06);box-shadow:0 0 0 3px rgba(79,142,247,.08)}
+input::placeholder,textarea::placeholder{color:var(--text3)}
+textarea{resize:vertical;min-height:76px;line-height:1.5}
+select option{background:#1a2035}
+
+/* photo */
+.photo-zone{border:2px dashed var(--border2);border-radius:13px;padding:22px;
+  text-align:center;cursor:pointer;transition:all .2s;margin-bottom:13px;position:relative}
+.photo-zone:hover,.photo-zone.has{border-color:var(--accent);background:var(--accent-glow)}
+.photo-zone input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+.ph-prev{width:74px;height:74px;border-radius:50%;object-fit:cover;
+  border:3px solid var(--accent);margin:0 auto 8px}
+.ph-lbl{font-size:.79rem;color:var(--text2);font-weight:500;line-height:1.5}
+.ph-lbl strong{color:var(--accent)}
+.rm-ph{font-size:.7rem;color:var(--text3);cursor:pointer;text-decoration:underline;
+  display:block;margin-top:5px}
+.rm-ph:hover{color:var(--red)}
+
+.sec-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:13px}
+.sec-tt{font-size:.9rem;font-weight:700;color:var(--text)}
+.add-btn{display:inline-flex;align-items:center;gap:4px;padding:6px 12px;
+  background:var(--accent-glow);color:var(--accent);border:1px solid var(--accent-border);
+  border-radius:8px;font-size:.75rem;font-weight:600;cursor:pointer;
+  transition:all .15s;font-family:inherit}
+.add-btn:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+.rep{background:var(--card);border:1px solid var(--border);border-radius:11px;
+  padding:12px;margin-bottom:10px}
+.rep-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:9px}
+.rep-lb{font-size:.74rem;font-weight:600;color:var(--text3)}
+.del{background:transparent;border:none;color:var(--text3);cursor:pointer;
+  padding:3px 6px;border-radius:6px;transition:all .14s;font-size:.82rem}
+.del:hover{color:var(--red);background:rgba(239,68,68,.1)}
+.sk-wrap{display:flex;flex-wrap:wrap;gap:5px;margin:7px 0}
+.sk-tag{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;
+  background:var(--accent-glow);border:1px solid var(--accent-border);
+  border-radius:20px;font-size:.74rem;color:var(--accent);font-weight:500}
+.sk-x{cursor:pointer;font-size:.67rem;opacity:.7}.sk-x:hover{opacity:1}
+.sk-row{display:flex;gap:8px;margin-bottom:7px}.sk-row input{flex:1}
+.q-sk-wrap{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+.q-sk{padding:4px 10px;background:var(--card);border:1px solid var(--border);
+  border-radius:16px;font-size:.72rem;color:var(--text2);font-weight:500;
+  cursor:pointer;transition:all .14s}
+.q-sk:hover{border-color:var(--accent-border);color:var(--accent);background:var(--accent-glow)}
+.c-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.c-dot{width:27px;height:27px;border-radius:50%;cursor:pointer;border:3px solid transparent;transition:all .18s}
+.c-dot:hover,.c-dot.on{border-color:var(--text);transform:scale(1.2)}
+.tpl-mg{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-bottom:14px}
+.tpl-mi{border:1px solid var(--border);border-radius:9px;padding:8px 5px;
+  cursor:pointer;text-align:center;transition:all .15s;background:var(--card)}
+.tpl-mi.on{border-color:var(--accent);background:var(--accent-glow)}
+.tpl-mi-ic{font-size:1.15rem;margin-bottom:2px}
+.tpl-mi-nm{font-size:.69rem;font-weight:600;color:var(--text3)}.tpl-mi.on .tpl-mi-nm{color:var(--accent)}
+.tip-box{background:var(--accent-glow);border:1px solid var(--accent-border);
+  border-radius:9px;padding:10px 12px;margin-bottom:13px;font-size:.76rem;
+  color:var(--text2);line-height:1.5}
+
+/* ATS widget */
+.ats-w{background:var(--bg);border-top:1px solid var(--border);padding:12px 18px;flex-shrink:0}
+.ats-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+.ats-lb{font-size:.7rem;font-weight:700;color:var(--text2);display:flex;align-items:center;gap:5px}
+.ats-bd{font-size:.78rem;font-weight:800;padding:3px 9px;border-radius:7px;transition:all .3s}
+.ats-tr{height:6px;background:rgba(255,255,255,.06);border-radius:6px;overflow:hidden}
+.ats-fi{height:100%;border-radius:6px;transition:width .5s ease,background .3s}
+.ats-gr{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:7px}
+.ats-it{display:flex;align-items:center;gap:5px;font-size:.68rem;color:var(--text3)}
+.ats-dt{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+
+/* PREVIEW panel */
+.prev-panel{background:#1c2033;display:flex;flex-direction:column;overflow:hidden}
+.prev-bar{display:flex;align-items:center;justify-content:space-between;
+  padding:9px 16px;background:var(--bg2);border-bottom:1px solid var(--border);flex-shrink:0}
+.prev-lb{font-size:.7rem;font-weight:600;color:var(--text3);letter-spacing:.5px;text-transform:uppercase}
+.zoom-r{display:flex;align-items:center;gap:7px}
+.z-btn{width:26px;height:26px;border-radius:7px;border:1px solid var(--border);
+  background:var(--card);cursor:pointer;font-size:.85rem;display:flex;
+  align-items:center;justify-content:center;color:var(--text2);transition:all .14s}
+.z-btn:hover{border-color:var(--accent-border);color:var(--accent)}
+.z-vl{font-size:.74rem;color:var(--text3);min-width:34px;text-align:center;font-weight:500}
+.prev-scroll{flex:1;overflow:auto;display:flex;align-items:flex-start;
+  justify-content:center;padding:26px 16px}
+
+/* ═══ RESUME DOCUMENT STYLES ═══ */
+#resume-doc{width:794px;background:#fff;color:#111;
+  box-shadow:0 12px 48px rgba(0,0,0,.5);transform-origin:top center;
+  transition:transform .2s;overflow:hidden;min-height:1100px}
+
+/* ── NOVA: gradient header, 2-col ── */
+.t-nova{font-family:'DM Sans','Inter',sans-serif}
+.t-nova .rh{position:relative;overflow:hidden}
+.t-nova .rh-bg{padding:32px 38px 26px}
+.t-nova .rh-bg::before{content:'';position:absolute;top:-60px;right:-60px;
+  width:240px;height:240px;background:rgba(255,255,255,.07);border-radius:50%}
+.t-nova .rh-bg::after{content:'';position:absolute;bottom:-40px;left:80px;
+  width:160px;height:160px;background:rgba(255,255,255,.04);border-radius:50%}
+.t-nova .rh-inner{display:flex;align-items:center;gap:22px;position:relative;z-index:1}
+.t-nova .rh-photo{width:78px;height:78px;object-fit:cover;border:3px solid rgba(255,255,255,.45);flex-shrink:0}
+.t-nova .rh-ph-ph{width:78px;height:78px;background:rgba(255,255,255,.12);
+  border:2px dashed rgba(255,255,255,.25);flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;font-size:1.6rem}
+.t-nova .rn{font-size:1.95rem;font-weight:700;color:#fff;letter-spacing:-.3px;margin-bottom:2px}
+.t-nova .rt{font-size:.9rem;color:rgba(255,255,255,.8);font-weight:400;margin-bottom:10px}
+.t-nova .rc{display:flex;flex-wrap:wrap;gap:12px;font-size:.73rem;color:rgba(255,255,255,.85)}
+.t-nova .rc span{display:flex;align-items:center;gap:3px}
+.t-nova .rb{display:grid;grid-template-columns:1fr 238px}
+.t-nova .rb-m{padding:26px 30px}
+.t-nova .rb-s{padding:26px 20px;background:#f7f9ff;border-left:1px solid #e8eef8}
+.t-nova .sh{font-size:.67rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+  padding-bottom:5px;border-bottom:2px solid;margin-bottom:11px}
+.t-nova .sb{margin-bottom:20px}
+.t-nova .ei{margin-bottom:13px}
+.t-nova .erole{font-size:.9rem;font-weight:700}
+.t-nova .eco{font-size:.8rem;font-weight:600;color:#374151}
+.t-nova .edt{font-size:.71rem;color:#9ca3af;margin-bottom:4px}
+.t-nova .edesc{font-size:.78rem;color:#4b5563;line-height:1.55}
+.t-nova .edesc ul{padding-left:14px}.t-nova .edesc li{margin-bottom:2px}
+.t-nova .ssh{font-size:.65rem;font-weight:700;letter-spacing:1.3px;text-transform:uppercase;color:#9ca3af;padding-bottom:4px;border-bottom:1px solid #e5e7eb;margin-bottom:8px}
+.t-nova .ssb{margin-bottom:16px}
+.t-nova .sk-pill{display:inline-block;padding:3px 8px;border-radius:10px;font-size:.72rem;font-weight:500;margin:2px}
+.t-nova .edu-i{margin-bottom:9px}
+.t-nova .edu-deg{font-size:.82rem;font-weight:600}
+.t-nova .edu-sch{font-size:.76rem;color:#4b5563}
+.t-nova .edu-yr{font-size:.7rem;color:#9ca3af}
+
+/* ── SLATE: dark left sidebar ── */
+.t-slate{font-family:'Inter',sans-serif}
+.t-slate .rh{display:grid;grid-template-columns:230px 1fr;min-height:1100px}
+.t-slate .rh-side{padding:30px 22px;display:flex;flex-direction:column}
+.t-slate .rh-photo{width:86px;height:86px;object-fit:cover;border:3px solid rgba(255,255,255,.2);margin:0 auto 12px}
+.t-slate .rh-ph-ph{width:86px;height:86px;background:rgba(255,255,255,.07);border:2px dashed rgba(255,255,255,.2);margin:0 auto 12px;display:flex;align-items:center;justify-content:center;font-size:1.7rem}
+.t-slate .rn{font-size:1.25rem;font-weight:700;color:#fff;text-align:center;line-height:1.25;margin-bottom:3px}
+.t-slate .rt{font-size:.75rem;text-align:center;font-weight:400;margin-bottom:16px;opacity:.7}
+.t-slate .sdiv{height:1px;background:rgba(255,255,255,.1);margin:0 0 14px}
+.t-slate .ssh{font-size:.62rem;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:8px}
+.t-slate .ssb{margin-bottom:16px}
+.t-slate .rc-item{display:flex;align-items:flex-start;gap:6px;font-size:.73rem;color:rgba(255,255,255,.75);margin-bottom:6px;line-height:1.35}
+.t-slate .sk-item{font-size:.74rem;color:rgba(255,255,255,.8);padding:4px 0;border-bottom:1px solid rgba(255,255,255,.07)}
+.t-slate .rh-main{padding:30px 28px;background:#fff}
+.t-slate .sh{font-size:.7rem;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;padding-bottom:5px;margin-bottom:12px;border-bottom:2px solid}
+.t-slate .sb{margin-bottom:20px}
+.t-slate .ei{margin-bottom:13px}
+.t-slate .erole{font-size:.9rem;font-weight:700}
+.t-slate .eco{font-size:.8rem;font-weight:600;color:#374151}
+.t-slate .edt{font-size:.71rem;color:#9ca3af;margin-bottom:3px}
+.t-slate .edesc{font-size:.78rem;color:#4b5563;line-height:1.55}
+.t-slate .edesc ul{padding-left:14px}.t-slate .edesc li{margin-bottom:2px}
+.t-slate .edu-i{margin-bottom:9px}
+.t-slate .edu-deg{font-size:.83rem;font-weight:600}
+.t-slate .edu-sch{font-size:.77rem;color:#4b5563}
+.t-slate .edu-yr{font-size:.7rem;color:#9ca3af}
+
+/* ── FRESH: top color bar, photo, timeline exp ── */
+.t-fresh{font-family:'DM Sans','Inter',sans-serif}
+.t-fresh .rh-bar{height:7px}
+.t-fresh .rh-top{padding:26px 40px 18px;display:flex;align-items:center;gap:20px}
+.t-fresh .rh-photo{width:78px;height:78px;object-fit:cover;border-radius:14px;border:2px solid;flex-shrink:0}
+.t-fresh .rh-ph-ph{width:78px;height:78px;border-radius:14px;background:#f3f4f6;border:2px dashed #d1d5db;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:1.7rem}
+.t-fresh .rn{font-size:1.9rem;font-weight:800;letter-spacing:-.4px;margin-bottom:2px}
+.t-fresh .rt{font-size:.87rem;font-weight:500;margin-bottom:8px}
+.t-fresh .rc{display:flex;flex-wrap:wrap;gap:13px;font-size:.72rem;color:#6b7280}
+.t-fresh .rc span{display:flex;align-items:center;gap:3px}
+.t-fresh .rb{padding:18px 40px 36px}
+.t-fresh .sh{font-size:.7rem;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.t-fresh .sh::after{content:'';flex:1;height:1.5px;background:#f0f0f0}
+.t-fresh .sb{margin-bottom:22px}
+.t-fresh .ei{margin-bottom:13px;display:flex;gap:16px}
+.t-fresh .ei-dt{min-width:88px;text-align:right;padding-top:1px}
+.t-fresh .edt{font-size:.7rem;color:#aaa;line-height:1.4}
+.t-fresh .erole{font-size:.88rem;font-weight:700}
+.t-fresh .eco{font-size:.8rem;font-weight:600;margin-bottom:3px}
+.t-fresh .edesc{font-size:.77rem;color:#4b5563;line-height:1.55}
+.t-fresh .edesc ul{padding-left:14px}.t-fresh .edesc li{margin-bottom:2px}
+.t-fresh .sk-pill{padding:4px 11px;border-radius:6px;font-size:.75rem;font-weight:600;margin:2px;display:inline-block}
+.t-fresh .edu-i{margin-bottom:9px}
+.t-fresh .edu-deg{font-size:.84rem;font-weight:600}
+.t-fresh .edu-sch{font-size:.77rem;color:#4b5563}
+.t-fresh .edu-yr{font-size:.7rem;color:#aaa}
+
+/* ── MONO: minimal typographic ── */
+.t-mono{font-family:'Inter',sans-serif}
+.t-mono .rh{padding:42px 46px 24px;border-bottom:2px solid #111}
+.t-mono .rh-top{display:flex;align-items:flex-end;justify-content:space-between;gap:16px}
+.t-mono .rh-left{display:flex;align-items:flex-end;gap:18px}
+.t-mono .rh-photo{width:68px;height:68px;border-radius:4px;object-fit:cover}
+.t-mono .rh-ph-ph{width:68px;height:68px;border-radius:4px;background:#f3f4f6;border:1.5px solid #e5e7eb;display:flex;align-items:center;justify-content:center;font-size:1.5rem}
+.t-mono .rh-name-area{}
+.t-mono .rn{font-size:2.1rem;font-weight:800;letter-spacing:-1px;color:#111;line-height:1;margin-bottom:4px}
+.t-mono .rt{font-size:.85rem;color:#6b7280;font-weight:400}
+.t-mono .rc{display:flex;flex-direction:column;gap:3px;text-align:right;font-size:.71rem;color:#9ca3af}
+.t-mono .rb{padding:26px 46px 38px;display:grid;grid-template-columns:1fr 1fr;gap:0 36px}
+.t-mono .rb-full{grid-column:1/-1}
+.t-mono .sh{font-size:.63rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#bbb;margin-bottom:9px;margin-top:4px}
+.t-mono .sb{margin-bottom:20px}
+.t-mono .ei{margin-bottom:12px;display:flex;gap:13px}
+.t-mono .edt-c{min-width:76px;font-size:.7rem;color:#bbb;padding-top:1px;line-height:1.4}
+.t-mono .erole{font-size:.86rem;font-weight:700}
+.t-mono .eco{font-size:.78rem;margin-bottom:2px}
+.t-mono .edesc{font-size:.77rem;color:#555;line-height:1.55}
+.t-mono .edesc ul{padding-left:13px}.t-mono .edesc li{margin-bottom:2px}
+.t-mono .sk-item{font-size:.76rem;color:#333}
+.t-mono .sk-item:not(:last-child)::after{content:" /";margin:0 5px;color:#ccc}
+.t-mono .edu-i{display:flex;gap:13px;margin-bottom:8px}
+.t-mono .edu-yr{min-width:76px;font-size:.7rem;color:#bbb;padding-top:1px}
+.t-mono .edu-deg{font-size:.83rem;font-weight:600}
+.t-mono .edu-sch{font-size:.76rem;color:#555}
+
+/* ── SPARK: vibrant right sidebar ── */
+.t-spark{font-family:'DM Sans','Inter',sans-serif}
+.t-spark .rh{display:grid;grid-template-columns:1fr 210px;min-height:1100px}
+.t-spark .rh-m{padding:30px 28px;background:#fff}
+.t-spark .rh-photo{width:76px;height:76px;object-fit:cover;border-radius:12px;border:2px solid;margin-bottom:12px}
+.t-spark .rh-ph-ph{width:76px;height:76px;border-radius:12px;background:#f3f4f6;border:2px dashed #d1d5db;margin-bottom:12px;display:flex;align-items:center;justify-content:center;font-size:1.6rem}
+.t-spark .rn{font-size:1.75rem;font-weight:800;letter-spacing:-.4px;margin-bottom:2px}
+.t-spark .rt{font-size:.84rem;font-weight:500;margin-bottom:8px;color:#6b7280}
+.t-spark .rc{display:flex;flex-wrap:wrap;gap:9px;font-size:.71rem;color:#6b7280;margin-bottom:16px}
+.t-spark .rc span{display:flex;align-items:center;gap:3px}
+.t-spark .sh{font-size:.67rem;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;padding-bottom:4px;border-bottom:2px solid;margin-bottom:11px}
+.t-spark .sb{margin-bottom:18px}
+.t-spark .ei{margin-bottom:12px}
+.t-spark .erole{font-size:.88rem;font-weight:700}
+.t-spark .eco{font-size:.79rem;font-weight:600;color:#374151}
+.t-spark .edt{font-size:.7rem;color:#9ca3af;margin-bottom:3px}
+.t-spark .edesc{font-size:.77rem;color:#4b5563;line-height:1.55}
+.t-spark .edesc ul{padding-left:13px}.t-spark .edesc li{margin-bottom:2px}
+.t-spark .rh-s{padding:30px 20px}
+.t-spark .ssh{font-size:.62rem;font-weight:700;letter-spacing:1.3px;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:8px}
+.t-spark .ssb{margin-bottom:18px}
+.t-spark .sk-pill{display:inline-block;padding:3px 9px;border-radius:4px;font-size:.72rem;font-weight:600;margin:2px;background:rgba(255,255,255,.15);color:#fff}
+.t-spark .edu-deg{font-size:.8rem;font-weight:600;color:#fff}
+.t-spark .edu-sch{font-size:.74px;color:rgba(255,255,255,.7)}
+.t-spark .edu-yr{font-size:.69rem;color:rgba(255,255,255,.5)}
+.t-spark .edu-i{margin-bottom:9px}
+
+.r-empty{font-size:.76rem;color:#ccc;font-style:italic}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-logo">
+    <div class="logo-ic">W</div><span class="logo-tx">MyWorkKits</span>
+  </a>
+  <div class="nav-r">
+    <a href="ats-checker.html" class="btn btn-ghost">🎯 ATS Checker</a>
+    <button class="btn btn-ghost" id="btn-save" onclick="saveDraft()" style="display:none">💾 Save</button>
+    <button class="btn btn-green" id="btn-dl" onclick="downloadPDF()" style="display:none">⬇ Download PDF</button>
+    <button class="btn btn-accent" id="btn-start" onclick="goBuilder()">✏ Build Resume</button>
+  </div>
+</nav>
+
+<!-- LANDING -->
+<div class="view active" id="vl">
+  <div class="hero">
+    <div class="hero-badge">✨ Free Resume Builder</div>
+    <h1>Create a resume that<br><em>gets you hired</em></h1>
+    <p>Modern, ATS-friendly templates with photo support. Trusted by job seekers across UAE, India & beyond.</p>
+    <div class="hero-ctas">
+      <button class="cta cta-outline" onclick="goBuilder()">✏ Start from scratch</button>
+      <button class="cta cta-solid" onclick="scrollGal()">🎨 Browse templates</button>
+    </div>
+  </div>
+  <div class="gallery" id="gal">
+    <h2 class="gal-hd">Select a template</h2>
+    <p class="gal-sub">You can always switch templates later inside the builder.</p>
+    <div class="cat-bar">
+      <button class="cat-pill on" onclick="fTpl('all',this)">All templates</button>
+      <button class="cat-pill" onclick="fTpl('modern',this)">Modern</button>
+      <button class="cat-pill" onclick="fTpl('minimal',this)">Minimal</button>
+      <button class="cat-pill" onclick="fTpl('twocol',this)">Two columns</button>
+      <button class="cat-pill" onclick="fTpl('ats',this)">ATS-friendly</button>
+    </div>
+    <div class="tpl-grid" id="tpl-grid"></div>
+  </div>
+</div>
+
+<!-- BUILDER -->
+<div class="view" id="vb">
+  <div class="editor">
+    <div class="etabs">
+      <button class="etab on" onclick="etab('basics')" id="et-basics">👤 Basics</button>
+      <button class="etab" onclick="etab('photo')" id="et-photo">📷 Photo</button>
+      <button class="etab" onclick="etab('work')" id="et-work">💼 Work</button>
+      <button class="etab" onclick="etab('edu')" id="et-edu">🎓 Edu</button>
+      <button class="etab" onclick="etab('skills')" id="et-skills">⚡ Skills</button>
+      <button class="etab" onclick="etab('design')" id="et-design">🎨 Design</button>
+    </div>
+    <div class="escroll">
+      <div class="epane on" id="ep-basics">
+        <div class="tip-box">💡 Preview updates live as you type.</div>
+        <div class="fg"><label>Full Name</label><input id="f-name" placeholder="e.g. Sarah Al-Farsi" oninput="go()"></div>
+        <div class="fg"><label>Job Title</label><input id="f-title" placeholder="e.g. Senior Product Manager" oninput="go()"></div>
+        <div class="fr">
+          <div class="fg"><label>Email</label><input id="f-email" placeholder="you@email.com" oninput="go()"></div>
+          <div class="fg"><label>Phone</label><input id="f-phone" placeholder="+971 50 000 0000" oninput="go()"></div>
+        </div>
+        <div class="fr">
+          <div class="fg"><label>Location</label><input id="f-loc" placeholder="Dubai, UAE" oninput="go()"></div>
+          <div class="fg"><label>LinkedIn</label><input id="f-li" placeholder="linkedin.com/in/you" oninput="go()"></div>
+        </div>
+        <div class="fg"><label>Website (optional)</label><input id="f-web" placeholder="yoursite.com" oninput="go()"></div>
+        <div class="fg"><label>Professional Summary</label><textarea id="f-sum" rows="5" placeholder="3-4 sentences about your background, strengths, and goals. Tailor it to your target role." oninput="go()"></textarea></div>
+      </div>
+      <div class="epane" id="ep-photo">
+        <div class="tip-box">📷 Professional headshot recommended. Square images work best.</div>
+        <div class="photo-zone" id="pz" onclick="document.getElementById('pf').click()">
+          <img id="pp" class="ph-prev" style="display:none" src="" alt="Photo">
+          <div id="ph-holder">
+            <div style="font-size:2.2rem;margin-bottom:8px">📷</div>
+            <div class="ph-lbl"><strong>Click to upload photo</strong><br>JPG or PNG, max 5MB</div>
+          </div>
+          <div id="ph-rm" style="display:none"><span class="rm-ph" onclick="rmPhoto(event)">✕ Remove photo</span></div>
+          <input type="file" id="pf" accept="image/*" onchange="handlePhoto(event)" style="display:none">
+        </div>
+        <div class="fg"><label>Photo Shape</label>
+          <select id="ph-shape" onchange="go()">
+            <option value="circle">Circle</option>
+            <option value="rounded">Rounded square</option>
+            <option value="square">Square</option>
+          </select>
+        </div>
+        <div style="font-size:.75rem;color:var(--text3);line-height:1.6;padding:10px 12px;background:var(--card);border:1px solid var(--border);border-radius:9px">
+          💡 <strong style="color:var(--text2)">UAE/GCC tip:</strong> Including a photo is standard and expected on resumes in UAE, Saudi Arabia, and most GCC markets. Use a clean background and professional attire.
+        </div>
+      </div>
+      <div class="epane" id="ep-work">
+        <div class="sec-hd"><span class="sec-tt">Work Experience</span><button class="add-btn" onclick="addExp()">+ Add Role</button></div>
+        <div id="exp-list"></div>
+      </div>
+      <div class="epane" id="ep-edu">
+        <div class="sec-hd"><span class="sec-tt">Education</span><button class="add-btn" onclick="addEdu()">+ Add</button></div>
+        <div id="edu-list"></div>
+      </div>
+      <div class="epane" id="ep-skills">
+        <div class="sec-hd"><span class="sec-tt">Skills</span></div>
+        <div class="sk-row"><input id="sk-i" placeholder="Type skill, press Enter" onkeydown="if(event.key==='Enter')addSk()"><button class="add-btn" onclick="addSk()">+ Add</button></div>
+        <div class="sk-wrap" id="sk-d"></div>
+        <p style="font-size:.71rem;color:var(--text3);font-weight:600;margin:10px 0 6px">Quick-add:</p>
+        <div class="q-sk-wrap">
+          <span class="q-sk" onclick="addSkQ('Microsoft Office')">MS Office</span>
+          <span class="q-sk" onclick="addSkQ('Project Management')">Project Mgmt</span>
+          <span class="q-sk" onclick="addSkQ('Data Analysis')">Data Analysis</span>
+          <span class="q-sk" onclick="addSkQ('Agile / Scrum')">Agile/Scrum</span>
+          <span class="q-sk" onclick="addSkQ('SQL')">SQL</span>
+          <span class="q-sk" onclick="addSkQ('Python')">Python</span>
+          <span class="q-sk" onclick="addSkQ('Leadership')">Leadership</span>
+          <span class="q-sk" onclick="addSkQ('Excel')">Excel</span>
+          <span class="q-sk" onclick="addSkQ('Salesforce')">Salesforce</span>
+          <span class="q-sk" onclick="addSkQ('Power BI')">Power BI</span>
+          <span class="q-sk" onclick="addSkQ('Figma')">Figma</span>
+          <span class="q-sk" onclick="addSkQ('Communication')">Communication</span>
+        </div>
+      </div>
+      <div class="epane" id="ep-design">
+        <div class="sec-hd"><span class="sec-tt">Template</span></div>
+        <div class="tpl-mg" id="tpl-mg"></div>
+        <div class="sec-hd" style="margin-top:2px"><span class="sec-tt">Accent Color</span></div>
+        <div class="c-row">
+          <div class="c-dot on" style="background:#1e3a8a" onclick="setCol('#1e3a8a',this)"></div>
+          <div class="c-dot" style="background:#7c3aed" onclick="setCol('#7c3aed',this)"></div>
+          <div class="c-dot" style="background:#059669" onclick="setCol('#059669',this)"></div>
+          <div class="c-dot" style="background:#dc2626" onclick="setCol('#dc2626',this)"></div>
+          <div class="c-dot" style="background:#0891b2" onclick="setCol('#0891b2',this)"></div>
+          <div class="c-dot" style="background:#d97706" onclick="setCol('#d97706',this)"></div>
+          <div class="c-dot" style="background:#111827" onclick="setCol('#111827',this)"></div>
+          <div class="c-dot" style="background:#be185d" onclick="setCol('#be185d',this)"></div>
+        </div>
+      </div>
+    </div>
+    <div class="ats-w">
+      <div class="ats-top"><span class="ats-lb">🎯 Resume Strength</span><span class="ats-bd" id="ab">0%</span></div>
+      <div class="ats-tr"><div class="ats-fi" id="af" style="width:0%;background:var(--border2)"></div></div>
+      <div class="ats-gr" id="ag"></div>
+    </div>
+  </div>
+  <div class="prev-panel">
+    <div class="prev-bar">
+      <span class="prev-lb">📄 Live Preview</span>
+      <div class="zoom-r">
+        <button class="z-btn" onclick="zoom(-8)">−</button>
+        <span class="z-vl" id="zv">70%</span>
+        <button class="z-btn" onclick="zoom(+8)">+</button>
+      </div>
+    </div>
+    <div class="prev-scroll"><div id="resume-doc" class="t-nova"></div></div>
+  </div>
+</div>
+
+<script>
+const TPLS=[
+  {id:'nova',name:'Nova',ic:'✦',tag:'Modern',cats:['all','modern','twocol'],bdg:'badge-rec',btxt:'RECOMMENDED'},
+  {id:'slate',name:'Slate',ic:'◼',tag:'Two columns',cats:['all','twocol','modern'],bdg:'badge-new',btxt:'NEW'},
+  {id:'fresh',name:'Fresh',ic:'▲',tag:'Modern',cats:['all','modern'],bdg:'badge-rec',btxt:'RECOMMENDED'},
+  {id:'mono',name:'Mono',ic:'—',tag:'Minimal',cats:['all','minimal','ats'],bdg:'',btxt:''},
+  {id:'spark',name:'Spark',ic:'✸',tag:'Two columns',cats:['all','twocol','modern'],bdg:'badge-new',btxt:'NEW'},
+];
+let S={tpl:'nova',col:'#1e3a8a',photo:null,exp:[],edu:[],skills:[]};
+let expId=0,eduId=0,zl=70;
+
+function goBuilder(){showV('vb')}
+function scrollGal(){document.getElementById('gal').scrollIntoView({behavior:'smooth'})}
+function showV(v){
+  document.querySelectorAll('.view').forEach(e=>e.classList.remove('active'));
+  document.getElementById(v).classList.add('active');
+  if(v==='vb'){document.getElementById('btn-start').style.display='none';document.getElementById('btn-save').style.display='';document.getElementById('btn-dl').style.display='';buildMG();go()}
+}
+function etab(n){
+  document.querySelectorAll('.epane').forEach(p=>p.classList.remove('on'));
+  document.querySelectorAll('.etab').forEach(b=>b.classList.remove('on'));
+  document.getElementById('ep-'+n).classList.add('on');
+  document.getElementById('et-'+n).classList.add('on');
+}
+function zoom(d){zl=Math.max(40,Math.min(120,zl+d));document.getElementById('zv').textContent=zl+'%';document.getElementById('resume-doc').style.transform='scale('+zl/100+')';}
+
+function handlePhoto(e){
+  const f=e.target.files[0];if(!f)return;
+  const r=new FileReader();
+  r.onload=ev=>{
+    S.photo=ev.target.result;
+    const pp=document.getElementById('pp');
+    pp.src=S.photo;pp.style.display='block';
+    document.getElementById('ph-holder').style.display='none';
+    document.getElementById('ph-rm').style.display='block';
+    document.getElementById('pz').classList.add('has');
+    go();
+  };r.readAsDataURL(f);
+}
+function rmPhoto(e){
+  e.stopPropagation();S.photo=null;
+  document.getElementById('pp').style.display='none';
+  document.getElementById('ph-holder').style.display='block';
+  document.getElementById('ph-rm').style.display='none';
+  document.getElementById('pz').classList.remove('has');
+  document.getElementById('pf').value='';go();
+}
+function phShape(){const v=document.getElementById('ph-shape').value;return v==='circle'?'50%':v==='rounded'?'14px':'4px'}
+function phEl(cls){
+  const sh=phShape();
+  if(S.photo)return`<img src="${S.photo}" class="${cls}" style="border-radius:${sh}" alt="Photo">`;
+  return`<div class="${cls}-ph-ph" style="border-radius:${sh}">👤</div>`;
+}
+
+function setCol(c,el){S.col=c;document.querySelectorAll('.c-dot').forEach(d=>d.classList.remove('on'));el.classList.add('on');go()}
+function setTpl(id){S.tpl=id;buildMG();go()}
+function buildMG(){
+  document.getElementById('tpl-mg').innerHTML=TPLS.map(t=>`
+    <div class="tpl-mi ${S.tpl===t.id?'on':''}" onclick="setTpl('${t.id}')">
+      <div class="tpl-mi-ic">${t.ic}</div>
+      <div class="tpl-mi-nm">${t.name}</div>
+    </div>`).join('');
+}
+
+function esc(s){return(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+function g(id){return document.getElementById(id)?.value||''}
+function dH(d){
+  if(!d)return'';
+  const lines=d.split('\n').filter(l=>l.trim());
+  if(lines.some(l=>/^[•\-]/.test(l.trim())))
+    return'<ul>'+lines.map(l=>{const c=l.trim().replace(/^[•\-]\s*/,'');return c?`<li>${esc(c)}</li>`:''}).join('')+'</ul>';
+  return`<p>${esc(lines.join(' '))}</p>`;
+}
+function ct(b){return[b.email&&`<span>✉ ${esc(b.email)}</span>`,b.phone&&`<span>📞 ${esc(b.phone)}</span>`,b.loc&&`<span>📍 ${esc(b.loc)}</span>`,b.li&&`<span>🔗 ${esc(b.li)}</span>`,b.web&&`<span>🌐 ${esc(b.web)}</span>`].filter(Boolean).join('')}
+
+function addExp(){const id=++expId;S.exp.push({id,role:'',co:'',s:'',e:'',desc:''});renderExp()}
+function delExp(id){S.exp=S.exp.filter(x=>x.id!==id);renderExp();go()}
+function uExp(id,f,v){const x=S.exp.find(e=>e.id===id);if(x){x[f]=v;go()}}
+function renderExp(){
+  const c=document.getElementById('exp-list');
+  c.innerHTML=!S.exp.length?'<p style="font-size:.79rem;color:var(--text3);text-align:center;padding:16px 0">No experience yet — click "+ Add Role"</p>':
+  S.exp.map((e,i)=>`<div class="rep">
+    <div class="rep-hd"><span class="rep-lb">Experience #${i+1}</span><button class="del" onclick="delExp(${e.id})">✕</button></div>
+    <div class="fr"><div class="fg"><label>Job Title</label><input value="${esc(e.role)}" placeholder="Product Manager" oninput="uExp(${e.id},'role',this.value)"></div>
+    <div class="fg"><label>Company</label><input value="${esc(e.co)}" placeholder="Company Name" oninput="uExp(${e.id},'co',this.value)"></div></div>
+    <div class="fr"><div class="fg"><label>Start</label><input value="${esc(e.s)}" placeholder="Jan 2022" oninput="uExp(${e.id},'s',this.value)"></div>
+    <div class="fg"><label>End</label><input value="${esc(e.e)}" placeholder="Present" oninput="uExp(${e.id},'e',this.value)"></div></div>
+    <div class="fg"><label>Description (use • for bullets)</label><textarea placeholder="• Increased revenue by 30%&#10;• Led team of 8&#10;• Delivered $2M project" oninput="uExp(${e.id},'desc',this.value)">${esc(e.desc)}</textarea></div>
+  </div>`).join('');
+}
+
+function addEdu(){const id=++eduId;S.edu.push({id,deg:'',sch:'',yr:'',gr:''});renderEdu()}
+function delEdu(id){S.edu=S.edu.filter(x=>x.id!==id);renderEdu();go()}
+function uEdu(id,f,v){const x=S.edu.find(e=>e.id===id);if(x){x[f]=v;go()}}
+function renderEdu(){
+  const c=document.getElementById('edu-list');
+  c.innerHTML=!S.edu.length?'<p style="font-size:.79rem;color:var(--text3);text-align:center;padding:16px 0">No education yet — click "+ Add"</p>':
+  S.edu.map((e,i)=>`<div class="rep">
+    <div class="rep-hd"><span class="rep-lb">Education #${i+1}</span><button class="del" onclick="delEdu(${e.id})">✕</button></div>
+    <div class="fr"><div class="fg"><label>Degree</label><input value="${esc(e.deg)}" placeholder="B.Sc. Computer Science" oninput="uEdu(${e.id},'deg',this.value)"></div>
+    <div class="fg"><label>Institution</label><input value="${esc(e.sch)}" placeholder="University" oninput="uEdu(${e.id},'sch',this.value)"></div></div>
+    <div class="fr"><div class="fg"><label>Year</label><input value="${esc(e.yr)}" placeholder="2020" oninput="uEdu(${e.id},'yr',this.value)"></div>
+    <div class="fg"><label>Grade/GPA</label><input value="${esc(e.gr)}" placeholder="3.8 GPA" oninput="uEdu(${e.id},'gr',this.value)"></div></div>
+  </div>`).join('');
+}
+
+function addSk(){const i=document.getElementById('sk-i');const v=i.value.trim();if(v&&!S.skills.includes(v)){S.skills.push(v);i.value='';renderSk();go()}}
+function addSkQ(s){if(!S.skills.includes(s)){S.skills.push(s);renderSk();go()}}
+function delSk(s){S.skills=S.skills.filter(k=>k!==s);renderSk();go()}
+function renderSk(){document.getElementById('sk-d').innerHTML=S.skills.map(s=>`<div class="sk-tag">${esc(s)}<span class="sk-x" onclick="delSk('${esc(s)}')">✕</span></div>`).join('')}
+
+function updateAts(){
+  const chk=[
+    {l:'Full name',ok:!!g('f-name').trim()},
+    {l:'Job title',ok:!!g('f-title').trim()},
+    {l:'Email',ok:!!g('f-email').trim()},
+    {l:'Phone',ok:!!g('f-phone').trim()},
+    {l:'Location',ok:!!g('f-loc').trim()},
+    {l:'Summary (3+ sentences)',ok:g('f-sum').split(/[.!?]+/).filter(s=>s.trim()).length>=3},
+    {l:'Work experience',ok:S.exp.length>0},
+    {l:'Job descriptions',ok:S.exp.some(e=>e.desc&&e.desc.length>30)},
+    {l:'Education',ok:S.edu.length>0},
+    {l:'Skills (5+)',ok:S.skills.length>=5},
+  ];
+  const done=chk.filter(c=>c.ok).length;
+  const pct=Math.round(done/chk.length*100);
+  const ab=document.getElementById('ab'),af=document.getElementById('af');
+  ab.textContent=pct+'%';af.style.width=pct+'%';
+  if(pct>=80){af.style.background='var(--green)';ab.style.background='rgba(16,185,129,.15)';ab.style.color='var(--green)'}
+  else if(pct>=50){af.style.background='var(--amber)';ab.style.background='rgba(245,158,11,.15)';ab.style.color='var(--amber)'}
+  else{af.style.background='var(--red)';ab.style.background='rgba(239,68,68,.15)';ab.style.color='var(--red)'}
+  document.getElementById('ag').innerHTML=chk.map(c=>`<div class="ats-it"><div class="ats-dt" style="background:${c.ok?'var(--green)':'var(--border2)'}"></div><span style="color:${c.ok?'var(--text2)':'var(--text3)'}">${c.l}</span></div>`).join('');
+}
+
+function go(){
+  const doc=document.getElementById('resume-doc');
+  doc.className='t-'+S.tpl;
+  const b={name:g('f-name'),title:g('f-title'),email:g('f-email'),phone:g('f-phone'),loc:g('f-loc'),li:g('f-li'),web:g('f-web'),sum:g('f-sum')};
+  doc.innerHTML=buildDoc(b,S.col);
+  updateAts();
+}
+
+function buildDoc(b,c){
+  if(S.tpl==='nova')return tNova(b,c);
+  if(S.tpl==='slate')return tSlate(b,c);
+  if(S.tpl==='fresh')return tFresh(b,c);
+  if(S.tpl==='mono')return tMono(b,c);
+  if(S.tpl==='spark')return tSpark(b,c);
+  return tNova(b,c);
+}
+
+function expRows(r,co,dt,desc){
+  if(!S.exp.length)return'<p class="r-empty">No experience added</p>';
+  return S.exp.map(e=>`<div class="ei"><div class="${r}">${esc(e.role)||'Job Title'}</div><div class="${co}">${esc(e.co)}</div><div class="${dt}">${esc(e.s)}${e.s&&e.e?' – ':''}${esc(e.e)}</div>${e.desc?`<div class="${desc}">${dH(e.desc)}</div>`:''}</div>`).join('');
+}
+function eduRows(d,s,y){
+  if(!S.edu.length)return'<p class="r-empty">No education added</p>';
+  return S.edu.map(e=>`<div class="edu-i"><div class="${d}">${esc(e.deg)||'Degree'}</div><div class="${s}">${esc(e.sch)}</div><div class="${y}">${esc(e.yr)}${e.gr?' · '+esc(e.gr):''}</div></div>`).join('');
+}
+
+function tNova(b,c){
+  const ph=document.getElementById('ph-shape')?.value||'circle';
+  const shape=ph==='circle'?'50%':ph==='rounded'?'14px':'4px';
+  const pEl=S.photo?`<img src="${S.photo}" class="rh-photo" style="border-radius:${shape}" alt="Photo">`:
+    `<div class="rh-ph-ph" style="border-radius:${shape}">👤</div>`;
+  const expH=!S.exp.length?'<p class="r-empty">No experience added</p>':
+    S.exp.map(e=>`<div class="ei"><div class="erole" style="color:${c}">${esc(e.role)||'Job Title'}</div><div class="eco">${esc(e.co)}</div><div class="edt">${esc(e.s)}${e.s&&e.e?' – ':''}${esc(e.e)}</div>${e.desc?`<div class="edesc">${dH(e.desc)}</div>`:''}</div>`).join('');
+  const eduH=!S.edu.length?'<p class="r-empty">No education added</p>':
+    S.edu.map(e=>`<div class="edu-i"><div class="edu-deg" style="color:${c}">${esc(e.deg)||'Degree'}</div><div class="edu-sch">${esc(e.sch)}</div><div class="edu-yr">${esc(e.yr)}</div></div>`).join('');
+  const skH=!S.skills.length?'<p class="r-empty">No skills</p>':S.skills.map(s=>`<span class="sk-pill" style="background:${c}20;color:${c}">${esc(s)}</span>`).join('');
+  return`<div class="rh"><div class="rh-bg" style="background:linear-gradient(135deg,${c} 0%,${c}cc 100%)">
+    <div class="rh-inner">${pEl}<div class="rh-info">
+      <div class="rn">${esc(b.name)||'Your Name'}</div>
+      <div class="rt">${esc(b.title)}</div>
+      <div class="rc">${ct(b)}</div>
+    </div></div></div></div>
+  <div class="rb">
+    <div class="rb-m">
+      ${b.sum?`<div class="sb"><div class="sh" style="color:${c};border-color:${c}">Profile</div><p style="font-size:.79rem;color:#4b5563;line-height:1.65">${esc(b.sum)}</p></div>`:''}
+      <div class="sb"><div class="sh" style="color:${c};border-color:${c}">Experience</div>${expH}</div>
+    </div>
+    <div class="rb-s">
+      <div class="ssb"><div class="ssh">Skills</div>${skH}</div>
+      <div class="ssb"><div class="ssh">Education</div>${eduH}</div>
+    </div>
+  </div>`;
+}
+
+function tSlate(b,c){
+  const ph=document.getElementById('ph-shape')?.value||'circle';
+  const shape=ph==='circle'?'50%':ph==='rounded'?'14px':'4px';
+  const pEl=S.photo?`<img src="${S.photo}" class="rh-photo" style="border-radius:${shape}" alt="Photo">`:
+    `<div class="rh-ph-ph" style="border-radius:${shape}">👤</div>`;
+  const expH=!S.exp.length?'<p class="r-empty">No experience added</p>':
+    S.exp.map(e=>`<div class="ei"><div class="erole" style="color:${c}">${esc(e.role)||'Job Title'}</div><div class="eco">${esc(e.co)}</div><div class="edt">${esc(e.s)}${e.s&&e.e?' – ':''}${esc(e.e)}</div>${e.desc?`<div class="edesc">${dH(e.desc)}</div>`:''}</div>`).join('');
+  const eduH=!S.edu.length?'<p class="r-empty" style="color:rgba(255,255,255,.4)">No education</p>':
+    S.edu.map(e=>`<div class="edu-i"><div class="edu-deg">${esc(e.deg)||'Degree'}</div><div class="edu-sch">${esc(e.sch)}</div><div class="edu-yr">${esc(e.yr)}</div></div>`).join('');
+  const skH=!S.skills.length?'<p class="r-empty" style="color:rgba(255,255,255,.4)">No skills</p>':
+    S.skills.map(s=>`<div class="sk-item">${esc(s)}</div>`).join('');
+  const cpSide=[b.email&&`<div class="rc-item">✉ ${esc(b.email)}</div>`,b.phone&&`<div class="rc-item">📞 ${esc(b.phone)}</div>`,b.loc&&`<div class="rc-item">📍 ${esc(b.loc)}</div>`,b.li&&`<div class="rc-item">🔗 ${esc(b.li)}</div>`].filter(Boolean).join('');
+  return`<div class="rh">
+    <div class="rh-side" style="background:#1e293b">${pEl}
+      <div class="rn">${esc(b.name)||'Your Name'}</div>
+      <div class="rt" style="color:${c}">${esc(b.title)}</div>
+      <div class="sdiv"></div>
+      <div class="ssb"><div class="ssh">Contact</div>${cpSide}</div>
+      <div class="ssb"><div class="ssh">Skills</div>${skH}</div>
+      <div class="ssb"><div class="ssh">Education</div>${eduH}</div>
+    </div>
+    <div class="rh-main">
+      ${b.sum?`<div class="sb"><div class="sh" style="color:${c};border-color:${c}">Profile</div><p style="font-size:.79rem;color:#4b5563;line-height:1.65">${esc(b.sum)}</p></div>`:''}
+      <div class="sb"><div class="sh" style="color:${c};border-color:${c}">Work Experience</div>${expH}</div>
+    </div>
+  </div>`;
+}
+
+function tFresh(b,c){
+  const ph=document.getElementById('ph-shape')?.value||'circle';
+  const shape=ph==='circle'?'50%':ph==='rounded'?'14px':'4px';
+  const pEl=S.photo?`<img src="${S.photo}" class="rh-photo" style="border-radius:${shape};border-color:${c}" alt="Photo">`:
+    `<div class="rh-ph-ph">👤</div>`;
+  const expH=!S.exp.length?'<p class="r-empty">No experience added</p>':
+    S.exp.map(e=>`<div class="ei"><div class="ei-dt"><div class="edt">${esc(e.s)}<br>${esc(e.e)}</div></div><div><div class="erole" style="color:${c}">${esc(e.role)||'Job Title'}</div><div class="eco">${esc(e.co)}</div>${e.desc?`<div class="edesc">${dH(e.desc)}</div>`:''}</div></div>`).join('');
+  const skH=!S.skills.length?'<p class="r-empty">No skills</p>':
+    `<div style="display:flex;flex-wrap:wrap">${S.skills.map(s=>`<span class="sk-pill" style="background:${c}18;color:${c}">${esc(s)}</span>`).join('')}</div>`;
+  const eduH=!S.edu.length?'<p class="r-empty">No education</p>':
+    S.edu.map(e=>`<div class="edu-i"><div class="edu-deg">${esc(e.deg)||'Degree'}</div><div class="edu-sch">${esc(e.sch)}</div><div class="edu-yr">${esc(e.yr)}</div></div>`).join('');
+  return`<div class="rh">
+    <div class="rh-bar" style="background:linear-gradient(90deg,${c},${c}55)"></div>
+    <div class="rh-top">${pEl}<div class="rh-txt">
+      <div class="rn" style="color:${c}">${esc(b.name)||'Your Name'}</div>
+      <div class="rt" style="color:${c}99">${esc(b.title)}</div>
+      <div class="rc">${ct(b)}</div>
+    </div></div>
+  </div>
+  <div class="rb">
+    ${b.sum?`<div class="sb"><div class="sh" style="color:${c}">Profile</div><p style="font-size:.79rem;color:#4b5563;line-height:1.65">${esc(b.sum)}</p></div>`:''}
+    <div class="sb"><div class="sh" style="color:${c}">Experience</div>${expH}</div>
+    <div class="sb"><div class="sh" style="color:${c}">Skills</div>${skH}</div>
+    <div class="sb"><div class="sh" style="color:${c}">Education</div>${eduH}</div>
+  </div>`;
+}
+
+function tMono(b,c){
+  const ph=document.getElementById('ph-shape')?.value||'circle';
+  const shape=ph==='circle'?'50%':ph==='rounded'?'10px':'4px';
+  const pEl=S.photo?`<img src="${S.photo}" class="rh-photo" style="border-radius:${shape}" alt="Photo">`:
+    `<div class="rh-ph-ph" style="border-radius:${shape}">👤</div>`;
+  const expH=!S.exp.length?'<p class="r-empty">No experience added</p>':
+    S.exp.map(e=>`<div class="ei"><div class="edt-c">${esc(e.s)}<br>${esc(e.e)}</div><div><div class="erole">${esc(e.role)||'Job Title'}</div><div class="eco" style="color:${c}">${esc(e.co)}</div>${e.desc?`<div class="edesc">${dH(e.desc)}</div>`:''}</div></div>`).join('');
+  const skH=!S.skills.length?'<p class="r-empty">No skills</p>':
+    `<div style="display:flex;flex-wrap:wrap">${S.skills.map(s=>`<span class="sk-item">${esc(s)}</span>`).join('')}</div>`;
+  const eduH=!S.edu.length?'<p class="r-empty">No education</p>':
+    S.edu.map(e=>`<div class="edu-i"><div class="edu-yr">${esc(e.yr)}</div><div><div class="edu-deg">${esc(e.deg)||'Degree'}</div><div class="edu-sch">${esc(e.sch)}</div></div></div>`).join('');
+  return`<div class="rh">
+    <div class="rh-top">
+      <div class="rh-left">${pEl}<div class="rh-name-area"><div class="rn">${esc(b.name)||'Your Name'}</div><div class="rt" style="color:${c}">${esc(b.title)}</div></div></div>
+      <div class="rc">${[b.email&&esc(b.email),b.phone&&esc(b.phone),b.loc&&esc(b.loc)].filter(Boolean).join('<br>')}</div>
+    </div>
+  </div>
+  <div class="rb">
+    ${b.sum?`<div class="sb rb-full"><div class="sh" style="color:${c}">Summary</div><p style="font-size:.78rem;color:#4b5563;line-height:1.65">${esc(b.sum)}</p></div>`:''}
+    <div class="sb rb-full"><div class="sh" style="color:${c}">Experience</div>${expH}</div>
+    <div class="sb"><div class="sh" style="color:${c}">Education</div>${eduH}</div>
+    <div class="sb"><div class="sh" style="color:${c}">Skills</div>${skH}</div>
+  </div>`;
+}
+
+function tSpark(b,c){
+  const ph=document.getElementById('ph-shape')?.value||'circle';
+  const shape=ph==='circle'?'50%':ph==='rounded'?'12px':'4px';
+  const pEl=S.photo?`<img src="${S.photo}" class="rh-photo" style="border-radius:${shape};border-color:${c}" alt="Photo">`:
+    `<div class="rh-ph-ph" style="border-radius:${shape}">👤</div>`;
+  const expH=!S.exp.length?'<p class="r-empty">No experience added</p>':
+    S.exp.map(e=>`<div class="ei"><div class="erole">${esc(e.role)||'Job Title'}</div><div class="eco">${esc(e.co)}</div><div class="edt">${esc(e.s)}${e.s&&e.e?' – ':''}${esc(e.e)}</div>${e.desc?`<div class="edesc">${dH(e.desc)}</div>`:''}</div>`).join('');
+  const skH=!S.skills.length?'<p style="font-size:.76rem;color:rgba(255,255,255,.4);font-style:italic">No skills</p>':
+    S.skills.map(s=>`<span class="sk-pill">${esc(s)}</span>`).join('');
+  const eduH=!S.edu.length?'<p style="font-size:.76rem;color:rgba(255,255,255,.4);font-style:italic">No education</p>':
+    S.edu.map(e=>`<div class="edu-i"><div class="edu-deg">${esc(e.deg)||'Degree'}</div><div class="edu-sch">${esc(e.sch)}</div><div class="edu-yr">${esc(e.yr)}</div></div>`).join('');
+  return`<div class="rh">
+    <div class="rh-m">
+      ${pEl}
+      <div class="rn" style="color:${c}">${esc(b.name)||'Your Name'}</div>
+      <div class="rt">${esc(b.title)}</div>
+      <div class="rc">${ct(b)}</div>
+      ${b.sum?`<div class="sb"><div class="sh" style="color:${c};border-color:${c}">Profile</div><p style="font-size:.78rem;color:#4b5563;line-height:1.65">${esc(b.sum)}</p></div>`:''}
+      <div class="sb"><div class="sh" style="color:${c};border-color:${c}">Experience</div>${expH}</div>
+    </div>
+    <div class="rh-s" style="background:${c}">
+      <div class="ssb"><div class="ssh">Skills</div>${skH}</div>
+      <div class="ssb"><div class="ssh">Education</div>${eduH}</div>
+    </div>
+  </div>`;
+}
+
+// Gallery
+function fTpl(cat,el){document.querySelectorAll('.cat-pill').forEach(p=>p.classList.remove('on'));el.classList.add('on');rGal(cat)}
+function rGal(cat){
+  const list=cat==='all'?TPLS:TPLS.filter(t=>t.cats.includes(cat));
+  document.getElementById('tpl-grid').innerHTML=list.map(t=>`
+    <div class="tpl-card" onclick="pickTpl('${t.id}')">
+      ${t.bdg?`<div class="tpl-badge ${t.bdg}">${t.btxt}</div>`:''}
+      <div class="tpl-thumb"><div class="doc-scale t-${t.id}">${buildSample(t.id)}</div></div>
+      <div class="tpl-foot"><div><div class="tpl-name">${t.name}</div><div class="tpl-cat">${t.tag}</div></div><button class="use-btn">Use →</button></div>
+    </div>`).join('');
+}
+function pickTpl(id){S.tpl=id;goBuilder()}
+function buildSample(id){
+  const oT=S.tpl,oC=S.col,oE=S.exp,oD=S.edu,oS=S.skills,oP=S.photo;
+  S.tpl=id;S.col='#1e3a8a';S.photo=null;
+  S.exp=[{id:1,role:'Senior Product Manager',co:'TechCorp Dubai',s:'2022',e:'Present',desc:'• Drove 45% growth in user retention\n• Managed $3M product budget\n• Led cross-functional team of 14'},{id:2,role:'Product Manager',co:'StartupHub',s:'2019',e:'2022',desc:'• Launched 3 product lines — $8M ARR\n• Increased DAU by 120%'}];
+  S.edu=[{id:1,deg:'MBA, Marketing',sch:'NYU Stern Business School',yr:'2019',gr:''}];
+  S.skills=['Product Strategy','Data Analysis','Agile','SQL','Figma','Stakeholder Mgmt','Leadership'];
+  const sB={name:'Alex Johnson',title:'Senior Product Manager',email:'alex@email.com',phone:'+971 50 000 0100',loc:'Dubai, UAE',li:'linkedin.com/in/alexj',web:'',sum:'Results-driven Product Manager with 7+ years delivering impactful digital products. Led teams of 14 to achieve 40% YoY growth. Expert in data-driven strategy and cross-functional leadership.'};
+  const h=buildDoc(sB,'#1e3a8a');
+  S.tpl=oT;S.col=oC;S.exp=oE;S.edu=oD;S.skills=oS;S.photo=oP;
+  return h;
+}
+
+async function downloadPDF(){
+  const btn=document.getElementById('btn-dl');
+  const orig=btn.innerHTML;btn.disabled=true;btn.innerHTML='⏳ Generating...';
+  try{
+    const doc=document.getElementById('resume-doc');
+    doc.style.transform='scale(1)';
+    const canvas=await html2canvas(doc,{scale:2,useCORS:true,backgroundColor:'#ffffff',width:794,logging:false});
+    const{jsPDF}=window.jspdf;
+    const pdf=new jsPDF({orientation:'portrait',unit:'mm',format:'a4'});
+    pdf.addImage(canvas.toDataURL('image/jpeg',.95),'JPEG',0,0,210,297);
+    pdf.save((g('f-name')||'Resume').replace(/\s+/g,'_')+'_Resume.pdf');
+    doc.style.transform='scale('+zl/100+')';
+  }catch(e){alert('PDF generation failed. Please try again.')}
+  btn.innerHTML=orig;btn.disabled=false;
+}
+function saveDraft(){
+  const d={basics:{name:g('f-name'),title:g('f-title'),email:g('f-email'),phone:g('f-phone'),loc:g('f-loc'),li:g('f-li'),web:g('f-web'),sum:g('f-sum')},exp:S.exp,edu:S.edu,skills:S.skills,tpl:S.tpl,col:S.col};
+  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(d,null,2)],{type:'application/json'}));a.download='resume-draft.json';a.click();
+}
+// Init
+rGal('all');renderExp();renderEdu();renderSk();updateAts();zoom(0);
+</script>
+</body>
+</html>

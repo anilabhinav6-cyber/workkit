@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free ATS Resume Checker – Score Your Resume Instantly | MyWorkKits</title>
+<meta name="description" content="Paste your resume and job description to get an instant ATS score. See matched keywords, missing terms, and personalized tips to pass applicant tracking systems.">
+<meta name="keywords" content="ATS resume checker, ATS score, resume keyword scanner, applicant tracking system checker, resume optimizer, ATS friendly resume, UAE jobs, India resume">
+<link rel="canonical" href="https://myworkkits.com/ats-checker.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  /* dark glass theme */
+  --bg:#0a0e1a;--bg2:#0f1628;--bg3:#141c2e;
+  --card:rgba(255,255,255,.04);--card2:rgba(255,255,255,.07);
+  --border:rgba(255,255,255,.08);--border2:rgba(255,255,255,.13);
+  --accent:#4f8ef7;--accent2:#7c3aed;--glow:rgba(79,142,247,.15);
+  --tx:#e8eaf6;--tx2:#8892a4;--tx3:#5a6375;
+  --green:#10b981;--green-bg:rgba(16,185,129,.12);--green-text:#6ee7b7;
+  --amber:#f59e0b;--amber-bg:rgba(245,158,11,.12);--amber-text:#fcd34d;
+  --red:#ef4444;--red-bg:rgba(239,68,68,.12);--red-text:#fca5a5;
+  /* legacy aliases */
+  --blue:#4f8ef7;--blue-bg:rgba(79,142,247,.1);--blue-border:rgba(79,142,247,.25);
+  --gray-50:var(--bg);--gray-100:var(--bg2);--gray-200:var(--border);--gray-300:var(--border2);
+  --gray-400:var(--tx3);--gray-500:var(--tx2);--gray-600:#a0a8b8;--gray-700:var(--tx);
+  --gray-800:var(--tx);--gray-900:var(--tx);--white:var(--bg3);
+  --radius:12px;--radius-lg:16px;
+  --shadow:0 4px 20px rgba(0,0,0,.4);
+  --shadow-md:0 8px 32px rgba(0,0,0,.5);
+  --shadow-xl:0 20px 48px rgba(0,0,0,.6);
+}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--tx);min-height:100vh}
+
+/* NAV */
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 32px;background:rgba(10,14,26,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;box-shadow:0 2px 20px rgba(0,0,0,.4)}
+.nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none}
+.nav-logo-icon{width:34px;height:34px;background:var(--accent);border-radius:9px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:.95rem}
+.nav-logo-text{font-size:1rem;font-weight:700;color:var(--tx)}
+.nav-right{display:flex;gap:10px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:9px 18px;border-radius:10px;font-size:.84rem;font-weight:600;cursor:pointer;border:none;font-family:inherit;transition:all .18s;text-decoration:none}
+.btn-outline{background:var(--card);color:var(--tx2);border:1.5px solid var(--border)}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent);background:var(--glow)}
+.btn-blue{background:var(--accent);color:#fff}
+.btn-blue:hover{background:#6b9ff7;transform:translateY(-1px);box-shadow:0 4px 14px rgba(79,142,247,.35)}
+
+/* HERO */
+.hero{text-align:center;padding:56px 20px 40px;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(79,142,247,.1),transparent);border-bottom:1px solid var(--border)}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;padding:5px 14px;background:var(--glow);border:1px solid rgba(79,142,247,.25);border-radius:20px;font-size:.75rem;font-weight:600;color:var(--accent);margin-bottom:16px;letter-spacing:.2px}
+.hero h1{font-size:2.4rem;font-weight:800;letter-spacing:-.6px;margin-bottom:10px;line-height:1.15;color:var(--tx)}
+.hero h1 span{color:var(--accent)}
+.hero p{color:var(--tx2);font-size:.95rem;max-width:520px;margin:0 auto}
+
+/* HOW IT WORKS */
+.how-row{display:flex;justify-content:center;gap:0;margin:28px auto 0;max-width:640px;flex-wrap:wrap}
+.how-step{display:flex;align-items:center;gap:8px;font-size:.82rem;color:var(--tx2);font-weight:500;padding:8px 16px}
+.how-step-num{width:26px;height:26px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;flex-shrink:0}
+.how-arrow{color:var(--tx3);font-size:1.1rem;margin:0 4px}
+
+/* MAIN LAYOUT */
+.main{max-width:1200px;margin:0 auto;padding:32px 24px 80px;position:relative}
+
+/* ── ATS SCORE METER (BIG, PERSISTENT) ── */
+.score-meter-bar{
+  background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);
+  padding:24px 28px;margin-bottom:24px;
+  box-shadow:var(--shadow);backdrop-filter:blur(10px);
+  display:flex;align-items:center;gap:28px;flex-wrap:wrap;
+}
+.meter-ring-wrap{position:relative;width:96px;height:96px;flex-shrink:0}
+.meter-ring-wrap svg{position:absolute;top:0;left:0;transform:rotate(-90deg)}
+.meter-ring-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center}
+.meter-score{font-size:1.7rem;font-weight:800;line-height:1}
+.meter-label{font-size:.65rem;font-weight:600;color:var(--tx3);letter-spacing:.5px;text-transform:uppercase}
+.meter-right{flex:1;min-width:220px}
+.meter-title{font-size:1.05rem;font-weight:700;margin-bottom:4px;color:var(--tx)}
+.meter-desc{font-size:.82rem;color:var(--tx2);line-height:1.55;margin-bottom:14px}
+.meter-bar-track{height:10px;background:rgba(255,255,255,.07);border-radius:10px;overflow:hidden;margin-bottom:10px}
+.meter-bar-fill{height:100%;border-radius:10px;transition:width .7s ease,background .3s}
+.meter-stats{display:flex;gap:20px;flex-wrap:wrap}
+.mstat{text-align:center}
+.mstat-n{font-size:1.3rem;font-weight:800;line-height:1}
+.mstat-l{font-size:.7rem;color:var(--tx3);font-weight:500;letter-spacing:.2px;margin-top:1px}
+
+/* PLACEHOLDER METER (before analysis) */
+.meter-placeholder{opacity:.4;pointer-events:none}
+.meter-hint{font-size:.82rem;color:var(--gray-400);text-align:center;padding:8px 0}
+
+/* TWO COLUMNS: inputs | analysis */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+@media(max-width:860px){.two-col{grid-template-columns:1fr}}
+
+.panel{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:22px;box-shadow:var(--shadow);backdrop-filter:blur(8px)}
+.panel-hd{display:flex;align-items:center;gap:8px;margin-bottom:14px}
+.panel-icon{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0}
+.panel-title{font-size:.9rem;font-weight:700;color:var(--tx)}
+.panel-sub{font-size:.74rem;color:var(--tx3);margin-top:1px}
+textarea{width:100%;border-radius:10px;background:rgba(255,255,255,.04);border:1.5px solid var(--border);color:var(--tx);font-size:.82rem;font-family:inherit;padding:12px 14px;line-height:1.6;outline:none;resize:vertical;transition:all .18s}
+textarea:focus{border-color:var(--accent);background:rgba(79,142,247,.05);box-shadow:0 0 0 3px rgba(79,142,247,.1)}
+textarea::placeholder{color:var(--tx3)}
+.word-count{font-size:.72rem;color:var(--tx3);text-align:right;margin-top:4px}
+
+.analyze-btn{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  width:100%;padding:15px;margin:20px 0 0;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-size:.95rem;font-weight:700;
+  border:none;border-radius:12px;cursor:pointer;font-family:inherit;
+  transition:all .2s;box-shadow:0 4px 16px rgba(79,142,247,.25);letter-spacing:.1px;
+}
+.analyze-btn:hover{box-shadow:0 6px 24px rgba(79,142,247,.4);transform:translateY(-1px)}
+.analyze-btn:disabled{opacity:.6;cursor:not-allowed;transform:none}
+
+/* RESULTS PANELS */
+.results-wrap{display:flex;flex-direction:column;gap:16px}
+.r-hidden{display:none}
+
+/* Keyword panels */
+.kw-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.kw-list{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.kw-tag{display:inline-flex;align-items:center;gap:5px;padding:5px 11px;border-radius:20px;font-size:.77rem;font-weight:500}
+.kw-found{background:rgba(16,185,129,.12);color:#6ee7b7;border:1px solid rgba(16,185,129,.25)}
+.kw-miss{background:rgba(239,68,68,.12);color:#fca5a5;border:1px solid rgba(239,68,68,.25)}
+.res-hd{font-size:.85rem;font-weight:700;margin-bottom:4px;display:flex;align-items:center;gap:6px;color:var(--tx)}
+.res-cnt{font-size:.72rem;font-weight:600;padding:2px 8px;border-radius:8px}
+
+/* Section bars */
+.sbar-row{display:flex;align-items:center;gap:10px;margin-bottom:9px}
+.sbar-label{font-size:.78rem;color:var(--tx2);min-width:140px;font-weight:500}
+.sbar-track{flex:1;height:8px;background:rgba(255,255,255,.07);border-radius:8px;overflow:hidden}
+.sbar-fill{height:100%;border-radius:8px;transition:width .8s ease}
+.sbar-pct{font-size:.74rem;color:var(--tx2);min-width:34px;text-align:right;font-weight:500}
+.sbar-ico{font-size:.85rem;min-width:18px}
+
+/* Tips */
+.tip-row{display:flex;gap:12px;padding:13px 0;border-bottom:1px solid var(--border)}
+.tip-row:last-child{border-bottom:none;padding-bottom:0}
+.tip-ico{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0;margin-top:1px}
+.tip-hd{font-size:.83rem;font-weight:700;margin-bottom:2px;color:var(--tx)}
+.tip-txt{font-size:.78rem;color:var(--tx2);line-height:1.55}
+.tip-txt strong{color:var(--accent)}
+
+.empty-msg{font-size:.8rem;color:var(--tx3);font-style:italic;padding:6px 0}
+
+/* info box */
+.info-box{background:rgba(79,142,247,.08);border:1px solid rgba(79,142,247,.2);border-radius:10px;padding:12px 16px;font-size:.8rem;color:#93b8fd;line-height:1.6;margin-bottom:20px;display:flex;gap:8px;align-items:flex-start}
+
+/* related */
+.related{margin-top:28px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.related-lbl{font-size:.78rem;color:var(--tx2);font-weight:600}
+.rel-link{display:inline-flex;align-items:center;gap:5px;padding:7px 14px;background:var(--card);border:1.5px solid var(--border);border-radius:9px;font-size:.8rem;color:var(--tx2);text-decoration:none;transition:all .15s;font-weight:500}
+.rel-link:hover{color:var(--accent);border-color:rgba(79,142,247,.3);background:var(--glow)}
+
+@media(max-width:640px){.kw-grid{grid-template-columns:1fr}.hero h1{font-size:1.8rem}.score-meter-bar{flex-direction:column;align-items:flex-start;gap:16px}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon">W</div>
+    <span class="nav-logo-text">MyWorkKits</span>
+  </a>
+  <div class="nav-right">
+    <a href="resume-builder.html" class="btn btn-outline">📄 Resume Builder</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-badge">🎯 Free ATS Resume Checker</div>
+  <h1>Will your resume <span>beat the ATS?</span></h1>
+  <p>Paste your resume and job description below. Get an instant keyword match score, see exactly what's missing, and know how to fix it.</p>
+  <div class="how-row">
+    <div class="how-step"><div class="how-step-num">1</div>Paste your resume</div>
+    <div class="how-arrow">→</div>
+    <div class="how-step"><div class="how-step-num">2</div>Add job description</div>
+    <div class="how-arrow">→</div>
+    <div class="how-step"><div class="how-step-num">3</div>Get instant ATS score</div>
+  </div>
+</div>
+
+<div class="main">
+
+  <div class="info-box">
+    <span>💡</span>
+    <span><strong>How ATS works:</strong> Over 98% of Fortune 500 companies use Applicant Tracking Systems to auto-filter resumes. If your resume doesn't contain the right keywords from the job description, it gets rejected before a human ever reads it. This tool replicates that process so you can optimize before applying.</span>
+  </div>
+
+  <!-- BIG ATS METER (always visible, updates live) -->
+  <div class="score-meter-bar" id="score-meter">
+    <div class="meter-ring-wrap">
+      <svg width="96" height="96" viewBox="0 0 96 96">
+        <circle cx="48" cy="48" r="40" fill="none" stroke="rgba(255,255,255,.06)" stroke-width="8"/>
+        <circle cx="48" cy="48" r="40" fill="none" stroke-width="8" stroke-linecap="round"
+          id="meter-arc" stroke="rgba(255,255,255,.15)" stroke-dasharray="251" stroke-dashoffset="251"/>
+      </svg>
+      <div class="meter-ring-center">
+        <div class="meter-score" id="meter-score">—</div>
+        <div class="meter-label">ATS Score</div>
+      </div>
+    </div>
+    <div class="meter-right">
+      <div class="meter-title" id="meter-title">Paste your resume &amp; job description</div>
+      <div class="meter-desc" id="meter-desc">Fill in both text areas below and click "Analyze My Resume" to get your score.</div>
+      <div class="meter-bar-track"><div class="meter-bar-fill" id="meter-bar" style="width:0%;background:var(--gray-200)"></div></div>
+      <div class="meter-stats" id="meter-stats">
+        <div class="mstat"><div class="mstat-n" style="color:var(--gray-300)">—</div><div class="mstat-l">Matched</div></div>
+        <div class="mstat"><div class="mstat-n" style="color:var(--gray-300)">—</div><div class="mstat-l">Missing</div></div>
+        <div class="mstat"><div class="mstat-n" style="color:var(--gray-300)">—</div><div class="mstat-l">Total Keywords</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TWO COLUMNS -->
+  <div class="two-col">
+
+    <!-- LEFT: INPUTS -->
+    <div>
+      <div class="panel" style="margin-bottom:16px">
+        <div class="panel-hd">
+          <div class="panel-icon" style="background:rgba(79,142,247,.15)">📄</div>
+          <div><div class="panel-title">Your Resume</div><div class="panel-sub">Paste the text content of your resume</div></div>
+        </div>
+        <textarea id="resume-text" rows="18" placeholder="Paste your resume text here...
+
+Sarah Al-Farsi
+Senior Product Manager | Dubai, UAE
+sarah@email.com | +971 50 000 0000 | linkedin.com/in/sarah
+
+PROFESSIONAL SUMMARY
+Results-driven Product Manager with 6 years of experience in B2B SaaS. Led cross-functional teams to deliver products used by 500K+ users. Expert in Agile methodologies, data-driven decision making, and stakeholder management.
+
+EXPERIENCE
+Senior Product Manager – TechCorp (2022–Present)
+• Increased user retention by 35% through A/B tested onboarding flows
+• Managed product roadmap for 3 product lines worth $12M ARR
+• Collaborated with engineering, design, and marketing teams
+
+SKILLS
+Product Strategy, Agile, SQL, Figma, Stakeholder Management, Data Analysis" oninput="onInputChange()"></textarea>
+        <div class="word-count" id="wc1">0 words</div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-hd">
+          <div class="panel-icon" style="background:rgba(16,185,129,.15)">🎯</div>
+          <div><div class="panel-title">Job Description</div><div class="panel-sub">Paste the full job posting</div></div>
+        </div>
+        <textarea id="jd-text" rows="18" placeholder="Paste the job description here...
+
+Senior Product Manager – FinTech SaaS
+Dubai, UAE | Full-time
+
+We are looking for a Senior Product Manager to join our growing team...
+
+Requirements:
+• 5+ years of product management experience in SaaS
+• Strong proficiency in Agile and Scrum methodologies
+• Experience with SQL and data analytics
+• Excellent stakeholder management skills
+• Mobile product experience preferred
+• Familiarity with Figma or similar design tools
+• Track record of driving measurable business outcomes
+• Strong cross-functional leadership skills" oninput="onInputChange()"></textarea>
+        <div class="word-count" id="wc2">0 words</div>
+      </div>
+
+      <button class="analyze-btn" id="analyze-btn" onclick="runAnalysis()">
+        🔍 Analyze My Resume
+      </button>
+    </div>
+
+    <!-- RIGHT: RESULTS -->
+    <div class="results-wrap" id="results-col">
+
+      <!-- KEYWORDS -->
+      <div class="panel r-hidden" id="kw-panel">
+        <div style="font-size:.9rem;font-weight:700;margin-bottom:12px;color:var(--tx)">🔑 Keyword Analysis</div>
+        <div class="kw-grid">
+          <div>
+            <div class="res-hd">✅ Found <span class="res-cnt" style="background:rgba(16,185,129,.15);color:#6ee7b7" id="cnt-found">0</span></div>
+            <div class="kw-list" id="kw-found"></div>
+          </div>
+          <div>
+            <div class="res-hd">❌ Missing <span class="res-cnt" style="background:rgba(239,68,68,.15);color:#fca5a5" id="cnt-miss">0</span></div>
+            <div class="kw-list" id="kw-miss"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION ANALYSIS -->
+      <div class="panel r-hidden" id="sec-panel">
+        <div style="font-size:.9rem;font-weight:700;margin-bottom:14px;color:var(--tx)">📊 Section Analysis</div>
+        <div id="sec-bars"></div>
+      </div>
+
+      <!-- TIPS -->
+      <div class="panel r-hidden" id="tips-panel">
+        <div style="font-size:.9rem;font-weight:700;margin-bottom:4px;color:var(--tx)">🛠 Improvement Tips</div>
+        <div style="font-size:.76rem;color:var(--tx3);margin-bottom:14px">Personalized to your resume</div>
+        <div id="tips-list"></div>
+      </div>
+
+      <!-- PLACEHOLDER -->
+      <div class="panel" id="placeholder-panel" style="text-align:center;padding:40px 20px">
+        <div style="font-size:2.5rem;margin-bottom:12px">📋</div>
+        <div style="font-size:.95rem;font-weight:600;color:var(--tx2);margin-bottom:8px">Your analysis will appear here</div>
+        <div style="font-size:.82rem;color:var(--tx3);line-height:1.6">Paste your resume and a job description on the left, then click <strong>Analyze My Resume</strong> to see your ATS score, keyword matches, section quality, and personalized tips.</div>
+      </div>
+
+    </div><!-- /results-col -->
+  </div><!-- /two-col -->
+
+  <div class="related">
+    <span class="related-lbl">Also useful:</span>
+    <a href="resume-builder.html" class="rel-link">📄 Resume Builder</a>
+    <a href="word-counter.html" class="rel-link">📝 Word Counter</a>
+    <a href="pdf-to-word.html" class="rel-link">🔄 PDF to Word</a>
+  </div>
+
+</div>
+
+<script>
+// ── KEYWORD ENGINE ──
+const STOP = new Set(['a','an','the','and','or','but','in','on','at','to','for','of','with','by','from','is','are','was','were','be','been','have','has','had','do','does','did','will','would','could','should','may','might','must','can','this','that','these','those','we','you','they','he','she','it','our','your','their','its','not','also','as','if','so','up','out','about','into','than','then','when','who','which','what','how','all','any','both','each','few','more','most','other','such','no','same','too','very','just','while','through','during','before','after','above','below','between','per','re','within','across','over','under','etc','team','work','role','position','job','candidate','company','organization','us','am','i','my','me','him','her','them','strong','excellent','good','great','ability','skills','experience','looking','seeking','join','help','ensure','include','including','required','preferred','plus','years','year','experience','working','work','using','use','able','well','new','make','need','will','would','must','shall','can','could','should','may','might']);
+const PHRASES = ['machine learning','data science','data analysis','data analytics','data engineering','project management','product management','product strategy','product roadmap','cross-functional','stakeholder management','customer success','business development','business intelligence','digital marketing','content marketing','social media','user experience','user research','user interface','supply chain','financial analysis','financial modeling','risk management','change management','talent acquisition','human resources','performance management','software development','software engineering','web development','mobile development','cloud computing','amazon web services','google cloud','microsoft azure','customer relationship','account management','sales management','revenue growth','team leadership','problem solving','critical thinking','attention to detail','communication skills','microsoft office','microsoft excel','power bi','tableau software','agile methodology','scrum master','kanban board','ci/cd','devops','artificial intelligence','natural language processing','deep learning','a/b testing','a/b test','growth hacking','go to market','analytical skills','leadership skills','data driven','data-driven','results driven','results-driven','fast paced','fast-paced','detail oriented','detail-oriented','cross functional','self starter','self-starter'];
+
+function extractKW(text){
+  const low=text.toLowerCase();
+  const found=new Map();
+  PHRASES.forEach(p=>{if(low.includes(p))found.set(p,(found.get(p)||0)+low.split(p).length-1)});
+  (low.match(/[a-z][a-z0-9+#.\-]*/g)||[]).forEach(w=>{if(w.length>=3&&!STOP.has(w)&&!found.has(w))found.set(w,(found.get(w)||0)+1)});
+  return found;
+}
+function topKW(map){
+  const arr=[];
+  for(const[k,v]of map.entries()){
+    if(STOP.has(k))continue;
+    arr.push({k,score:v*(k.includes(' ')?2:k.length>6?1.5:1)});
+  }
+  return arr.sort((a,b)=>b.score-a.score).slice(0,60).map(x=>x.k);
+}
+function checkSections(txt){
+  const low=txt.toLowerCase();
+  return[
+    {n:'Contact Info',pts:['@','+','phone','email','linkedin','linkedin.com'],score:0},
+    {n:'Work Experience',pts:['experience','manager','engineer','analyst','led','managed','developed','•','2020','2021','2022','2023','2024','present'],score:0},
+    {n:'Education',pts:['education','university','college','degree','bachelor','master','mba','bsc','b.sc','m.sc'],score:0},
+    {n:'Skills Section',pts:['skills','proficient','expertise','technologies','tools','competencies'],score:0},
+    {n:'Professional Summary',pts:['summary','objective','profile','about me','professional summary','career objective'],score:0},
+    {n:'Quantified Results',pts:['%','increased','reduced','improved','achieved','delivered','million','revenue','growth','2x','3x'],score:0},
+  ].map(s=>{s.score=Math.min(100,Math.round((s.pts.filter(p=>low.includes(p)).length/s.pts.length)*120));return s});
+}
+
+function wc(text){return text.trim()?text.trim().split(/\s+/).length:0}
+
+function onInputChange(){
+  document.getElementById('wc1').textContent=wc(document.getElementById('resume-text').value)+' words';
+  document.getElementById('wc2').textContent=wc(document.getElementById('jd-text').value)+' words';
+}
+
+// ── SCORE STATE ──
+let lastScore=-1;
+
+function renderMeter(score,found,missing,total,state){
+  const arc=document.getElementById('meter-arc');
+  const circ=251;
+  const offset=circ-(score/100)*circ;
+  let col=score>=80?'#059669':score>=55?'#d97706':'#dc2626';
+  arc.style.stroke=col;
+  arc.style.transition='stroke-dashoffset .7s ease';
+  arc.style.strokeDashoffset=state==='empty'?circ:offset;
+
+  const el=document.getElementById('meter-score');
+  el.textContent=state==='empty'?'—':score;
+  el.style.color=state==='empty'?'var(--gray-300)':col;
+
+  document.getElementById('meter-bar').style.width=(state==='empty'?0:score)+'%';
+  document.getElementById('meter-bar').style.background=state==='empty'?'var(--gray-200)':col;
+
+  if(state==='empty'){
+    document.getElementById('meter-title').textContent='Paste your resume & job description';
+    document.getElementById('meter-desc').textContent='Fill in both text areas and click "Analyze My Resume" to get your score.';
+    document.getElementById('meter-stats').innerHTML='<div class="mstat"><div class="mstat-n" style="color:var(--tx3)">—</div><div class="mstat-l">Matched</div></div><div class="mstat"><div class="mstat-n" style="color:var(--tx3)">—</div><div class="mstat-l">Missing</div></div><div class="mstat"><div class="mstat-n" style="color:var(--tx3)">—</div><div class="mstat-l">Total Keywords</div></div>';
+  } else {
+    const titles={80:'Excellent Match 🎉',65:'Good Match ✅',50:'Moderate Match ⚠️',35:'Weak Match 🔴',0:'Poor Match ❌'};
+    const title=Object.entries(titles).reverse().find(([t])=>score>=+t)?.[1]||'';
+    const descs={80:'Strong keyword alignment. You have a great chance of passing ATS screening. Focus on interview prep.',65:'Good match. Adding a few more targeted keywords could push it higher. Check missing keywords below.',50:'Partial alignment. Add the missing keywords and tailor your summary to significantly improve your score.',35:'Your resume needs more tailoring. Many important keywords are absent. Review the missing list carefully.',0:'Low alignment with this job. Consider whether this role fits your background, or rewrite your resume to match.'};
+    const desc=Object.entries(descs).reverse().find(([t])=>score>=+t)?.[1]||'';
+    document.getElementById('meter-title').textContent=title;
+    document.getElementById('meter-desc').textContent=desc;
+    document.getElementById('meter-stats').innerHTML=`
+      <div class="mstat"><div class="mstat-n" style="color:#6ee7b7">${found}</div><div class="mstat-l">Matched</div></div>
+      <div class="mstat"><div class="mstat-n" style="color:#fca5a5">${missing}</div><div class="mstat-l">Missing</div></div>
+      <div class="mstat"><div class="mstat-n" style="color:var(--blue)">${total}</div><div class="mstat-l">Total Keywords</div></div>`;
+  }
+}
+
+function runAnalysis(){
+  const rv=document.getElementById('resume-text').value.trim();
+  const jv=document.getElementById('jd-text').value.trim();
+  if(!rv||rv.length<40){alert('Please paste your resume text (at least a paragraph).'); return}
+  if(!jv||jv.length<40){alert('Please paste the job description.'); return}
+
+  const btn=document.getElementById('analyze-btn');
+  btn.disabled=true;btn.innerHTML='⏳ Analyzing...';
+
+  setTimeout(()=>{
+    try{ doAnalysis(rv,jv) }finally{
+      btn.disabled=false;btn.innerHTML='🔍 Re-Analyze';
+    }
+  },250);
+}
+
+function doAnalysis(rv,jv){
+  const jdKW=extractKW(jv);
+  const rKW=extractKW(rv);
+  const topJD=topKW(jdKW);
+  const found=[],missing=[];
+  topJD.forEach(k=>{
+    (rv.toLowerCase().includes(k.toLowerCase())||rKW.has(k))?found.push(k):missing.push(k);
+  });
+  const matchRate=topJD.length>0?found.length/topJD.length:0;
+  const rawScore=Math.round(matchRate*100);
+  const sections=checkSections(rv);
+  const secBonus=sections.reduce((a,s)=>a+s.score,0)/sections.length/20;
+  const finalScore=Math.min(100,Math.round(rawScore*.8+secBonus*20));
+
+  renderMeter(finalScore,found.length,missing.length,topJD.length,'scored');
+  document.getElementById('meter-score').scrollIntoView({behavior:'smooth',block:'nearest'});
+
+  // show panels
+  ['kw-panel','sec-panel','tips-panel'].forEach(id=>document.getElementById(id).classList.remove('r-hidden'));
+  document.getElementById('placeholder-panel').style.display='none';
+
+  // keywords
+  document.getElementById('cnt-found').textContent=found.length;
+  document.getElementById('cnt-miss').textContent=missing.length;
+  document.getElementById('kw-found').innerHTML=found.length?found.slice(0,28).map(k=>`<span class="kw-tag kw-found">✓ ${k}</span>`).join(''):'<span class="empty-msg">No matches found</span>';
+  document.getElementById('kw-miss').innerHTML=missing.length?missing.slice(0,28).map(k=>`<span class="kw-tag kw-miss">✕ ${k}</span>`).join(''):'<span class="empty-msg" style="color:var(--green-text)">All key terms present! 🎉</span>';
+
+  // section bars
+  document.getElementById('sec-bars').innerHTML=sections.map(s=>{
+    const col=s.score>=70?'#10b981':s.score>=40?'#f59e0b':'#ef4444';
+    return`<div class="sbar-row">
+      <div class="sbar-label">${s.n}</div>
+      <div class="sbar-track"><div class="sbar-fill" style="width:${s.score}%;background:${col}"></div></div>
+      <div class="sbar-pct">${s.score}%</div>
+      <div class="sbar-ico">${s.score>=70?'✅':s.score>=40?'⚠️':'❌'}</div>
+    </div>`;
+  }).join('');
+
+  // tips
+  const tips=[];
+  if(missing.length>0)tips.push({ico:'🔑',bg:'rgba(239,68,68,.12)',hd:`Add ${missing.length} missing keyword${missing.length>1?'s':''}`,txt:`Naturally work these terms into your resume: <strong>${missing.slice(0,5).map(m=>`"${m}"`).join(', ')}${missing.length>5?' and more':''}</strong>. Add them in your summary, experience bullet points, and skills section.`});
+  const sumSec=sections.find(s=>s.n==='Professional Summary');
+  if(sumSec&&sumSec.score<50)tips.push({ico:'📝',bg:'rgba(245,158,11,.12)',hd:'Add a Professional Summary',txt:"A 3-4 sentence summary at the top is prime ATS real estate. Mirror the job title and core requirements from the posting in your summary."});
+  const qtSec=sections.find(s=>s.n==='Quantified Results');
+  if(qtSec&&qtSec.score<40)tips.push({ico:'📊',bg:'rgba(79,142,247,.12)',hd:'Add numbers to your achievements',txt:"ATS scores and recruiters both love quantified results. Try: 'Increased X by 35%', 'Managed a team of 12', 'Reduced costs by $200K'. Numbers immediately stand out."});
+  const skSec=sections.find(s=>s.n==='Skills Section');
+  if(skSec&&skSec.score<60)tips.push({ico:'⚡',bg:'rgba(16,185,129,.12)',hd:'Create a dedicated Skills section',txt:"ATS systems often scan for a 'Skills' section specifically. List your hard and soft skills explicitly — don't just bury them inside job descriptions."});
+  if(finalScore<50)tips.push({ico:'🎯',bg:'rgba(124,58,237,.12)',hd:'Mirror the job description language',txt:"Use the exact job title and key terms from the posting. If they say 'cross-functional collaboration', don't write 'worked with multiple teams' — the ATS won't match it."});
+  if(tips.length===0)tips.push({ico:'🌟',bg:'rgba(16,185,129,.12)',hd:'Excellent keyword coverage!',txt:"Your resume aligns well with this job. Now ensure ATS-friendly formatting: no tables, no text boxes, standard section headings (Work Experience, Education, Skills), and save as a clean PDF or .docx."});
+  document.getElementById('tips-list').innerHTML=tips.map(t=>`<div class="tip-row"><div class="tip-ico" style="background:${t.bg}">${t.ico}</div><div><div class="tip-hd">${t.hd}</div><div class="tip-txt">${t.txt}</div></div></div>`).join('');
+
+  // animate bars after render
+  setTimeout(()=>document.querySelectorAll('.sbar-fill').forEach(el=>el.style.transition='width .8s ease'),50);
+}
+
+// init meter empty
+renderMeter(0,0,0,0,'empty');
+</script>
+</body>
+</html>
