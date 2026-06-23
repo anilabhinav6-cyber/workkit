@@ -90,7 +90,66 @@ h1 .grad{background:linear-gradient(120deg,#818cf8 0%,#c084fc 50%,#60a5fa 100%);
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
 
 /* ── FEATURED ── */
-.featured{max-width:1080px;margin:0 auto;padding:10px 5% 0;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.featured{max-width:1080px;margin:0 auto;padding:10px 5% 0;display:flex;flex-direction:column;gap:16px}
+
+/* ── RESUME HERO BANNER ── */
+.resume-banner{
+  position:relative;border-radius:24px;padding:32px 36px;
+  background:linear-gradient(135deg,rgba(79,142,247,.22) 0%,rgba(124,58,237,.18) 60%,rgba(16,185,129,.1) 100%);
+  border:1px solid rgba(79,142,247,.3);
+  backdrop-filter:blur(14px);
+  text-decoration:none;color:#fff;overflow:hidden;
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+  transition:transform .2s,box-shadow .2s;
+  animation:fadeUp .5s .3s ease both;
+}
+.resume-banner:hover{transform:translateY(-3px);box-shadow:0 20px 60px rgba(79,142,247,.3)}
+.resume-banner::before{
+  content:'';position:absolute;top:-60px;right:-60px;
+  width:260px;height:260px;border-radius:50%;
+  background:radial-gradient(circle,rgba(79,142,247,.15),transparent 70%);
+  pointer-events:none;
+}
+.resume-banner::after{
+  content:'';position:absolute;bottom:-80px;left:30%;
+  width:200px;height:200px;border-radius:50%;
+  background:radial-gradient(circle,rgba(124,58,237,.1),transparent 70%);
+  pointer-events:none;
+}
+.rb-left{flex:1;position:relative;z-index:1}
+.rb-eyebrow{display:inline-flex;align-items:center;gap:6px;background:rgba(79,142,247,.25);border:1px solid rgba(79,142,247,.4);border-radius:99px;padding:4px 13px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#93c5fd;margin-bottom:14px}
+.rb-title{font-size:1.75rem;font-weight:800;line-height:1.15;letter-spacing:-.4px;margin-bottom:8px}
+.rb-title em{font-style:normal;color:#93c5fd}
+.rb-desc{font-size:.88rem;color:rgba(255,255,255,.72);line-height:1.55;max-width:480px;margin-bottom:20px}
+.rb-features{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.rb-feat-chip{display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:8px;padding:5px 11px;font-size:.75rem;font-weight:600;color:rgba(255,255,255,.85)}
+.rb-ctas{display:flex;gap:10px;flex-wrap:wrap}
+.rb-btn-primary{display:inline-flex;align-items:center;gap:7px;padding:11px 22px;background:#4f8ef7;color:#fff;border-radius:10px;font-size:.88rem;font-weight:700;text-decoration:none;transition:all .18s;box-shadow:0 4px 16px rgba(79,142,247,.35)}
+.rb-btn-primary:hover{background:#6b9ff7;transform:translateY(-1px);box-shadow:0 6px 24px rgba(79,142,247,.5)}
+.rb-btn-secondary{display:inline-flex;align-items:center;gap:6px;padding:11px 18px;background:rgba(255,255,255,.1);color:rgba(255,255,255,.85);border-radius:10px;font-size:.85rem;font-weight:600;text-decoration:none;border:1px solid rgba(255,255,255,.2);transition:all .18s}
+.rb-btn-secondary:hover{background:rgba(255,255,255,.18);color:#fff}
+.rb-right{flex-shrink:0;position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:12px}
+.rb-tpl-stack{position:relative;width:160px;height:110px}
+.rb-tpl-card{position:absolute;background:#fff;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.35);overflow:hidden}
+.rb-tpl-card-1{width:130px;height:90px;top:0;left:0;transform:rotate(-4deg)}
+.rb-tpl-card-2{width:130px;height:90px;top:12px;left:22px;transform:rotate(2deg)}
+.rb-tpl-card-3{width:130px;height:90px;top:4px;left:12px}
+.rb-tpl-inner{height:100%;display:flex;flex-direction:column}
+.rb-tpl-hdr{height:30px;display:flex;align-items:center;padding:0 8px;gap:6px}
+.rb-tpl-avatar{width:16px;height:16px;border-radius:50%;background:rgba(255,255,255,.4);flex-shrink:0}
+.rb-tpl-hdr-txt{flex:1}
+.rb-tpl-name{height:4px;background:rgba(255,255,255,.8);border-radius:2px;width:60%;margin-bottom:2px}
+.rb-tpl-role{height:3px;background:rgba(255,255,255,.5);border-radius:2px;width:40%}
+.rb-tpl-body{flex:1;padding:5px 8px;display:flex;flex-direction:column;gap:3px}
+.rb-tpl-line{height:2.5px;background:#e5e7eb;border-radius:2px}
+.rb-tpl-line.w70{width:70%}
+.rb-tpl-line.w90{width:90%}
+.rb-tpl-line.w55{width:55%}
+.rb-badge-new{background:linear-gradient(135deg,#4f8ef7,#7c3aed);color:#fff;border-radius:8px;font-size:.72rem;font-weight:700;padding:4px 10px;letter-spacing:.04em}
+
+/* keep feat-cards grid for the two smaller ones */
+.feat-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:640px){.resume-banner{flex-direction:column}.rb-right{display:none}.rb-title{font-size:1.4rem}.feat-row{grid-template-columns:1fr}}
 .feat{position:relative;border-radius:20px;padding:26px;text-decoration:none;color:#fff;overflow:hidden;border:1px solid var(--border2);backdrop-filter:blur(12px);transition:transform .2s,box-shadow .2s;animation:fadeUp .6s .5s ease both}
 .feat:hover{transform:translateY(-4px)}
 .feat-qr{background:linear-gradient(135deg,rgba(124,58,237,.35),rgba(91,33,182,.25))}
@@ -222,10 +281,10 @@ body{top:0!important}
   <p class="hero-sub">Calculators, converters, planners and document tools — fast, free, and beautifully simple. Pick a tool to get started.</p>
   <div class="hero-search">
     <span class="sico">🔍</span>
-    <input type="search" id="msearch" placeholder="Search 50+ tools — budget, QR, SIP, BMI, PDF…" autocomplete="off">
+    <input type="search" id="msearch" placeholder="Search 52+ tools — budget, QR, SIP, BMI, PDF…" autocomplete="off">
   </div>
   <div class="hero-stats">
-    <span class="hstat"><strong>50+</strong> tools</span>
+    <span class="hstat"><strong>52+</strong> tools</span>
     <span class="hstat"><strong>6</strong> categories</span>
     <span class="hstat"><strong>100%</strong> free</span>
     <span class="hstat"><strong>0</strong> sign-ups</span>
@@ -234,20 +293,77 @@ body{top:0!important}
 
 <!-- FEATURED -->
 <div class="featured">
-  <a class="feat feat-qr" href="/qr-code-generator.html">
-    <span class="feat-tag">⭐ Featured</span>
-    <div class="feat-icon">▦</div>
-    <div class="feat-title">QR Code Generator</div>
-    <div class="feat-desc">URL, WiFi, WhatsApp, email — download PNG free</div>
-    <span class="feat-arrow">↗</span>
+
+  <!-- ── RESUME BUILDER HIGHLIGHT ── -->
+  <a class="resume-banner" href="/resume-builder.html">
+    <div class="rb-left">
+      <div class="rb-eyebrow">✨ New &nbsp;·&nbsp; Career Tools</div>
+      <div class="rb-title">Build a resume that<br><em>gets you hired</em></div>
+      <div class="rb-desc">Modern ATS-friendly templates, photo upload, live preview and instant download. Free — no sign-up needed.</div>
+      <div class="rb-features">
+        <span class="rb-feat-chip">📄 5 Modern Templates</span>
+        <span class="rb-feat-chip">📷 Photo Upload</span>
+        <span class="rb-feat-chip">⬆ Import PDF Resume</span>
+        <span class="rb-feat-chip">⬇ PDF / TXT / HTML</span>
+        <span class="rb-feat-chip">🎯 Live ATS Score</span>
+      </div>
+      <div class="rb-ctas">
+        <span class="rb-btn-primary">✏ Build My Resume →</span>
+        <span class="rb-btn-secondary">🎯 Check ATS Score</span>
+      </div>
+    </div>
+    <div class="rb-right">
+      <div class="rb-tpl-stack">
+        <div class="rb-tpl-card rb-tpl-card-1">
+          <div class="rb-tpl-inner">
+            <div class="rb-tpl-hdr" style="background:#7c3aed">
+              <div class="rb-tpl-avatar"></div>
+              <div class="rb-tpl-hdr-txt"><div class="rb-tpl-name"></div><div class="rb-tpl-role"></div></div>
+            </div>
+            <div class="rb-tpl-body"><div class="rb-tpl-line w90"></div><div class="rb-tpl-line w70"></div><div class="rb-tpl-line w90"></div><div class="rb-tpl-line w55"></div></div>
+          </div>
+        </div>
+        <div class="rb-tpl-card rb-tpl-card-2">
+          <div class="rb-tpl-inner">
+            <div class="rb-tpl-hdr" style="background:#1e293b">
+              <div class="rb-tpl-avatar"></div>
+              <div class="rb-tpl-hdr-txt"><div class="rb-tpl-name"></div><div class="rb-tpl-role"></div></div>
+            </div>
+            <div class="rb-tpl-body"><div class="rb-tpl-line w70"></div><div class="rb-tpl-line w90"></div><div class="rb-tpl-line w55"></div><div class="rb-tpl-line w90"></div></div>
+          </div>
+        </div>
+        <div class="rb-tpl-card rb-tpl-card-3">
+          <div class="rb-tpl-inner">
+            <div class="rb-tpl-hdr" style="background:linear-gradient(135deg,#1e3a8a,#3b82f6)">
+              <div class="rb-tpl-avatar"></div>
+              <div class="rb-tpl-hdr-txt"><div class="rb-tpl-name"></div><div class="rb-tpl-role"></div></div>
+            </div>
+            <div class="rb-tpl-body"><div class="rb-tpl-line w90"></div><div class="rb-tpl-line w55"></div><div class="rb-tpl-line w70"></div><div class="rb-tpl-line w90"></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="rb-badge-new">✨ Just Launched</div>
+    </div>
   </a>
-  <a class="feat feat-budget" href="/budget-planner.html">
-    <span class="feat-tag">⭐ Featured</span>
-    <div class="feat-icon">📋</div>
-    <div class="feat-title">Monthly Budget Planner</div>
-    <div class="feat-desc">Income, expenses, savings — download PDF</div>
-    <span class="feat-arrow">↗</span>
-  </a>
+
+  <!-- existing featured cards -->
+  <div class="feat-row">
+    <a class="feat feat-qr" href="/qr-code-generator.html">
+      <span class="feat-tag">⭐ Featured</span>
+      <div class="feat-icon">▦</div>
+      <div class="feat-title">QR Code Generator</div>
+      <div class="feat-desc">URL, WiFi, WhatsApp, email — download PNG free</div>
+      <span class="feat-arrow">↗</span>
+    </a>
+    <a class="feat feat-budget" href="/budget-planner.html">
+      <span class="feat-tag">⭐ Featured</span>
+      <div class="feat-icon">📋</div>
+      <div class="feat-title">Monthly Budget Planner</div>
+      <div class="feat-desc">Income, expenses, savings — download PDF</div>
+      <span class="feat-arrow">↗</span>
+    </a>
+  </div>
+
 </div>
 
 <!-- CATEGORY TABS -->
