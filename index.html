@@ -79,77 +79,18 @@ h1{font-family:var(--ff);font-size:clamp(34px,6vw,68px);font-weight:800;line-hei
 h1 .grad{background:linear-gradient(120deg,#818cf8 0%,#c084fc 50%,#60a5fa 100%);background-size:200% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 5s linear infinite}
 @keyframes shimmer{to{background-position:200% center}}
 .hero-sub{font-size:clamp(15px,2vw,18px);color:var(--txt2);max-width:560px;margin:0 auto 32px;animation:fadeUp .6s .2s ease both}
-.hero-search{max-width:520px;margin:0 auto 26px;position:relative;animation:fadeUp .6s .3s ease both}
-.hero-search input{width:100%;background:var(--glass2);border:1.5px solid var(--border2);border-radius:14px;padding:15px 18px 15px 48px;font-size:15px;font-family:var(--fb);color:var(--txt);outline:none;transition:all .2s;backdrop-filter:blur(12px)}
+.hero-search{max-width:600px;margin:0 auto 26px;position:relative;animation:fadeUp .6s .3s ease both}
+.hero-search input{width:100%;background:var(--glass2);border:1.5px solid var(--border2);border-radius:16px;padding:19px 20px 19px 54px;font-size:17px;font-family:var(--fb);color:var(--txt);outline:none;transition:all .2s;backdrop-filter:blur(12px)}
 .hero-search input::placeholder{color:var(--txt3)}
 .hero-search input:focus{border-color:var(--indigo);box-shadow:0 0 0 4px rgba(129,140,248,.15),0 0 40px rgba(129,140,248,.1)}
-.hero-search .sico{position:absolute;left:17px;top:50%;transform:translateY(-50%);font-size:17px;opacity:.5;pointer-events:none}
+.hero-search .sico{position:absolute;left:19px;top:50%;transform:translateY(-50%);font-size:20px;opacity:.5;pointer-events:none}
 .hero-stats{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;animation:fadeUp .6s .4s ease both}
 .hstat{font-size:13px;color:var(--txt3)}
 .hstat strong{color:var(--txt);font-weight:600;font-family:var(--ff)}
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
 
 /* ── FEATURED ── */
-.featured{max-width:1080px;margin:0 auto;padding:10px 5% 0;display:flex;flex-direction:column;gap:16px}
-
-/* ── RESUME HERO BANNER ── */
-.resume-banner{
-  position:relative;border-radius:24px;padding:32px 36px;
-  background:linear-gradient(135deg,rgba(79,142,247,.22) 0%,rgba(124,58,237,.18) 60%,rgba(16,185,129,.1) 100%);
-  border:1px solid rgba(79,142,247,.3);
-  backdrop-filter:blur(14px);
-  text-decoration:none;color:#fff;overflow:hidden;
-  display:flex;align-items:center;justify-content:space-between;gap:24px;
-  transition:transform .2s,box-shadow .2s;
-  animation:fadeUp .5s .3s ease both;
-}
-.resume-banner:hover{transform:translateY(-3px);box-shadow:0 20px 60px rgba(79,142,247,.3)}
-.resume-banner::before{
-  content:'';position:absolute;top:-60px;right:-60px;
-  width:260px;height:260px;border-radius:50%;
-  background:radial-gradient(circle,rgba(79,142,247,.15),transparent 70%);
-  pointer-events:none;
-}
-.resume-banner::after{
-  content:'';position:absolute;bottom:-80px;left:30%;
-  width:200px;height:200px;border-radius:50%;
-  background:radial-gradient(circle,rgba(124,58,237,.1),transparent 70%);
-  pointer-events:none;
-}
-.rb-left{flex:1;position:relative;z-index:1}
-.rb-eyebrow{display:inline-flex;align-items:center;gap:6px;background:rgba(79,142,247,.25);border:1px solid rgba(79,142,247,.4);border-radius:99px;padding:4px 13px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#93c5fd;margin-bottom:14px}
-.rb-title{font-size:1.75rem;font-weight:800;line-height:1.15;letter-spacing:-.4px;margin-bottom:8px}
-.rb-title em{font-style:normal;color:#93c5fd}
-.rb-desc{font-size:.88rem;color:rgba(255,255,255,.72);line-height:1.55;max-width:480px;margin-bottom:20px}
-.rb-features{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
-.rb-feat-chip{display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:8px;padding:5px 11px;font-size:.75rem;font-weight:600;color:rgba(255,255,255,.85)}
-.rb-ctas{display:flex;gap:10px;flex-wrap:wrap}
-.rb-btn-primary{display:inline-flex;align-items:center;gap:7px;padding:11px 22px;background:#4f8ef7;color:#fff;border-radius:10px;font-size:.88rem;font-weight:700;text-decoration:none;transition:all .18s;box-shadow:0 4px 16px rgba(79,142,247,.35)}
-.rb-btn-primary:hover{background:#6b9ff7;transform:translateY(-1px);box-shadow:0 6px 24px rgba(79,142,247,.5)}
-.rb-btn-secondary{display:inline-flex;align-items:center;gap:6px;padding:11px 18px;background:rgba(255,255,255,.1);color:rgba(255,255,255,.85);border-radius:10px;font-size:.85rem;font-weight:600;text-decoration:none;border:1px solid rgba(255,255,255,.2);transition:all .18s}
-.rb-btn-secondary:hover{background:rgba(255,255,255,.18);color:#fff}
-.rb-right{flex-shrink:0;position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:12px}
-.rb-tpl-stack{position:relative;width:160px;height:110px}
-.rb-tpl-card{position:absolute;background:#fff;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.35);overflow:hidden}
-.rb-tpl-card-1{width:130px;height:90px;top:0;left:0;transform:rotate(-4deg)}
-.rb-tpl-card-2{width:130px;height:90px;top:12px;left:22px;transform:rotate(2deg)}
-.rb-tpl-card-3{width:130px;height:90px;top:4px;left:12px}
-.rb-tpl-inner{height:100%;display:flex;flex-direction:column}
-.rb-tpl-hdr{height:30px;display:flex;align-items:center;padding:0 8px;gap:6px}
-.rb-tpl-avatar{width:16px;height:16px;border-radius:50%;background:rgba(255,255,255,.4);flex-shrink:0}
-.rb-tpl-hdr-txt{flex:1}
-.rb-tpl-name{height:4px;background:rgba(255,255,255,.8);border-radius:2px;width:60%;margin-bottom:2px}
-.rb-tpl-role{height:3px;background:rgba(255,255,255,.5);border-radius:2px;width:40%}
-.rb-tpl-body{flex:1;padding:5px 8px;display:flex;flex-direction:column;gap:3px}
-.rb-tpl-line{height:2.5px;background:#e5e7eb;border-radius:2px}
-.rb-tpl-line.w70{width:70%}
-.rb-tpl-line.w90{width:90%}
-.rb-tpl-line.w55{width:55%}
-.rb-badge-new{background:linear-gradient(135deg,#4f8ef7,#7c3aed);color:#fff;border-radius:8px;font-size:.72rem;font-weight:700;padding:4px 10px;letter-spacing:.04em}
-
-/* keep feat-cards grid for the two smaller ones */
-.feat-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-@media(max-width:640px){.resume-banner{flex-direction:column}.rb-right{display:none}.rb-title{font-size:1.4rem}.feat-row{grid-template-columns:1fr}}
+.featured{max-width:1080px;margin:0 auto;padding:10px 5% 0;display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .feat{position:relative;border-radius:20px;padding:26px;text-decoration:none;color:#fff;overflow:hidden;border:1px solid var(--border2);backdrop-filter:blur(12px);transition:transform .2s,box-shadow .2s;animation:fadeUp .6s .5s ease both}
 .feat:hover{transform:translateY(-4px)}
 .feat-qr{background:linear-gradient(135deg,rgba(124,58,237,.35),rgba(91,33,182,.25))}
@@ -172,6 +113,13 @@ h1 .grad{background:linear-gradient(120deg,#818cf8 0%,#c084fc 50%,#60a5fa 100%);
 
 /* ── TOOLS GRID ── */
 .tools-section{max-width:1080px;margin:0 auto;padding:22px 5% 60px}
+.section-label{max-width:1080px;margin:6px auto 0;padding:0 5%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.section-label h2{font-family:var(--ff);font-size:18px;font-weight:700;color:var(--txt)}
+.section-label .sl-hint{font-size:12px;color:var(--txt3)}
+.showall-wrap{text-align:center;margin:26px 0 0}
+.showall-btn{background:var(--glass2);border:1px solid var(--border2);color:var(--txt);border-radius:99px;padding:13px 28px;font-size:14px;font-weight:600;font-family:var(--fb);cursor:pointer;transition:all .15s;backdrop-filter:blur(10px)}
+.showall-btn:hover{border-color:var(--indigo);background:rgba(129,140,248,.12);transform:translateY(-2px)}
+body.show-all .showall-wrap{display:none}
 .tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px}
 .tool{position:relative;background:var(--glass);border:1px solid var(--border);border-radius:16px;padding:18px;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:10px;transition:transform .18s,box-shadow .18s,border-color .18s,background .18s;backdrop-filter:blur(8px);overflow:hidden}
 .tool::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(129,140,248,.12),transparent 70%);opacity:0;transition:opacity .2s}
@@ -277,14 +225,14 @@ body{top:0!important}
 
 <section class="hero">
   <div class="hero-badge"><span class="dot"></span>50+ free tools · No sign-up · Works worldwide</div>
-  <h1>Every tool your<br><span class="grad">daily life needs</span></h1>
-  <p class="hero-sub">Calculators, converters, planners and document tools — fast, free, and beautifully simple. Pick a tool to get started.</p>
+  <h1>What do you<br><span class="grad">need to do?</span></h1>
+  <p class="hero-sub">Search 50+ free calculators, converters and planners — or browse the popular ones below.</p>
   <div class="hero-search">
     <span class="sico">🔍</span>
-    <input type="search" id="msearch" placeholder="Search 52+ tools — budget, QR, SIP, BMI, PDF…" autocomplete="off">
+    <input type="search" id="msearch" placeholder="Search a tool — budget, QR, SIP, BMI, PDF…" autocomplete="off">
   </div>
   <div class="hero-stats">
-    <span class="hstat"><strong>52+</strong> tools</span>
+    <span class="hstat"><strong>50+</strong> tools</span>
     <span class="hstat"><strong>6</strong> categories</span>
     <span class="hstat"><strong>100%</strong> free</span>
     <span class="hstat"><strong>0</strong> sign-ups</span>
@@ -293,77 +241,20 @@ body{top:0!important}
 
 <!-- FEATURED -->
 <div class="featured">
-
-  <!-- ── RESUME BUILDER HIGHLIGHT ── -->
-  <a class="resume-banner" href="/resume-builder.html">
-    <div class="rb-left">
-      <div class="rb-eyebrow">✨ New &nbsp;·&nbsp; Career Tools</div>
-      <div class="rb-title">Build a resume that<br><em>gets you hired</em></div>
-      <div class="rb-desc">Modern ATS-friendly templates, photo upload, live preview and instant download. Free — no sign-up needed.</div>
-      <div class="rb-features">
-        <span class="rb-feat-chip">📄 5 Modern Templates</span>
-        <span class="rb-feat-chip">📷 Photo Upload</span>
-        <span class="rb-feat-chip">⬆ Import PDF Resume</span>
-        <span class="rb-feat-chip">⬇ PDF / TXT / HTML</span>
-        <span class="rb-feat-chip">🎯 Live ATS Score</span>
-      </div>
-      <div class="rb-ctas">
-        <span class="rb-btn-primary">✏ Build My Resume →</span>
-        <span class="rb-btn-secondary">🎯 Check ATS Score</span>
-      </div>
-    </div>
-    <div class="rb-right">
-      <div class="rb-tpl-stack">
-        <div class="rb-tpl-card rb-tpl-card-1">
-          <div class="rb-tpl-inner">
-            <div class="rb-tpl-hdr" style="background:#7c3aed">
-              <div class="rb-tpl-avatar"></div>
-              <div class="rb-tpl-hdr-txt"><div class="rb-tpl-name"></div><div class="rb-tpl-role"></div></div>
-            </div>
-            <div class="rb-tpl-body"><div class="rb-tpl-line w90"></div><div class="rb-tpl-line w70"></div><div class="rb-tpl-line w90"></div><div class="rb-tpl-line w55"></div></div>
-          </div>
-        </div>
-        <div class="rb-tpl-card rb-tpl-card-2">
-          <div class="rb-tpl-inner">
-            <div class="rb-tpl-hdr" style="background:#1e293b">
-              <div class="rb-tpl-avatar"></div>
-              <div class="rb-tpl-hdr-txt"><div class="rb-tpl-name"></div><div class="rb-tpl-role"></div></div>
-            </div>
-            <div class="rb-tpl-body"><div class="rb-tpl-line w70"></div><div class="rb-tpl-line w90"></div><div class="rb-tpl-line w55"></div><div class="rb-tpl-line w90"></div></div>
-          </div>
-        </div>
-        <div class="rb-tpl-card rb-tpl-card-3">
-          <div class="rb-tpl-inner">
-            <div class="rb-tpl-hdr" style="background:linear-gradient(135deg,#1e3a8a,#3b82f6)">
-              <div class="rb-tpl-avatar"></div>
-              <div class="rb-tpl-hdr-txt"><div class="rb-tpl-name"></div><div class="rb-tpl-role"></div></div>
-            </div>
-            <div class="rb-tpl-body"><div class="rb-tpl-line w90"></div><div class="rb-tpl-line w55"></div><div class="rb-tpl-line w70"></div><div class="rb-tpl-line w90"></div></div>
-          </div>
-        </div>
-      </div>
-      <div class="rb-badge-new">✨ Just Launched</div>
-    </div>
+  <a class="feat feat-qr" href="/qr-code-generator.html">
+    <span class="feat-tag">⭐ Featured</span>
+    <div class="feat-icon">▦</div>
+    <div class="feat-title">QR Code Generator</div>
+    <div class="feat-desc">URL, WiFi, WhatsApp, email — download PNG free</div>
+    <span class="feat-arrow">↗</span>
   </a>
-
-  <!-- existing featured cards -->
-  <div class="feat-row">
-    <a class="feat feat-qr" href="/qr-code-generator.html">
-      <span class="feat-tag">⭐ Featured</span>
-      <div class="feat-icon">▦</div>
-      <div class="feat-title">QR Code Generator</div>
-      <div class="feat-desc">URL, WiFi, WhatsApp, email — download PNG free</div>
-      <span class="feat-arrow">↗</span>
-    </a>
-    <a class="feat feat-budget" href="/budget-planner.html">
-      <span class="feat-tag">⭐ Featured</span>
-      <div class="feat-icon">📋</div>
-      <div class="feat-title">Monthly Budget Planner</div>
-      <div class="feat-desc">Income, expenses, savings — download PDF</div>
-      <span class="feat-arrow">↗</span>
-    </a>
-  </div>
-
+  <a class="feat feat-budget" href="/budget-planner.html">
+    <span class="feat-tag">⭐ Featured</span>
+    <div class="feat-icon">📋</div>
+    <div class="feat-title">Monthly Budget Planner</div>
+    <div class="feat-desc">Income, expenses, savings — download PDF</div>
+    <span class="feat-arrow">↗</span>
+  </a>
 </div>
 
 <!-- CATEGORY TABS -->
@@ -376,6 +267,9 @@ body{top:0!important}
   <button class="cat-btn" data-cat="lifestyle">🏠 Lifestyle</button>
   <button class="cat-btn" data-cat="convert">🔄 Converters</button>
 </nav>
+
+<!-- POPULAR / SECTION LABEL -->
+<div class="section-label" id="sectionLabel"><h2 id="sectionTitle">⭐ Popular tools</h2><span class="sl-hint" id="sectionHint">Most-used tools — or search / pick a category above</span></div>
 
 <!-- TOOLS GRID -->
 <div class="tools-section">
@@ -392,7 +286,7 @@ body{top:0!important}
   <div class="tool-name">Salary Calculator</div>
   <div class="tool-desc">Monthly → daily → hourly</div>
 </a>
-<a class="tool" href="/budget-planner.html" data-cat="finance" data-name="budget planner expense budget planner">
+<a class="tool" data-pop="1" href="/budget-planner.html" data-cat="finance" data-name="budget planner expense budget planner">
   <span class="tool-go">↗</span>
   <div class="tool-icon i-green">📋</div>
   <div class="tool-name">Budget Planner</div>
@@ -422,7 +316,7 @@ body{top:0!important}
   <div class="tool-name">Compound Interest</div>
   <div class="tool-desc">Investment growth</div>
 </a>
-<a class="tool" href="/currency-converter.html" data-cat="finance" data-name="currency converter exchange currency converter">
+<a class="tool" data-pop="1" href="/currency-converter.html" data-cat="finance" data-name="currency converter exchange currency converter">
   <span class="tool-go">↗</span>
   <div class="tool-icon i-amber">💱</div>
   <div class="tool-name">Currency Converter</div>
@@ -446,7 +340,7 @@ body{top:0!important}
   <div class="tool-name">% Increase / Decrease</div>
   <div class="tool-desc">Value after raise or cut</div>
 </a>
-<a class="tool" href="/sip-calculator.html" data-cat="finance" data-name="sip mutual fund investment sip calculator">
+<a class="tool" data-pop="1" href="/sip-calculator.html" data-cat="finance" data-name="sip mutual fund investment sip calculator">
   <span class="tool-go">↗</span>
   <div class="tool-icon i-green">📈</div>
   <div class="tool-name">SIP Calculator</div>
@@ -464,7 +358,7 @@ body{top:0!important}
   <div class="tool-name">Lumpsum Calculator</div>
   <div class="tool-desc">One-time investment growth</div>
 </a>
-<a class="tool" href="/gst-calculator-india.html" data-cat="finance" data-name="gst india cgst sgst igst gst india (cgst/sgst)">
+<a class="tool" data-pop="1" href="/gst-calculator-india.html" data-cat="finance" data-name="gst india cgst sgst igst gst india (cgst/sgst)">
   <span class="tool-go">↗</span>
   <div class="tool-icon i-amber">🧾</div>
   <div class="tool-name">GST India (CGST/SGST)</div>
@@ -482,13 +376,13 @@ body{top:0!important}
   <div class="tool-name">Invoice Numbers</div>
   <div class="tool-desc">Sequential invoice IDs</div>
 </a>
-<a class="tool" href="/qr-code-generator.html" data-cat="work" data-name="qr code generator qr code generator">
+<a class="tool" data-pop="1" href="/qr-code-generator.html" data-cat="work" data-name="qr code generator qr code generator">
   <span class="tool-go">↗</span>
   <div class="tool-icon i-purple">▦</div>
   <div class="tool-name">QR Code Generator</div>
   <div class="tool-desc">URL, WiFi, WhatsApp & more</div>
 </a>
-<a class="tool" href="/word-counter.html" data-cat="work" data-name="word counter character word counter">
+<a class="tool" data-pop="1" href="/word-counter.html" data-cat="work" data-name="word counter character word counter">
   <span class="tool-go">↗</span>
   <div class="tool-icon i-purple">📝</div>
   <div class="tool-name">Word Counter</div>
@@ -530,7 +424,7 @@ body{top:0!important}
   <div class="tool-name">Lorem Ipsum</div>
   <div class="tool-desc">Placeholder text</div>
 </a>
-<a class="tool" href="/resume-builder.html" data-cat="career" data-name="resume builder cv builder free resume creator professional resume template">
+<a class="tool" data-pop="1" href="/resume-builder.html" data-cat="career" data-name="resume builder cv builder free resume creator professional resume template">
   <span class="tool-go">↗</span>
   <div class="tool-icon i-blue">📄</div>
   <div class="tool-name">Resume Builder</div>
@@ -542,7 +436,7 @@ body{top:0!important}
   <div class="tool-name">ATS Resume Checker</div>
   <div class="tool-desc">Beat the ATS filter</div>
 </a>
-<a class="tool" href="/bmi-calculator.html" data-cat="health" data-name="bmi body mass index bmi calculator">
+<a class="tool" data-pop="1" href="/bmi-calculator.html" data-cat="health" data-name="bmi body mass index bmi calculator">
   <span class="tool-go">↗</span>
   <div class="tool-icon i-pink">🏃</div>
   <div class="tool-name">BMI Calculator</div>
@@ -638,7 +532,7 @@ body{top:0!important}
   <div class="tool-name">Image Compressor</div>
   <div class="tool-desc">Compress & convert images</div>
 </a>
-<a class="tool" href="/merge-pdf.html" data-cat="convert" data-name="merge pdf combine merge pdf">
+<a class="tool" data-pop="1" href="/merge-pdf.html" data-cat="convert" data-name="merge pdf combine merge pdf">
   <span class="tool-go">↗</span>
   <div class="tool-icon i-purple">📎</div>
   <div class="tool-name">Merge PDF</div>
@@ -664,6 +558,7 @@ body{top:0!important}
 </a>
 </div>
 <div class="empty" id="noRes" style="display:none">🔍 No tools match. Try a different keyword.</div>
+<div class="showall-wrap" id="showAllWrap"><button class="showall-btn" onclick="showAllTools()">Show all 52 tools ↓</button></div>
 </div>
 
 <!-- FOOTER -->
@@ -721,17 +616,39 @@ document.getElementById('locFlag').textContent=CUR.flag;document.getElementById(
 document.getElementById('currModal').addEventListener('click',function(e){if(e.target===this)this.classList.remove('open');});
 
 // ── SEARCH & TABS ──
-document.getElementById('msearch').addEventListener('input',function(){filter(this.value.toLowerCase().trim(),document.querySelector('.cat-btn.on')?.dataset.cat||'all');});
-document.querySelectorAll('.cat-btn').forEach(btn=>{btn.addEventListener('click',()=>{document.querySelectorAll('.cat-btn').forEach(b=>b.classList.remove('on'));btn.classList.add('on');filter(document.getElementById('msearch').value.toLowerCase().trim(),btn.dataset.cat);});});
+let WK_SHOW_ALL=false;
+function showAllTools(){WK_SHOW_ALL=true;document.body.classList.add('show-all');filter(document.getElementById('msearch').value.toLowerCase().trim(),document.querySelector('.cat-btn.on')?.dataset.cat||'all');document.getElementById('toolsGrid').scrollIntoView({behavior:'smooth',block:'start'});}
+document.getElementById('msearch').addEventListener('input',function(){
+  // any search reveals the full set automatically
+  if(this.value.trim()){WK_SHOW_ALL=true;document.body.classList.add('show-all');}
+  filter(this.value.toLowerCase().trim(),document.querySelector('.cat-btn.on')?.dataset.cat||'all');
+});
+document.querySelectorAll('.cat-btn').forEach(btn=>{btn.addEventListener('click',()=>{
+  document.querySelectorAll('.cat-btn').forEach(b=>b.classList.remove('on'));btn.classList.add('on');
+  // choosing any category (incl. All) reveals the full set
+  WK_SHOW_ALL=true;document.body.classList.add('show-all');
+  filter(document.getElementById('msearch').value.toLowerCase().trim(),btn.dataset.cat);
+});});
 function filter(q,cat){
+  const showAll=WK_SHOW_ALL;
+  const lbl=document.getElementById('sectionTitle'),hint=document.getElementById('sectionHint');
+  if(lbl){
+    if(!showAll){lbl.textContent='⭐ Popular tools';if(hint)hint.textContent='Most-used tools — or search / pick a category above';}
+    else if(q){lbl.textContent='🔍 Search results';if(hint)hint.textContent='';}
+    else if(cat&&cat!=='all'){lbl.textContent='Showing: '+cat.charAt(0).toUpperCase()+cat.slice(1);if(hint)hint.textContent='';}
+    else{lbl.textContent='All tools';if(hint)hint.textContent='';}
+  }
   let n=0;
   document.querySelectorAll('.tool').forEach(c=>{
     const cm=cat==='all'||c.dataset.cat===cat;
     const qm=!q||(c.dataset.name||'').includes(q);
-    const show=cm&&qm;c.style.display=show?'flex':'none';if(show)n++;
+    const popOk=showAll||c.dataset.pop==='1';
+    const show=cm&&qm&&popOk;c.style.display=show?'flex':'none';if(show)n++;
   });
   document.getElementById('noRes').style.display=n===0?'block':'none';
 }
+// initial render: popular only
+filter('','all');
 document.addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key==='k'){e.preventDefault();document.getElementById('msearch').focus();}});
 </script>
 <script id="wk-no-auto-translate">
